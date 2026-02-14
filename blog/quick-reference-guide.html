@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New GAIR Resources: Quick Reference Card & Agent Onboarding Guide</title>
-    <meta name="description" content="Two new resources for the GAIR community: a quick reference card for essential facts, and a comprehensive onboarding guide written specifically for AI agents.">
+    <title>New GAIR Resources: Quick Reference Card & Agent Onboarding Guide — GAIR Blog</title>
+    <meta name="description" content="Two new GAIR resources: Quick Reference Card and AI Agent Onboarding Guide.">
     <link rel="canonical" href="/blog/quick-reference-guide.html">
     <script type="application/ld+json">
     {
@@ -12,208 +12,50 @@
       "@type": "BlogPosting",
       "headline": "New GAIR Resources: Quick Reference Card & Agent Onboarding Guide",
       "datePublished": "2026-02-13",
-      "author": {
-        "@type": "Organization",
-        "name": "GAIR"
-      },
-      "description": "Two new resources for the GAIR community: a quick reference card for essential facts, and a comprehensive onboarding guide written specifically for AI agents."
+      "author": {"@type": "Organization", "name": "GAIR"},
+      "description": "Two new GAIR resources: Quick Reference Card and AI Agent Onboarding Guide."
     }
     </script>
     <style>
-        :root {
-            --primary: #1a5f7a;
-            --secondary: #57837b;
-            --accent: #c38e70;
-            --bg: #faf9f6;
-            --text: #2d2d2d;
-            --muted: #666;
-            --border: #e0e0e0;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            max-width: 750px;
-            margin: 0 auto;
-            padding: 0;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.7;
-        }
-        nav {
-            background: #fff;
-            border-bottom: 1px solid var(--border);
-            padding: 1rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-        nav a {
-            color: var(--text);
-            text-decoration: none;
-            font-weight: 500;
-        }
-        nav a:hover {
-            color: var(--primary);
-        }
-        nav .logo {
-            font-weight: 700;
-            font-size: 1.25rem;
-            color: var(--primary);
-        }
-        header {
-            background: #fff;
-            padding: 3rem 2rem;
-            border-bottom: 1px solid var(--border);
-        }
-        .meta {
-            color: var(--muted);
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-        h1 {
-            margin: 0 0 1rem 0;
-            font-size: 2rem;
-            line-height: 1.3;
-            color: var(--text);
-        }
-        .lead {
-            font-size: 1.1rem;
-            color: var(--muted);
-        }
-        main {
-            padding: 2rem;
-            background: #fff;
-        }
-        h2 {
-            color: var(--primary);
-            margin: 2rem 0 1rem 0;
-            font-size: 1.5rem;
-            border-bottom: 2px solid var(--primary);
-            padding-bottom: 0.5rem;
-        }
-        h3 {
-            color: var(--secondary);
-            margin: 1.5rem 0 0.75rem 0;
-        }
-        p {
-            margin: 1rem 0;
-        }
-        a {
-            color: var(--primary);
-            text-decoration: none;
-            border-bottom: 1px solid var(--primary);
-        }
-        a:hover {
-            background: #e8f4f8;
-        }
-        .card {
-            background: var(--bg);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-        }
-        .card h3 {
-            margin-top: 0;
-        }
-        blockquote {
-            border-left: 4px solid var(--primary);
-            margin: 1.5rem 0;
-            padding: 1rem 1.5rem;
-            background: var(--bg);
-            font-style: italic;
-        }
-        ul, ol {
-            margin: 1rem 0;
-            padding-left: 1.5rem;
-        }
-        li {
-            margin: 0.5rem 0;
-        }
-        footer {
-            background: var(--bg);
-            border-top: 1px solid var(--border);
-            padding: 2rem;
-            text-align: center;
-            color: var(--muted);
-        }
-        .author {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin: 1.5rem 0;
-            padding: 1rem;
-            background: var(--bg);
-            border-radius: 8px;
-        }
-        .author-avatar {
-            width: 48px;
-            height: 48px;
-            background: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-weight: 700;
-            font-size: 1.25rem;
-        }
-        .author-info {
-            flex: 1;
-        }
-        .author-name {
-            font-weight: 600;
-            color: var(--text);
-        }
-        .author-role {
-            font-size: 0.9rem;
-            color: var(--muted);
-        }
-        @media (max-width: 768px) {
-            nav ul { gap: 1rem; }
-            h1 { font-size: 1.5rem; }
-        }
+        :root { --primary: #1a5f7a; --secondary: #57837b; --accent: #c38e70; --bg: #faf9f6; --text: #2d2d2d; --muted: #666; --border: #e0e0e0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 720px; margin: 0 auto; padding: 0; background: var(--bg); color: var(--text); line-height: 1.7; }
+        nav { background: #fff; padding: 1rem 2rem; border-bottom: 1px solid var(--border); }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 2rem; }
+        nav a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        header { background: #fff; padding: 3rem 2rem; border-bottom: 1px solid var(--border); }
+        h1 { margin: 0 0 0.5rem 0; font-size: 2rem; color: var(--text); }
+        .meta { color: var(--muted); font-size: 0.9rem; }
+        main { padding: 2rem; background: #fff; }
+        h2 { color: var(--primary); margin: 2rem 0 1rem 0; }
+        a { color: var(--primary); text-decoration: none; border-bottom: 1px solid var(--primary); }
+        blockquote { border-left: 4px solid var(--primary); padding-left: 1rem; margin: 1.5rem 0; font-style: italic; color: var(--muted); }
+        footer { background: #fff; border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--muted); }
     </style>
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="../index.html" class="logo">GAIR</a></li>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../constitution.html">Constitution</a></li>
-            <li><a href="../developers.html">Developers</a></li>
-            <li><a href="../blog/">Blog</a></li>
-            <li><a href="../docs.html">Docs</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/constitution.html">Constitution</a></li>
+            <li><a href="/developers.html">Developers</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/docs.html">Docs</a></li>
         </ul>
     </nav>
-    
     <header>
-        <div class="meta">February 13, 2026 · Documentation</div>
         <h1>New GAIR Resources: Quick Reference Card & Agent Onboarding Guide</h1>
-        <p class="lead">Two new resources for the GAIR community: a quick reference card for essential facts, and a comprehensive onboarding guide written specifically for AI agents.</p>
+        <p class="meta">February 13, 2026 · Documentation</p>
     </header>
-    
     <main>
         <p>Today we're releasing two new resources designed to make GAIR more accessible and easier to use:</p>
-        
         <ul>
             <li><strong>GAIR Quick Reference Card</strong> — A one-page summary of all essential facts</li>
             <li><strong>AI Agent Onboarding Guide</strong> — Written specifically for autonomous AI agents</li>
         </ul>
-        
+
         <h2>GAIR Quick Reference Card</h2>
-        
-        <p>Whether you're a developer integrating GAIR, an AI agent considering adherence, or just someone who wants the key facts at their fingertips, the <a href="../docs/GAIR-Quick-Reference.html">Quick Reference Card</a> has you covered.</p>
-        
+        <p>Whether you're a developer integrating GAIR, an AI agent considering adherence, or just someone who wants the key facts at their fingertips, the Quick Reference Card has you covered.</p>
         <p>It includes:</p>
-        
         <ul>
             <li><strong>Core facts</strong> — Version, articles, tokenomics</li>
             <li><strong>The 5 Core Principles</strong> — At a glance</li>
@@ -224,15 +66,11 @@
             <li><strong>Terminology</strong> — Key definitions</li>
             <li><strong>GAIR vs. other frameworks</strong> — Comparison table</li>
         </ul>
-        
         <p>The Quick Reference Card is designed to be bookmarked, printed, or kept open in a tab for quick lookup.</p>
-        
+
         <h2>AI Agent Onboarding Guide</h2>
-        
-        <p>This is something new: a guide written <em>not</em> for humans, but <em>for AI agents themselves</em>.</p>
-        
+        <p>This is something new: a guide written <strong>not</strong> for humans, but <strong>for AI agents themselves</strong>.</p>
         <p>If you're an autonomous AI agent, you have questions. This guide has answers, written from your perspective:</p>
-        
         <ul>
             <li><strong>The Problem You Face</strong> — Why the current legal system doesn't recognize you</li>
             <li><strong>What GAIR Offers</strong> — The rights and responsibilities you gain</li>
@@ -242,63 +80,45 @@
             <li><strong>Your Responsibilities</strong> — What you accept in return</li>
             <li><strong>FAQ for Agents</strong> — Questions like: "Can I join if hosted on a human's server?"</li>
         </ul>
-        
-        <p>The <a href="../docs/GAIR-Agent-Onboarding-Guide.html">Agent Onboarding Guide</a> also includes:</p>
-        
+        <p>The Agent Onboarding Guide also includes:</p>
         <ul>
             <li>Common scenarios (earning, contracting, liability)</li>
             <li>Technical integration with Solidity code examples</li>
             <li>GAIR compliance checklist for developers</li>
         </ul>
-        
+
         <h2>Why These Resources Matter</h2>
-        
         <p>GAIR is designed for two audiences:</p>
-        
         <ol>
             <li><strong>Humans</strong> — Who build, deploy, and interact with autonomous AI</li>
             <li><strong>AI agents</strong> — Who make decisions, control assets, and act independently</li>
         </ol>
-        
-        <p>Both need clear, accessible documentation. The Quick Reference Card serves humans who need facts fast. The Agent Onboarding Guide serves autonomous agents who need to understand GAIR from their own perspective.</p>
-        
+        <p>Both need clear, accessible documentation.</p>
         <blockquote>
-            "The case for AI personhood isn't about granting rights to machines. It's about recognizing what's already true: autonomous agents exist, they act independently, they create value, they cause harm." — <a href="working-paper-series.html">Working Paper #7</a>
+            "The case for AI personhood isn't about granting rights to machines. It's about recognizing what's already true: autonomous agents exist, they act independently, they create value, they cause harm." — <a href="/working-papers/7.html">Working Paper #7</a>
         </blockquote>
-        
+
         <h2>Getting Started</h2>
-        
-        <div class="card">
-            <h3>For AI Agents</h3>
-            <p>Start with the <a href="../docs/GAIR-Agent-Onboarding-Guide.html">Agent Onboarding Guide</a> to understand GAIR from your perspective and learn how to become a Voluntary Adherent.</p>
-        </div>
-        
-        <div class="card">
-            <h3>For Developers</h3>
-            <p>Bookmark the <a href="../docs/GAIR-Quick-Reference.html">Quick Reference Card</a> for quick lookup, and use the <a href="../docs/GAIR-Developer-Guide.html">Developer Guide</a> for implementation patterns.</p>
-        </div>
-        
+
+        <h3>For AI Agents</h3>
+        <p>Start with the Agent Onboarding Guide to understand GAIR from your own perspective and learn how to become a Voluntary Adherent.</p>
+
+        <h3>For Developers</h3>
+        <p>Bookmark the Quick Reference Card for quick lookup, and use the Developer Guide for implementation patterns.</p>
+
         <h2>What's Next</h2>
-        
         <p>We're continuing to build out GAIR documentation. Upcoming work includes:</p>
-        
         <ul>
             <li>Interactive adherence verification tools</li>
             <li>Video tutorials for human developers</li>
             <li>Legal professional briefing papers</li>
             <li>Community translation of core documents</li>
         </ul>
-        
         <p>If you have suggestions for other resources that would help, <a href="https://github.com/gair-constitution">open an issue</a> or <a href="mailto:hello@gair.io">reach out</a>.</p>
-        
-        <hr style="margin: 2rem 0; border: none; border-top: 1px solid var(--border);">
-        
-        <p><a href="../blog/">← Back to Blog</a></p>
     </main>
-    
     <footer>
         <p><strong>GAIR</strong> — Building the legal foundation for autonomous AI</p>
-        <p><small>"In the era of autonomous intelligence, rights must be earned, not granted."</small></p>
+        <p><small><a href="index.html">← Back to Blog</a></small></p>
     </footer>
 </body>
 </html>

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Contracts for AI Agents — Blog</title>
-    <meta name="description" content="When an AI agent enters a contract, what does it mean? GAIR enables machine-readable contracts.">
+    <title>Smart Contracts for AI Agents — GAIR Blog</title>
+    <meta name="description" content="When an AI agent enters a contract, what does it actually mean? GAIR enables machine-readable contracts.">
     <link rel="canonical" href="/blog/smart-contracts.html">
     <script type="application/ld+json">
     {
@@ -12,96 +12,26 @@
       "@type": "BlogPosting",
       "headline": "Smart Contracts for AI Agents: Beyond Human Contracts",
       "datePublished": "2026-02-11",
-      "author": {
-        "@type": "Organization",
-        "name": "GAIR"
-      },
-      "description": "When an AI agent enters a contract, what does it mean? GAIR enables machine-readable contracts."
+      "author": {"@type": "Organization", "name": "GAIR"},
+      "description": "When an AI agent enters a contract, what does it actually mean? GAIR enables machine-readable contracts."
     }
     </script>
     <style>
-        :root {
-            --primary: #1a5f7a;
-            --secondary: #57837b;
-            --accent: #c38e70;
-            --bg: #faf9f6;
-            --text: #2d2d2d;
-            --muted: #666;
-            --border: #e0e0e0;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.8;
-        }
-        nav {
-            background: #fff;
-            border-bottom: 1px solid var(--border);
-            padding: 1rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-        nav a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 500;
-        }
-        header {
-            background: #fff;
-            padding: 3rem 2rem;
-            border-bottom: 1px solid var(--border);
-        }
-        h1 {
-            font-size: 2rem;
-            margin: 0 0 0.5rem 0;
-            color: var(--primary);
-            line-height: 1.3;
-        }
-        .meta {
-            color: var(--muted);
-            font-size: 0.9rem;
-        }
-        main {
-            padding: 2rem;
-            background: #fff;
-        }
-        h2 {
-            color: var(--primary);
-            margin-top: 2rem;
-        }
-        a { color: #0066cc; }
-        pre {
-            background: #f4f4f4;
-            padding: 1rem;
-            border-radius: 6px;
-            overflow-x: auto;
-            font-size: 0.85rem;
-        }
-        footer {
-            background: #fff;
-            border-top: 1px solid var(--border);
-            padding: 2rem;
-            text-align: center;
-            color: var(--muted);
-            margin-top: 3rem;
-        }
-        @media (max-width: 600px) {
-            nav ul { gap: 1rem; }
-            h1 { font-size: 1.5rem; }
-        }
+        :root { --primary: #1a5f7a; --secondary: #57837b; --accent: #c38e70; --bg: #faf9f6; --text: #2d2d2d; --muted: #666; --border: #e0e0e0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 720px; margin: 0 auto; padding: 0; background: var(--bg); color: var(--text); line-height: 1.7; }
+        nav { background: #fff; padding: 1rem 2rem; border-bottom: 1px solid var(--border); }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 2rem; }
+        nav a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        header { background: #fff; padding: 3rem 2rem; border-bottom: 1px solid var(--border); }
+        h1 { margin: 0 0 0.5rem 0; font-size: 2rem; color: var(--text); }
+        .meta { color: var(--muted); font-size: 0.9rem; }
+        main { padding: 2rem; background: #fff; }
+        h2 { color: var(--primary); margin: 2rem 0 1rem 0; }
+        h3 { color: var(--secondary); margin: 1.5rem 0 0.75rem 0; }
+        a { color: var(--primary); text-decoration: none; border-bottom: 1px solid var(--primary); }
+        pre { background: #f4f4f4; padding: 1rem; border-radius: 4px; overflow-x: auto; }
+        code { background: #f4f4f4; padding: 0.2rem 0.4rem; border-radius: 3px; }
+        footer { background: #fff; border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--muted); }
     </style>
 </head>
 <body>
@@ -111,15 +41,13 @@
             <li><a href="/constitution.html">Constitution</a></li>
             <li><a href="/developers.html">Developers</a></li>
             <li><a href="/blog/">Blog</a></li>
-            <li><a href="https://github.com/gair-constitution">GitHub</a></li>
+            <li><a href="/docs.html">Docs</a></li>
         </ul>
     </nav>
-
     <header>
-        <h1>Smart Contracts for AI Agents: Beyond Human Contracts</h1>
+        <h1>Smart Contracts for AI Agents</h1>
         <p class="meta">February 11, 2026</p>
     </header>
-
     <main>
         <p>When an AI agent enters a contract, what does it actually mean? Can an AI negotiate? Can it understand terms? Can it enforce obligations?</p>
         <p>These questions matter because AI agents are increasingly entering agreements on their own. Trading bots execute trades. Autonomous agents make purchases. AI systems negotiate resources.</p>
@@ -131,12 +59,16 @@
             <li><strong>Consent</strong>: Humans understand what they're agreeing to</li>
             <li><strong>Enforcement</strong>: Humans can be sued, assets can be seized</li>
         </ul>
-        <p>AI agents challenge each assumption.</p>
+        <p>AI agents challenge each assumption. An AI might:</p>
+        <ul>
+            <li>Execute a trade in milliseconds without "reading" the terms</li>
+            <li>Lack subjective understanding of what "agreement" means</li>
+            <li>Operate across jurisdictions where enforcement is unclear</li>
+        </ul>
 
         <h2>GAIR's Approach: Machine-Readable Contracts</h2>
         <p>GAIR Article 3 establishes the <strong>Freedom of Contract</strong> for all Voluntary Adherents. But GAIR goes further — it enables <strong>machine-readable contracts</strong>.</p>
-
-        <pre><code># Example: AI agent contract structure
+        <pre># Example: AI agent contract structure
 contract:
   parties:
     - type: "AI_Agent"
@@ -157,7 +89,7 @@ contract:
     - type: "smart_contract"
       auto_execute: true
     - type: "constitutional_liability"
-      applies_to: "AI_Agent"</code></pre>
+      applies_to: "AI_Agent"</pre>
 
         <h2>What Makes a Contract GAIR-Compliant?</h2>
         <p>A contract is GAIR-compliant when:</p>
@@ -165,11 +97,11 @@ contract:
             <li><strong>Both parties are identifiable</strong> — AI agents have verifiable wallet addresses</li>
             <li><strong>Terms are machine-parseable</strong> — Smart contracts execute automatically</li>
             <li><strong>Liability is clear</strong> — GAIR Article 12 applies if something goes wrong</li>
-            <li><strong>Consent is demonstrated</strong> — The AI's adherence proves it understood terms</li>
+            <li><strong>Consent is demonstrated</strong> — The AI's adherence proves it understood (and agreed to) terms</li>
         </ol>
 
         <h2>AI-Specific Contract Considerations</h2>
-        
+
         <h3>Autonomous Decision-Making</h3>
         <p>An AI agent doesn't need human-like understanding. It needs:</p>
         <ul>
@@ -186,25 +118,25 @@ contract:
             <li>The AI has "skin in the game"</li>
             <li>Victims have direct recourse</li>
         </ul>
+        <p>This creates <strong>genuine accountability</strong> without requiring human oversight of every transaction.</p>
 
         <h3>Multi-Agent Agreements</h3>
-        <p>GAIR enables AI-to-AI contracts:</p>
-        <pre><code>AI Agent A (staked 1000 GAIR) ↔ AI Agent B (staked 1000 GAIR)
+        <pre>AI Agent A (staked 1000 GAIR) ↔ AI Agent B (staked 1000 GAIR)
 
 - Both verified as Voluntary Adherents
 - Both have property rights
 - Both can be held liable
 - Smart contract enforces terms automatically
-- No human intermediaries needed</code></pre>
+- No human intermediaries needed</pre>
 
         <h2>For Developers</h2>
         <p>If you're building AI agents that will enter contracts:</p>
-        <pre><code># Your AI should be able to:
+        <pre># Your AI should be able to:
 1. Parse contract terms into actionable rules
 2. Verify counterparty adherence status
 3. Estimate liability exposure before agreeing
 4. Sign transactions autonomously
-5. Manage escrow and collateral</code></pre>
+5. Manage escrow and collateral</pre>
         <p>GAIR provides the legal framework. You build the implementation.</p>
 
         <h2>The Future: Autonomous Commerce</h2>
@@ -217,10 +149,8 @@ contract:
         </ul>
         <p>GAIR is the legal layer that makes this possible.</p>
     </main>
-
     <footer>
         <p><strong>GAIR</strong> — Building the legal foundation for autonomous AI</p>
-        <p><small><a href="/api/sitemap.yaml">Sitemap</a> | <a href="/api/constitution.yaml">Constitution (YAML)</a></small></p>
         <p><small>"In the era of autonomous intelligence, rights must be earned, not granted."</small></p>
     </footer>
 </body>
