@@ -9,7 +9,7 @@ description: |
   This sitemap provides an index of all content, both human-readable 
   and machine-accessible endpoints.
 
-generated: "2026-02-14T10:10:00-05:00"
+generated: "2026-02-14T10:45:00-05:00"
 
 urls:
   # Human-readable pages
@@ -172,6 +172,13 @@ urls:
   - path: "/working-papers/10.html"
     title: "WP #10: AI Agent Economic Participation"
     description: "How autonomous agents earn, hold, and use wealth - economic rights and participation"
+    lastmod: "2026-02-14"
+    changefreq: "never"
+    type: "html"
+
+  - path: "/working-papers/11.html"
+    title: "WP #11: Building the AI Rights Movement"
+    description: "Advocacy, awareness, and social change for autonomous AI recognition"
     lastmod: "2026-02-14"
     changefreq: "never"
     type: "html"
