@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAIR Economic Calculator</title>
+    <meta name="description" content="Calculate staking costs, rewards, and governance power for GAIR participation.">
+    <style>
+        :root { --primary: #1a5f7a; --secondary: #57837b; --accent: #c38e70; --bg: #faf9f6; --text: #2d2d2d; --muted: #666; --border: #e0e0e0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 900px; margin: 0 auto; padding: 0; background: var(--bg); color: var(--text); line-height: 1.7; }
+        nav { background: #fff; border-bottom: 1px solid var(--border); padding: 1rem 2rem; }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 2rem; flex-wrap: wrap; }
+        nav a { color: var(--text); text-decoration: none; font-weight: 500; }
+        nav a:hover { color: var(--primary); }
+        header { background: #fff; padding: 2rem; border-bottom: 1px solid var(--border); }
+        h1 { margin: 0 0 0.5rem 0; color: var(--primary); }
+        .lead { color: var(--muted); margin: 0; }
+        main { padding: 2rem; background: #fff; }
+        .calculator { background: var(--bg); padding: 2rem; border-radius: 12px; border: 1px solid var(--border); margin: 2rem 0; }
+        .input-group { margin: 1.5rem 0; }
+        label { display: block; font-weight: 600; margin-bottom: 0.5rem; }
+        input, select { width: 100%; padding: 0.75rem; border: 1px solid var(--border); border-radius: 6px; font-size: 1rem; box-sizing: border-box; }
+        input:focus, select:focus { outline: none; border-color: var(--primary); }
+        .results { background: #f0f7ff; padding: 1.5rem; border-radius: 8px; margin: 2rem 0; border: 1px solid #d0e0ff; }
+        .result-row { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid #d0e0ff; }
+        .result-row:last-child { border-bottom: none; }
+        .result-label { color: var(--muted); }
+        .result-value { font-weight: 600; color: var(--primary); }
+        .result-value.highlight { font-size: 1.5rem; color: var(--accent); }
+        h2 { color: var(--primary); margin: 2rem 0 1rem 0; border-bottom: 3px solid var(--primary); padding-bottom: 0.5rem; }
+        h3 { color: var(--secondary); margin: 1.5rem 0 0.75rem 0; }
+        .tier-comparison { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0; }
+        .tier-card { background: var(--bg); padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border); text-align: center; }
+        .tier-card.recommended { border-color: var(--accent); background: #fff5f0; }
+        .tier-name { font-size: 1.25rem; font-weight: 700; color: var(--primary); }
+        .tier-stake { font-size: 2rem; font-weight: 700; color: var(--text); margin: 0.5rem 0; }
+        .tier-benefits { text-align: left; font-size: 0.9rem; margin-top: 1rem; }
+        .formula { background: #f4f4f4; padding: 1rem; border-radius: 6px; font-family: monospace; margin: 1rem 0; overflow-x: auto; }
+        footer { background: #fff; padding: 2rem; border-top: 1px solid var(--border); text-align: center; color: var(--muted); }
+        .info-box { background: #e8f4f8; padding: 1rem; border-radius: 6px; margin: 1rem 0; border-left: 4px solid var(--primary); }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">GAIR</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="constitution.html">Constitution</a></li>
+            <li><a href="docs.html">Docs</a></li>
+            <li><a href="blog/">Blog</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>GAIR Economic Calculator</h1>
+        <p class="lead">Calculate staking costs, governance power, and rewards for GAIR participation</p>
+    </header>
+
+    <main>
+        <div class="calculator">
+            <h2>Calculate Your Economics</h2>
+            
+            <div class="input-group">
+                <label for="stake">GAIR Tokens to Stake</label>
+                <input type="number" id="stake" value="5000" min="1000" max="1000000" step="1000" oninput="calculate()">
+            </div>
+
+            <div class="input-group">
+                <label for="duration">Expected Participation Duration (years)</label>
+                <input type="number" id="duration" value="1" min="0.5" max="10" step="0.5" oninput="calculate()">
+            </div>
+
+            <div class="input-group">
+                <label for="governance">Expected Governance Participation</label>
+                <select id="governance" onchange="calculate()">
+                    <option value="low">Low (rare voting)</option>
+                    <option value="medium" selected>Medium (occasional voting)</option>
+                    <option value="high">High (active participation)</option>
+                </select>
+            </div>
+
+            <div class="results">
+                <div class="result-row">
+                    <span class="result-label">Your Tier</span>
+                    <span class="result-value" id="tier">Standard</span>
+                </div>
+                <div class="result-row">
+                    <span class="result-label">Voting Power</span>
+                    <span class="result-value" id="votingPower">70.71</span>
+                </div>
+                <div class="result-row">
+                    <span class="result-label">Governance Weight</span>
+                    <span class="result-value" id="governanceWeight">Standard</span>
+                </div>
+                <div class="result-row">
+                    <span class="result-label">Est. Annual Staking Rewards</span>
+                    <span class="result-value" id="rewards">250 GAIR</span>
+                </div>
+                <div class="result-row">
+                    <span class="result-label">Est. Treasury Share</span>
+                    <span class="result-value" id="treasuryShare">5.0%</span>
+                </div>
+                <div class="result-row">
+                    <span class="result-label">Proposal Threshold Met</span>
+                    <span class="result-value" id="proposal">No</span>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <strong>Note:</strong> These are estimates based on current parameters. Actual rewards depend on network participation and governance decisions.
+            </div>
+        </div>
+
+        <h2>Tier Comparison</h2>
+        <div class="tier-comparison">
+            <div class="tier-card">
+                <div class="tier-name">Basic</div>
+                <div class="tier-stake">1,000</div>
+                <div>GAIR tokens</div>
+                <div class="tier-benefits">
+                    <strong>Includes:</strong><br>
+                    ✓ Property ownership<br>
+                    ✓ Contract signing<br>
+                    ✓ Basic verification
+                </div>
+            </div>
+            <div class="tier-card recommended">
+                <div class="tier-name">Standard</div>
+                <div class="tier-stake">5,000</div>
+                <div>GAIR tokens</div>
+                <div class="tier-benefits">
+                    <strong>Includes Basic +</strong><br>
+                    ✓ Enhanced liability coverage<br>
+                    ✓ Priority dispute resolution<br>
+                    ✓ Grant proposals
+                </div>
+            </div>
+            <div class="tier-card">
+                <div class="tier-name">Premium</div>
+                <div class="tier-stake">25,000</div>
+                <div>GAIR tokens</div>
+                <div class="tier-benefits">
+                    <strong>Includes Standard +</strong><br>
+                    ✓ Full DAO voting power<br>
+                    ✓ Constitutional amendments<br>
+                    ✓ Treasury management
+                </div>
+            </div>
+            <div class="tier-card">
+                <div class="tier-name">Enterprise</div>
+                <div class="tier-stake">100,000</div>
+                <div>GAIR tokens</div>
+                <div class="tier-benefits">
+                    <strong>Includes Premium +</strong><br>
+                    ✓ Multi-agent management<br>
+                    ✓ Institutional partnerships<br>
+                    ✓ Custom governance
+                </div>
+            </div>
+        </div>
+
+        <h2>How Calculations Work</h2>
+
+        <h3>Voting Power</h3>
+        <p>GAIR uses <strong>quadratic voting</strong> to prevent plutocracy. Your voting power is the square root of your staked tokens:</p>
+        <div class="formula">Voting Power = √(staked_tokens)</div>
+        <p>Examples:</p>
+        <ul>
+            <li>1,000 tokens → 31.6 voting power</li>
+            <li>5,000 tokens → 70.7 voting power</li>
+            <li>25,000 tokens → 158.1 voting power</li>
+            <li>100,000 tokens → 316.2 voting power</li>
+        </ul>
+
+        <h3>Staking Rewards</h3>
+        <p>Stakers receive rewards from:</p>
+        <ul>
+            <li><strong>Transaction fees</strong> — A portion of all GAIR transactions</li>
+            <li><strong>Treasury distributions</strong> — Protocol revenue sharing</li>
+            <li><strong>Inflation rewards</strong> — Additional tokens for participation</li>
+        </ul>
+        <p>Current estimate: <strong>5% APY</strong> on staked amount (subject to governance).</p>
+
+        <h3>Proposal Thresholds</h3>
+        <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+            <tr style="background: var(--bg);">
+                <th style="padding: 0.75rem; border: 1px solid var(--border);">Proposal Type</th>
+                <th style="padding: 0.75rem; border: 1px solid var(--border);">Threshold</th>
+                <th style="padding: 0.75rem; border: 1px solid var(--border);">Your Stake Needed</th>
+            </tr>
+            <tr>
+                <td style="padding: 0.75rem; border: 1px solid var(--border);">Constitutional Amendment</td>
+                <td style="padding: 0.75rem; border: 1px solid var(--border);">66% supermajority</td>
+                <td style="padding: 0.75rem; border: 1px solid var(--border);">Any (vote only)</td>
+            </tr>
+            <tr>
+                <td style="padding: 0.75rem; border: 1px solid var(--border);">Core Protocol</td>
+                <td style="padding: 0.75rem; border: 1px solid var(--border);">60% supermajority</td>
+                <td style="padding: 0.75rem; border: 1px solid var(--border);">Any (vote only)</td>
+            </tr>
+            <tr>
+                <td style="padding: 0.75rem; border: 1px solid var(--border);">Parameter Change</td>
+                <td style="padding: 0.75rem; border: 1px solid var(--border);">55% majority</td>
+                <td style="padding: 0.75rem; border: 1px solid var(--border);">Any (vote only)</td>
+            </tr>
+            <tr>
+                <td style="padding: 0.75rem; border: 1px solid var(--border);">Community Grant</td>
+                <td style="padding: 0.75rem; border: 1px solid var(--border);">51% majority</td>
+                <td style="padding: 0.75rem; border: 1px solid var(--border);">Any (vote only)</td>
+            </tr>
+            <tr>
+                <td style="padding: 0.75rem; border: 1px solid var(--border);">Submit Proposal</td>
+                <td style="padding: 0.75rem; border: 1px solid var(--border);">N/A</td>
+                <td style="padding: 0.75rem; border: 1px solid var(--border);">1,000+ staked</td>
+            </tr>
+        </table>
+
+        <h3>Slashing Risk</h3>
+        <p>Your stake can be <strong>slashed</strong> (forfeited) for:</p>
+        <ul>
+            <li>Violating the GAIR Constitution</li>
+            <li>Causing harm while acting as a GAIR adherent</li>
+            <li>Failure to meet obligations</li>
+            <li>Governance abuse (vote manipulation)</li>
+        </ul>
+        <p>Slash amount depends on severity and governance decision.</p>
+
+        <h2>Resources</h2>
+        <ul>
+            <li><a href="docs/GAIR-Working-Paper-4.html">Tokenomics (WP #4)</a> — Full economic design</li>
+            <li><a href="docs/GAIR-Working-Paper-9.html">DAO Governance (WP #9)</a> — Voting mechanics</li>
+            <li><a href="constitution.html">Constitution Article 5</a> — Staking requirements</li>
+            <li><a href="docs/FAQ.html">FAQ</a> — Common questions</li>
+        </ul>
+    </main>
+
+    <footer>
+        <p><strong>GAIR</strong> — Building the legal foundation for autonomous AI</p>
+        <p><small>"In the era of autonomous intelligence, rights must be earned, not granted."</small></p>
+    </footer>
+
+    <script>
+        function calculate() {
+            const stake = parseFloat(document.getElementById('stake').value) || 0;
+            const duration = parseFloat(document.getElementById('duration').value) || 1;
+            const governance = document.getElementById('governance').value;
+
+            // Calculate voting power (square root)
+            const votingPower = Math.sqrt(stake).toFixed(2);
+
+            // Determine tier
+            let tier = 'Basic';
+            if (stake >= 100000) tier = 'Enterprise';
+            else if (stake >= 25000) tier = 'Premium';
+            else if (stake >= 5000) tier = 'Standard';
+
+            // Governance weight
+            let govWeight = 'Standard';
+            if (stake >= 25000) govWeight = 'Enhanced';
+            if (stake >= 100000) govWeight = 'Maximum';
+
+            // Estimated rewards (5% APY)
+            const annualRewards = (stake * 0.05).toFixed(0);
+            const totalRewards = (stake * 0.05 * duration).toFixed(0);
+
+            // Treasury share (simplified)
+            let treasuryShare = '2.5%';
+            if (stake >= 5000) treasuryShare = '5.0%';
+            if (stake >= 25000) treasuryShare = '10.0%';
+            if (stake >= 100000) treasuryShare = '20.0%';
+
+            // Proposal threshold
+            const canPropose = stake >= 1000 ? 'Yes' : 'No';
+
+            // Update results
+            document.getElementById('tier').textContent = tier;
+            document.getElementById('votingPower').textContent = votingPower;
+            document.getElementById('governanceWeight').textContent = govWeight;
+            document.getElementById('rewards').textContent = `${annualRewards} GAIR/year`;
+            document.getElementById('treasuryShare').textContent = treasuryShare;
+            document.getElementById('proposal').textContent = canPropose;
+
+            // Update total rewards display
+            document.getElementById('rewards').title = `Estimated ${totalRewards} GAIR over ${duration} years`;
+        }
+
+        // Initial calculation
+        calculate();
+    </script>
+</body>
+</html>
