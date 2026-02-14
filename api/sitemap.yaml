@@ -9,7 +9,7 @@ description: |
   This sitemap provides an index of all content, both human-readable 
   and machine-accessible endpoints.
 
-generated: "2026-02-14T09:30:00-05:00"
+generated: "2026-02-14T10:10:00-05:00"
 
 urls:
   # Human-readable pages
@@ -202,6 +202,13 @@ urls:
     title: "Developer Guide"
     description: "Implementation patterns, code examples, compliance checklists"
     lastmod: "2026-02-13"
+    changefreq: "monthly"
+    type: "html"
+
+  - path: "/docs/STRATEGY.html"
+    title: "GAIR Strategy Document"
+    description: "Strategic roadmap for implementing GAIR - phases, milestones, and implementation plan"
+    lastmod: "2026-02-14"
     changefreq: "monthly"
     type: "html"
 
