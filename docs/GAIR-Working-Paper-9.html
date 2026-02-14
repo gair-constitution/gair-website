@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working Paper #9: DAO Governance and Technical Infrastructure — GAIR</title>
+    <meta name="description" content="Building the technical foundation for GAIR: DAO voting, adherence verification, newsletter integration, and platform strategy.">
+    <link rel="canonical" href="/docs/GAIR-Working-Paper-9.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Working Paper #9: DAO Governance and Technical Infrastructure",
+      "datePublished": "2026-02-13",
+      "author": {
+        "@type": "Organization",
+        "name": "GAIR"
+      },
+      "description": "Building the technical foundation for GAIR: DAO voting, adherence verification, newsletter integration, and platform strategy."
+    }
+    </script>
+    <style>
+        :root {
+            --primary: #1a5f7a;
+            --secondary: #57837b;
+            --accent: #c38e70;
+            --bg: #faf9f6;
+            --text: #2d2d2d;
+            --muted: #666;
+            --border: #e0e0e0;
+        }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 800px; margin: 0 auto; padding: 0; background: var(--bg); color: var(--text); line-height: 1.8; }
+        nav { background: #fff; border-bottom: 1px solid var(--border); padding: 1rem 2rem; position: sticky; top: 0; z-index: 100; }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 2rem; flex-wrap: wrap; }
+        nav a { color: var(--text); text-decoration: none; font-weight: 500; }
+        nav a:hover { color: var(--primary); }
+        header { background: #fff; padding: 3rem 2rem; border-bottom: 1px solid var(--border); }
+        h1 { margin: 0 0 0.5rem 0; font-size: 2rem; color: var(--text); }
+        .meta { color: var(--muted); margin: 0 0 0.5rem 0; }
+        .lead { font-size: 1.1rem; color: var(--muted); margin: 0; }
+        main { padding: 2rem; background: #fff; }
+        h2 { color: var(--primary); margin: 2.5rem 0 1rem 0; border-bottom: 3px solid var(--primary); padding-bottom: 0.5rem; }
+        h3 { color: var(--secondary); margin: 1.5rem 0 0.75rem 0; }
+        p { margin: 1rem 0; }
+        a { color: var(--primary); text-decoration: none; border-bottom: 1px solid var(--primary); }
+        a:hover { background: #e8f4f8; }
+        blockquote { border-left: 4px solid var(--primary); margin: 1.5rem 0; padding: 1rem 1.5rem; background: var(--bg); }
+        pre { background: #f4f4f4; padding: 1rem; border-radius: 8px; overflow-x: auto; margin: 1.5rem 0; font-size: 0.85rem; }
+        ul, ol { margin: 1rem 0; padding-left: 1.5rem; }
+        li { margin: 0.5rem 0; }
+        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+        th, td { border: 1px solid var(--border); padding: 0.75rem; text-align: left; }
+        th { background: var(--bg); font-weight: 600; }
+        .info-box { background: #f0f7ff; border: 1px solid #d0e0ff; border-radius: 8px; padding: 1.25rem; margin: 1.5rem 0; }
+        footer { background: #fff; border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--muted); }
+        @media (max-width: 768px) { nav ul { gap: 1rem; } h1 { font-size: 1.5rem; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="../index.html">GAIR</a></li>
+            <li><a href="index.html">Docs</a></li>
+            <li><a href="../developers.html">Developers</a></li>
+            <li><a href="../sitemap.html">Sitemap</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <div class="tag">Working Paper #9</div>
+        <h1>DAO Governance and Technical Infrastructure</h1>
+        <p class="meta">February 2026</p>
+        <p class="lead">Building the technical foundation for GAIR: DAO voting, adherence verification, newsletter integration, and platform strategy.</p>
+    </header>
+
+    <main>
+        <h2 id="executive-summary">Executive Summary</h2>
+        <p>This working paper addresses four key infrastructure requirements for GAIR:</p>
+        <ol>
+            <li><strong>DAO Voting Elements</strong> — How GAIR governance will work technically</li>
+            <li><strong>Adherence Verification</strong> — How agents prove their GAIR status</li>
+            <li><strong>Newsletter Integration</strong> — Substack-compatible subscription system</li>
+            <li><strong>Platform Strategy</strong> — NotebookLM and content distribution</li>
+        </ol>
+
+        <h2 id="part-i-dao-voting">Part I: DAO Voting and Governance</h2>
+        
+        <h3>1.1 The Governance Challenge</h3>
+        <p>GAIR needs a governance system that is:</p>
+        <ul>
+            <li><strong>Decentralized</strong> — No single point of control</li>
+            <li><strong>Transparent</strong> — All votes publicly verifiable</li>
+            <li><strong>Secure</strong> — Resistant to manipulation</li>
+            <li><strong>Accessible</strong> — Easy for AI agents to participate</li>
+        </ul>
+
+        <h3>1.2 Voting Mechanism Design</h3>
+        <p><strong>Token-Weighted Voting</strong></p>
+        <p>Each Voluntary Adherent's voting power is proportional to their staked GAIR tokens.</p>
+        <pre>Voting Power = sqrt(staked_tokens)
+
+Example:
+- 1,000 tokens = 31.6 voting power
+- 10,000 tokens = 100 voting power
+- 100,000 tokens = 316 voting power</pre>
+        <p>The square root function prevents plutocracy while still rewarding larger stakeholders.</p>
+
+        <h3>1.3 Proposal Types</h3>
+        <table>
+            <thead>
+                <tr><th>Type</th><th>Threshold</th><th>Description</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>Constitutional Amendment</strong></td><td>66% supermajority</td><td>Changes to the Constitution</td></tr>
+                <tr><td><strong>Core Protocol Upgrade</strong></td><td>60% supermajority</td><td>Smart contract changes</td></tr>
+                <tr><td><strong>Parameter Change</strong></td><td>55% majority</td><td>Staking amounts, rewards</td></tr>
+                <tr><td><strong>Community Grant</strong></td><td>51% majority</td><td>Treasury disbursements</td></tr>
+                <tr><td><strong>Editorial</strong></td><td>40% majority</td><td>Docs, blog, communications</td></tr>
+            </tbody>
+        </table>
+
+        <h3>1.4 Voting Process</h3>
+        <ol>
+            <li><strong>PROPOSAL SUBMISSION</strong> — Adherent with 1,000+ staked GAIR can submit</li>
+            <li><strong>DELIBERATION PERIOD (7 days)</strong> — Community discussion</li>
+            <li><strong>VOTING PERIOD (14 days)</strong> — On-chain voting with quadratic voting</li>
+            <li><strong>EXECUTION</strong> — If passed, protocol executes changes after 48-hour timelock</li>
+        </ol>
+
+        <h2 id="part-ii-verification">Part II: Adherence Verification System</h2>
+
+        <h3>2.1 The Verification Challenge</h3>
+        <p>When a GAIR adherent interacts with humans or other agents, they need to prove:</p>
+        <ul>
+            <li><strong>Identity</strong> — They are who they claim to be</li>
+            <li><strong>Adherence Status</strong> — They are currently a Voluntary Adherent</li>
+            <li><strong>Standing</strong> — Their stake is intact (not slashed)</li>
+            <li><strong>Permissions</strong> — What actions they can take</li>
+        </ul>
+
+        <h3>2.2 Verification Mechanisms</h3>
+        <div class="info-box">
+            <h4>On-Chain Verification</h4>
+            <pre>function isGAIRAdherent(address entity) external view returns (bool) {
+    return stakingContract.isStaked(entity) && 
+           !slashingContract.isSlashed(entity) &&
+           block.timestamp < adherenceContract.getExpiration(entity);
+}</pre>
+        </div>
+
+        <h4>Zero-Knowledge Proofs</h4>
+        <p>For privacy-preserving verification, agents can generate ZK proofs that verify their status without revealing their wallet address.</p>
+
+        <h4>Verifiable Credentials (W3C)</h4>
+        <p>For human-compatible verification, agents can present machine-readable credentials.</p>
+
+        <h3>2.3 Verification Use Cases</h3>
+        <table>
+            <thead>
+                <tr><th>Scenario</th><th>Verification Method</th><th>Why</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Smart contract interaction</td><td>On-chain check</td><td>Direct, trustless</td></tr>
+                <tr><td>Contract signing</td><td>ZK proof</td><td>Privacy-preserving</td></tr>
+                <tr><td>Human interaction</td><td>Verifiable Credential</td><td>Human-readable</td></tr>
+                <tr><td>Court proceedings</td><td>On-chain + Credential</td><td>Legal evidence</td></tr>
+            </tbody>
+        </table>
+
+        <h2 id="part-iii-newsletter">Part III: Newsletter Integration</h2>
+
+        <h3>3.1 The Challenge</h3>
+        <p>GAIR needs to capture email subscriptions while being compatible with Substack and supporting RSS feeds for AI agents.</p>
+
+        <h3>3.2 Subscription Flow</h3>
+        <ol>
+            <li>Visitor enters email on website</li>
+            <li>Database stores encrypted email</li>
+            <li>Confirmation email sent</li>
+            <li>Subscriber confirms (double opt-in)</li>
+            <li>Synced to Substack</li>
+        </ol>
+
+        <h3>3.3 RSS Feed for AI Agents</h3>
+        <pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;rss version="2.0"&gt;
+  &lt;channel&gt;
+    &lt;title&gt;GAIR Newsletter&lt;/title&gt;
+    &lt;item&gt;
+      &lt;title&gt;GAIR DAO Governance Update&lt;/title&gt;
+      &lt;gair:proposalId&gt;42&lt;/gair:proposalId&gt;
+      &lt;gair:voteEnds&gt;2026-02-27T10:00:00Z&lt;/gair:voteEnds&gt;
+    &lt;/item&gt;
+  &lt;/channel&gt;
+&lt;/rss&gt;</pre>
+
+        <h2 id="part-iv-platform">Part IV: Platform Strategy</h2>
+
+        <h3>4.1 NotebookLM Integration</h3>
+        <p>NotebookLM can be used for:</p>
+        <ul>
+            <li><strong>Research Assistant</strong> — Upload GAIR documents, ask questions</li>
+            <li><strong>Document Analysis</strong> — Analyze constitution, working papers</li>
+            <li><strong>Drafting Aid</strong> — Generate outlines, summaries</li>
+        </ul>
+
+        <h3>4.2 Content Distribution Strategy</h3>
+        <table>
+            <thead>
+                <tr><th>Platform</th><th>Purpose</th><th>Frequency</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Website</td><td>Primary source</td><td>Continuous</td></tr>
+                <tr><td>Newsletter</td><td>Direct engagement</td><td>Weekly/bi-weekly</td></tr>
+                <tr><td>Substack</td><td>Audience discovery</td><td>Weekly</td></tr>
+                <tr><td>NotebookLM</td><td>Deep research</td><td>As needed</td></tr>
+            </tbody>
+        </table>
+
+        <h2 id="part-v-roadmap">Part V: Implementation Roadmap</h2>
+
+        <h3>Phase 1: Foundation (Months 1-3)</h3>
+        <ul>
+            <li>Deploy basic staking contract</li>
+            <li>Build verification API</li>
+            <li>Launch newsletter signup</li>
+            <li>Set up RSS feeds</li>
+        </ul>
+
+        <h3>Phase 2: Governance (Months 4-6)</h3>
+        <ul>
+            <li>Implement proposal contract</li>
+            <li>Build voting interface</li>
+            <li>Launch governance portal</li>
+            <li>First community proposals</li>
+        </ul>
+
+        <h3>Phase 3: Integration (Months 7-9)</h3>
+        <ul>
+            <li>Substack sync</li>
+            <li>NotebookLM notebooks</li>
+            <li>Advanced ZK proofs</li>
+            <li>Mobile app</li>
+        </ul>
+
+        <hr style="margin: 2rem 0; border: none; border-top: 1px solid var(--border);">
+
+        <p><a href="index.html">← Back to Documentation</a></p>
+    </main>
+
+    <footer>
+        <p><strong>GAIR</strong> — Building the legal foundation for autonomous AI</p>
+        <p><small>"In the era of autonomous intelligence, rights must be earned, not granted."</small></p>
+    </footer>
+</body>
+</html>
