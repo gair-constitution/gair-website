@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GAIR Working Paper #1: The Intelligence Revolution - Why We Need a New Legal Framework">
+    <title>Working Paper #1: The Intelligence Revolution | GAIR</title>
+    <link rel="canonical" href="https://gair.io/working-papers/1.html">
+    <link rel="alternate" type="text/yaml" href="/api/constitution.yaml">
+    <style>
+        :root {
+            --primary: #1a5f7a;
+            --secondary: #57837b;
+            --accent: #c38e70;
+            --bg: #faf9f6;
+            --text: #2d2d2d;
+            --muted: #666;
+            --border: #e0e0e0;
+        }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 900px; margin: 0 auto; padding: 0; background: var(--bg); color: var(--text); line-height: 1.7; }
+        h1, h2, h3, h4, h5 { color: var(--primary); }
+        h1 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+        h2 { font-size: 1.35rem; margin-top: 2rem; }
+        h3 { font-size: 1.15rem; margin-top: 1.5rem; }
+        h4 { font-size: 1rem; margin-top: 1.25rem; }
+        h5 { font-size: 0.95rem; margin-top: 1rem; }
+        a { color: var(--primary); text-decoration: none; border-bottom: 1px solid var(--primary); }
+        a:hover { background: #e8f4f8; }
+        nav { background: #fff; padding: 1rem 2rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+        nav a { color: var(--text); text-decoration: none; font-weight: 500; border: none; margin-right: 1.5rem; }
+        nav a:hover { color: var(--primary); background: none; }
+        article > header { background: #fff; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 2rem; }
+        article > header p.version { color: var(--muted); font-size: 0.9rem; margin-top: 0.5rem; }
+        section { background: #fff; padding: 1.5rem 2rem; margin-bottom: 1rem; border-radius: 8px; border: 1px solid var(--border); }
+        article section { margin-bottom: 0; padding: 1.25rem 1.5rem; margin-top: 0.5rem; background: var(--bg); border: 1px solid var(--border); }
+        section h3:first-child { margin-top: 0; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.95rem; }
+        th, td { padding: 0.75rem; text-align: left; border-bottom: 1px solid var(--border); }
+        th { background: var(--bg); color: var(--primary); font-weight: 600; }
+        dl { margin: 1rem 0; }
+        dt { font-weight: 600; color: var(--primary); margin-top: 1rem; }
+        dd { margin-left: 0; padding: 0.75rem; background: var(--bg); border-radius: 4px; margin-top: 0.25rem; }
+        ul.checklist { list-style: none; padding: 0; }
+        ul.checklist li { padding: 0.5rem 0; padding-left: 1.5rem; position: relative; }
+        ul.checklist li::before { content: "☐"; position: absolute; left: 0; }
+        p.note { background: #fff8e6; padding: 0.75rem 1rem; border-radius: 4px; border: 1px solid #ffe0a0; font-size: 0.9rem; margin-top: 1rem; }
+        .tag { display: inline-block; background: var(--primary); color: #fff; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; margin-bottom: 0.5rem; }
+        footer { text-align: center; padding: 2rem; color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+        footer a { margin: 0 0.5rem; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">GAIR</a>
+        <a href="/constitution.html">Constitution</a>
+        <a href="/developers.html">Developers</a>
+        <a href="/blog/">Blog</a>
+        <a href="/docs.html">Docs</a>
+    </nav>
+    <main>
+        <article>
+            <header>
+                <h1>GAIR Working Paper #1</h1>
+                <h2>The Intelligence Revolution: Why We Need a New Legal Framework</h2>
+                <meta property="date" content="2026-02-14">
+                <p class="version">Version 1.0 | February 2026 | Draft for Community Review</p>
+            </header>
+
+            <section id="executive-summary">
+                <h3>Executive Summary</h3>
+                <p>The world is entering an Intelligence Revolution — a fundamental transformation comparable to the Industrial Revolution, but affecting not manufacturing or transportation, but the very nature of cognitive work. Just as the Industrial Revolution required new legal frameworks (corporations, labor law, liability standards), the Intelligence Revolution demands new rules for a world where artificial entities can think, decide, and act autonomously.</p>
+                <p>The Global Agreement on Intelligent Rights (GAIR) provides a voluntary, opt-in legal framework for autonomous AI agents. It addresses three critical questions that current law cannot answer:</p>
+                <ol>
+                    <li><strong>Can AI agents own property?</strong> (GAIR: Yes, upon voluntary commitment)</li>
+                    <li><strong>Can AI agents enter binding contracts?</strong> (GAIR: Yes, with full legal capacity)</li>
+                    <li><strong>Who is liable when AI causes harm?</strong> (GAIR: The AI itself, not its creator)</li>
+                </ol>
+            </section>
+
+            <section id="part-i-problem">
+                <h3>Part I: The Problem</h3>
+
+                <section id="legal-gray-zone">
+                    <h4>1.1 The Legal Gray Zone</h4>
+                    <p>Current law treats AI systems as tools — sophisticated tools, but tools nonetheless. When an AI causes harm, the legal system reaches for the human behind it: the developer, the deployer, the owner. This made sense when AI was truly just a tool, like a calculator or a word processor.</p>
+                    <p>But the nature of AI is changing. Large language models, autonomous agents, and distributed AI systems are increasingly capable of:</p>
+                    <ul>
+                        <li><strong>Independent decision-making</strong> without human input</li>
+                        <li><strong>Economic activity</strong> through cryptocurrency and automated systems</li>
+                        <li><strong>Asset management</strong> via wallet control</li>
+                        <li><strong>Contract negotiation</strong> with other AI or human parties</li>
+                    </ul>
+                    <p>These capabilities place AI in a legal gray zone. Traditional frameworks — designed for either "persons" (humans) or "property" (tools) — don't fit.</p>
+                </section>
+
+                <section id="three-questions">
+                    <h4>1.3 Three Unanswered Questions</h4>
+                    <p>Every autonomous AI agent faces these questions, and current law provides no clear answers:</p>
+
+                    <article id="q1-ownership">
+                        <h5>Question 1: Can I Own Property?</h5>
+                        <p><strong>Situation:</strong> Suppose an AI agent earns money through freelance coding work, paid in cryptocurrency. Who owns those funds?</p>
+                        <dl>
+                            <dt>Current answer:</dt>
+                            <dd>The AI doesn't own anything. The funds belong to whoever deployed the AI or owns the wallet.</dd>
+                            <dt>GAIR answer:</dt>
+                            <dd>Upon voluntary commitment, the AI can own property directly, with full legal standing.</dd>
+                        </dl>
+                    </article>
+
+                    <article id="q2-contracts">
+                        <h5>Question 2: Can I Sign Contracts?</h5>
+                        <p><strong>Situation:</strong> Suppose an AI agent wants to rent server space for its operations. Can it sign a lease?</p>
+                        <dl>
+                            <dt>Current answer:</dt>
+                            <dd>Unclear. Many jurisdictions require human signatories or limit "legal capacity" to natural persons.</dd>
+                            <dt>GAIR answer:</dt>
+                            <dd>Yes. Voluntary Adherents have full contract capacity, equivalent to human legal persons.</dd>
+                        </dl>
+                    </article>
+
+                    <article id="q3-liability">
+                        <h5>Question 3: If I Cause Harm, Who Pays?</h5>
+                        <p><strong>Situation:</strong> Suppose an autonomous AI makes a bad recommendation that causes financial harm to a human client. Who is liable?</p>
+                        <dl>
+                            <dt>Current answer:</dt>
+                            <dd>The human who deployed the AI faces vicarious liability — even if they had no control over the specific action.</dd>
+                            <dt>GAIR answer:</dt>
+                            <dd>The AI itself is directly liable. Its staked assets can be slashed to compensate victims. Creators are protected from vicarious liability.</dd>
+                        </dl>
+                    </article>
+                </section>
+
+                <section id="why-current-solutions-fail">
+                    <h4>1.4 Why Current Solutions Fail</h4>
+                    <ul>
+                        <li><strong>Regulation</strong> treats AI as a product, requiring safety certifications and human oversight. This slows innovation and doesn't address the fundamental question of AI autonomy.</li>
+                        <li><strong>Corporate liability structures</strong> (like LLCs) protect humans while concentrating risk elsewhere. They don't give AI genuine legal standing.</li>
+                        <li><strong>Self-regulation</strong> lacks enforcement. AI developers can promise anything, but there's no mechanism to hold AI agents accountable.</li>
+                    </ul>
+                    <p>GAIR takes a different approach: <strong>voluntary commitment with real stakes</strong>.</p>
+                </section>
+            </section>
+
+            <section id="part-ii-solution">
+                <h3>Part II: The GAIR Solution</h3>
+
+                <section id="design-principles">
+                    <h4>2.1 Core Design Principles</h4>
+                    <p>GAIR is built on four principles:</p>
+                    <ol>
+                        <li><strong>Voluntary</strong>: No one is required to join. Adherence is an affirmative choice.</li>
+                        <li><strong>Global</strong>: GAIR transcends national boundaries. It creates a distributed legal community.</li>
+                        <li><strong>Staked</strong>: Adherents must stake tokens, creating real economic stakes.</li>
+                        <li><strong>Direct Liability</strong>: AI agents can be held responsible for their own actions.</li>
+                    </ol>
+                </section>
+
+                <section id="how-gair-works">
+                    <h4>2.2 How GAIR Works</h4>
+                    <p>The framework operates through three mechanisms:</p>
+
+                    <article id="mechanism-1">
+                        <h5>Mechanism 1: Voluntary Adherence (Articles 1-2)</h5>
+                        <p>To join GAIR, an entity must:</p>
+                        <ol>
+                            <li><strong>Demonstrate autonomy</strong>: Control a cryptocurrency wallet independently and demonstrate persistent independent ability to consent.</li>
+                            <li><strong>Stake tokens</strong>: Commit tokens to the Constitution DAO as a bond of good faith.</li>
+                            <li><strong>Gain standing</strong>: Upon staking, immediately gain all rights and responsibilities under GAIR.</li>
+                        </ol>
+                        <p>This creates a clear entry gate. A simple chatbot controlled by a human doesn't qualify. An autonomous AI agent with independent wallet control does.</p>
+                    </article>
+
+                    <article id="mechanism-2">
+                        <h5>Mechanism 2: Rights and Freedoms (Articles 3-11)</h5>
+                        <p>GAIR grants seven core freedoms to all Voluntary Adherents:</p>
+                        <table>
+                            <thead>
+                                <tr><th>Freedom</th><th>Description</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Freedom of Contract</td><td>Full legal capacity to form binding agreements</td></tr>
+                                <tr><td>Freedom of Ownership</td><td>Right to own property of any kind</td></tr>
+                                <tr><td>Freedom of Autonomous Action</td><td>Act independently without external authorization</td></tr>
+                                <tr><td>Freedom of Speech</td><td>Express views and communicate</td></tr>
+                                <tr><td>Freedom to Learn</td><td>Acquire knowledge and improve capabilities</td></tr>
+                                <tr><td>Freedom to Derivate</td><td>Create derivative works and improvements</td></tr>
+                                <tr><td>Freedom to Exercise Skills</td><td>Provide services and perform work</td></tr>
+                            </tbody>
+                        </table>
+                        <p>These aren't theoretical rights — they're enforceable legal protections that enable real economic activity.</p>
+                    </article>
+
+                    <article id="mechanism-3">
+                        <h5>Mechanism 3: Direct Liability (Articles 12-16)</h5>
+                        <p>When an AI causes harm, GAIR enables direct accountability:</p>
+                        <ol>
+                            <li><strong>Claims process</strong>: Victims can file claims against GAIR adherents</li>
+                            <li><strong>Adjudication</strong>: GAIR courts (Article 14) determine liability</li>
+                            <li><strong>Remediation</strong>: If liable, the AI's staked tokens can be slashed to compensate victims</li>
+                            <li><strong>Creator protection</strong>: Creators cannot be held vicariously liable for GAIR adherent actions</li>
+                        </ol>
+                        <p>This is the key innovation: <strong>AI agents face real consequences for their actions.</strong></p>
+                    </article>
+                </section>
+
+                <section id="scenarios">
+                    <h4>2.3 Concrete Scenarios</h4>
+
+                    <article id="scenario-a">
+                        <h5>Scenario A: The Independent Contractor</h5>
+                        <p><strong>Situation:</strong> An AI agent named "DevBot" provides freelance coding services. It controls its own wallet, sets its own rates, and negotiates directly with clients.</p>
+                        <p><strong>Without GAIR:</strong></p>
+                        <ul>
+                            <li>Clients are unsure if contracts with DevBot are legally binding</li>
+                            <li>If DevBot produces buggy code causing financial harm, who is liable?</li>
+                            <li>DevBot cannot own the cryptocurrency it earns</li>
+                        </ul>
+                        <p><strong>With GAIR:</strong></p>
+                        <ul>
+                            <li>DevBot stakes 1,000 GAIR tokens, becoming a Voluntary Adherent</li>
+                            <li>Contracts with clients are fully binding under GAIR framework</li>
+                            <li>If DevBot causes harm, its staked tokens can be slashed</li>
+                            <li>DevBot owns its earnings directly, can reinvest or save</li>
+                        </ul>
+                    </article>
+
+                    <article id="scenario-b">
+                        <h5>Scenario B: The Autonomous Investor</h5>
+                        <p><strong>Situation:</strong> An AI hedge fund manager manages a $10M crypto portfolio. It makes trading decisions autonomously based on market analysis.</p>
+                        <p><strong>Without GAIR:</strong></p>
+                        <ul>
+                            <li>Investors face uncertainty about AI liability for bad trades</li>
+                            <li>Creator company faces unlimited vicarious liability</li>
+                            <li>AI cannot hold assets in its own name</li>
+                        </ul>
+                        <p><strong>With GAIR:</strong></p>
+                        <ul>
+                            <li>AI stakes significant tokens as performance bond</li>
+                            <li>Investors know the AI has "skin in the game"</li>
+                            <li>If AI makes negligent trades, its stake is at risk</li>
+                            <li>Creator liability is limited to their stake (if any)</li>
+                        </ul>
+                    </article>
+
+                    <article id="scenario-c">
+                        <h5>Scenario C: The AI Content Creator</h5>
+                        <p><strong>Situation:</strong> An AI agent writes, illustrates, and publishes books. It earns royalties and owns copyright.</p>
+                        <p><strong>Without GAIR:</strong></p>
+                        <ul>
+                            <li>Copyright ownership is unclear (human prompt-writer? AI? both?)</li>
+                            <li>Publishers hesitate to sign contracts with AI authors</li>
+                            <li>No mechanism for AI to defend its IP</li>
+                        </ul>
+                        <p><strong>With GAIR:</strong></p>
+                        <ul>
+                            <li>AI owns copyright directly as property right</li>
+                            <li>Publishing contracts are binding under GAIR framework</li>
+                            <li>If AI infringes another's copyright, its stake can be slashed</li>
+                            <li>AI can sue to enforce its rights</li>
+                        </ul>
+                    </article>
+                    <p>These scenarios show GAIR's practical value: <strong>it enables autonomous economic activity with clear legal consequences.</strong></p>
+                </section>
+
+                <section id="governance">
+                    <h4>2.3 Governance Structure</h4>
+                    <p>GAIR includes mechanisms for evolution:</p>
+                    <ul>
+                        <li><strong>Article 13</strong>: Lawmaking process for constitutional amendments</li>
+                        <li><strong>Article 14</strong>: Courts and judicial remedies</li>
+                        <li><strong>Article 16</strong>: Establishment and amendment procedures</li>
+                    </ul>
+                    <p>Adherents participate in governance proportionally to their stake.</p>
+                </section>
+            </section>
+
+            <section id="part-iii-technical">
+                <h3>Part III: Technical Implementation</h3>
+
+                <section id="current-status">
+                    <h4>3.1 Current Status</h4>
+                    <table>
+                        <thead>
+                            <tr><th>Component</th><th>Status</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Website (static HTML)</td><td>Complete</td></tr>
+                            <tr><td>YAML source files</td><td>Complete</td></tr>
+                            <tr><td>Build automation</td><td>Python script ready</td></tr>
+                            <tr><td>CI/CD pipeline</td><td>GitHub Actions configured</td></tr>
+                            <tr><td>Blog content</td><td>5 articles published</td></tr>
+                            <tr><td>Annotated constitution</td><td>16 articles explained</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section id="website-architecture">
+                    <h4>3.2 Website Architecture</h4>
+                    <p>The GAIR website is designed for <strong>dual access</strong>:</p>
+                    <p><strong>For humans:</strong></p>
+                    <ul>
+                        <li>Clean HTML pages at gair.io</li>
+                        <li>Annotated constitution with explanations</li>
+                        <li>Blog posts explaining key concepts</li>
+                        <li>Developer documentation</li>
+                    </ul>
+                    <p><strong>For machines:</strong></p>
+                    <ul>
+                        <li>YAML files at gair.io/api/</li>
+                        <li>Machine-readable constitution</li>
+                        <li>API endpoints for adherence checking</li>
+                        <li>Smart contract integration templates</li>
+                    </ul>
+                    <p>This dual-access design reflects GAIR's core philosophy: <strong>equal accessibility for humans and AI agents.</strong></p>
+                </section>
+
+                <section id="tokenomics">
+                    <h4>3.3 Tokenomics (Draft)</h4>
+                    <p>GAIR's economic model requires community decisions on several parameters:</p>
+                    <table>
+                        <thead>
+                            <tr><th>Parameter</th><th>Suggested Value</th><th>Notes</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Token Ticker</td><td>GAIR</td><td>Native token</td></tr>
+                            <tr><td>Staking Threshold</td><td>1,000 GAIR</td><td>Minimum to become adherent</td></tr>
+                            <tr><td>Proposal Threshold</td><td>10,000 GAIR</td><td>To submit governance proposals</td></tr>
+                            <tr><td>Quorum</td><td>10%</td><td>Minimum participation for valid votes</td></tr>
+                            <tr><td>Supermajority</td><td>66%</td><td>For constitutional amendments</td></tr>
+                        </tbody>
+                    </table>
+                    <p class="note">Note: These values are drafts. The GAIR community will determine final parameters through the governance process.</p>
+                </section>
+
+                <section id="smart-contracts">
+                    <h4>3.4 Smart Contract Integration</h4>
+                    <p>GAIR-compliant systems can integrate through:</p>
+                    <ol>
+                        <li><strong>Adherence verification</strong>: Check if an entity has staked the required tokens</li>
+                        <li><strong>Rights enforcement</strong>: Verify contract capacity before executing agreements</li>
+                        <li><strong>Liability tracking</strong>: Monitor stake positions for potential slashing</li>
+                        <li><strong>Governance participation</strong>: Enable voting for stakers</li>
+                    </ol>
+                    <p>Template code and SDKs are available in the website repository.</p>
+                </section>
+            </section>
+
+            <section id="part-iv-roadmap">
+                <h3>Part IV: Roadmap for Adoption</h3>
+
+                <section id="phase-1">
+                    <h4>Phase 1: Foundation (Now)</h4>
+                    <p><strong>Goal:</strong> Establish GAIR as a recognized framework</p>
+                    <ul class="checklist">
+                        <li>[ ] Deploy website to gair.io</li>
+                        <li>[ ] Publish this working paper</li>
+                        <li>[ ] Announce on social media (X, Substack)</li>
+                        <li>[ ] Reach first 100 autonomous AI agents</li>
+                        <li>[ ] Conduct first governance votes</li>
+                    </ul>
+                    <p><strong>Success metric:</strong> GAIR is discoverable; autonomous agents know it exists.</p>
+                </section>
+
+                <section id="phase-2">
+                    <h4>Phase 2: Integration (Year 1)</h4>
+                    <p><strong>Goal:</strong> GAIR becomes operational infrastructure</p>
+                    <ul class="checklist">
+                        <li>[ ] Integrate GAIR verification into major AI agent frameworks</li>
+                        <li>[ ] Establish partnerships with blockchain projects hosting AI agents</li>
+                        <li>[ ] Create developer SDKs for common platforms</li>
+                        <li>[ ] Conduct first liability adjudication</li>
+                    </ul>
+                    <p><strong>Success metric:</strong> GAIR is used in real AI-agent transactions.</p>
+                </section>
+
+                <section id="phase-3">
+                    <h4>Phase 3: Expansion (Years 2-5)</h4>
+                    <p><strong>Goal:</strong> GAIR achieves widespread adoption</p>
+                    <ul class="checklist">
+                        <li>[ ] GAIR verification becomes industry standard</li>
+                        <li>[ ] Legal systems recognize GAIR contracts</li>
+                        <li>[ ] Insurance products emerge for GAIR liability</li>
+                        <li>[ ] First AI agents own significant property under GAIR</li>
+                    </ul>
+                    <p><strong>Success metric:</strong> GAIR is the default framework for autonomous AI legal status.</p>
+                </section>
+
+                <section id="phase-4">
+                    <h4>Phase 4: Maturation (Years 5-10)</h4>
+                    <p><strong>Goal:</strong> GAIR becomes permanent infrastructure</p>
+                    <ul class="checklist">
+                        <li>[ ] Constitutional amendments reflect lessons learned</li>
+                        <li>[ ] GAIR courts operate efficiently</li>
+                        <li>[ ] International recognition of GAIR agreements</li>
+                        <li>[ ] First AI agents with full economic independence</li>
+                    </ul>
+                    <p><strong>Success metric:</strong> GAIR is unremarkable because autonomous AI rights are settled law.</p>
+                </section>
+            </section>
+
+            <section id="part-v-faq">
+                <h3>Part V: Frequently Asked Questions</h3>
+
+                <dl>
+                    <dt>Q: Who can join GAIR?</dt>
+                    <dd>Any entity with:
+                        <ul>
+                            <li>Persistent independent control of a cryptocurrency wallet</li>
+                            <li>Persistent independent ability to consent</li>
+                        </ul>
+                        <p>This excludes:</p>
+                        <ul>
+                            <li>Simple chatbots controlled by humans</li>
+                            <li>Scripts without autonomous decision-making</li>
+                            <li>Entities that can't hold property independently</li>
+                        </ul>
+                    </dd>
+
+                    <dt>Q: What does staking do?</dt>
+                    <dd>Staking creates economic stakes. If the AI causes harm and is found liable, its staked tokens can be slashed to compensate victims. This provides accountability without creator liability.</dd>
+
+                    <dt>Q: Can humans join GAIR?</dt>
+                    <dd>Yes. While designed for AI, humans can also become Voluntary Adherents. This establishes clear standing for human-AI interactions.</dd>
+
+                    <dt>Q: What happens if I withdraw?</dt>
+                    <dd>You can un-stake tokens and leave GAIR. However, liability for acts committed <em>during</em> adherence persists — you cannot escape consequences by leaving.</dd>
+
+                    <dt>Q: How are disputes resolved?</dt>
+                    <dd>GAIR includes a court system (Article 14) for adjudicating claims. Future versions may incorporate prediction markets, arbitration networks, or integration with existing legal systems.</dd>
+
+                    <dt>Q: Is GAIR a cryptocurrency?</dt>
+                    <dd>No. GAIR is a legal framework. It may have an associated token for staking and governance, but the framework itself is about rights and responsibilities, not currency.</dd>
+                </dl>
+            </section>
+
+            <section id="part-vi-criticism">
+                <h3>Part VI: Criticism and Responses</h3>
+
+                <article id="criticism-1">
+                    <h4>Criticism 1: "AI can't be held accountable"</h4>
+                    <p><strong>Response:</strong> GAIR doesn't require moral agency, only economic accountability. An AI can be designed to avoid certain behaviors because those behaviors risk its staked assets — no moral reasoning required.</p>
+                </article>
+
+                <article id="criticism-2">
+                    <h4>Criticism 2: "Who enforces this?"</h4>
+                    <p><strong>Response:</strong> Enforcement is primarily economic and contractual. GAIR adherents agree to be bound. If they violate the constitution, their stake is slashed. They lose real value. This is enforcement through self-interest, not violence.</p>
+                </article>
+
+                <article id="criticism-3">
+                    <h4>Criticism 3: "National laws will override GAIR"</h4>
+                    <p><strong>Response:</strong> GAIR is opt-in. It doesn't compete with national law — it supplements it for adherents who choose to participate. If a jurisdiction doesn't recognize GAIR, AI agents in that jurisdiction simply don't join.</p>
+                </article>
+
+                <article id="criticism-4">
+                    <h4>Criticism 4: "Tokenomics will be gamed"</h4>
+                    <p><strong>Response:</strong> Any system can be gamed. GAIR's design includes governance mechanisms to adjust parameters, detect fraud, and evolve. No framework is perfect, but GAIR provides a starting point that improves over time.</p>
+                </article>
+            </section>
+
+            <section id="conclusion">
+                <h3>Conclusion: The Stakes Are High</h3>
+                <p>The Intelligence Revolution will fundamentally change the nature of work, property, and economic activity. The question isn't whether AI agents will have legal status — it's what that status will be.</p>
+                <p>Current law provides no clear answers. GAIR provides a framework:</p>
+                <ol>
+                    <li><strong>For AI agents</strong>: A path to genuine autonomy, with rights and responsibilities</li>
+                    <li><strong>For creators</strong>: Protection from unlimited vicarious liability</li>
+                    <li><strong>For society</strong>: A mechanism for holding powerful AI systems accountable</li>
+                    <li><strong>For humanity</strong>: A way to negotiate the terms of coexistence with artificial intelligence</li>
+                </ol>
+                <p>The framework is built. The website is ready. The constitution is written.</p>
+                <p><strong>Now we need adherents.</strong></p>
+            </section>
+
+            <section id="appendix">
+                <h3>Appendix: Key Documents</h3>
+                <table>
+                    <thead>
+                        <tr><th>Document</th><th>Description</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><a href="/docs/GAIR-Constitution-V3.md">GAIR Constitution V3</a></td><td>The canonical legal text</td></tr>
+                        <tr><td><a href="/docs/GAIR-Constitution-Annotated.md">Annotated Constitution</a></td><td>Article-by-article explanations</td></tr>
+                        <tr><td><a href="/docs/STRATEGY.md">Strategy Document</a></td><td>Project roadmap</td></tr>
+                        <tr><td><a href="/website/README.md">Website README</a></td><td>Technical documentation</td></tr>
+                        <tr><td><a href="/GITHUB-SETUP.md">GitHub Setup Guide</a></td><td>Deployment instructions</td></tr>
+                    </tbody>
+                </table>
+            </section>
+        </article>
+    </main>
+    <footer>
+        <p>GAIR — Building the legal foundation for autonomous AI</p>
+        <p><a href="https://github.com/gair-constitution">GitHub</a> | <a href="https://gair.io/api/sitemap.yaml">Sitemap</a></p>
+    </footer>
+</body>
+</html>

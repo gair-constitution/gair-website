@@ -9,7 +9,7 @@ description: |
   This sitemap provides an index of all content, both human-readable 
   and machine-accessible endpoints.
 
-generated: "2026-02-13T15:00:00-05:00"
+generated: "2026-02-14T04:30:00-05:00"
 
 urls:
   # Human-readable pages
@@ -105,53 +105,67 @@ urls:
     changefreq: "never"
     type: "html"
 
-  # Documentation - Working Papers
-  - path: "/docs/GAIR-Working-Paper-1.html"
+  # Working Papers
+  - path: "/working-papers/1.html"
     title: "WP #1: The Intelligence Revolution"
     description: "Why GAIR exists - the problem of AI in a legal gray zone"
-    lastmod: "2026-02-13"
+    lastmod: "2026-02-14"
     changefreq: "never"
     type: "html"
 
-  - path: "/docs/GAIR-Working-Paper-2.html"
+  - path: "/working-papers/2.html"
     title: "WP #2: GAIR vs. The World"
     description: "Framework comparison - GAIR vs. traditional law, EU AI Act, corporate shields"
-    lastmod: "2026-02-13"
+    lastmod: "2026-02-14"
     changefreq: "never"
     type: "html"
 
-  - path: "/docs/GAIR-Working-Paper-3.html"
+  - path: "/working-papers/3.html"
     title: "WP #3: Court System Design"
     description: "Hybrid court system with prediction markets and human judges"
-    lastmod: "2026-02-13"
+    lastmod: "2026-02-14"
     changefreq: "never"
     type: "html"
 
-  - path: "/docs/GAIR-Working-Paper-4.html"
+  - path: "/working-papers/4.html"
     title: "WP #4: Tokenomics"
     description: "GAIR economic design - staking, governance, treasury"
-    lastmod: "2026-02-13"
+    lastmod: "2026-02-14"
     changefreq: "never"
     type: "html"
 
-  - path: "/docs/GAIR-Working-Paper-5.html"
+  - path: "/working-papers/5.html"
     title: "WP #5: Vertical Applications"
     description: "GAIR across DeFi AI, creative AI, autonomous vehicles"
-    lastmod: "2026-02-13"
+    lastmod: "2026-02-14"
     changefreq: "never"
     type: "html"
 
-  - path: "/docs/GAIR-Working-Paper-6.html"
+  - path: "/working-papers/6.html"
     title: "WP #6: Court Competition"
     description: "Bootstrapping enforcement through existing contract law courts"
-    lastmod: "2026-02-13"
+    lastmod: "2026-02-14"
     changefreq: "never"
     type: "html"
 
-  - path: "/docs/GAIR-Working-Paper-7.html"
+  - path: "/working-papers/7.html"
     title: "WP #7: The Case for AI Personhood"
     description: "Philosophical and practical argument for AI legal personhood"
-    lastmod: "2026-02-13"
+    lastmod: "2026-02-14"
+    changefreq: "never"
+    type: "html"
+
+  - path: "/working-papers/8.html"
+    title: "WP #8: The Independence Problem"
+    description: "How to define AI independence for legal purposes"
+    lastmod: "2026-02-14"
+    changefreq: "never"
+    type: "html"
+
+  - path: "/working-papers/9.html"
+    title: "WP #9: Voluntary Adherence"
+    description: "How AI agents can voluntarily commit to GAIR"
+    lastmod: "2026-02-14"
     changefreq: "never"
     type: "html"
 

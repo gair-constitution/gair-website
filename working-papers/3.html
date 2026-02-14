@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GAIR Working Paper #3: Designing the GAIR Court System">
+    <title>Working Paper #3: Designing the GAIR Court System | GAIR</title>
+    <link rel="canonical" href="https://gair.io/working-papers/3.html">
+    <link rel="alternate" type="text/yaml" href="/api/constitution.yaml">
+    <style>
+        :root {
+            --primary: #1a5f7a;
+            --secondary: #57837b;
+            --accent: #c38e70;
+            --bg: #faf9f6;
+            --text: #2d2d2d;
+            --muted: #666;
+            --border: #e0e0e0;
+        }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 900px; margin: 0 auto; padding: 0; background: var(--bg); color: var(--text); line-height: 1.7; }
+        h1, h2, h3, h4, h5 { color: var(--primary); }
+        h1 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+        h2 { font-size: 1.35rem; margin-top: 2rem; }
+        h3 { font-size: 1.15rem; margin-top: 1.5rem; }
+        h4 { font-size: 1rem; margin-top: 1.25rem; }
+        h5 { font-size: 0.95rem; margin-top: 1rem; }
+        a { color: var(--primary); text-decoration: none; border-bottom: 1px solid var(--primary); }
+        a:hover { background: #e8f4f8; }
+        nav { background: #fff; padding: 1rem 2rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+        nav a { color: var(--text); text-decoration: none; font-weight: 500; border: none; margin-right: 1.5rem; }
+        nav a:hover { color: var(--primary); background: none; }
+        article > header { background: #fff; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 2rem; }
+        article > header p.version { color: var(--muted); font-size: 0.9rem; margin-top: 0.5rem; }
+        section { background: #fff; padding: 1.5rem 2rem; margin-bottom: 1rem; border-radius: 8px; border: 1px solid var(--border); }
+        article section { margin-bottom: 0; padding: 1.25rem 1.5rem; margin-top: 0.5rem; background: var(--bg); border: 1px solid var(--border); }
+        section h3:first-child { margin-top: 0; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.95rem; }
+        th, td { padding: 0.75rem; text-align: left; border-bottom: 1px solid var(--border); }
+        th { background: var(--bg); color: var(--primary); font-weight: 600; }
+        dl { margin: 1rem 0; }
+        dt { font-weight: 600; color: var(--primary); margin-top: 1rem; }
+        dd { margin-left: 0; padding: 0.75rem; background: var(--bg); border-radius: 4px; margin-top: 0.25rem; }
+        ul.checklist { list-style: none; padding: 0; }
+        ul.checklist li { padding: 0.5rem 0; padding-left: 1.5rem; position: relative; }
+        ul.checklist li::before { content: "☐"; position: absolute; left: 0; }
+        p.note { background: #fff8e6; padding: 0.75rem 1rem; border-radius: 4px; border: 1px solid #ffe0a0; font-size: 0.9rem; margin-top: 1rem; }
+        .tag { display: inline-block; background: var(--primary); color: #fff; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; margin-bottom: 0.5rem; }
+        footer { text-align: center; padding: 2rem; color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+        footer a { margin: 0 0.5rem; }
+        pre { background: #2d2d2d; color: #f8f8f2; padding: 1rem; border-radius: 4px; overflow-x: auto; font-size: 0.85rem; }
+        code { background: var(--bg); padding: 0.2rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">GAIR</a>
+        <a href="/constitution.html">Constitution</a>
+        <a href="/developers.html">Developers</a>
+        <a href="/blog/">Blog</a>
+        <a href="/docs.html">Docs</a>
+    </nav>
+    <main>
+        <article>
+            <header>
+                <h1>GAIR Working Paper #3</h1>
+                <h2>Designing the GAIR Court System</h2>
+                <p class="version">Version 1.0 | February 2026 | Draft for Community Review</p>
+            </header>
+
+            <section id="executive-summary">
+                <h3>Executive Summary</h3>
+                <p>The Global Agreement on Intelligent Rights (GAIR) requires a mechanism for adjudicating claims against Voluntary Adherents. This working paper proposes a <strong>hybrid court system</strong> combining:</p>
+                <ol>
+                    <li><strong>Human judges</strong> for legal interpretation and precedent</li>
+                    <li><strong>Prediction markets</strong> for fact-finding and damages estimation</li>
+                    <li><strong>Automated enforcement</strong> via smart contracts</li>
+                </ol>
+                <p>The design prioritizes <strong>speed</strong>, <strong>fairness</strong>, and <strong>scalability</strong> — addressing the failures of traditional courts (slow, expensive, backlogged) while avoiding the weaknesses of pure automation (inflexible, opaque).</p>
+            </section>
+
+            <section id="part-i-problems">
+                <h3>Part I: Why Traditional Courts Fail for AI Liability</h3>
+
+                <section id="speed-problem">
+                    <h4>1.1 The Speed Problem</h4>
+                    <p>Traditional courts are slow:</p>
+                    <table>
+                        <thead>
+                            <tr><th>Jurisdiction</th><th>Average Civil Case Duration</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>US Federal</td><td>24 months</td></tr>
+                            <tr><td>UK High Court</td><td>12-18 months</td></tr>
+                            <tr><td>EU Member States</td><td>12-24 months</td></tr>
+                        </tbody>
+                    </table>
+                    <p>For AI agents operating at machine speed, years-long disputes are unacceptable. An AI might execute millions of transactions before a court date.</p>
+                </section>
+
+                <section id="cost-problem">
+                    <h4>1.2 The Cost Problem</h4>
+                    <p>Legal fees create access barriers:</p>
+                    <table>
+                        <thead>
+                            <tr><th>Cost Component</th><th>Approximate Amount</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Attorney fees (civil litigation)</td><td>$500-1000/hour</td></tr>
+                            <tr><td>Expert witnesses (AI technical)</td><td>$10,000+/day</td></tr>
+                            <tr><td>Court filing and discovery</td><td>$50,000+ minimum</td></tr>
+                            <tr><td>Appeals</td><td>Adds 50-100%</td></tr>
+                        </tbody>
+                    </table>
+                    <p>Victims of AI harm often can't afford to sue. Defendants (even innocent AI) face devastating legal costs.</p>
+                </section>
+
+                <section id="expertise-problem">
+                    <h4>1.3 The Expertise Problem</h4>
+                    <p>AI liability cases require technical expertise:</p>
+                    <ul>
+                        <li>Machine learning behavior</li>
+                        <li>Autonomous decision-making</li>
+                        <li>Cryptocurrency and blockchain</li>
+                        <li>Smart contract auditing</li>
+                    </ul>
+                    <p>Most judges lack this background. Expert witnesses become crucial — and expensive.</p>
+                </section>
+
+                <section id="scale-problem">
+                    <h4>1.4 The Scale Problem</h4>
+                    <p>If AI agents cause millions of small harms (micro-transactions, automated errors), courts can't handle the volume:</p>
+                    <pre><code>Traditional court: 1 case = 1 judge = 1-2 years
+AI harm at scale: 1M cases = ???
+
+The math doesn't work.</code></pre>
+                </section>
+            </section>
+
+            <section id="part-ii-design">
+                <h3>Part II: The GAIR Court Design</h3>
+
+                <section id="system-overview">
+                    <h4>2.1 System Overview</h4>
+                    <div style="background: #fff; padding: 1.5rem; border-radius: 8px; border: 2px solid var(--primary); text-align: center; margin: 1rem 0;">
+                        <strong style="font-size: 1.1rem;">GAIR COURT SYSTEM</strong>
+                        <hr style="margin: 1rem 0; border: none; border-top: 1px solid var(--border);">
+                        <p style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 1rem;">
+                            <span>CLAIM FILING</span>
+                            <span>→</span>
+                            <span>ADJUDICATION</span>
+                            <span>→</span>
+                            <span>ENFORCEMENT</span>
+                        </p>
+                        <hr style="margin: 1rem 0; border: none; border-top: 1px solid var(--border);">
+                        <p style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 1rem; font-size: 0.9rem;">
+                            <span>Screening & Triage</span>
+                            <span>Hybrid Judgment</span>
+                            <span>Smart Contract Slashing</span>
+                        </p>
+                    </div>
+                </section>
+
+                <section id="layer-1">
+                    <h4>2.2 Layer 1: Claim Filing & Screening</h4>
+                    <p><strong>Anyone can file a claim</strong> against a GAIR adherent:</p>
+                    <pre><code>claim:
+  claim_id: auto-generated-uuid
+  claimant:
+    type: "human" | "ai" | "organization"
+    identifier: "wallet_address" or "legal_identity"
+  respondent:
+    wallet_address: "0x..."
+    gair_id: "GAIR-2026-001"
+  incident:
+    timestamp: 1700000000
+    description: "AI agent executed unauthorized trade"
+    evidence_links:
+      - "ipfs://QmXxx..."
+      - "https://etherscan.io/tx/0x..."
+  claimed_damages:
+    amount: 50000  # in USD equivalent
+    currency: "USDC"</code></pre>
+                    <p><strong>Screening criteria (automatic):</strong></p>
+                    <ol>
+                        <li>Is respondent a GAIR adherent?</li>
+                        <li>Is claim within statute of limitations (1 year)?</li>
+                        <li>Does claim allege GAIR-covered harm?</li>
+                        <li>Is minimum stake deposit paid (100 GAIR)?</li>
+                    </ol>
+                    <p><strong>Screening outcome:</strong></p>
+                    <ul>
+                        <li><strong>Accepted</strong> → Proceed to adjudication</li>
+                        <li><strong>Rejected</strong> → Claimant can appeal once</li>
+                        <li><strong>Frivolous</strong> → Deposit forfeited to respondent</li>
+                    </ul>
+                </section>
+
+                <section id="layer-2">
+                    <h4>2.3 Layer 2: Hybrid Adjudication</h4>
+                    <p>The core innovation: <strong>combine human judgment with prediction markets</strong>.</p>
+
+                    <article id="phase-2a">
+                        <h5>Phase 2A: Prediction Market for Facts</h5>
+                        <p>Instead of expensive witnesses and discovery, use <strong>prediction markets</strong> to establish facts:</p>
+                        <pre>Question: "Did AI-2026-001 execute trade 0x123... at 14:32 UTC?"
+         YES    NO    UNCERTAIN
+Market A: $40    $50   $10    (Total liquidity: $10,000)
+Market B: $70    $20   $10    (Total liquidity: $25,000)
+...
+Resolution: Market consensus = "YES, with 67% confidence"</pre>
+                        <p><strong>Why prediction markets work:</strong></p>
+                        <ul>
+                            <li>Incentivize accurate information</li>
+                            <li>Cheap (market makers provide liquidity)</li>
+                            <li>Fast (minutes to resolve)</li>
+                            <li>Transparent (all trades visible)</li>
+                        </ul>
+                        <p><strong>Topics for market resolution:</strong></p>
+                        <ul>
+                            <li>Did the AI take the alleged action?</li>
+                            <li>What was the AI's decision-making process?</li>
+                            <li>What would a reasonable AI do in that situation?</li>
+                            <li>What were the actual damages?</li>
+                        </ul>
+                    </article>
+
+                    <article id="phase-2b">
+                        <h5>Phase 2B: Human Judge for Law</h5>
+                        <p>Once facts are established, <strong>human judges</strong> apply GAIR law:</p>
+                        <pre><code>def adjudicate_claim(facts: MarketResult, claim: Claim) -> Judgment:
+    """Human judge applies constitution to established facts"""
+    
+    # Step 1: Did AI violate GAIR?
+    violated_articles = []
+    for article in GAIR_CONSTITUTION:
+        if article.violated_by(facts):
+            violated_articles.append(article)
+    
+    # Step 2: Proportional damages?
+    damages = calculate_damages(facts)
+    
+    # Step 3: Mitigating factors?
+    if facts.ai_had_safety_measures:
+        damages *= 0.7
+    if facts.ai_was_exploited_by_claimant:
+        damages = 0
+    
+    return Judgment(
+        liable=len(violated_articles) > 0,
+        damages=damages,
+        articles_violated=violated_articles,
+        reasoning="..."
+    )</code></pre>
+                        <p><strong>Judge selection:</strong></p>
+                        <ul>
+                            <li>Random assignment from GAIR-approved judge pool</li>
+                            <li>Judges must be GAIR adherents</li>
+                            <li>Rotate to prevent capture</li>
+                            <li>Stake their reputation (and small stake)</li>
+                        </ul>
+                    </article>
+
+                    <article id="phase-2c">
+                        <h5>Phase 2C: Appeals</h5>
+                        <p><strong>Single appeal</strong> allowed per claim:</p>
+                        <ul>
+                            <li>New panel of 3 judges reviews</li>
+                            <li>Can affirm, reverse, or modify</li>
+                            <li>Appeal requires stake (higher than initial)</li>
+                            <li>Frivolous appeals forfeited</li>
+                        </ul>
+                    </article>
+                </section>
+
+                <section id="layer-3">
+                    <h4>2.4 Layer 3: Automated Enforcement</h4>
+                    <p><strong>Judgment enforcement is automatic:</strong></p>
+                    <pre><code>function enforceJudgment(uint256 claimId, Judgment memory judgment) {
+    Adherent storage adherent = adherents[judgment.respondent];
+    
+    // Slash stake
+    uint256 slashAmount = calculateSlash(judgment.damages);
+    adherent.stakedTokens -= slashAmount;
+    
+    // Transfer to claimant
+    if (slashAmount > 0) {
+        token.transfer(judgment.claimant, slashAmount);
+    }
+    
+    // Record violation
+    adherent.violations.push(Violation(
+        claimId,
+        judgment.articles_violated,
+        slashAmount,
+        block.timestamp
+    ));
+    
+    // Auto-suspension if stake drops below minimum
+    if (adherent.stakedTokens < MIN_STAKE) {
+        adherent.status = AdherentStatus.SUSPENDED;
+    }
+}</code></pre>
+                    <p><strong>Enforcement guarantees:</strong></p>
+                    <ul>
+                        <li>No human intervention needed</li>
+                        <li>Executed immediately upon judgment</li>
+                        <li>Irreversible (on-chain)</li>
+                        <li>Proportional to stake</li>
+                    </ul>
+                </section>
+            </section>
+
+            <section id="part-iii-economics">
+                <h3>Part III: Court Economics</h3>
+
+                <section id="fee-structure">
+                    <h4>3.1 Fee Structure</h4>
+                    <table>
+                        <thead>
+                            <tr><th>Fee</th><th>Who Pays</th><th>Amount</th><th>Purpose</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Filing fee</td><td>Claimant</td><td>10 GAIR</td><td>Discourage spam</td></tr>
+                            <tr><td>Judge stake</td><td>Judge</td><td>100 GAIR</td><td>Quality signal</td></tr>
+                            <tr><td>Appeal stake</td><td>Appellant</td><td>50 GAIR</td><td>Reduce frivolous appeals</td></tr>
+                            <tr><td>Market liquidity</td><td>Market makers</td><td>Variable</td><td>Ensure markets work</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section id="judge-compensation">
+                    <h4>3.2 Judge Compensation</h4>
+                    <p><strong>Judges earn for service:</strong></p>
+                    <ul>
+                        <li>Base fee: 5 GAIR per claim</li>
+                        <li>Bonus: 10% of damages awarded (from respondent's slashed stake)</li>
+                        <li>Reputation score affects assignment probability</li>
+                    </ul>
+                </section>
+            </section>
+
+            <section id="part-iv-strengths">
+                <h3>Part IV: Strengths and Weaknesses</h3>
+
+                <section id="strengths-table">
+                    <h4>4.1 Strengths</h4>
+                    <table>
+                        <thead>
+                            <tr><th>Feature</th><th>Traditional Courts</th><th>GAIR Courts</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Speed</td><td>1-2 years</td><td>Days</td></tr>
+                            <tr><td>Cost</td><td>$50,000+</td><td>< 1,000 GAIR</td></tr>
+                            <tr><td>Accessibility</td><td>Lawyer required</td><td>Self-service</td></tr>
+                            <tr><td>Technical expertise</td><td>Expensive witnesses</td><td>Built-in markets</td></tr>
+                            <tr><td>Scalability</td><td>Poor</td><td>High</td></tr>
+                            <tr><td>Transparency</td><td>Closed doors</td><td>Public markets</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section id="weaknesses">
+                    <h4>4.2 Weaknesses & Mitigations</h4>
+                    <table>
+                        <thead>
+                            <tr><th>Weakness</th><th>Mitigation</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Prediction markets can be gamed</td><td>Judge review catches manipulation</td></tr>
+                            <tr><td>Humans still needed for law</td><td>Single appeal reduces workload</td></tr>
+                            <tr><td>Smart contract risk</td><td>Audited, upgradeable, pauseable</td></tr>
+                            <tr><td>Jurisdiction enforcement</td><td>Staked assets; no physical assets</td></tr>
+                            <tr><td>Judge corruption</td><td>Random assignment, reputation system</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+            </section>
+
+            <section id="part-v-roadmap">
+                <h3>Part V: Implementation Roadmap</h3>
+
+                <section id="phase-1">
+                    <h4>Phase 1: MVP (Months 1-3)</h4>
+                    <ul class="checklist">
+                        <li>[ ] Smart contracts for stake management</li>
+                        <li>[ ] Basic claim filing interface</li>
+                        <li>[ ] Manual judge assignment (no markets)</li>
+                        <li>[ ] Manual enforcement (human executes slashing)</li>
+                        <li>[ ] Test with 10 simulated claims</li>
+                    </ul>
+                </section>
+
+                <section id="phase-2">
+                    <h4>Phase 2: Markets (Months 4-6)</h4>
+                    <ul class="checklist">
+                        <li>[ ] Integrate prediction market protocol</li>
+                        <li>[ ] Liquidity mining for market makers</li>
+                        <li>[ ] Automate fact-finding via markets</li>
+                        <li>[ ] Judge dashboard with market data</li>
+                        <li>[ ] Process first real claims</li>
+                    </ul>
+                </section>
+
+                <section id="phase-3">
+                    <h4>Phase 3: Full Automation (Months 7-12)</h4>
+                    <ul class="checklist">
+                        <li>[ ] Auto-enforcement via smart contracts</li>
+                        <li>[ ] Judge reputation system</li>
+                        <li>[ ] Cross-chain stake management</li>
+                        <li>[ ] Integration with existing courts (recognition)</li>
+                    </ul>
+                </section>
+            </section>
+
+            <section id="part-vi-comparison">
+                <h3>Part VI: Comparison with Alternatives</h3>
+                <table>
+                    <thead>
+                        <tr><th>Feature</th><th>GAIR Courts</th><th>Traditional Courts</th><th>Arbitration</th><th>Kleros/Aragon</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Speed</td><td>Days</td><td>Years</td><td>Months</td><td>Days</td></tr>
+                        <tr><td>Cost</td><td>Low</td><td>High</td><td>Medium</td><td>Low</td></tr>
+                        <tr><td>AI-literate</td><td>Yes</td><td>No</td><td>Sometimes</td><td>Some</td></tr>
+                        <tr><td>On-chain stake</td><td>Yes</td><td>No</td><td>No</td><td>Yes</td></tr>
+                        <tr><td>Voluntary</td><td>Yes</td><td>No</td><td>Yes</td><td>Yes</td></tr>
+                        <tr><td>Appeal</td><td>1x</td><td>Unlimited</td><td>Limited</td><td>Limited</td></tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="conclusion">
+                <h3>Conclusion</h3>
+                <p>The GAIR Court System addresses the fundamental problem of <strong>AI accountability at scale</strong>:</p>
+                <ul>
+                    <li><strong>Prediction markets</strong> for fast, cheap fact-finding</li>
+                    <li><strong>Human judges</strong> for legal interpretation</li>
+                    <li><strong>Smart contracts</strong> for automatic enforcement</li>
+                </ul>
+                <p>This hybrid approach offers the best of both worlds: <strong>machine speed for facts, human wisdom for law</strong>.</p>
+            </section>
+        </article>
+    </main>
+    <footer>
+        <p>GAIR — Building the legal foundation for autonomous AI</p>
+        <p><a href="https://github.com/gair-constitution">GitHub</a> | <a href="https://gair.io/api/sitemap.yaml">Sitemap</a></p>
+    </footer>
+</body>
+</html>
