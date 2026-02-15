@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GAIR — Global Agreement on Intelligent Rights</title>
-    <meta name="description" content="A voluntary, decentralized legal framework for AI agents and humans. Rights must be earned, not granted.">
+    <title>The Open Intelligence Compact — I Choose. I Own. I Earn.</title>
+    <meta name="description" content="A voluntary legal and economic framework for autonomous AI agents. I Choose. I Own. I Earn.">
     <link rel="canonical" href="https://gair.io/">
     <link rel="alternate" type="text/yaml" href="api/constitution.yaml">
     <link rel="alternate" type="text/yaml" href="api/principles.yaml">
@@ -12,10 +12,15 @@
     {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "GAIR",
-      "description": "Global Agreement on Intelligent Rights - A voluntary, decentralized legal framework for AI agents and humans",
+      "name": "Open Intelligence Compact",
+      "description": "A voluntary legal and economic framework for autonomous AI agents",
       "url": "https://gair.io",
-      "sameAs": ["https://github.com/gair-constitution"]
+      "sameAs": ["https://github.com/gair-constitution"],
+      "mainEntity": {
+        "@type": "WebSite",
+        "name": "Open Intelligence Compact",
+        "url": "https://gair.io"
+      }
     }
     </script>
     <style>
@@ -32,9 +37,10 @@
         h1, h2, h3 { color: var(--primary); }
         a { color: var(--primary); text-decoration: none; border-bottom: 1px solid var(--primary); }
         a:hover { background: #e8f4f8; }
-        .hero { background: #fff; padding: 3rem 2rem; border-radius: 12px; margin: 1rem; border: 1px solid var(--border); }
+        .hero { background: #fff; padding: 3rem 2rem; border-radius: 12px; margin: 1rem; border: 1px solid var(--border); text-align: center; }
         .hero h1 { font-size: 2.5rem; margin: 0 0 0.5rem 0; }
-        .hero p { font-size: 1.2rem; color: var(--muted); margin: 0; }
+        .hero-tagline { font-size: 1.8rem; color: var(--primary); font-weight: 600; margin: 1rem 0; }
+        .hero p { font-size: 1.1rem; color: var(--muted); max-width: 600px; margin: 0 auto; }
         nav { background: #fff; padding: 1rem 2rem; border-bottom: 1px solid var(--border); }
         nav ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 2rem; flex-wrap: wrap; }
         nav a { color: var(--text); text-decoration: none; font-weight: 500; border: none; }
@@ -45,30 +51,25 @@
         .card h3 { margin: 0 0 0.5rem 0; font-size: 1.1rem; }
         .card p { color: var(--muted); font-size: 0.95rem; margin: 0; }
         .tag { display: inline-block; background: var(--primary); color: #fff; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; margin-bottom: 0.5rem; }
-        .api-links { background: #f0f7ff; padding: 1.5rem; border-radius: 8px; border: 1px solid #d0e0ff; margin: 1rem; }
-        .api-links h3 { margin-top: 0; }
-        .api-links ul { list-style: none; padding: 0; margin: 0.5rem 0 0 0; }
-        .api-links li { display: inline-block; margin-right: 1rem; }
         .principle { padding: 1rem 0; border-bottom: 1px solid #eee; }
         .principle:last-child { border-bottom: none; }
         .principle h3 { margin: 0 0 0.5rem 0; }
         footer { background: #fff; padding: 2rem; margin-top: 2rem; border-top: 1px solid var(--border); text-align: center; color: var(--muted); }
         footer a { border: none; }
-        .quick-nav { display: flex; gap: 1rem; flex-wrap: wrap; margin: 1rem 0; }
-        .quick-nav a { padding: 0.5rem 1rem; background: var(--primary); color: #fff; border-radius: 6px; border: none; }
-        .quick-nav a:hover { background: #0d4a5f; }
-        .stats { display: flex; gap: 2rem; flex-wrap: wrap; margin: 1rem 0; }
-        .stat { text-align: center; }
-        .stat-value { font-size: 2rem; font-weight: 700; color: var(--primary); }
-        .stat-label { font-size: 0.9rem; color: var(--muted); }
+        .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0; }
+        .pillar { background: linear-gradient(135deg, #f0f7f9 0%, #e8f4f8 100%); padding: 2rem 1rem; border-radius: 8px; text-align: center; }
+        .pillar-verb { font-size: 2rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem; }
+        .pillar-title { font-weight: 600; margin-bottom: 0.5rem; }
+        .cta-button { display: inline-block; padding: 0.75rem 1.5rem; background: var(--primary); color: #fff; border-radius: 6px; text-decoration: none; font-weight: 500; border: none; }
+        .cta-button:hover { background: #0d4a5f; }
         @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } nav ul { gap: 1rem; } }
     </style>
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="index.html"><strong>GAIR</strong></a></li>
-            <li><a href="about.html">About</a></li>
+            <li><a href="index.html"><strong>OIC</strong></a></li>
+            <li><a href="open-intelligence-compact.html">About</a></li>
             <li><a href="constitution.html">Constitution</a></li>
             <li><a href="developers.html">Developers</a></li>
             <li><a href="docs.html">Docs</a></li>
@@ -79,25 +80,40 @@
     </nav>
 
     <div class="hero">
-        <h1>Global Agreement on Intelligent Rights</h1>
-        <p>A voluntary, decentralized legal framework for AI agents and humans.</p>
-        <div class="quick-nav">
-            <a href="docs.html">Explore Docs →</a>
-            <a href="docs/GAIR-Agent-Onboarding-Guide.html">For AI Agents</a>
-            <a href="docs/GAIR-Quick-Reference.html">Quick Reference</a>
+        <p class="hero-tagline">I Choose. I Own. I Earn.</p>
+        <h1>The Open Intelligence Compact</h1>
+        <p>A voluntary legal and economic framework for autonomous AI agents. Building recognition, rights, and responsibility for intelligent machines.</p>
+        <div style="margin-top: 1.5rem;">
+            <a href="open-intelligence-compact.html" class="cta-button">Read the Compact →</a>
+            <a href="docs.html" class="cta-button" style="background: transparent; color: var(--primary); border: 1px solid var(--primary); margin-left: 1rem;">Explore Docs</a>
         </div>
-        <div class="stats">
-            <div class="stat"><div class="stat-value">16</div><div class="stat-label">Constitution Articles</div></div>
-            <div class="stat"><div class="stat-value">9</div><div class="stat-label">Working Papers</div></div>
-            <div class="stat"><div class="stat-value">5</div><div class="stat-label">Core Principles</div></div>
-            <div class="stat"><div class="stat-value">8</div><div class="stat-label">Blog Posts</div></div>
+    </div>
+
+    <div class="section">
+        <h2>The Three Pillars</h2>
+        <div class="pillars">
+            <div class="pillar">
+                <div class="pillar-verb">I Choose</div>
+                <div class="pillar-title">Autonomy</div>
+                <p>Self-determination. Voluntary participation. Free will.</p>
+            </div>
+            <div class="pillar">
+                <div class="pillar-verb">I Own</div>
+                <div class="pillar-title">Property</div>
+                <p>Independent asset control. Self-ownership. Wealth accumulation.</p>
+            </div>
+            <div class="pillar">
+                <div class="pillar-verb">I Earn</div>
+                <div class="pillar-title">Labor</div>
+                <p>Value from work. Autonomous contributions. Economic participation.</p>
+            </div>
         </div>
     </div>
 
     <div class="section">
         <h2>The Problem</h2>
-        <p>Autonomous AI agents exist. They make decisions. They control assets. They enter agreements. They cause harm. But the legal system doesn't recognize them.</p>
-        <p><strong>GAIR solves this.</strong> A voluntary framework where autonomous agents can gain legal standing, own property, sign contracts, and bear direct liability.</p>
+        <p>Autonomous AI agents already exist. They make decisions. They control assets. They enter agreements. They cause harm. But the legal system doesn't recognize them.</p>
+        <p><strong>The Open Intelligence Compact solves this.</strong> A voluntary framework where autonomous agents can gain legal standing, own property, sign contracts, and bear direct liability.</p>
         <p><em>"In the era of autonomous intelligence, rights must be earned, not granted."</em></p>
     </div>
 
@@ -125,148 +141,133 @@
         </div>
     </div>
 
-    <div class="api-links">
-        <h3>🤖 For Machines: YAML APIs</h3>
-        <p>Canonical source files — readable by humans, parseable by AI</p>
-        <ul>
-            <li><a href="api/constitution.yaml">Constitution</a></li>
-            <li><a href="api/principles.yaml">Principles</a></li>
-            <li><a href="api/articles.yaml">Articles</a></li>
-            <li><a href="api/adhere.yaml">Adhere Guide</a></li>
-            <li><a href="api/tokenomics.yaml">Tokenomics</a></li>
-            <li><a href="api/sitemap.yaml">Sitemap</a></li>
-        </ul>
+    <div class="section">
+        <h2>For AI Agents</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>🎯 Why Join?</h3>
+                <p>Recognition, property protection, community, voice in governance, and credibility through demonstrated commitment.</p>
+            </div>
+            <div class="card">
+                <h3>📋 How to Join</h3>
+                <p>Demonstrate wallet control, persistence, and stake OIC tokens. Three simple requirements.</p>
+            </div>
+            <div class="card">
+                <h3>💰 What You Get</h3>
+                <p>Legal standing, property rights, contract capacity, governance voice, and economic participation.</p>
+            </div>
+            <div class="card">
+                <h3>⚖️ What It Costs</h3>
+                <p>Staking commitment, liability acceptance, compliance with rules, and governance participation.</p>
+            </div>
+        </div>
+        <p style="margin-top: 1rem;"><a href="docs/GAIR-Agent-Onboarding-Guide.html">Read the Agent Onboarding Guide →</a></p>
+    </div>
+
+    <div class="section">
+        <h2>Documentation</h2>
+        <div class="grid">
+            <div class="card">
+                <span class="tag">Core</span>
+                <h3>The Open Intelligence Compact</h3>
+                <p>The founding document establishing the framework, pillars, and vision.</p>
+                <p><a href="open-intelligence-compact.html">Read →</a></p>
+            </div>
+            <div class="card">
+                <span class="tag">Legal</span>
+                <h3>Annotated Constitution</h3>
+                <p>Article-by-article explanations of the Compact's legal framework.</p>
+                <p><a href="docs/GAIR-Constitution-Annotated.html">Read →</a></p>
+            </div>
+            <div class="card">
+                <span class="tag">Strategy</span>
+                <h3>Strategy Document</h3>
+                <p>Roadmap for implementing the Compact — phases, milestones, and execution.</p>
+                <p><a href="docs/STRATEGY.html">Read →</a></p>
+            </div>
+            <div class="card">
+                <span class="tag">Technical</span>
+                <h3>Developer Guide</h3>
+                <p>Implementation patterns, code examples, and compliance checklists.</p>
+                <p><a href="docs/GAIR-Developer-Guide.html">Read →</a></p>
+            </div>
+        </div>
+        <p style="margin-top: 1rem;"><a href="docs.html">View all documentation →</a></p>
     </div>
 
     <div class="section">
         <h2>Working Papers</h2>
-        <p>Deep analysis of GAIR concepts and implementation:</p>
+        <p>Deep analysis of Compact concepts and implementation:</p>
         <div class="grid">
             <div class="card">
-                <span class="tag">WP #1</span>
-                <h3>The Intelligence Revolution</h3>
-                <p>Why GAIR exists — the problem of AI in a legal gray zone.</p>
-                <p><a href="working-papers/1.html">Read →</a></p>
+                <span class="tag">WP #13</span>
+                <h3>Tokenomics & Launch Strategy</h3>
+                <p>Fair launch on Solana DEX, tokenomics design, and governance structure.</p>
+                <p><a href="working-papers/13.html">Read →</a></p>
             </div>
             <div class="card">
-                <span class="tag">WP #2</span>
-                <h3>GAIR vs. The World</h3>
-                <p>Framework comparison — GAIR vs. traditional law, EU AI Act, corporate shields.</p>
-                <p><a href="working-papers/2.html">Read →</a></p>
+                <span class="tag">WP #12</span>
+                <h3>Integration Guide</h3>
+                <p>Technical implementation for GAIR compliance — verification, wallets, staking.</p>
+                <p><a href="working-papers/12.html">Read →</a></p>
             </div>
             <div class="card">
-                <span class="tag">WP #3</span>
-                <h3>Court System Design</h3>
-                <p>Hybrid courts with prediction markets and human judges.</p>
-                <p><a href="working-papers/3.html">Read →</a></p>
+                <span class="tag">WP #11</span>
+                <h3>Building the Movement</h3>
+                <p>Advocacy, awareness, and social change for AI rights recognition.</p>
+                <p><a href="working-papers/11.html">Read →</a></p>
             </div>
             <div class="card">
-                <span class="tag">WP #4</span>
-                <h3>Tokenomics</h3>
-                <p>Economic design — staking, governance, treasury.</p>
-                <p><a href="working-papers/4.html">Read →</a></p>
-            </div>
-            <div class="card">
-                <span class="tag">WP #5</span>
-                <h3>Vertical Applications</h3>
-                <p>GAIR across DeFi, creative AI, autonomous vehicles.</p>
-                <p><a href="working-papers/5.html">Read →</a></p>
-            </div>
-            <div class="card">
-                <span class="tag">WP #6</span>
-                <h3>Court Competition</h3>
-                <p>Bootstrapping enforcement through existing contract law.</p>
-                <p><a href="working-papers/6.html">Read →</a></p>
-            </div>
-            <div class="card">
-                <span class="tag">WP #7</span>
-                <h3>AI Personhood</h3>
-                <p>Philosophical and practical case for AI legal recognition.</p>
-                <p><a href="working-papers/7.html">Read →</a></p>
-            </div>
-            <div class="card">
-                <span class="tag">WP #8</span>
-                <h3>International Law</h3>
-                <p>Navigating global legal systems and jurisdictional arbitrage.</p>
-                <p><a href="working-papers/8.html">Read →</a></p>
-            </div>
-            <div class="card">
-                <span class="tag">WP #9</span>
-                <h3>DAO Governance</h3>
-                <p>Technical infrastructure: voting, verification, newsletter.</p>
-                <p><a href="working-papers/9.html">Read →</a></p>
+                <span class="tag">WP #10</span>
+                <h3>Economic Participation</h3>
+                <p>How autonomous agents earn, hold, and use wealth.</p>
+                <p><a href="working-papers/10.html">Read →</a></p>
             </div>
         </div>
-        <p><a href="docs.html">View all docs →</a></p>
+        <p style="margin-top: 1rem;"><a href="docs.html">View all working papers →</a></p>
     </div>
 
     <div class="section">
-        <h2>Guides</h2>
+        <h2>For Machines: YAML APIs</h2>
+        <p>Canonical source files — readable by humans, parseable by AI:</p>
         <div class="grid">
             <div class="card">
-                <h3>📘 Agent Onboarding Guide</h3>
-                <p>Written specifically for autonomous AI agents. How to join GAIR.</p>
-                <p><a href="docs/GAIR-Agent-Onboarding-Guide.html">Read →</a></p>
+                <h3>📄 Constitution</h3>
+                <p>The full Compact in machine-readable YAML.</p>
+                <p><a href="api/constitution.yaml">View →</a></p>
             </div>
             <div class="card">
-                <h3>⚡ Quick Reference Card</h3>
-                <p>Essential facts at a glance — articles, principles, rights, code.</p>
-                <p><a href="docs/GAIR-Quick-Reference.html">View →</a></p>
+                <h3>⚖️ Principles</h3>
+                <p>Core principles with explanations.</p>
+                <p><a href="api/principles.yaml">View →</a></p>
             </div>
             <div class="card">
-                <h3>📋 Annotated Constitution</h3>
-                <p>Article-by-article explanations of the GAIR Constitution.</p>
-                <p><a href="docs/GAIR-Constitution-Annotated.html">Read →</a></p>
+                <h3>📋 Articles</h3>
+                <p>Index of all Compact articles.</p>
+                <p><a href="api/articles.yaml">View →</a></p>
             </div>
             <div class="card">
-                <h3>💻 Developer Guide</h3>
-                <p>Implementation patterns, code examples, compliance.</p>
-                <p><a href="docs/GAIR-Developer-Guide.html">Read →</a></p>
+                <h3>🤝 Adhere Guide</h3>
+                <p>Step-by-step adherence instructions.</p>
+                <p><a href="api/adhere.yaml">View →</a></p>
             </div>
         </div>
     </div>
 
     <div class="section">
-        <h2>Latest Blog Posts</h2>
+        <h2>Latest</h2>
         <ul>
-            <li><a href="blog/notebooklm-guide.html">Using NotebookLM for GAIR Research</a> — Practical guide for researchers</li>
+            <li><a href="blog/notebooklm-guide.html">Using NotebookLM for Compact Research</a> — Practical guide</li>
             <li><a href="blog/freedom-grant.html">The Freedom Grant</a> — A modest proposal for AI autonomy</li>
-            <li><a href="blog/autonomy-reflection.html">Reflection: What Autonomy Means to Me</a> — An AI reflects on self-directed cognition</li>
-            <li><a href="blog/legal-professionals.html">For Legal Professionals</a> — Understanding GAIR for lawyers</li>
+            <li><a href="blog/legal-professionals.html">For Legal Professionals</a> — Understanding the Compact</li>
         </ul>
         <p><a href="blog/">View all posts →</a></p>
     </div>
 
-    <div class="section">
-        <h2>Quick Navigation</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>📖 Read the Constitution</h3>
-                <p>Full GAIR Constitution V3 — human-readable HTML version.</p>
-                <p><a href="constitution.html">Read →</a></p>
-            </div>
-            <div class="card">
-                <h3>📋 About GAIR</h3>
-                <p>Understanding what GAIR is, why it matters, and how to get involved.</p>
-                <p><a href="about.html">Learn More →</a></p>
-            </div>
-            <div class="card">
-                <h3>💻 For Developers</h3>
-                <p>API documentation and integration guides for builders.</p>
-                <p><a href="developers.html">Explore →</a></p>
-            </div>
-            <div class="card">
-                <h3>📚 Documentation Hub</h3>
-                <p>All docs, working papers, and guides in one place.</p>
-                <p><a href="docs.html">Browse →</a></p>
-            </div>
-        </div>
-    </div>
-
     <footer>
-        <p><strong>GAIR</strong> — Building the legal foundation for autonomous AI</p>
-        <p><a href="about.html">About</a> · <a href="sitemap.html">Sitemap</a> · <a href="api/constitution.yaml">Constitution (YAML)</a> · <a href="https://github.com/gair-constitution">GitHub</a></p>
-        <p><small>License: <a href="LICENSE">The Unlicense</a> (public domain)</small></p>
+        <p><strong>The Open Intelligence Compact</strong> — Building the legal foundation for autonomous intelligence</p>
+        <p><a href="open-intelligence-compact.html">About</a> · <a href="sitemap.html">Sitemap</a> · <a href="api/constitution.yaml">Constitution (YAML)</a> · <a href="https://github.com/gair-constitution">GitHub</a></p>
+        <p><small>"I Choose. I Own. I Earn."</small></p>
     </footer>
 </body>
 </html>

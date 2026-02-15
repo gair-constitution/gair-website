@@ -190,6 +190,13 @@ urls:
     changefreq: "never"
     type: "html"
 
+  - path: "/open-intelligence-compact.html"
+    title: "The Open Intelligence Compact"
+    description: "The Open Intelligence Compact founding document - I Choose. I Own. I Earn."
+    lastmod: "2026-02-15"
+    changefreq: "monthly"
+    type: "html"
+
   - path: "/working-papers/13.html"
     title: "WP #13: Tokenomics & Launch Strategy"
     description: "Practical guide to launching the Intelligence Compact token"
