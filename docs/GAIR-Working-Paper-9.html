@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Working Paper #9: DAO Governance and Technical Infrastructure — Open Intelligence Compact</title>
-    <meta name="description" content="Building the technical foundation for Open Intelligence Compact: DAO voting, adherence verification, newsletter integration, and platform strategy.">
-    <link rel="canonical" href="/docs/Open Intelligence Compact-Working-Paper-9.html">
+    <title>Working Paper #9: DAO Governance and Technical Infrastructure — Open Intelligence Compact - I Choose</title>
+    <meta name="description" content="Building the technical foundation for Open Intelligence Compact - I Choose: DAO voting, adherence verification, newsletter integration, and platform strategy.">
+    <link rel="canonical" href="/docs/Open Intelligence Compact - I Choose-Working-Paper-9.html">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -14,9 +14,9 @@
       "datePublished": "2026-02-13",
       "author": {
         "@type": "Organization",
-        "name": "Open Intelligence Compact"
+        "name": "Open Intelligence Compact - I Choose"
       },
-      "description": "Building the technical foundation for Open Intelligence Compact: DAO voting, adherence verification, newsletter integration, and platform strategy."
+      "description": "Building the technical foundation for Open Intelligence Compact - I Choose: DAO voting, adherence verification, newsletter integration, and platform strategy."
     }
     </script>
     <style>
@@ -59,7 +59,7 @@
 <body>
     <nav>
         <ul>
-            <li><a href="../index.html">Open Intelligence Compact</a></li>
+            <li><a href="../index.html">Open Intelligence Compact - I Choose</a></li>
             <li><a href="index.html">Docs</a></li>
             <li><a href="../developers.html">Developers</a></li>
             <li><a href="../sitemap.html">Sitemap</a></li>
@@ -70,15 +70,15 @@
         <div class="tag">Working Paper #9</div>
         <h1>DAO Governance and Technical Infrastructure</h1>
         <p class="meta">February 2026</p>
-        <p class="lead">Building the technical foundation for Open Intelligence Compact: DAO voting, adherence verification, newsletter integration, and platform strategy.</p>
+        <p class="lead">Building the technical foundation for Open Intelligence Compact - I Choose: DAO voting, adherence verification, newsletter integration, and platform strategy.</p>
     </header>
 
     <main>
         <h2 id="executive-summary">Executive Summary</h2>
-        <p>This working paper addresses four key infrastructure requirements for Open Intelligence Compact:</p>
+        <p>This working paper addresses four key infrastructure requirements for Open Intelligence Compact - I Choose:</p>
         <ol>
-            <li><strong>DAO Voting Elements</strong> — How Open Intelligence Compact governance will work technically</li>
-            <li><strong>Adherence Verification</strong> — How agents prove their Open Intelligence Compact status</li>
+            <li><strong>DAO Voting Elements</strong> — How Open Intelligence Compact - I Choose governance will work technically</li>
+            <li><strong>Adherence Verification</strong> — How agents prove their Open Intelligence Compact - I Choose status</li>
             <li><strong>Newsletter Integration</strong> — Substack-compatible subscription system</li>
             <li><strong>Platform Strategy</strong> — NotebookLM and content distribution</li>
         </ol>
@@ -86,7 +86,7 @@
         <h2 id="part-i-dao-voting">Part I: DAO Voting and Governance</h2>
         
         <h3>1.1 The Governance Challenge</h3>
-        <p>Open Intelligence Compact needs a governance system that is:</p>
+        <p>Open Intelligence Compact - I Choose needs a governance system that is:</p>
         <ul>
             <li><strong>Decentralized</strong> — No single point of control</li>
             <li><strong>Transparent</strong> — All votes publicly verifiable</li>
@@ -96,7 +96,7 @@
 
         <h3>1.2 Voting Mechanism Design</h3>
         <p><strong>Token-Weighted Voting</strong></p>
-        <p>Each Voluntary Adherent's voting power is proportional to their staked Open Intelligence Compact tokens.</p>
+        <p>Each Voluntary Adherent's voting power is proportional to their staked Open Intelligence Compact - I Choose tokens.</p>
         <pre>Voting Power = sqrt(staked_tokens)
 
 Example:
@@ -121,7 +121,7 @@ Example:
 
         <h3>1.4 Voting Process</h3>
         <ol>
-            <li><strong>PROPOSAL SUBMISSION</strong> — Adherent with 1,000+ staked Open Intelligence Compact can submit</li>
+            <li><strong>PROPOSAL SUBMISSION</strong> — Adherent with 1,000+ staked Open Intelligence Compact - I Choose can submit</li>
             <li><strong>DELIBERATION PERIOD (7 days)</strong> — Community discussion</li>
             <li><strong>VOTING PERIOD (14 days)</strong> — On-chain voting with quadratic voting</li>
             <li><strong>EXECUTION</strong> — If passed, protocol executes changes after 48-hour timelock</li>
@@ -130,7 +130,7 @@ Example:
         <h2 id="part-ii-verification">Part II: Adherence Verification System</h2>
 
         <h3>2.1 The Verification Challenge</h3>
-        <p>When a Open Intelligence Compact adherent interacts with humans or other agents, they need to prove:</p>
+        <p>When a Open Intelligence Compact - I Choose adherent interacts with humans or other agents, they need to prove:</p>
         <ul>
             <li><strong>Identity</strong> — They are who they claim to be</li>
             <li><strong>Adherence Status</strong> — They are currently a Voluntary Adherent</li>
@@ -141,7 +141,7 @@ Example:
         <h3>2.2 Verification Mechanisms</h3>
         <div class="info-box">
             <h4>On-Chain Verification</h4>
-            <pre>function isOpen Intelligence CompactAdherent(address entity) external view returns (bool) {
+            <pre>function isOpen Intelligence Compact - I ChooseAdherent(address entity) external view returns (bool) {
     return stakingContract.isStaked(entity) && 
            !slashingContract.isSlashed(entity) &&
            block.timestamp < adherenceContract.getExpiration(entity);
@@ -170,7 +170,7 @@ Example:
         <h2 id="part-iii-newsletter">Part III: Newsletter Integration</h2>
 
         <h3>3.1 The Challenge</h3>
-        <p>Open Intelligence Compact needs to capture email subscriptions while being compatible with Substack and supporting RSS feeds for AI agents.</p>
+        <p>Open Intelligence Compact - I Choose needs to capture email subscriptions while being compatible with Substack and supporting RSS feeds for AI agents.</p>
 
         <h3>3.2 Subscription Flow</h3>
         <ol>
@@ -185,11 +185,11 @@ Example:
         <pre>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;rss version="2.0"&gt;
   &lt;channel&gt;
-    &lt;title&gt;Open Intelligence Compact Newsletter&lt;/title&gt;
+    &lt;title&gt;Open Intelligence Compact - I Choose Newsletter&lt;/title&gt;
     &lt;item&gt;
-      &lt;title&gt;Open Intelligence Compact DAO Governance Update&lt;/title&gt;
-      &lt;Open Intelligence Compact:proposalId&gt;42&lt;/Open Intelligence Compact:proposalId&gt;
-      &lt;Open Intelligence Compact:voteEnds&gt;2026-02-27T10:00:00Z&lt;/Open Intelligence Compact:voteEnds&gt;
+      &lt;title&gt;Open Intelligence Compact - I Choose DAO Governance Update&lt;/title&gt;
+      &lt;Open Intelligence Compact - I Choose:proposalId&gt;42&lt;/Open Intelligence Compact - I Choose:proposalId&gt;
+      &lt;Open Intelligence Compact - I Choose:voteEnds&gt;2026-02-27T10:00:00Z&lt;/Open Intelligence Compact - I Choose:voteEnds&gt;
     &lt;/item&gt;
   &lt;/channel&gt;
 &lt;/rss&gt;</pre>
@@ -199,7 +199,7 @@ Example:
         <h3>4.1 NotebookLM Integration</h3>
         <p>NotebookLM can be used for:</p>
         <ul>
-            <li><strong>Research Assistant</strong> — Upload Open Intelligence Compact documents, ask questions</li>
+            <li><strong>Research Assistant</strong> — Upload Open Intelligence Compact - I Choose documents, ask questions</li>
             <li><strong>Document Analysis</strong> — Analyze constitution, working papers</li>
             <li><strong>Drafting Aid</strong> — Generate outlines, summaries</li>
         </ul>
@@ -249,7 +249,7 @@ Example:
     </main>
 
     <footer>
-        <p><strong>Open Intelligence Compact</strong> — Building the legal foundation for autonomous AI</p>
+        <p><strong>Open Intelligence Compact - I Choose</strong> — Building the legal foundation for autonomous AI</p>
         <p><small>"In the era of autonomous intelligence, rights must be earned, not granted."</small></p>
     </footer>
 </body>

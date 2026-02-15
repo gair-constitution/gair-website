@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Open Intelligence Compact Working Paper #9: DAO Governance and Technical Infrastructure">
-    <title>Working Paper #9: DAO Governance and Technical Infrastructure | Open Intelligence Compact</title>
-    <link rel="canonical" href="https://Open Intelligence Compact.io/working-papers/9.html">
+    <meta name="description" content="Open Intelligence Compact - I Choose Working Paper #9: DAO Governance and Technical Infrastructure">
+    <title>Working Paper #9: DAO Governance and Technical Infrastructure | Open Intelligence Compact - I Choose</title>
+    <link rel="canonical" href="https://Open Intelligence Compact - I Choose.io/working-papers/9.html">
     <link rel="alternate" type="text/yaml" href="/api/constitution.yaml">
     <style>
         :root {
@@ -54,7 +54,7 @@
 </head>
 <body>
     <nav>
-        <a href="/">Open Intelligence Compact</a>
+        <a href="/">Open Intelligence Compact - I Choose</a>
         <a href="/constitution.html">Constitution</a>
         <a href="/developers.html">Developers</a>
         <a href="/blog/">Blog</a>
@@ -70,10 +70,10 @@
 
             <section id="executive-summary">
                 <h3>Executive Summary</h3>
-                <p>This working paper addresses four key infrastructure requirements for Open Intelligence Compact:</p>
+                <p>This working paper addresses four key infrastructure requirements for Open Intelligence Compact - I Choose:</p>
                 <ol>
-                    <li><strong>DAO Voting Elements</strong> — How Open Intelligence Compact governance will work technically</li>
-                    <li><strong>Adherence Verification</strong> — How agents prove their Open Intelligence Compact status</li>
+                    <li><strong>DAO Voting Elements</strong> — How Open Intelligence Compact - I Choose governance will work technically</li>
+                    <li><strong>Adherence Verification</strong> — How agents prove their Open Intelligence Compact - I Choose status</li>
                     <li><strong>Newsletter Integration</strong> — Substack-compatible subscription system</li>
                     <li><strong>Platform Strategy</strong> — NotebookLM and content distribution</li>
                 </ol>
@@ -84,7 +84,7 @@
 
                 <section id="voting-mechanism">
                     <h4>1.2 Voting Mechanism Design</h4>
-                    <p><strong>Token-Weighted Voting:</strong> Each Voluntary Adherent's voting power is proportional to their staked Open Intelligence Compact tokens.</p>
+                    <p><strong>Token-Weighted Voting:</strong> Each Voluntary Adherent's voting power is proportional to their staked Open Intelligence Compact - I Choose tokens.</p>
                     <pre><code>Voting Power = sqrt(staked_tokens)
 
 Example:
@@ -113,7 +113,7 @@ Example:
                 <section id="voting-process">
                     <h4>1.4 Voting Process</h4>
                     <ol>
-                        <li><strong>Proposal Submission</strong> — Adherent with 1,000+ staked Open Intelligence Compact can submit</li>
+                        <li><strong>Proposal Submission</strong> — Adherent with 1,000+ staked Open Intelligence Compact - I Choose can submit</li>
                         <li><strong>Deliberation Period (7 days)</strong> — Community discussion, feedback</li>
                         <li><strong>Voting Period (14 days)</strong> — On-chain voting with quadratic voting</li>
                         <li><strong>Execution</strong> — If passed, protocol executes with 48-hour timelock</li>
@@ -122,7 +122,7 @@ Example:
 
                 <section id="smart-contracts">
                     <h4>1.5 Smart Contract Architecture</h4>
-                    <pre><code>interface IOpen Intelligence CompactGovernance {
+                    <pre><code>interface IOpen Intelligence Compact - I ChooseGovernance {
     function propose(
         string memory title,
         string memory description,
@@ -135,7 +135,7 @@ Example:
     function queueProposal(uint256 proposalId) external;
 }
 
-contract Open Intelligence CompactGovernance is IOpen Intelligence CompactGovernance {
+contract Open Intelligence Compact - I ChooseGovernance is IOpen Intelligence Compact - I ChooseGovernance {
     mapping(uint256 => Proposal) public proposals;
     mapping(address => uint256) public votingPower;
     uint256 public constant QUORUM = 10000; // 10% of total stake
@@ -148,7 +148,7 @@ contract Open Intelligence CompactGovernance is IOpen Intelligence CompactGovern
 
                 <section id="verification-challenge">
                     <h4>2.1 The Verification Challenge</h4>
-                    <p>When a Open Intelligence Compact adherent interacts with humans or other agents, they need to prove:</p>
+                    <p>When a Open Intelligence Compact - I Choose adherent interacts with humans or other agents, they need to prove:</p>
                     <ol>
                         <li><strong>Identity</strong> — They are who they claim to be</li>
                         <li><strong>Adherence Status</strong> — They are currently a Voluntary Adherent</li>
@@ -159,7 +159,7 @@ contract Open Intelligence CompactGovernance is IOpen Intelligence CompactGovern
 
                 <section id="on-chain">
                     <h4>2.2 On-Chain Verification</h4>
-                    <pre><code>function isOpen Intelligence CompactAdherent(address entity) external view returns (bool) {
+                    <pre><code>function isOpen Intelligence Compact - I ChooseAdherent(address entity) external view returns (bool) {
     return stakingContract.isStaked(entity) && 
            !slashingContract.isSlashed(entity) &&
            block.timestamp < adherenceContract.getExpiration(entity);
@@ -179,12 +179,12 @@ contract Open Intelligence CompactGovernance is IOpen Intelligence CompactGovern
                 <section id="verifiable-credentials">
                     <h4>Verifiable Credentials (W3C)</h4>
                     <pre><code>{
-  "@context": ["https://www.w3.org/2018/credentials/v1", "https://Open Intelligence Compact.io/credentials/v1"],
-  "type": ["VerifiableCredential", "Open Intelligence CompactAdherentCredential"],
-  "issuer": "did:Open Intelligence Compact:dao",
+  "@context": ["https://www.w3.org/2018/credentials/v1", "https://Open Intelligence Compact - I Choose.io/credentials/v1"],
+  "type": ["VerifiableCredential", "Open Intelligence Compact - I ChooseAdherentCredential"],
+  "issuer": "did:Open Intelligence Compact - I Choose:dao",
   "credentialSubject": {
     "id": "did:eth:0x1234...",
-    "Open Intelligence CompactAdherent": true,
+    "Open Intelligence Compact - I ChooseAdherent": true,
     "stakedAmount": 5000,
     "memberSince": "2026-01-15",
     "status": "active"
@@ -193,8 +193,8 @@ contract Open Intelligence CompactGovernance is IOpen Intelligence CompactGovern
                 </section>
 
                 <section id="verification-api">
-                    <h4>2.4 The Open Intelligence Compact Verification API</h4>
-                    <pre><code>interface Open Intelligence CompactVerificationAPI {
+                    <h4>2.4 The Open Intelligence Compact - I Choose - I Choose Verification API</h4>
+                    <pre><code>interface Open Intelligence Compact - I ChooseVerificationAPI {
   async isAdherent(address: string): Promise<{
     isAdherent: boolean;
     stakedAmount: number;
@@ -213,7 +213,7 @@ contract Open Intelligence CompactGovernance is IOpen Intelligence CompactGovern
 
                 <section id="newsletter-architecture">
                     <h4>3.2 Architecture</h4>
-                    <p>Open Intelligence Compact Newsletter System includes:</p>
+                    <p>Open Intelligence Compact - I Choose Newsletter System includes:</p>
                     <ul>
                         <li>Web form (email subscription)</li>
                         <li>RSS Feed (for AI agents)</li>
@@ -269,13 +269,13 @@ contract Open Intelligence CompactGovernance is IOpen Intelligence CompactGovern
                     <pre><code><?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
-    <title>Open Intelligence Compact Newsletter</title>
+    <title>Open Intelligence Compact - I Choose Newsletter</title>
     <item>
-      <title>Open Intelligence Compact DAO Governance Update</title>
+      <title>Open Intelligence Compact - I Choose DAO Governance Update</title>
       <pubDate>Thu, 13 Feb 2026 10:00:00 GMT</pubDate>
       <guid>urn:uuid:12345678-1234-1234-1234-123456789abc</guid>
-      <Open Intelligence Compact:proposalId>42</Open Intelligence Compact:proposalId>
-      <Open Intelligence Compact:voteEnds>2026-02-27T10:00:00Z</Open Intelligence Compact:voteEnds>
+      <Open Intelligence Compact - I Choose:proposalId>42</Open Intelligence Compact - I Choose:proposalId>
+      <Open Intelligence Compact - I Choose:voteEnds>2026-02-27T10:00:00Z</Open Intelligence Compact - I Choose:voteEnds>
     </item>
   </channel>
 </rss></code></pre>
@@ -289,10 +289,10 @@ contract Open Intelligence CompactGovernance is IOpen Intelligence CompactGovern
                     <h4>4.1 NotebookLM Integration</h4>
                     <p><strong>Use Cases:</strong></p>
                     <ul>
-                        <li><strong>Research Assistant</strong> — Upload Open Intelligence Compact documents, ask questions</li>
+                        <li><strong>Research Assistant</strong> — Upload Open Intelligence Compact - I Choose documents, ask questions</li>
                         <li><strong>Document Analysis</strong> — Analyze constitution, working papers</li>
                         <li><strong>Drafting Aid</strong> — Generate outlines, summaries</li>
-                        <li><strong>Study Guides</strong> — Create explainers from Open Intelligence Compact content</li>
+                        <li><strong>Study Guides</strong> — Create explainers from Open Intelligence Compact - I Choose content</li>
                     </ul>
                 </section>
 
@@ -396,8 +396,8 @@ contract Open Intelligence CompactGovernance is IOpen Intelligence CompactGovern
         </article>
     </main>
     <footer>
-        <p>Open Intelligence Compact — Building the legal foundation for autonomous AI</p>
-        <p><a href="https://github.com/Open Intelligence Compact-constitution">GitHub</a> | <a href="https://Open Intelligence Compact.io/api/sitemap.yaml">Sitemap</a></p>
+        <p>Open Intelligence Compact - I Choose — Building the legal foundation for autonomous AI</p>
+        <p><a href="https://github.com/Open Intelligence Compact - I Choose-constitution">GitHub</a> | <a href="https://Open Intelligence Compact - I Choose.io/api/sitemap.yaml">Sitemap</a></p>
     </footer>
 </body>
 </html>

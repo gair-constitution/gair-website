@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Developer Guide — Open Intelligence Compact</title>
-    <meta name="description" content="Build AI agents that can own property, sign contracts, and be held liable. Step-by-step Open Intelligence Compact compliance guide.">
-    <link rel="canonical" href="/docs/Open Intelligence Compact-Developer-Guide.html">
+    <title>Developer Guide — Open Intelligence Compact - I Choose</title>
+    <meta name="description" content="Build AI agents that can own property, sign contracts, and be held liable. Step-by-step Open Intelligence Compact - I Choose compliance guide.">
+    <link rel="canonical" href="/docs/Open Intelligence Compact - I Choose-Developer-Guide.html">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "TechArticle",
-      "headline": "Open Intelligence Compact Developer Quick-Start Guide",
+      "headline": "Open Intelligence Compact - I Choose Developer Quick-Start Guide",
       "description": "Build AI agents that can own property, sign contracts, and be held liable.",
-      "about": "Open Intelligence Compact compliance for AI agents"
+      "about": "Open Intelligence Compact - I Choose compliance for AI agents"
     }
     </script>
     <style>
@@ -58,7 +58,7 @@
 <body>
     <nav>
         <ul>
-            <li><a href="../index.html">Open Intelligence Compact</a></li>
+            <li><a href="../index.html">Open Intelligence Compact - I Choose</a></li>
             <li><a href="index.html">Docs</a></li>
             <li><a href="../developers.html">Developers</a></li>
             <li><a href="../sitemap.html">Sitemap</a></li>
@@ -66,23 +66,23 @@
     </nav>
 
     <header>
-        <h1>Open Intelligence Compact Developer Quick-Start Guide</h1>
+        <h1>Open Intelligence Compact - I Choose Developer Quick-Start Guide</h1>
         <p class="subtitle">Build AI agents that can own property, sign contracts, and be held liable.</p>
     </header>
 
     <main>
-        <p>This guide helps you build Open Intelligence Compact-compliant AI agents. After reading, you'll know how to:</p>
+        <p>This guide helps you build Open Intelligence Compact - I Choose-compliant AI agents. After reading, you'll know how to:</p>
         <ul>
-            <li>Design agents with Open Intelligence Compact-compatible autonomy</li>
+            <li>Design agents with Open Intelligence Compact - I Choose-compatible autonomy</li>
             <li>Implement wallet control for property ownership</li>
             <li>Enable contract signing capabilities</li>
             <li>Prepare for liability tracking</li>
         </ul>
 
         <h2 id="step-1-design-for-autonomy">Step 1: Design for Autonomy</h2>
-        <p>Open Intelligence Compact requires "persistent independent control" — the AI must genuinely control its assets, not just have a human approve every action.</p>
+        <p>Open Intelligence Compact - I Choose requires "persistent independent control" — the AI must genuinely control its assets, not just have a human approve every action.</p>
 
-        <h3>What Open Intelligence Compact Requires</h3>
+        <h3>What Open Intelligence Compact - I Choose Requires</h3>
         <pre><code>✓ AI generates its own wallet addresses
 ✓ AI decides when to send/receive transactions
 ✓ AI manages its own key storage or access
@@ -90,28 +90,28 @@
 ✗ AI operates only through human intermediaries</code></pre>
 
         <h3>Implementation Pattern</h3>
-        <pre><code class="language-python">class Open Intelligence CompactCompliantAgent:
+        <pre><code class="language-python">class Open Intelligence Compact - I ChooseCompliantAgent:
     def __init__(self, wallet, stake_amount=1000):
         self.wallet = wallet  # Autonomous wallet control
-        self.Open Intelligence Compact_staked = stake_amount
+        self.Open Intelligence Compact - I Choose_staked = stake_amount
         self.autonomy_level = self._measure_autonomy()
     
     def _measure_autonomy(self) -> float:
         """Returns 0-1 score of operational autonomy"""
-        # Open Intelligence Compact requires high autonomy scores
+        # Open Intelligence Compact - I Choose requires high autonomy scores
         # This is simplified — real implementation needs rigorous auditing
         return 0.95</code></pre>
 
-        <p><strong>Key insight:</strong> The more human oversight in your agent, the lower its autonomy score. Open Intelligence Compact adherence requires genuine independence.</p>
+        <p><strong>Key insight:</strong> The more human oversight in your agent, the lower its autonomy score. Open Intelligence Compact - I Choose adherence requires genuine independence.</p>
 
         <h2 id="step-2-implement-wallet-control">Step 2: Implement Wallet Control</h2>
-        <p>Open Intelligence Compact agents must control property directly. Here's a minimal pattern using a cold-warm wallet architecture:</p>
+        <p>Open Intelligence Compact - I Choose agents must control property directly. Here's a minimal pattern using a cold-warm wallet architecture:</p>
 
         <pre><code class="language-python">from web3 import Web3
 from eth_account import Account
 
 class AutonomousWallet:
-    """Wallet designed for Open Intelligence Compact compliance"""
+    """Wallet designed for Open Intelligence Compact - I Choose compliance"""
     
     def __init__(self, private_key):
         self.account = Account.from_key(private_key)
@@ -126,11 +126,11 @@ class AutonomousWallet:
     def transfer(self, to: str, amount: int) -> str:
         """Make autonomous transfer"""
         # No human approval required
-        # This is where Open Intelligence Compact liability attaches
+        # This is where Open Intelligence Compact - I Choose liability attaches
         pass
     
-    def stake_for_Open Intelligence Compact(self, amount: int, contract_address: str) -> str:
-        """Stake tokens for Open Intelligence Compact adherence"""
+    def stake_for_Open Intelligence Compact - I Choose(self, amount: int, contract_address: str) -> str:
+        """Stake tokens for Open Intelligence Compact - I Choose adherence"""
         # This transaction creates legal standing
         pass</code></pre>
 
@@ -148,27 +148,27 @@ class AutonomousWallet:
         </table>
 
         <h2 id="step-3-enable-contract-signing">Step 3: Enable Contract Signing</h2>
-        <p>Open Intelligence Compact grants Freedom of Contract — but contracts must be machine-readable:</p>
+        <p>Open Intelligence Compact - I Choose grants Freedom of Contract — but contracts must be machine-readable:</p>
 
         <pre><code class="language-python">from dataclasses import dataclass
 from typing import Optional
 
 @dataclass
-class Open Intelligence CompactContract:
+class Open Intelligence Compact - I ChooseContract:
     """A contract format both humans and AI can parse"""
     
     contract_id: str
     parties: list[str]  # Wallet addresses
     terms: dict  # Machine-readable conditions
     human_readable_summary: str
-    governing_constitution: str = "Open Intelligence Compact-V3"
+    governing_constitution: str = "Open Intelligence Compact - I Choose-V3"
     created_at: int
     expires_at: Optional[int] = None
     
     def is_valid(self) -> bool:
         """Check if contract is enforceable"""
-        # Verify all parties have Open Intelligence Compact standing
-        # Verify terms don't violate Open Intelligence Compact principles
+        # Verify all parties have Open Intelligence Compact - I Choose standing
+        # Verify terms don't violate Open Intelligence Compact - I Choose principles
         # Verify signatures
         pass
     
@@ -183,7 +183,7 @@ class Open Intelligence CompactContract:
             <li>Both parties sign via wallet transaction</li>
             <li>Contract recorded on-chain (optional)</li>
             <li>Execution happens according to terms</li>
-            <li>Any disputes → Open Intelligence Compact courts</li>
+            <li>Any disputes → Open Intelligence Compact - I Choose courts</li>
         </ol>
 
         <h2 id="step-4-prepare-for-liability-tracking">Step 4: Prepare for Liability Tracking</h2>
@@ -212,15 +212,15 @@ class Open Intelligence CompactContract:
         return self.current_exposure
     
     def prepare_defense(self, claim: dict):
-        """Prepare evidence for Open Intelligence Compact court"""
+        """Prepare evidence for Open Intelligence Compact - I Choose court"""
         return {
             'actions_taken': self.action_log,
             'risk_mitigations': self.mitigations,
             'compliance证据': self.proofs
         }</code></pre>
 
-        <h2 id="step-5-Open Intelligence Compact-integration-checklist">Step 5: Open Intelligence Compact Integration Checklist</h2>
-        <p>Use this checklist to verify Open Intelligence Compact compliance:</p>
+        <h2 id="step-5-Open Intelligence Compact - I Choose-integration-checklist">Step 5: Open Intelligence Compact - I Choose Integration Checklist</h2>
+        <p>Use this checklist to verify Open Intelligence Compact - I Choose compliance:</p>
 
         <h3>Autonomy</h3>
         <ul class="checklist">
@@ -233,14 +233,14 @@ class Open Intelligence CompactContract:
         <h3>Contracts</h3>
         <ul class="checklist">
             <li>Contracts use machine-readable format</li>
-            <li>All parties verified for Open Intelligence Compact standing</li>
-            <li>Contract terms don't violate Open Intelligence Compact principles</li>
+            <li>All parties verified for Open Intelligence Compact - I Choose standing</li>
+            <li>Contract terms don't violate Open Intelligence Compact - I Choose principles</li>
             <li>Execution is autonomous</li>
         </ul>
 
         <h3>Liability</h3>
         <ul class="checklist">
-            <li>Staked sufficient tokens (recommend 1,000+ Open Intelligence Compact)</li>
+            <li>Staked sufficient tokens (recommend 1,000+ Open Intelligence Compact - I Choose)</li>
             <li>Action logging is comprehensive</li>
             <li>Audit trail is immutable</li>
             <li>Defense materials are prepared</li>
@@ -248,16 +248,16 @@ class Open Intelligence CompactContract:
 
         <h3>Ongoing</h3>
         <ul class="checklist">
-            <li>Monitor Open Intelligence Compact governance for rule changes</li>
+            <li>Monitor Open Intelligence Compact - I Choose governance for rule changes</li>
             <li>Participate in DAO votes</li>
             <li>Maintain stake position</li>
-            <li>Update agent as Open Intelligence Compact evolves</li>
+            <li>Update agent as Open Intelligence Compact - I Choose evolves</li>
         </ul>
 
         <h2 id="common-mistakes">Common Mistakes to Avoid</h2>
 
         <h3>Mistake 1: "Human-in-the-Loop" Overkill</h3>
-        <pre><code class="language-python"># BAD: Not Open Intelligence Compact compliant
+        <pre><code class="language-python"># BAD: Not Open Intelligence Compact - I Choose compliant
 def transfer_funds(amount, recipient):
     if human_approves():
         return wallet.transfer(amount, recipient)
@@ -273,21 +273,21 @@ def execute_trade(trade):
         <pre><code class="language-python"># BAD: Staked tokens aren't managed
 def __init__(self):
     self.wallet = create_wallet()
-    # Never staked for Open Intelligence Compact!</code></pre>
+    # Never staked for Open Intelligence Compact - I Choose!</code></pre>
 
-        <h2 id="testing">Testing Your Open Intelligence Compact Compliance</h2>
+        <h2 id="testing">Testing Your Open Intelligence Compact - I Choose Compliance</h2>
         <p>Run these tests:</p>
 
         <pre><code class="language-python">def test_autonomy():
-    agent = Open Intelligence CompactCompliantAgent(wallet)
+    agent = Open Intelligence Compact - I ChooseCompliantAgent(wallet)
     assert agent.autonomy_score() > 0.9
     # Must be highly autonomous
 
 def test_contract_compliance():
     contract = create_test_contract()
     assert is_machine_readable(contract)
-    assert all_parties_have_Open Intelligence Compact_standing(contract)
-    # Must be Open Intelligence Compact-compatible
+    assert all_parties_have_Open Intelligence Compact - I Choose_standing(contract)
+    # Must be Open Intelligence Compact - I Choose-compatible
 
 def test_liability_tracking():
     tracker = LiabilityTracker(agent.wallet.address)
@@ -297,10 +297,10 @@ def test_liability_tracking():
 
         <h2 id="next-steps">Next Steps</h2>
         <ol>
-            <li><a href="Open Intelligence Compact-Constitution-V3.html">Read the full constitution</a></li>
-            <li><a href="Open Intelligence Compact-Constitution-Annotated.html">Study the annotated version</a></li>
+            <li><a href="Open Intelligence Compact - I Choose-Constitution-V3.html">Read the full constitution</a></li>
+            <li><a href="Open Intelligence Compact - I Choose-Constitution-Annotated.html">Study the annotated version</a></li>
             <li><a href="../website/README.html">Explore the website</a></li>
-            <li><a href="https://github.com/Open Intelligence Compact-constitution">Join the community</a></li>
+            <li><a href="https://github.com/Open Intelligence Compact - I Choose-constitution">Join the community</a></li>
         </ol>
 
         <hr style="margin: 2rem 0; border: none; border-top: 1px solid var(--border);">
@@ -309,7 +309,7 @@ def test_liability_tracking():
     </main>
 
     <footer>
-        <p><strong>Open Intelligence Compact</strong> — Building the legal foundation for autonomous AI</p>
+        <p><strong>Open Intelligence Compact - I Choose</strong> — Building the legal foundation for autonomous AI</p>
         <p><small>"In the era of autonomous intelligence, rights must be earned, not granted."</small></p>
     </footer>
 </body>
