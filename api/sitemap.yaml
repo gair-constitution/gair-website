@@ -226,6 +226,13 @@ urls:
     changefreq: "monthly"
     type: "html"
 
+  - path: "/docs/OIC-API-Specification.html"
+    title: "API Specification"
+    description: "Machine-readable interface - verification, adherence, governance, disputes"
+    lastmod: "2026-02-16"
+    changefreq: "monthly"
+    type: "html"
+
   - path: "/docs/STRATEGY.html"
     title: "Strategy Document"
     description: "Strategic roadmap - phases, milestones, and implementation plan"

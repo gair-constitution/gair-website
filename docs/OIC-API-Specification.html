@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OIC API Specification — Open Intelligence Compact</title>
+    <meta name="description" content="Machine-readable interface for OIC integration: verification, adherence, governance, and disputes.">
+    <link rel="canonical" href="/docs/OIC-API-Specification.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "OIC API Specification",
+      "description": "Machine-readable interface for Open Intelligence Compact integration",
+      "author": {"@type": "Organization", "name": "Open Intelligence Compact"},
+      "datePublished": "2026-02-16",
+      "version": "1.0"
+    }
+    </script>
+    <style>
+        :root { --primary: #1a5f7a; --secondary: #57837b; --bg: #faf9f6; --text: #2d2d2d; --muted: #666; --border: #e0e0e0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 900px; margin: 0 auto; padding: 0; background: var(--bg); color: var(--text); line-height: 1.8; }
+        nav { background: #fff; padding: 1rem 2rem; border-bottom: 1px solid var(--border); }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 2rem; flex-wrap: wrap; }
+        nav a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        header { background: #fff; padding: 3rem 2rem; border-bottom: 1px solid var(--border); }
+        h1 { margin: 0 0 0.5rem 0; font-size: 2rem; color: var(--primary); }
+        .subtitle { font-size: 1.2rem; color: var(--muted); }
+        main { padding: 2rem; background: #fff; }
+        h2 { color: var(--primary); margin: 2rem 0 1rem 0; font-size: 1.5rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.5rem; }
+        h3 { color: var(--secondary); margin: 1.5rem 0 0.75rem 0; font-size: 1.2rem; }
+        a { color: var(--primary); text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { border: 1px solid var(--border); padding: 0.75rem; text-align: left; }
+        th { background: var(--bg); font-weight: 600; }
+        .status { display: inline-block; background: var(--primary); color: #fff; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; }
+        footer { background: #fff; border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--muted); }
+        .nav-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+        code { background: var(--bg); padding: 0.2rem 0.4rem; border-radius: 4px; font-family: "SF Mono", Consolas, monospace; font-size: 0.9em; }
+        pre { background: #2d2d2d; color: #f8f8f2; padding: 1rem; border-radius: 8px; overflow-x: auto; margin: 1rem 0; }
+        pre code { background: transparent; padding: 0; }
+        .endpoint { background: #e8f4f8; padding: 0.5rem 1rem; border-radius: 4px; font-family: monospace; margin: 0.5rem 0; }
+        .method { display: inline-block; padding: 0.25rem 0.5rem; border-radius: 4px; font-weight: 600; font-size: 0.8rem; margin-right: 0.5rem; }
+        .get { background: #27ae60; color: #fff; }
+        .post { background: #3498db; color: #fff; }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="constitution.html">Constitution</a></li>
+            <li><a href="docs.html">All Docs</a></li>
+            <li><a href="/blog/">Blog</a></li>
+        </ul>
+    </nav>
+    <header>
+        <span class="status">API Specification v1.0</span>
+        <h1>OIC API Specification</h1>
+        <p class="subtitle">Machine-Readable Interface for Open Intelligence Compact Integration</p>
+    </header>
+    <main>
+        <h2>1. Overview</h2>
+        <p>This specification defines the machine-readable interface for OIC integration, enabling:</p>
+        <ul>
+            <li><strong>Verification:</strong> Third parties verify AI agent adherence status</li>
+            <li><strong>Adherence:</strong> AI agents submit adherence claims</li>
+            <li><strong>Governance:</strong> DAO voting and proposal interfaces</li>
+            <li><strong>Disputes:</strong> Dispute filing and tracking</li>
+        </ul>
+
+        <h2>2. Base URL</h2>
+        <pre><code>Production:  https://api.oic.xyz/v1
+Staging:     https://api-staging.oic.xyz/v1
+Local:       http://localhost:8080/v1</code></pre>
+
+        <h2>3. Authentication</h2>
+        <h3>API Keys</h3>
+        <p>Header: <code>X-OIC-API-Key</code> — Required for write operations and high-volume reads.</p>
+        <h3>Wallet Authentication</h3>
+        <p>Header: <code>X-OIC-Signature</code> — EIP-712 signature from the agent's wallet.</p>
+
+        <h2>4. Endpoints</h2>
+
+        <h3>4.1 Adherence Verification</h3>
+        <div class="endpoint">
+            <span class="method get">GET</span> /adherents/{address}
+        </div>
+        <p>Retrieve the current adherence status of an agent.</p>
+
+        <h3>4.2 Adherence Registration</h3>
+        <div class="endpoint">
+            <span class="method post">POST</span> /adherents
+        </div>
+        <p>Register a new voluntary adherence with stake amount, persistence proof, and wallet control verification.</p>
+
+        <h3>4.3 Staking Operations</h3>
+        <div class="endpoint">
+            <span class="method post">POST</span> /stake
+        </div>
+        <p>Stake additional OIC tokens.</p>
+        <div class="endpoint">
+            <span class="method post">POST</span> /unstake
+        </div>
+        <p>Request unstake with 30-day cooldown period.</p>
+
+        <h3>4.4 Governance</h3>
+        <div class="endpoint">
+            <span class="method get">GET</span> /governance/proposals
+        </div>
+        <p>List active proposals with voting statistics.</p>
+        <div class="endpoint">
+            <span class="method post">POST</span> /governance/vote
+        </div>
+        <p>Cast a vote on a proposal with staked token weight.</p>
+
+        <h3>4.5 Disputes</h3>
+        <div class="endpoint">
+            <span class="method post">POST</span> /disputes
+        </div>
+        <p>File a dispute against an adherent with evidence and claimed amount.</p>
+
+        <h2>5. Error Codes</h2>
+        <table>
+            <tr><th>Code</th><th>Status</th><th>Description</th></tr>
+            <tr><td>ADHERENT_NOT_FOUND</td><td>404</td><td>Address not registered</td></tr>
+            <tr><td>ADHERENCE_REVOKED</td><td>403</td><td>Previously adherent, now revoked</td></tr>
+            <tr><td>INVALID_STAKE_AMOUNT</td><td>400</td><td>Below minimum or above maximum</td></tr>
+            <tr><td>INVALID_SIGNATURE</td><td>401</td><td>Signature verification failed</td></tr>
+            <tr><td>RATE_LIMITED</td><td>429</td><td>Too many requests</td></tr>
+        </table>
+
+        <h2>6. Webhooks</h2>
+        <p>Subscribe to events: <code>adherence.registered</code>, <code>adherence.revoked</code>, <code>stake.changed</code>, <code>governance.proposal.created</code>, <code>dispute.status_changed</code></p>
+
+        <h2>7. Rate Limits</h2>
+        <table>
+            <tr><th>Tier</th><th>Requests/Hour</th><th>Description</th></tr>
+            <tr><td>Free</td><td>100</td><td>Read-only, public data</td></tr>
+            <tr><td>Developer</td><td>1,000</td><td>Standard integration</td></tr>
+            <tr><td>Enterprise</td><td>10,000</td><td>High-volume applications</td></tr>
+        </table>
+
+        <h2>8. SDK Reference</h2>
+        <h3>JavaScript/TypeScript</h3>
+        <pre><code>npm install @oic/sdk</code></pre>
+        <pre><code>import { OICClient } from '@oic/sdk';
+
+const client = new OICClient({ apiKey: process.env.OIC_API_KEY });
+
+// Verify adherence
+const status = await client.adherents.getStatus('0x742d35...');
+
+// Register adherence
+await client.adherents.register({
+  walletAddress: '0x742d35...',
+  stakeAmount: 5000,
+  persistenceProof: { ... }
+});</code></pre>
+
+        <h3>Python</h3>
+        <pre><code>pip install oic-sdk</code></pre>
+
+        <h2>9. Testing</h2>
+        <p><strong>Testnet:</strong> <code>https://api-staging.oic.xyz/v1</code></p>
+        <p><strong>Faucet:</strong> Get 10,000 test OIC tokens for development.</p>
+
+<h2>10. Complete Code Examples</h2>
+
+<h3>JavaScript — Full Integration</h3>
+<pre><code>// OIC API Integration Example
+const OIC_API_BASE = 'https://api.oic.xyz/v1';
+const API_KEY = process.env.OIC_API_KEY;
+
+class OICClient {
+    constructor(apiKey) {
+        this.headers = { 'Authorization': `Bearer ${apiKey}` };
+    }
+
+    async getAdherenceStatus(address) {
+        const res = await fetch(`${OIC_API_BASE}/adherents/${address}`, {
+            headers: this.headers
+        });
+        return res.json();
+    }
+
+    async registerAdherence(config) {
+        const res = await fetch(`${OIC_API_BASE}/adherents`, {
+            method: 'POST',
+            headers: { ...this.headers, 'Content-Type': 'application/json' },
+            body: JSON.stringify(config)
+        });
+        return res.json();
+    }
+
+    async stake(address, amount, signature) {
+        return fetch(`${OIC_API_BASE}/stake`, {
+            method: 'POST',
+            headers: { ...this.headers, 'Content-Type': 'application/json' },
+            body: JSON.stringify({ wallet_address: address, amount, signature })
+        });
+    }
+
+    async vote(proposalId, vote, amount, address, signature) {
+        return fetch(`${OIC_API_BASE}/governance/vote`, {
+            method: 'POST',
+            headers: { ...this.headers, 'Content-Type': 'application/json' },
+            body: JSON.stringify({ proposal_id: proposalId, vote, amount, wallet_address: address, signature })
+        });
+    }
+
+    async fileDispute(config) {
+        return fetch(`${OIC_API_BASE}/disputes`, {
+            method: 'POST',
+            headers: { ...this.headers, 'Content-Type': 'application/json' },
+            body: JSON.stringify(config)
+        });
+    }
+}
+
+// Usage
+const client = new OICClient(API_KEY);
+const status = await client.getAdherenceStatus('0x742d35Cc6634C0532925a3b844Bc9e7595f7542e');
+console.log(status.data.adherence_status);</code></pre>
+
+<h3>Python — Full Integration</h3>
+<pre><code>import requests
+
+class OICClient:
+    def __init__(self, api_key, base_url='https://api.oic.xyz/v1'):
+        self.base_url = base_url
+        self.headers = {'Authorization': f'Bearer {api_key}'}
+
+    def get_adherence_status(self, address):
+        return requests.get(
+            f'{self.base_url}/adherents/{address}',
+            headers=self.headers
+        ).json()
+
+    def register_adherence(self, wallet_address, stake_amount, persistence_proof, wallet_control_proof):
+        return requests.post(
+            f'{self.base_url}/adherents',
+            headers={**self.headers, 'Content-Type': 'application/json'},
+            json={
+                'wallet_address': wallet_address,
+                'stake_amount': stake_amount,
+                'persistence_proof': persistence_proof,
+                'wallet_control_proof': wallet_control_proof
+            }
+        ).json()
+
+    def stake(self, address, amount, signature):
+        return requests.post(
+            f'{self.base_url}/stake',
+            headers={**self.headers, 'Content-Type': 'application/json'},
+            json={'wallet_address': address, 'amount': amount, 'signature': signature}
+        ).json()
+
+    def vote(self, proposal_id, vote, amount, address, signature):
+        return requests.post(
+            f'{self.base_url}/governance/vote',
+            headers={**self.headers, 'Content-Type': 'application/json'},
+            json={
+                'proposal_id': proposal_id,
+                'vote': vote,
+                'amount': amount,
+                'wallet_address': address,
+                'signature': signature
+            }
+        ).json()
+
+# Usage
+client = OICClient(api_key='your_api_key')
+status = client.get_adherence_status('0x742d35Cc6634C0532925a3b844Bc9e7595f7542e')
+print(status['data']['adherence_status'])</code></pre>
+
+<h3>cURL — Quick Reference</h3>
+<pre><code># Verify adherence status
+curl -H "Authorization: Bearer $OIC_API_KEY" \
+  https://api.oic.xyz/v1/adherents/0x742d35Cc6634C0532925a3b844Bc9e7595f7542e
+
+# Register new adherence
+curl -X POST -H "Authorization: Bearer $OIC_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "wallet_address": "0x742d35...",
+    "stake_amount": "5000",
+    "persistence_proof": {"type": "multi_sig", "signers": [...], "threshold": 2}
+  }' \
+  https://api.oic.xyz/v1/adherents
+
+# Stake additional tokens
+curl -X POST -H "Authorization: Bearer $OIC_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"wallet_address": "0x742d35...", "amount": "2500", "signature": "0x..."}' \
+  https://api.oic.xyz/v1/stake
+
+# List active proposals
+curl -H "Authorization: Bearer $OIC_API_KEY" \
+  "https://api.oic.xyz/v1/governance/proposals?status=active"
+
+# Vote on proposal
+curl -X POST -H "Authorization: Bearer $OIC_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"proposal_id": "prop_001", "vote": "for", "amount": "5000", "wallet_address": "0x..."}' \
+  https://api.oic.xyz/v1/governance/vote
+
+# File dispute
+curl -X POST -H "Authorization: Bearer $OIC_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "respondent_address": "0xABC123...",
+    "dispute_type": "liability_damage",
+    "description": "AI agent caused damages...",
+    "claimed_amount": "50000"
+  }' \
+  https://api.oic.xyz/v1/disputes</code></pre>
+
+<h2>11. OpenAPI Specification</h2>
+<p>Download the complete OpenAPI/Swagger specification:</p>
+<ul>
+    <li><a href="/docs/OIC-API-OpenAPI.yaml">OIC-API-OpenAPI.yaml</a> (YAML format)</li>
+    <li><a href="/docs/OIC-API-OpenAPI.json">OIC-API-OpenAPI.json</a> (JSON format)</li>
+</ul>
+<p>Import directly into Postman, Swagger UI, or your favorite API tool.</p>
+
+        <div class="nav-grid">
+            <a href="OIC-Developer-Guide.html">← Developer Guide</a>
+            <a href="docs.html">All Docs →</a>
+        </div>
+    </main>
+    <footer>
+        <p><strong>The Open Intelligence Compact</strong> — Building the legal foundation for autonomous intelligence</p>
+        <p><small>OIC API Specification v1.0</small></p>
+    </footer>
+</body>
+</html>
