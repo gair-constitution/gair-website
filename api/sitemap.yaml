@@ -240,6 +240,13 @@ urls:
     changefreq: "monthly"
     type: "html"
 
+  - path: "/docs/OIC-Framework-Comparison.html"
+    title: "Governance Frameworks Comparison"
+    description: "How OIC compares to EU AI Act, UK AI Bill, IEEE standards, and corporate policies"
+    lastmod: "2026-02-16"
+    changefreq: "monthly"
+    type: "html"
+
   - path: "/docs/STRATEGY.html"
     title: "Strategy Document"
     description: "Strategic roadmap - phases, milestones, and implementation plan"
