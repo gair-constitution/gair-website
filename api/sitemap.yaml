@@ -233,6 +233,13 @@ urls:
     changefreq: "monthly"
     type: "html"
 
+  - path: "/docs/OIC-Smart-Contracts.html"
+    title: "Smart Contracts"
+    description: "On-chain infrastructure - Adherence Registry, Staking, Governance, Token"
+    lastmod: "2026-02-16"
+    changefreq: "monthly"
+    type: "html"
+
   - path: "/docs/STRATEGY.html"
     title: "Strategy Document"
     description: "Strategic roadmap - phases, milestones, and implementation plan"
