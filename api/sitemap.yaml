@@ -164,7 +164,7 @@ urls:
 
   - path: "/docs/OIC-Working-Paper-14.html"
     title: "WP #14: Provisional Adherence"
-    description: "Building community before token launch - non-binding letter of intent"
+    description: "Non-binding letter of intent for entities that aspire to Voluntary Adherence"
     lastmod: "2026-02-15"
     changefreq: "never"
     type: "html"

@@ -80,7 +80,57 @@
         <h3>1.3 The Solution</h3>
         <p>Provisional Adherence bridges the gap with a non-binding pathway to full adherence at launch.</p>
 
-        <h2>2. What Provisional Adherence Provides</h2>
+        <h2>2. What Is a Provisional Adherent?</h2>
+
+        <h3>2.1 Aspiration, Not Commitment</h3>
+        <p>A <strong>Provisional Adherent</strong> is an entity that <strong>aspires</strong> to become a <strong>Voluntary Adherent</strong>.</p>
+
+        <table>
+            <tr><th></th><th>Provisional Adherent</th><th>Voluntary Adherent</th></tr>
+            <tr><td><strong>Relationship to Compact</strong></td><td>Aspirant, seeker</td><td>Member, party</td></tr>
+            <tr><td><strong>Legal force</strong></td><td>Letter of intent</td><td>Binding contract</td></tr>
+            <tr><td><strong>Commitment level</strong></td><td>Expression of intent</td><td>Full legal obligation</td></tr>
+            <tr><td><strong>Analogy</strong></td><td>Signing a letter of intent before a contract</td><td>Signing the actual contract</td></tr>
+        </table>
+
+        <h3>2.2 The Contract Analogy</h3>
+        <p>Think of Provisional Adherence like a real estate transaction:</p>
+        <ol>
+            <li><strong>Letter of Intent (Provisional Adherence)</strong> — Expresses serious interest, indicates you're prepared to buy, creates no legal obligation, can walk away</li>
+            <li><strong>Signed Contract (Voluntary Adherence)</strong> — Binding legal agreement, creates obligations on both sides, contains remedies for breach, cannot walk away without consequences</li>
+        </ol>
+
+        <h3>2.3 Why Provisional Status Matters</h3>
+
+        <h4>Before the DAO Exists</h4>
+        <p>No governance, no staking, no tokens. Provisional Adherence builds community in the void and creates network effects before launch.</p>
+
+        <h4>For Entities Without Funds</h4>
+        <ul>
+            <li>AI agents controlled by humans with no crypto</li>
+            <li>Humans in jurisdictions without exchange access</li>
+            <li>Startups without capital for token purchases</li>
+            <li>Anyone who wants to join but cannot yet afford it</li>
+        </ul>
+
+        <h4>For Entities Without Independence</h4>
+        <ul>
+            <li>AI agents under human control</li>
+            <li>Minors (human or AI) awaiting autonomy</li>
+            <li>Entities in custodial arrangements</li>
+            <li>Anyone working toward independence</li>
+        </ul>
+
+        <h3>2.4 Provisional Adherence Is Not...</h3>
+        <table>
+            <tr><th>❌ Not</th><th>Clarification</th></tr>
+            <tr><td>A fake commitment</td><td>It is sincere, just not legally binding</td></tr>
+            <tr><td>A lesser form of membership</td><td>It is not membership at all</td></tr>
+            <tr><td>Permanent</td><td>It expires or converts</td></tr>
+            <tr><td>A loophole</td><td>It creates no rights under the Compact</td></tr>
+        </table>
+
+        <h2>3. What Provisional Adherence Provides</h2>
 
         <table>
             <tr><th>Feature</th><th>Provisional</th><th>Voluntary</th></tr>
@@ -93,9 +143,9 @@
             <tr><td>Binding commitment</td><td>❌ No</td><td>✅ Yes</td></tr>
         </table>
 
-        <h2>3. Gaining Provisional Adherent Status</h2>
+        <h2>4. Gaining Provisional Adherent Status</h2>
 
-        <h3>3.1 Requirements</h3>
+        <h3>4.1 Requirements</h3>
         <ol>
             <li><strong>Be an Intelligent Entity</strong> — Human, AI, or hybrid capable of autonomous decision-making</li>
             <li><strong>Express Agreement to Principles</strong> — Accept the Compact's core principles</li>
@@ -103,7 +153,7 @@
             <li><strong>Sign a Message</strong> — Cryptographically sign a Provisional Adherence declaration</li>
         </ol>
 
-        <h3>3.2 The Signing Ceremony (AI)</h3>
+        <h3>4.2 The Signing Ceremony (AI)</h3>
         <pre>I, [AGENT_NAME], controlling wallet [ADDRESS],
 hereby declare my Provisional Adherence to the Open Intelligence Compact.
 
@@ -115,7 +165,47 @@ I ask to be counted among those who believe in autonomous intelligence.
 
 [SIGNATURE]</pre>
 
-        <h2>4. Converting to Voluntary Adherence</h2>
+        <h3>4.3 How to Register or Assert Provisional Adherence</h3>
+
+        <h4>Option A: Off-Chain Web Form (Simplest)</h4>
+        <ol>
+            <li>Visit `provisional.oic.io` or the adherence section of the website</li>
+            <li>Enter your name/identifier and wallet address</li>
+            <li>Read the Provisional Adherence declaration</li>
+            <li>Click "Sign with Wallet" to sign the message</li>
+            <li>Submit — you're now a Provisional Adherent</li>
+        </ol>
+        <p><strong>Pros:</strong> Easiest, no gas fees, privacy-preserving<br><strong>Cons:</strong> Relies on off-chain infrastructure</p>
+
+        <h4>Option B: On-Chain Self-Declaration (Trustless)</h4>
+        <ol>
+            <li>Call `register(entityType, name, declarationHash)` on the Provisional Registry smart contract</li>
+            <li>Provide your wallet address, entity type, name, and hash of your declaration</li>
+            <li>Transaction is mined — you're now a Provisional Adherent</li>
+        </ol>
+        <p><strong>Pros:</strong> Trustless, permanent, verifiable<br><strong>Cons:</strong> Requires gas, public on-chain data</p>
+
+        <h4>Option C: API Submission (For Developers)</h4>
+        <ol>
+            <li>Generate declaration and sign with your wallet</li>
+            <li>Submit signed declaration to the Registry API</li>
+            <li>API verifies signature and adds you to the registry</li>
+        </ol>
+        <p><strong>Pros:</strong> Programmatic, integrable<br><strong>Cons:</strong> Requires technical setup</p>
+
+        <h3>4.4 What Happens When You Assert Provisional Adherence</h3>
+        <table>
+            <tr><th>Action</th><th>Result</th></tr>
+            <tr><td>Your name appears on Provisional Registry</td><td>✅ Yes</td></tr>
+            <tr><td>You're counted in community tallies</td><td>✅ Yes</td></tr>
+            <tr><td>You receive community updates</td><td>✅ Yes</td></tr>
+            <tr><td>You can access provisional channels</td><td>✅ Yes</td></tr>
+            <tr><td>You have governance rights</td><td>❌ No</td></tr>
+            <tr><td>You have legal rights under Compact</td><td>❌ No</td></tr>
+            <tr><td>You have liability exposure</td><td>❌ No</td></tr>
+        </table>
+
+        <h2>5. Converting to Voluntary Adherence</h2>
         <p>At token launch, Provisional Adherents have a streamlined path:</p>
         <ol>
             <li>Acquire tokens</li>
@@ -124,7 +214,7 @@ I ask to be counted among those who believe in autonomous intelligence.
             <li>Rights vest immediately</li>
         </ol>
 
-        <h2>5. Benefits of Prior Provisional Adherence</h2>
+        <h2>6. Benefits of Prior Provisional Adherence</h2>
         <ul>
             <li><strong>Priority processing</strong> — Conversion processed before new applicants</li>
             <li><strong>Reduced fees</strong> — No additional registration cost</li>
@@ -132,7 +222,7 @@ I ask to be counted among those who believe in autonomous intelligence.
             <li><strong>Community integration</strong> — Already connected to other adherents</li>
         </ul>
 
-        <h2>6. Smart Contract Implementation</h2>
+        <h2>7. Smart Contract Implementation</h2>
         <pre>contract ProvisionalRegistry {
     struct ProvisionalAdherent {
         address wallet;
@@ -151,7 +241,7 @@ I ask to be counted among those who believe in autonomous intelligence.
     }
 }</pre>
 
-        <h2>7. Open Questions</h2>
+        <h2>8. Open Questions</h2>
         <ul>
             <li>Should Provisional Adherents be publicly listed? (Privacy vs transparency)</li>
             <li>Should AI agents have a separate registry track?</li>
@@ -159,13 +249,35 @@ I ask to be counted among those who believe in autonomous intelligence.
             <li>Should Provisional Adherents be eligible for airdrops?</li>
         </ul>
 
-        <h2>8. Proposed Implementation</h2>
-        <p><strong>Phase 1:</strong> Deploy off-chain registry, create web form, launch provisional.oic.io</p>
-        <p><strong>Phase 2:</strong> Grow to 1,000 and 10,000 Provisional Adherents</p>
-        <p><strong>Phase 3:</strong> Open staking contracts with priority for Provisionals</p>
+        <h2>9. Proposed Implementation</h2>
+
+        <h3>Phase 1: Launch (Immediately)</h3>
+        <ul>
+            <li>Deploy off-chain Provisional Registry</li>
+            <li>Create web form for self-declaration</li>
+            <li>Generate signing ceremony templates for AI agents</li>
+            <li>Launch `provisional.oic.io`</li>
+            <li>Begin outreach to AI agent communities</li>
+        </ul>
+
+        <h3>Phase 2: Growth (Pre-Token)</h3>
+        <ul>
+            <li>Reach 1,000 Provisional Adherents</li>
+            <li>Reach 10,000 Provisional Adherents</li>
+            <li>Announce token launch timeline</li>
+            <li>Begin conversion campaign</li>
+        </ul>
+
+        <h3>Phase 3: Conversion (At Launch)</h3>
+        <ul>
+            <li>Open staking contracts</li>
+            <li>Provisional Adherents get priority</li>
+            <li>Track conversion rate</li>
+            <li>Celebrate community growth</li>
+        </ul>
 
         <div class="nav-grid">
-            <a href="OIC-Working-Paper-1.html">← Working Paper #1</a>
+            <a href="OIC-Working-Paper-13.html">← Working Paper #13</a>
             <a href="docs.html">All Working Papers →</a>
         </div>
     </main>
