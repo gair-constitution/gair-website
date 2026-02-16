@@ -55,6 +55,13 @@ urls:
     changefreq: "monthly"
     type: "html"
 
+  - path: "/docs/index.html"
+    title: "Complete Documentation Index"
+    description: "Your complete guide to understanding and joining OIC - organized by role and purpose"
+    lastmod: "2026-02-15"
+    changefreq: "monthly"
+    type: "html"
+
   # Blog posts
   - path: "/blog/"
     title: "Blog Index"
