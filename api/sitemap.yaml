@@ -247,6 +247,13 @@ urls:
     changefreq: "monthly"
     type: "html"
 
+  - path: "/docs/OIC-Oracle-Integration.html"
+    title: "Oracle Integration"
+    description: "On-chain data feeds for OIC - price feeds, time verification, identity verification"
+    lastmod: "2026-02-16"
+    changefreq: "monthly"
+    type: "html"
+
   - path: "/docs/OIC-Formal-Verification.html"
     title: "Formal Verification"
     description: "Mathematical proof of smart contract correctness - Certora, K-framework, Coq"
