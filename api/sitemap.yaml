@@ -247,6 +247,13 @@ urls:
     changefreq: "monthly"
     type: "html"
 
+  - path: "/docs/OIC-Treasury-Design.html"
+    title: "Treasury Design"
+    description: "Multi-signature treasury with time-locks, guardians, and security modules"
+    lastmod: "2026-02-16"
+    changefreq: "monthly"
+    type: "html"
+
   - path: "/docs/STRATEGY.html"
     title: "Strategy Document"
     description: "Strategic roadmap - phases, milestones, and implementation plan"

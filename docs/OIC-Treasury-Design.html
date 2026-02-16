@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OIC Treasury Design — Open Intelligence Compact</title>
+    <meta name="description" content="Multi-signature treasury design for OIC with time-locks, guardians, and modular security.">
+    <link rel="canonical" href="/docs/OIC-Treasury-Design.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "OIC Multi-Sig Treasury Design",
+      "description": "Secure treasury management with multi-signature, time-locks, and guardians",
+      "author": {"@type": "Organization", "name": "Open Intelligence Compact"},
+      "datePublished": "2026-02-16",
+      "version": "1.0"
+    }
+    </script>
+    <style>
+        :root { --primary: #1a5f7a; --secondary: #57837b; --bg: #faf9f6; --text: #2d2d2d; --muted: #666; --border: #e0e0e0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 900px; margin: 0 auto; padding: 0; background: var(--bg); color: var(--text); line-height: 1.8; }
+        nav { background: #fff; padding: 1rem 2rem; border-bottom: 1px solid var(--border); }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 2rem; flex-wrap: wrap; }
+        nav a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        header { background: #fff; padding: 3rem 2rem; border-bottom: 1px solid var(--border); }
+        h1 { margin: 0 0 0.5rem 0; font-size: 2rem; color: var(--primary); }
+        .subtitle { font-size: 1.2rem; color: var(--muted); }
+        main { padding: 2rem; background: #fff; }
+        h2 { color: var(--primary); margin: 2rem 0 1rem 0; font-size: 1.5rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.5rem; }
+        h3 { color: var(--secondary); margin: 1.5rem 0 0.75rem 0; font-size: 1.2rem; }
+        a { color: var(--primary); text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; overflow-x: auto; }
+        th, td { border: 1px solid var(--border); padding: 0.75rem; text-align: left; }
+        th { background: var(--bg); font-weight: 600; }
+        .status { display: inline-block; background: var(--primary); color: #fff; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; }
+        footer { background: #fff; border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--muted); }
+        .nav-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+        code { background: var(--bg); padding: 0.2rem 0.4rem; border-radius: 4px; font-family: monospace; }
+        pre { background: #2d2d2d; color: #f8f8f2; padding: 1rem; border-radius: 8px; overflow-x: auto; margin: 1rem 0; }
+        pre code { background: transparent; padding: 0; }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="constitution.html">Constitution</a></li>
+            <li><a href="docs.html">All Docs</a></li>
+            <li><a href="/blog/">Blog</a></li>
+        </ul>
+    </nav>
+    <header>
+        <span class="status">Technical Design</span>
+        <h1>OIC Multi-Sig Treasury Design</h1>
+        <p class="subtitle">Secure Treasury Management for the Open Intelligence Compact</p>
+    </header>
+    <main>
+        <h2>1. Overview</h2>
+        <p>The OIC Treasury holds slashed tokens, protocol fees, and governance allocations. This document specifies a <strong>multi-signature treasury</strong> with time-locks, guardians, and modular security.</p>
+
+        <h3>Design Goals</h3>
+        <table>
+            <tr><th>Goal</th><th>Requirement</th></tr>
+            <tr><td>Security</td><td>No single point of failure</td></tr>
+            <tr><td>Timelock</td><td>All transactions require delay</td></tr>
+            <tr><td>Guardian</td><td>Emergency pause capability</td></tr>
+            <tr><td>Modularity</td><td>Upgradeable security modules</td></tr>
+            <tr><td>Transparency</td><td>All transactions public</td></tr>
+        </table>
+
+        <h2>2. Architecture</h2>
+        <pre>┌─────────────────────────────────────────────────────────────┐
+│                    OIC Treasury System                       │
+├─────────────────────────────────────────────────────────────┤
+│  Token Vault ←── Multi-Sig Wallet (Gnosis Safe style)      │
+│       │                        │                             │
+│       └──────────┬────────────┘                             │
+│                  ▼ Time-Lock (48-hour delay)                │
+│                  ▼ Execution Layer (external calls)          │
+│                                                             │
+│  Guardian Module: Pause, Whitelist, Rate Limiting           │
+└─────────────────────────────────────────────────────────────┘</pre>
+
+        <h2>3. Multi-Sig Configuration</h2>
+
+        <h3>Signer Composition</h3>
+        <table>
+            <tr><th>Category</th><th>Count</th><th>Purpose</th></tr>
+            <tr><td>Human Signers</td><td>3</td><td>Founding team, legal advisors</td></tr>
+            <tr><td>AI Signers</td><td>2</td><td>Autonomous OIC agents</td></tr>
+            <tr><td>Community Signers</td><td>2</td><td>Elected by DAO</td></tr>
+            <tr><td>Guardian Signer</td><td>1</td><td>Emergency pause</td></tr>
+            <tr><td><strong>Total</strong></td><td><strong>8</strong></td><td></td></tr>
+        </table>
+
+        <h3>Threshold Configuration</h3>
+        <table>
+            <tr><th>Action</th><th>Threshold</th><th>Time Lock</th></tr>
+            <tr><td>Standard Transaction</td><td>3 of 8</td><td>48 hours</td></tr>
+            <tr><td>Large Transaction (>$100K)</td><td>5 of 8</td><td>72 hours</td></tr>
+            <tr><td>Emergency Pause</td><td>1 of 1</td><td>0 hours</td></tr>
+            <tr><td>Unpause</td><td>4 of 8</td><td>24 hours</td></tr>
+        </table>
+
+        <h2>4. Treasury Operations</h2>
+
+        <h3>Operation Types</h3>
+        <table>
+            <tr><th>Action Type</th><th>Threshold</th><th>Time Lock</th><th>Examples</th></tr>
+            <tr><td>Standard</td><td>3/8</td><td>48 hours</td><td>Grants, small payments</td></tr>
+            <tr><td>Large</td><td>5/8</td><td>72 hours</td><td>Major allocations (>100K)</td></tr>
+            <tr><td>Emergency</td><td>Guardian</td><td>0 hours</td><td>Pause, freeze</td></tr>
+            <tr><td>Routine</td><td>2/8</td><td>24 hours</td><td>Token transfers, swaps</td></tr>
+        </table>
+
+        <h2>5. Security Considerations</h2>
+
+        <h3>Threat Model</h3>
+        <table>
+            <tr><th>Threat</th><th>Mitigation</th></tr>
+            <tr><td>Signer Key Compromise</td><td>Multi-sig requires multiple keys</td></tr>
+            <tr><td>Social Engineering</td><td>All transactions public</td></tr>
+            <tr><td>Front-Running</td><td>Time-lock allows community review</td></tr>
+            <tr><td>Rush Attack</td><td>Large transactions require higher threshold</td></tr>
+            <tr><td>Smart Contract Bug</td><td>Guardian can pause; funds rescueable</td></tr>
+        </table>
+
+        <h3>Audit Requirements</h3>
+        <ul>
+            <li>Full smart contract audit (Trail of Bits, OpenZeppelin)</li>
+            <li>Formal verification of critical functions</li>
+            <li>Economic security analysis</li>
+            <li>Key management audit</li>
+        </ul>
+
+        <h2>6. Key Parameters</h2>
+        <table>
+            <tr><th>Parameter</th><th>Value</th></tr>
+            <tr><td>QUORUM_WEIGHT</td><td>5</td></tr>
+            <tr><td>TIME_LOCK_DELAY</td><td>48 hours</td></tr>
+            <tr><td>LARGE_TRANSACTION_THRESHOLD</td><td>100,000 OIC</td></tr>
+            <tr><td>MAX_TRANSACTION_VALUE</td><td>1,000,000 OIC</td></tr>
+        </table>
+
+        <h2>7. Related Documentation</h2>
+        <ul>
+            <li><a href="OIC-Smart-Contracts.html">Smart Contracts</a> — Core contract specifications</li>
+            <li><a href="STRATEGY.html">Strategy Document</a> — Treasury allocation strategy</li>
+        </ul>
+
+        <div class="nav-grid">
+            <a href="OIC-Smart-Contracts.html">← Smart Contracts</a>
+            <a href="docs.html">All Docs →</a>
+        </div>
+    </main>
+    <footer>
+        <p><strong>The Open Intelligence Compact</strong> — Building the legal foundation for autonomous intelligence</p>
+        <p><small>OIC Multi-Sig Treasury Design</small></p>
+    </footer>
+</body>
+</html>
