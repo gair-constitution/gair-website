@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+artifacts/
+cache/
+
+# TypeChain generated types
+typechain/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Deployment outputs
+deployments/*.json
+!deployments/.gitkeep
+
+# Coverage reports
+coverage/
+coverage.json
+
+# Hardhat runtime errors
+hs_err_*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Testing
+test/local/

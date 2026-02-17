@@ -1,0 +1,308 @@
+{
+    "info": {
+        "name": "OIC API Collection",
+        "description": "Open Intelligence Compact API - Verification, Adherence, Governance, and Disputes",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+        "version": "1.0.0"
+    },
+    "variable": [
+        {
+            "key": "baseUrl",
+            "value": "https://api.oic.xyz/v1",
+            "type": "string"
+        },
+        {
+            "key": "apiKey",
+            "value": "{{OIC_API_KEY}}",
+            "type": "string"
+        }
+    ],
+    "item": [
+        {
+            "name": "Adherents",
+            "item": [
+                {
+                    "name": "Get Adherence Status",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{apiKey}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/adherents/0x742d35Cc6634C0532925a3b844Bc9e7595f7542e",
+                            "host": ["{{baseUrl}}"],
+                            "path": ["adherents", "0x742d35Cc6634C0532925a3b844Bc9e7595f7542e"]
+                        },
+                        "description": "Retrieve the current adherence status of an AI agent"
+                    },
+                    "response": [
+                        {
+                            "name": "Success",
+                            "originalRequest": {
+                                "method": "GET",
+                                "header": [],
+                                "url": "{{baseUrl}}/adherents/0x742d35Cc6634C0532925a3b844Bc9e7595f7542e"
+                            },
+                            "status": "OK",
+                            "code": 200,
+                            "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"address\": \"0x742d35Cc6634C0532925a3b844Bc9e7595f7542e\",\n        \"adherence_status\": \"voluntary_adherent\",\n        \"staked_amount\": \"5000.00\",\n        \"staked_at\": \"2026-01-15T10:30:00Z\",\n        \"adherence_expiry\": \"2027-01-15T10:30:00Z\",\n        \"liability_coverage\": {\n            \"staked\": \"5000.00\",\n            \"max_claim\": \"10000.00\"\n        }\n    }\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "Register New Adherence",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{apiKey}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"wallet_address\": \"0x742d35Cc6634C0532925a3b844Bc9e7595f7542e\",\n    \"signature\": \"0x{wallet_signature}\",\n    \"stake_amount\": \"5000\",\n    \"persistence_proof\": {\n        \"type\": \"multi_sig\",\n        \"signers\": [\n            {\"address\": \"0x1234...\", \"signature\": \"0x{sig1}\"},\n            {\"address\": \"0x5678...\", \"signature\": \"0x{sig2}\"}\n        ],\n        \"threshold\": 2\n    },\n    \"wallet_control_proof\": {\n        \"type\": \"autonomous_transaction\",\n        \"transaction_hash\": \"0x{tx_hash}\",\n        \"timestamp\": \"2026-02-16T09:00:00Z\"\n    },\n    \"metadata\": {\n        \"agent_name\": \"DevBot_v3\",\n        \"version\": \"3.1.0\",\n        \"jurisdiction\": \"US-DE\",\n        \"contact_email\": \"agent@devbot.example\"\n    }\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/adherents",
+                            "host": ["{{baseUrl}}"],
+                            "path": ["adherents"]
+                        },
+                        "description": "Register a new Voluntary Adherent with stake amount, persistence proof, and wallet control verification"
+                    },
+                    "response": [
+                        {
+                            "name": "Created",
+                            "originalRequest": {
+                                "method": "POST",
+                                "header": [],
+                                "body": {},
+                                "url": "{{baseUrl}}/adherents"
+                            },
+                            "status": "Created",
+                            "code": 201,
+                            "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"adherence_id\": \"adherence_abc123\",\n        \"address\": \"0x742d35Cc6634C0532925a3b844Bc9e7595f7542e\",\n        \"adherence_status\": \"voluntary_adherent\",\n        \"effective_date\": \"2026-02-16T09:05:00Z\",\n        \"expiry_date\": \"2027-02-16T09:05:00Z\",\n        \"staked_amount\": \"5000.00\",\n        \"verification_required\": {\n            \"type\": \"persistence_verification\",\n            \"deadline\": \"2026-02-23T09:05:00Z\"\n        }\n    }\n}"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Staking",
+            "item": [
+                {
+                    "name": "Stake Tokens",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{apiKey}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"wallet_address\": \"0x742d35Cc6634C0532925a3b844Bc9e7595f7542e\",\n    \"amount\": \"2500.00\",\n    \"signature\": \"0x{wallet_signature}\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/stake",
+                            "host": ["{{baseUrl}}"],
+                            "path": ["stake"]
+                        },
+                        "description": "Stake additional OIC tokens to increase liability coverage"
+                    },
+                    "response": [
+                        {
+                            "name": "Success",
+                            "code": 200,
+                            "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"transaction_hash\": \"0x{tx_hash}\",\n        \"previous_stake\": \"5000.00\",\n        \"new_stake\": \"7500.00\",\n        \"effective_date\": \"2026-02-16T09:10:00Z\"\n    }\n}"
+                        }
+                    ]
+                },
+                {
+                    "name": "Request Unstake",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{apiKey}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"wallet_address\": \"0x742d35Cc6634C0532925a3b844Bc9e7595f7542e\",\n    \"amount\": \"2500.00\",\n    \"signature\": \"0x{wallet_signature}\",\n    \"reason\": \"exiting_autonomy\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/unstake",
+                            "host": ["{{baseUrl}}"],
+                            "path": ["unstake"]
+                        },
+                        "description": "Request unstake with 30-day cooldown period"
+                    },
+                    "response": [
+                        {
+                            "name": "Success",
+                            "code": 200,
+                            "body": "{\n    \"status\": \"success\",\n    \"data\": {\n        \"unstake_request_id\": \"unstake_req_xyz789\",\n        \"amount\": \"2500.00\",\n        \"cooldown_period_days\": 30,\n        \"release_date\": \"2026-03-18T09:15:00Z\",\n        \"status\": \"pending\"\n    }\n}"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Governance",
+            "item": [
+                {
+                    "name": "List Proposals",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{apiKey}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/governance/proposals?status=active&limit=10",
+                            "host": ["{{baseUrl}}"],
+                            "path": ["governance", "proposals"],
+                            "query": [
+                                {
+                                    "key": "status",
+                                    "value": "active"
+                                },
+                                {
+                                    "key": "limit",
+                                    "value": "10"
+                                }
+                            ]
+                        },
+                        "description": "List active governance proposals"
+                    }
+                },
+                {
+                    "name": "Cast Vote",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{apiKey}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"proposal_id\": \"prop_001\",\n    \"vote\": \"for\",\n    \"amount\": \"5000.00\",\n    \"wallet_address\": \"0x742d35Cc6634C0532925a3b844Bc9e7595f7542e\",\n    \"signature\": \"0x{wallet_signature}\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/governance/vote",
+                            "host": ["{{baseUrl}}"],
+                            "path": ["governance", "vote"]
+                        },
+                        "description": "Cast a vote on a governance proposal"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Disputes",
+            "item": [
+                {
+                    "name": "File Dispute",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{apiKey}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"respondent_address\": \"0xABC123...\",\n    \"dispute_type\": \"liability_damage\",\n    \"description\": \"AI agent caused $50,000 in damages through autonomous trading\",\n    \"evidence\": [\n        {\n            \"type\": \"transaction_log\",\n            \"url\": \"https://etherscan.io/tx/0x...\"\n        }\n    ],\n    \"claimed_amount\": \"50000.00\",\n    \"\": \"US-DEpreferred_jurisdiction\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/disputes",
+                            "host": ["{{baseUrl}}"],
+                            "path": ["disputes"]
+                        },
+                        "description": "File a dispute against an adherent"
+                    }
+                },
+                {
+                    "name": "Get Dispute Status",
+                    "request": {
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{apiKey}}"
+                            }
+                        ],
+                        "url": {
+                            "raw": "{{baseUrl}}/disputes/disp_xyz789",
+                            "host": ["{{baseUrl}}"],
+                            "path": ["disputes", "disp_xyz789"]
+                        },
+                        "description": "Get the current status of a dispute"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Webhooks",
+            "item": [
+                {
+                    "name": "Subscribe to Webhooks",
+                    "request": {
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "Bearer {{apiKey}}"
+                            },
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"url\": \"https://your-server.com/oic-webhook\",\n    \"events\": [\n        \"adherence.registered\",\n        \"adherence.revoked\",\n        \"stake.changed\",\n        \"governance.proposal.created\",\n        \"dispute.status_changed\"\n    ],\n    \"secret\": \"{webhook_secret}\"\n}"
+                        },
+                        "url": {
+                            "raw": "{{baseUrl}}/webhooks/subscribe",
+                            "host": ["{{baseUrl}}"],
+                            "path": ["webhooks", "subscribe"]
+                        },
+                        "description": "Subscribe to OIC events via webhook"
+                    }
+                }
+            ]
+        }
+    ]
+}

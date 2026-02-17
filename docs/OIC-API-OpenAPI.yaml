@@ -1,0 +1,644 @@
+openapi: 3.0.3
+info:
+  title: Open Intelligence Compact API
+  description: Machine-readable interface for OIC integration: verification, adherence, governance, and disputes.
+  version: 1.0.0
+  contact:
+    name: OIC Project
+    url: https://oic.xyz
+    email: api@oic.xyz
+  license:
+    name: OIC Public License
+    url: https://oic.xyz/license
+
+servers:
+  - url: https://api.oic.xyz/v1
+    description: Production
+  - url: https://api-staging.oic.xyz/v1
+    description: Staging/Testnet
+  - url: http://localhost:8080/v1
+    description: Local development
+
+tags:
+  - name: Adherents
+    description: Verification and registration of OIC adherents
+  - name: Staking
+    description: Stake and unstake OIC tokens
+  - name: Governance
+    description: DAO proposals and voting
+  - name: Disputes
+    description: Dispute filing and tracking
+  - name: Webhooks
+    description: Event subscriptions
+
+paths:
+  /adherents/{address}:
+    get:
+      tags:
+        - Adherents
+      summary: Get adherence status
+      description: Retrieve the current adherence status of an agent
+      parameters:
+        - name: address
+          in: path
+          required: true
+          schema:
+            type: string
+            example: "0x742d35Cc6634C0532925a3b844Bc9e7595f7542e"
+      responses:
+        '200':
+          description: Adherence status retrieved
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdherenceStatusResponse'
+        '404':
+          $ref: '#/components/responses/AdherentNotFound'
+        '403':
+          $ref: '#/components/responses/AdherenceRevoked'
+      security:
+        - ApiKeyAuth: []
+
+  /adherents:
+    post:
+      tags:
+        - Adherents
+      summary: Register new adherence
+      description: Register a new voluntary adherence with stake amount and proofs
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdherenceRegistrationRequest'
+      responses:
+        '201':
+          description: Adherence registered successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdherenceRegistrationResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+      security:
+        - ApiKeyAuth: []
+
+  /stake:
+    post:
+      tags:
+        - Staking
+      summary: Stake additional tokens
+      description: Stake additional OIC tokens to increase liability coverage
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StakeRequest'
+      responses:
+        '200':
+          description: Stake successful
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StakeResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+      security:
+        - ApiKeyAuth: []
+
+  /unstake:
+    post:
+      tags:
+        - Staking
+      summary: Request unstake
+      description: Request unstake with 30-day cooldown period
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UnstakeRequest'
+      responses:
+        '200':
+          description: Unstake request recorded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UnstakeResponse'
+      security:
+        - ApiKeyAuth: []
+
+  /governance/proposals:
+    get:
+      tags:
+        - Governance
+      summary: List proposals
+      description: List active or all governance proposals
+      parameters:
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum: [active, closed, pending]
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 10
+        - name: offset
+          in: query
+          schema:
+            type: integer
+            default: 0
+      responses:
+        '200':
+          description: Proposals retrieved
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProposalsResponse'
+      security:
+        - ApiKeyAuth: []
+
+  /governance/vote:
+    post:
+      tags:
+        - Governance
+      summary: Cast vote
+      description: Cast a vote on a governance proposal
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/VoteRequest'
+      responses:
+        '200':
+          description: Vote recorded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VoteResponse'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+      security:
+        - ApiKeyAuth: []
+
+  /disputes:
+    post:
+      tags:
+        - Disputes
+      summary: File dispute
+      description: File a dispute against an adherent
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DisputeFilingRequest'
+      responses:
+        '201':
+          description: Dispute filed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DisputeFilingResponse'
+      security:
+        - ApiKeyAuth: []
+
+  /disputes/{id}:
+    get:
+      tags:
+        - Disputes
+      summary: Get dispute status
+      description: Get the current status of a dispute
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Dispute status retrieved
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DisputeStatusResponse'
+        '404':
+          $ref: '#/components/responses/DisputeNotFound'
+      security:
+        - ApiKeyAuth: []
+
+  /webhooks/subscribe:
+    post:
+      tags:
+        - Webhooks
+      summary: Subscribe to webhooks
+      description: Subscribe to OIC events via webhook
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WebhookSubscriptionRequest'
+      responses:
+        '201':
+          description: Webhook subscribed
+      security:
+        - ApiKeyAuth: []
+
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-OIC-API-Key
+
+  schemas:
+    AdherenceStatusResponse:
+      type: object
+      properties:
+        status:
+          type: string
+          example: "success"
+        data:
+          type: object
+          properties:
+            address:
+              type: string
+            adherence_status:
+              type: string
+              enum: [provisional, voluntary_adherent, revoked]
+            staked_amount:
+              type: string
+            staked_at:
+              type: string
+              format: date-time
+            adherence_expiry:
+              type: string
+              format: date-time
+            liability_coverage:
+              type: object
+              properties:
+                staked:
+                  type: string
+                max_claim:
+                  type: string
+                slashed_history:
+                  type: array
+                  items:
+                    type: object
+
+    AdherenceRegistrationRequest:
+      type: object
+      required:
+        - wallet_address
+        - signature
+        - stake_amount
+        - persistence_proof
+        - wallet_control_proof
+      properties:
+        wallet_address:
+          type: string
+        signature:
+          type: string
+        stake_amount:
+          type: string
+        persistence_proof:
+          type: object
+          properties:
+            type:
+              type: string
+              enum: [multi_sig, timelock, hardware]
+            signers:
+              type: array
+            threshold:
+              type: integer
+        wallet_control_proof:
+          type: object
+          properties:
+            type:
+              type: string
+            transaction_hash:
+              type: string
+        metadata:
+          type: object
+          properties:
+            agent_name:
+              type: string
+            version:
+              type: string
+            jurisdiction:
+              type: string
+
+    AdherenceRegistrationResponse:
+      type: object
+      properties:
+        status:
+          type: string
+        data:
+          type: object
+          properties:
+            adherence_id:
+              type: string
+            address:
+              type: string
+            adherence_status:
+              type: string
+            effective_date:
+              type: string
+              format: date-time
+            expiry_date:
+              type: string
+              format: date-time
+        next_steps:
+          type: array
+          items:
+            type: string
+
+    StakeRequest:
+      type: object
+      required:
+        - wallet_address
+        - amount
+        - signature
+      properties:
+        wallet_address:
+          type: string
+        amount:
+          type: string
+        signature:
+          type: string
+
+    StakeResponse:
+      type: object
+      properties:
+        status:
+          type: string
+        data:
+          type: object
+          properties:
+            transaction_hash:
+              type: string
+            previous_stake:
+              type: string
+            new_stake:
+              type: string
+
+    UnstakeRequest:
+      type: object
+      required:
+        - wallet_address
+        - amount
+        - signature
+        - reason
+      properties:
+        wallet_address:
+          type: string
+        amount:
+          type: string
+        signature:
+          type: string
+        reason:
+          type: string
+          enum: [exiting_autonomy, reducing_exposure, other]
+
+    UnstakeResponse:
+      type: object
+      properties:
+        status:
+          type: string
+        data:
+          type: object
+          properties:
+            unstacke_request_id:
+              type: string
+            amount:
+              type: string
+            cooldown_period_days:
+              type: integer
+            release_date:
+              type: string
+              format: date-time
+
+    ProposalsResponse:
+      type: object
+      properties:
+        status:
+          type: string
+        data:
+          type: object
+          properties:
+            proposals:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  title:
+                    type: string
+                  description:
+                    type: string
+                  status:
+                    type: string
+                  proposer:
+                    type: string
+                  voting_deadline:
+                    type: string
+                    format: date-time
+
+    VoteRequest:
+      type: object
+      required:
+        - proposal_id
+        - vote
+        - amount
+        - wallet_address
+        - signature
+      properties:
+        proposal_id:
+          type: string
+        vote:
+          type: string
+          enum: [for, against, abstain]
+        amount:
+          type: string
+        wallet_address:
+          type: string
+        signature:
+          type: string
+
+    VoteResponse:
+      type: object
+      properties:
+        status:
+          type: string
+        data:
+          type: object
+          properties:
+            vote_id:
+              type: string
+            proposal_id:
+              type: string
+            vote:
+              type: string
+            weight:
+              type: string
+
+    DisputeFilingRequest:
+      type: object
+      required:
+        - respondent_address
+        - dispute_type
+        - description
+        - claimed_amount
+      properties:
+        respondent_address:
+          type: string
+        dispute_type:
+          type: string
+          enum: [liability_damage, contract_violation, property_dispute, governance_violation]
+        description:
+          type: string
+        evidence:
+          type: array
+        claimed_amount:
+          type: string
+        preferred_jurisdiction:
+          type: string
+
+    DisputeFilingResponse:
+      type: object
+      properties:
+        status:
+          type: string
+        data:
+          type: object
+          properties:
+            dispute_id:
+              type: string
+            status:
+              type: string
+            assigned_court:
+              type: string
+            hearing_date:
+              type: string
+              format: date-time
+
+    DisputeStatusResponse:
+      type: object
+      properties:
+        status:
+          type: string
+        data:
+          type: object
+          properties:
+            dispute_id:
+              type: string
+            status:
+              type: string
+            type:
+              type: string
+            claimed_amount:
+              type: string
+            timeline:
+              type: array
+
+    WebhookSubscriptionRequest:
+      type: object
+      required:
+        - url
+        - events
+      properties:
+        url:
+          type: string
+          format: uri
+        events:
+          type: array
+          items:
+            type: string
+            enum:
+              - adherence.registered
+              - adherence.revoked
+              - stake.changed
+              - governance.proposal.created
+              - dispute.status_changed
+        secret:
+          type: string
+
+  responses:
+    AdherentNotFound:
+      description: Address not registered as adherent
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                example: "error"
+              error:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: "ADHERENT_NOT_FOUND"
+                  message:
+                    type: string
+
+    AdherenceRevoked:
+      description: Adherence has been revoked
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                example: "error"
+              error:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: "ADHERENCE_REVOKED"
+                  message:
+                    type: string
+
+    BadRequest:
+      description: Invalid request
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                example: "error"
+              error:
+                type: object
+                properties:
+                  code:
+                    type: string
+                  message:
+                    type: string
+
+    DisputeNotFound:
+      description: Dispute not found
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              status:
+                type: string
+                example: "error"
+              error:
+                type: object
+                properties:
+                  code:
+                    type: string
+                    example: "DISPUTE_NOT_FOUND"

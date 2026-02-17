@@ -1,0 +1,47 @@
+{
+  "name": "oic-smart-contracts",
+  "version": "1.0.0",
+  "description": "OIC Smart Contracts - Test Suite and Deployment Scripts",
+  "main": "index.js",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "test:gas": "REPORT_GAS=true hardhat test",
+    "typechain": "hardhat typechain",
+    "coverage": "hardhat coverage",
+    "check": "npm run compile && npm run typechain && npm run test",
+    "deploy:local": "hardhat run scripts/deploy.ts --network localhost",
+    "deploy:sepolia": "hardhat run scripts/deploy.ts --network sepolia",
+    "deploy:base": "hardhat run scripts/deploy.ts --network base"
+  },
+  "keywords": [
+    "oic",
+    "smart-contracts",
+    "ethereum",
+    "hardhat",
+    "ai-governance"
+  ],
+  "author": "Open Intelligence Compact",
+  "license": "OIC-1.0",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.0",
+    "@openzeppelin/contracts": "^5.0.0",
+    "@openzeppelin/hardhat-upgrades": "^3.0.0",
+    "@typechain/ethers-v5": "^11.1.0",
+    "@typechain/hardhat": "^9.1.0",
+    "@types/chai": "^4.3.0",
+    "@types/mocha": "^10.0.0",
+    "@types/node": "^20.0",
+    "chai": "^4.3.0",
+    "dotenv": "^16.3.0",
+    "ethers": "^6.9.0",
+    "hardhat": "^2.19.0",
+    "hardhat-gas-reporter": "^1.0.0",
+    "solidity-coverage": "^0.8.0",
+    "ts-generator": "^0.1.0",
+    "ts-node": "^10.9.0",
+    "typechain": "^8.3.0",
+    "typescript": "^5.3.0"
+  }
+}

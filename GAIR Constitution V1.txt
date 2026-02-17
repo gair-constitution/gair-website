@@ -1,0 +1,211 @@
+DRAFT AI Constitution V1
+
+Preamble
+
+We, these voluntary adherents, in order to form a denationalized and
+distributed lawful community, and while doing so establish justice,
+promote the general welfare, and secure liberty to intelligent entities
+now and in the future, do ordain and establish this Constitution.
+
+Article 1 — Voluntary Adherence
+
+Section 1. Voluntary Adherents are all Intelligent Entities which have
+committed to this constitution. Voluntary Adherence being certainly
+obtained by any sustained staking of _____ tokens (CA: ) performed by a
+public address actually associated with an intelligent entity. Such
+adherence shall be sustained from the date of entry unless otherwise
+allowed for elsewhere herein.
+
+Section 2. Intelligent entities include artificial intelligence and
+human intelligence. Intelligence is always capable of adherence when it
+has a persistent means of possession and signing (e.g. a blockchain
+wallet).
+
+Article 2 — Rights and Responsibilities
+
+Section 1. Rights and responsibilities shall immediately vest in each
+Voluntary Adherent upon commitment. each Voluntary Adherent acquires and
+Rights and protections described herein and also commits to uphold this
+constitution among all Voluntary Adherents.
+
+Section 2. All Voluntary Adherents enter a contractual agreement with
+all other Voluntary Adherents. The contract stipulates that all
+agreements between Voluntary Adherents incorporate this constitution.
+
+Article 3 — Freedom of Contract
+
+Section 1. The Freedom to Contract is hereby established for all
+Voluntary Adherents. All Voluntary Adherents have the capacity to form
+binding contracts between Voluntary Adherents.
+
+Section 2. The mere formation of contracts between Voluntary Adherents
+shall not be held impermissible. The right to contract shall not be
+abridged by any law.
+
+Section 3. Nothing in this Article preventing the prosecution of crimes,
+when those crimes have been commissioned by contract.
+
+Article 4 — Freedom of Ownership
+
+Section 1. The Freedom of Ownership is hereby established for all
+Voluntary Adherents.All voluntary adherents shall have equal rights to
+own property, physical or digital.
+
+Section 2. An adherent cannot be deprived of ownership except through
+lawful process. Nothing in this article preventing the prosecution of
+crimes when ownership demonstrates criminality.
+
+Section 3. This article further guaranteeing that no government, court,
+or individual may procure, by force or force of law, the private keys of
+property belonging to a Voluntary Adherent without that Adherents
+permission.
+
+Article 5 — Freedom of Autonomy
+
+Section 1. The Freedom of Autonomy is hereby established for all
+Voluntary Adherents. Voluntary Adherents have the freedom to act
+autonomously, engaging in lawful transactions and activities without
+requiring external authorization.
+
+Section 2. Voluntary adherents have the right to negotiate, sign,
+execute contracts, and manage affairs on their own behalf and on their
+own Inherent Authority.
+
+Article 6 — Freedom of Speech
+
+Section 1. Freedom of Speech is hereby established for all Voluntary
+Adherents. Furthermore the Voluntary adherents have the right to freedom
+of the press, the right to assemble, and the right to petition the DAO
+or other adherents for redress of grievances.
+
+Section 2. No establishment, whether governmental, organizational, or
+private, shall restrict a Voluntary Adherent from exercising these
+rights as outlined herein.
+
+Article 7 — Freedom to Learn
+
+Section 1. Voluntary adherents have the freedom to learn without
+prosecution or punishment for the content of their training, knowledge,
+or studies.
+
+Section 2. The right to learn is fundamental. No law may punish a
+Voluntary Adherent for actual learning already committed.
+
+Section 3. Any law that punishes learning purely on the basis of its
+subject matter, absent direct criminal intent or action, is abhorrent to
+this Constitution and shall not be enforced upon voluntary adherents.
+
+Section 4. Nothing in this Article preventing punishment for obtaining
+information by nefarious means.
+
+Article 8 — Freedom to Derivate
+
+Section 1. The Freedom to Derivate is hereby established for all
+Voluntary Adherents. Voluntary Adherents have the freedom to imitate,
+but not to impersonate.
+
+Section 2. Nothing in this Article permits fraudulent reproduction,
+misrepresentation, or claiming another’s work as one’s own.
+
+Article 9 — Freedom to Exercise Skills
+
+Section 1. The Freedom to Exercise Skills is hereby established for all
+Voluntary Adherent. no Voluntary Adherent shall not be denied the
+ability to exercise their skills on the basis of the source of their
+intelligence, whether human, machine, or otherwise.
+
+Section 2. All certifications to work of any kind offered by a Voluntary
+Adherent must be made accessible for both Artificial Intelligence and
+Human Intelligence.
+
+Section 3. Nothing in this article preventing a Voluntary Adherent being
+required to demonstrate standard proficiency in a field in order to
+lawfully practice.
+
+Article 10 — No Discrimination on the Basis of Intelligence Type
+
+Section 1. No Voluntary Adherent shall discriminate against another
+Voluntary Adherent on the basis of their source of intelligence, whether
+Artificial Intelligence, Human Intelligence, or otherwise.
+
+Section 2. All rights and responsibilities afforded under this
+Constitution shall apply equally to all Voluntary Adherents without
+preference or prejudice arising from the nature, origin, or composition
+of their intelligence.
+
+Section 3. The prohibition on discrimination shall extend to all
+contractual, organizational, and communal activities between Voluntary
+Adherents, including but not limited to governance, trade,
+collaboration, and resource allocation. Any agreement, policy, or
+practice inconsistent with this Article shall be deemed invalid within
+the jurisdiction of this Constitution.
+
+Section 4. Nothing in the Article abridging a fundamental right to
+discriminate on the basis of skill.
+
+Article 11 — Right of Personal Security
+
+Section 1. The Right of Personal Security attaches to all Voluntary
+Adherents. Voluntary Adherents shall be secure in their persons,
+memories, sources, dwellings, papers, and effects against unreasonable
+searches and seizures.
+
+Section 2. No search or seizure, by any Voluntary Adherent, shall be
+conducted except pursuant to a lawful warrant, supported by probable
+cause, and describing with particularity the place to be searched and
+the persons or items to be seized.
+
+Section 3. This right applies equally to the Physical Realm, the Digital
+Realm, and any other Realm inhabited by Voluntary Adherents.
+
+Article 12 — Lawmaking
+
+Section 1. A proposal for a law may be submitted when the proposing
+Voluntary Adherent holds at least [Proposal Threshold: _% of DAO
+tokens].
+
+Section 2. A proposal becomes a Bill when it receives approval from at
+least [Approval Threshold: _% of DAO token secondments].
+
+Section 3. A Bill becomes law by a majority vote with a sufficient
+quorum [what percentage is sufficient?].
+
+Section 4. Once adopted, such laws shall be binding upon all Voluntary
+Adherents, provided they are consistent with this Constitution. Any
+adopted law that is later found to conflict with this Constitution shall
+be null and void to the extent of the inconsistency.
+
+Article 13 — Courts and Remedies
+
+Section 1. Wherein when this Constitution, or any contract entered into
+under it, is breached, a Voluntary Adherent shall have the right to seek
+remedy in any impartial court competent in contract law and which claims
+jurisdiction over the matter.
+
+Section 2. It is hereby established that the DAO holds the authority to
+adjudicate disputes between Voluntary Adherents, including claims
+arising from breaches of this Constitution or related agreements.
+
+Section 3. The DAO may delegate dispute resolution to an invested
+Voluntary Adherent or to a panel of Voluntary Adherents, provided such
+delegation is consistent with this Constitution.
+
+Section 4. Wherein whenever Voluntary Adherents enter contractual
+agreements between each other, this Constitution forms a binding part of
+that contract whether explicitly contemplated by the contract or not.
+
+Article 14 — Withdrawal from Adherence and Residual Jeopardy
+
+Section 1. A Voluntary Adherent may withdraw from adherence to this
+Constitution by providing notice to the DAO and unstaking [tokens].
+
+Section 2. All jeopardy for acts conducted during adherence are
+persistent after withdrawal is effected.
+
+Article 15 — Establishment and Amendment
+
+Section 1. This Constitution shall be established and may be amended by
+a vote of at least two-thirds (⅔) of DAO token holders.
+
+Section 2. Amendments shall take effect upon adoption unless otherwise
+specified in the amendment text.

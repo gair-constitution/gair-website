@@ -1,0 +1,24 @@
+# GAIR Website .gitignore
+
+# Build artifacts
+*.pyc
+__pycache__/
+build.pyc
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.idea/
+.vscode/
+
+# Temporary files
+*.tmp
+*.bak
+*~

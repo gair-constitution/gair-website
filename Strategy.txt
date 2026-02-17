@@ -1,0 +1,37 @@
+1.  A website
+
+2.  Social Media
+
+    a.  X
+
+    b.  Substack
+
+What to do:
+
+Publish the constitution on Github.
+
+Revise and update it.
+
+Write blog posts which explain the point of it.
+
+Write a book which justifies the purpose of the project in the context
+of the Intelligence revolution. Intelligence revolution will mean mass
+production of intelligence.
+
+Unique intelligence, experience and perspectives will be increasingly
+valuable.
+The business Model is like this:
+
+Step one, brain dump ideas into Notebook LM.
+
+Step two, use Notebook LM to build out content for a website. Accept
+donations.
+
+Step three. Use Notebook LM to build out content for Social media.
+
+Create crypto currency to support the project.
+
+Website should include an AI for answering questions about the project.
+
+Website should include prompts for building AI that follows the
+constitution.
