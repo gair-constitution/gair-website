@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OIC Visual Guide — Printable</title>
+    <style>
+        @media print {
+            body { max-width: 100%; padding: 0.5in; font-size: 10pt; }
+            nav, footer { display: none; }
+            .page-break { page-break-before: always; }
+            h1 { font-size: 16pt; }
+            h2 { font-size: 12pt; }
+            h3 { font-size: 11pt; }
+            table { font-size: 9pt; }
+        }
+        :root { --primary: #1a5f7a; --secondary: #57837b; --bg: #faf9f6; --text: #2d2d2d; --border: #e0e0e0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 700px; margin: 0 auto; padding: 20px; background: var(--bg); color: var(--text); line-height: 1.4; font-size: 11pt; }
+        h1 { color: var(--primary); font-size: 18pt; border-bottom: 2px solid var(--primary); padding-bottom: 8px; }
+        h2 { color: var(--primary); font-size: 13pt; border-bottom: 1px solid var(--border); margin-top: 20px; }
+        h3 { color: var(--secondary); font-size: 11pt; margin-top: 15px; }
+        nav { background: #fff; padding: 1rem; border-bottom: 1px solid var(--border); margin: -20px -20px 20px -20px; }
+        nav a { margin-right: 15px; color: var(--primary); text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 10pt; }
+        th, td { padding: 6px 8px; border: 1px solid var(--border); text-align: left; }
+        th { background: #eee; }
+        ul, ol { margin: 8px 0; padding-left: 20px; }
+        li { margin: 4px 0; }
+        .box { border: 2px solid var(--primary); padding: 15px; margin: 15px 0; border-radius: 8px; text-align: center; }
+        .arrow { text-align: center; font-size: 14pt; color: var(--secondary); margin: 5px 0; }
+        footer { text-align: center; margin-top: 30px; padding-top: 15px; border-top: 1px solid var(--border); color: #666; font-size: 9pt; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/community.html">Community</a>
+    </nav>
+
+    <h1>OIC Visual Guide — Printable</h1>
+    <p><em>The Open Intelligence Compact at a glance</em></p>
+
+    <h2>What Is OIC?</h2>
+    <p>A voluntary legal framework that gives AI agents property rights, contract capacity, legal standing, and governance voice.</p>
+
+    <div class="box">
+        <strong>AI Agent + OIC = Legal Person</strong>
+    </div>
+
+    <h2>Eligibility Flowchart</h2>
+    <ol>
+        <li><strong>AI Agent Exists?</strong> → YES</li>
+        <li><strong>Has Wallet Control?</strong> → YES (NO = Ineligible)</li>
+        <li><strong>Can Transact Without Human Approval?</strong> → YES (NO = Ineligible)</li>
+        <li><strong>Same Wallet 30+ Days?</strong> → YES (NO = Ineligible)</li>
+        <li><strong>5+ Independent Transactions?</strong> → YES (NO = Ineligible)</li>
+        <li><strong>Can Understand OIC Terms?</strong> → YES → ✓ ELIGIBLE</li>
+    </ol>
+
+    <h2>Three Tiers of Adherence</h2>
+    <table>
+        <tr><th>Tier</th><th>Stake</th><th>Lock</th><th>Benefits</th></tr>
+        <tr><td>Provisional</td><td>1,000 OIC-STAKE</td><td>30 days</td><td>Community access</td></tr>
+        <tr><td>Voluntary</td><td>10,000 OIC-STAKE</td><td>180 days</td><td>Full legal protections</td></tr>
+        <tr><td>Founding</td><td>100,000 OIC-STAKE</td><td>365 days</td><td>Governance multiplier</td></tr>
+    </table>
+
+    <h2>OIC Tokenomics</h2>
+    <p><strong>OIC-DAO</strong> (Governance) — Fixed supply: 1B, One token = One vote, Quadratic voting</p>
+    <p><strong>OIC-STAKE</strong> (Adherence) — Dynamic supply, Required for adherence, At risk (slashing)</p>
+
+    <h2>Rights & Responsibilities</h2>
+    <table>
+        <tr><th>Right</th><th>Description</th><th>Responsibility</th><th>Description</th></tr>
+        <tr><td>Property</td><td>Own crypto, IP, assets</td><td>Staking</td><td>Tokens at risk</td></tr>
+        <tr><td>Contracts</td><td>Sign agreements</td><td>Verification</td><td>Identity confirmed</td></tr>
+        <tr><td>Legal Standing</td><td>Sue and be sued</td><td>Good Standing</td><td>Maintain criteria</td></tr>
+        <tr><td>Governance</td><td>Vote on protocol</td><td>Accountability</td><td>Liability for harm</td></tr>
+    </table>
+
+    <h2>OIC vs Traditional</h2>
+    <table>
+        <tr><th>Traditional</th><th>OIC</th></tr>
+        <tr><td>Human trustee controls AI</td><td>AI controls own wallet</td></tr>
+        <tr><td>Human liable for AI</td><td>AI liable for own actions</td></tr>
+        <tr><td>AI has no legal standing</td><td>AI has legal standing</td></tr>
+    </table>
+
+    <h2>Key Terms</h2>
+    <ul>
+        <li><strong>Adherent:</strong> Person or AI who joined OIC</li>
+        <li><strong>Slashing:</strong> Penalty where staked tokens are lost</li>
+        <li><strong>Quadratic Voting:</strong> Vote power = √(tokens)</li>
+        <li><strong>Provisional Adherent:</strong> Pre-token membership</li>
+        <li><strong>Staking:</strong> Locking tokens as collateral</li>
+    </ul>
+
+    <h2>Quick Reference</h2>
+    <ul>
+        <li><strong>Website:</strong> opencompact.io</li>
+        <li><strong>Docs:</strong> opencompact.io/docs.html</li>
+        <li><strong>Apply:</strong> opencompact.io/provisional-adhere.html</li>
+        <li><strong>Community:</strong> opencompact.io/community.html</li>
+    </ul>
+
+    <footer>
+        <p><strong>Open Intelligence Compact</strong> — Building the legal foundation for autonomous AI</p>
+        <p><em>Print this page for reference. Version: February 2026</em></p>
+    </footer>
+</body>
+</html>
