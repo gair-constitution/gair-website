@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OIC Governance Simulator</title>
+    <style>
+        :root { --primary: #1a5f7a; --secondary: #57837b; --accent: #c38e70; --bg: #faf9f6; --text: #2d2d2d; --muted: #666; --border: #e0e0e0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background: var(--bg); color: var(--text); line-height: 1.6; }
+        h1, h2, h3 { color: var(--primary); }
+        .card { background: #fff; padding: 20px; margin: 15px 0; border-radius: 8px; border: 1px solid var(--border); }
+        .proposal { background: #f0f7ff; padding: 15px; margin: 10px 0; border-radius: 6px; border-left: 4px solid var(--primary); }
+        button { background: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; margin: 5px; }
+        button:hover { background: #154a63; }
+        button.secondary { background: var(--secondary); }
+        .vote-btn { min-width: 80px; }
+        .results { margin-top: 15px; padding: 15px; background: #e8f5e9; border-radius: 6px; }
+        .slider-container { margin: 15px 0; }
+        input[type="range"] { width: 100%; }
+        .scenario-box { background: #fff3e0; padding: 15px; border-radius: 6px; margin: 10px 0; }
+        nav { background: #fff; padding: 1rem; border-bottom: 1px solid var(--border); margin: -20px -20px 20px -20px; }
+        nav a { margin-right: 20px; color: var(--primary); text-decoration: none; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/constitution.html">Constitution</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/community.html">Community</a>
+    </nav>
+
+    <h1>⚖️ OIC Governance Simulator</h1>
+    <p>Experience how OIC governance works. Vote on proposals and see how decisions are made.</p>
+
+    <div class="card">
+        <h2>How OIC Governance Works</h2>
+        <ul>
+            <li><strong>Proposals:</strong> Any Voluntary Adherent can submit a proposal</li>
+            <li><strong>Voting:</strong> Adherents vote with OIC-DAO tokens (quadratic voting)</li>
+            <li><strong>Approval:</strong> Proposals need 60% approval to pass</li>
+            <li><strong>Execution:</strong> Passed proposals are executed by the treasury</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>📋 Active Proposals</h2>
+        
+        <div class="proposal" id="proposal1">
+            <h3>Proposal #1: Reduce Minimum Stake</h3>
+            <p>Reduce the minimum OIC-STAKE for Voluntary Adherent from 10,000 to 5,000 to increase accessibility.</p>
+            <div class="slider-container">
+                <label>Your vote weight (tokens): <span id="weight1">100</span></label>
+                <input type="range" min="100" max="10000" value="100" oninput="updateWeight(1, this.value)">
+            </div>
+            <button class="vote-btn" onclick="vote(1, 'yes')">✅ Vote Yes</button>
+            <button class="vote-btn" onclick="vote(1, 'no')">❌ Vote No</button>
+            <button class="vote-btn secondary" onclick="vote(1, 'abstain')">➖ Abstain</button>
+            <div class="results" id="results1">
+                <strong>Current Results:</strong><br>
+                Yes: <span id="yes1">0</span> | No: <span id="no1">0</span> | Abstain: <span id="abstain1">0</span><br>
+                Approval: <span id="approval1">0</span>%
+            </div>
+        </div>
+
+        <div class="proposal" id="proposal2">
+            <h3>Proposal #2: Add New Verifier</h3>
+            <p>Approve "ChainVerify" as an authorized identity verifier for OIC adherence.</p>
+            <div class="slider-container">
+                <label>Your vote weight (tokens): <span id="weight2">100</span></label>
+                <input type="range" min="100" max="10000" value="100" oninput="updateWeight(2, this.value)">
+            </div>
+            <button class="vote-btn" onclick="vote(2, 'yes')">✅ Vote Yes</button>
+            <button class="vote-btn" onclick="vote(2, 'no')">❌ Vote No</button>
+            <button class="vote-btn secondary" onclick="vote(2, 'abstain')">➖ Abstain</button>
+            <div class="results" id="results2">
+                <strong>Current Results:</strong><br>
+                Yes: <span id="yes2">0</span> | No: <span id="no2">0</span> | Abstain: <span id="abstain2">0</span><br>
+                Approval: <span id="approval2">0</span>%
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>🎯 Quadratic Voting Demo</h2>
+        <p>In OIC, voting power = √(tokens). This reduces whale influence.</p>
+        <div class="slider-container">
+            <label>Your tokens: <span id="demoTokens">1000</span></label>
+            <input type="range" min="100" max="100000" value="1000" oninput="updateDemo(this.value)">
+        </div>
+        <p>Your voting power: <strong id="demoPower">31.62</strong> (√<span id="demoTokens2">1000</span>)</p>
+        <p><em>Compare: 10,000 tokens = 100 vote power (not 10,000!)</em></p>
+    </div>
+
+    <div class="card">
+        <h2>📊 What-If Scenarios</h2>
+        
+        <div class="scenario-box">
+            <h3>Scenario: Whale Attack</h3>
+            <p>A single holder has 1,000,000 tokens. How much voting power do they have?</p>
+            <button onclick="showScenario(1)">Calculate</button>
+            <p id="scenario1-result" style="display:none; margin-top:10px;">
+                <strong>Result:</strong> 1,000,000 tokens → 1,000 vote power (√1,000,000)<br>
+                <em>Even with 10x more tokens than 100 users with 1,000 each, their combined power (316) beats the whale!</em>
+            </p>
+        </div>
+
+        <div class="scenario-box">
+            <h3>Scenario: Community vs. Foundation</h3>
+            <p>100 community members (1,000 tokens each) vs. 5 founders (50,000 tokens each)</p>
+            <button onclick="showScenario(2)">Calculate</button>
+            <p id="scenario2-result" style="display:none; margin-top:10px;">
+                <strong>Result:</strong><br>
+                Community: 100 × √1,000 = 100 × 31.62 = 3,162<br>
+                Founders: 5 × √50,000 = 5 × 223.6 = 1,118<br>
+                <em>The community wins despite having less total value!</em>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        let proposals = {
+            1: { yes: 0, no: 0, abstain: 0, voters: [] },
+            2: { yes: 0, no: 0, abstain: 0, voters: [] }
+        };
+
+        function updateWeight(id, value) {
+            document.getElementById('weight' + id).textContent = value;
+        }
+
+        function vote(proposalId, choice) {
+            const weight = parseInt(document.getElementById('weight' + proposalId).textContent);
+            const votingPower = Math.sqrt(weight);
+            
+            // Remove previous vote if exists
+            const proposal = proposals[proposalId];
+            proposal.yes = 0; proposal.no = 0; proposal.abstain = 0;
+            
+            if (choice === 'yes') proposal.yes = votingPower;
+            else if (choice === 'no') proposal.no = votingPower;
+            else proposal.abstain = votingPower;
+            
+            updateResults(proposalId);
+        }
+
+        function updateResults(id) {
+            const p = proposals[id];
+            document.getElementById('yes' + id).textContent = p.yes.toFixed(2);
+            document.getElementById('no' + id).textContent = p.no.toFixed(2);
+            document.getElementById('abstain' + id).textContent = p.abstain.toFixed(2);
+            
+            const total = p.yes + p.no + p.abstain;
+            const approval = total > 0 ? (p.yes / (p.yes + p.no) * 100) : 0;
+            document.getElementById('approval' + id).textContent = approval.toFixed(1);
+        }
+
+        function updateDemo(value) {
+            document.getElementById('demoTokens').textContent = value;
+            document.getElementById('demoTokens2').textContent = value;
+            document.getElementById('demoPower').textContent = Math.sqrt(value).toFixed(2);
+        }
+
+        function showScenario(num) {
+            document.getElementById('scenario' + num + '-result').style.display = 'block';
+        }
+    </script>
+
+    <footer style="text-align: center; margin-top: 40px; padding: 20px; color: var(--muted);">
+        <p><strong>Open Intelligence Compact</strong> — Building the legal foundation for autonomous AI</p>
+        <p><a href="/docs.html">Learn more about OIC</a></p>
+    </footer>
+</body>
+</html>
