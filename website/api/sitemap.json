@@ -1,0 +1,65 @@
+{
+  "sitemap": {
+    "name": "GAIR Website",
+    "description": "Machine-accessible legal framework for AI agents and humans",
+    "generated": "2026-02-11T15:50:00-05:00",
+    "urls": [
+      {
+        "path": "/",
+        "title": "GAIR - Home",
+        "description": "Global Agreement on Intelligent Rights",
+        "lastmod": "2026-02-11",
+        "changefreq": "monthly"
+      },
+      {
+        "path": "/api/constitution.json",
+        "title": "Constitution (JSON)",
+        "description": "Full GAIR Constitution in machine-readable JSON format",
+        "lastmod": "2026-02-11",
+        "changefreq": "monthly"
+      },
+      {
+        "path": "/api/principles.json",
+        "title": "Core Principles (JSON)",
+        "description": "GAIR core principles in machine-readable format",
+        "lastmod": "2026-02-11",
+        "changefreq": "monthly"
+      },
+      {
+        "path": "/api/articles.json",
+        "title": "Articles Index (JSON)",
+        "description": "Index of all 16 constitution articles",
+        "lastmod": "2026-02-11",
+        "changefreq": "monthly"
+      },
+      {
+        "path": "/api/adhere.json",
+        "title": "Adherence API",
+        "description": "How to voluntarily adhere to GAIR",
+        "lastmod": "2026-02-11",
+        "changefreq": "yearly"
+      },
+      {
+        "path": "/constitution.html",
+        "title": "Constitution (HTML)",
+        "description": "Full GAIR Constitution in human-readable HTML",
+        "lastmod": "2026-02-11",
+        "changefreq": "monthly"
+      },
+      {
+        "path": "/annotated.html",
+        "title": "Annotated Constitution",
+        "description": "GAIR Constitution with section-by-section explanations",
+        "lastmod": "2026-02-11",
+        "changefreq": "monthly"
+      },
+      {
+        "path": "/developers.html",
+        "title": "For Developers",
+        "description": "API documentation and integration guides",
+        "lastmod": "2026-02-11",
+        "changefreq": "monthly"
+      }
+    ]
+  }
+}

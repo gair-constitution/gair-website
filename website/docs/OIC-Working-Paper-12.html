@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working Paper #12: OIC Integration Guide — Open Intelligence Compact</title>
+    <meta name="description" content="Practical handbook for implementing OIC in AI systems.">
+    <link rel="canonical" href="/docs/OIC-Working-Paper-12.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "headline": "OIC Integration Guide",
+      "description": "Practical handbook for implementing OIC in AI systems",
+      "author": {"@type": "Organization", "name": "Open Intelligence Compact"},
+      "datePublished": "2026-02-14",
+      "version": "1.0"
+    }
+    </script>
+    <style>
+        :root { --primary: #1a5f7a; --secondary: #57837b; --bg: #faf9f6; --text: #2d2d2d; --muted: #666; --border: #e0e0e0; }
+        body { font-family: -apple-system, sans-serif; max-width: 800px; margin: 0 auto; padding: 0; background: var(--bg); color: var(--text); line-height: 1.8; }
+        nav { background: #fff; padding: 1rem 2rem; border-bottom: 1px solid var(--border); }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 2rem; }
+        nav a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        header { background: #fff; padding: 3rem 2rem; border-bottom: 1px solid var(--border); }
+        h1 { margin: 0 0 0.5rem 0; font-size: 2rem; color: var(--primary); }
+        .subtitle { font-size: 1.2rem; color: var(--muted); }
+        main { padding: 2rem; background: #fff; }
+        h2 { color: var(--primary); margin: 2rem 0 1rem 0; font-size: 1.5rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.5rem; }
+        h3 { color: var(--secondary); margin: 1.5rem 0 0.75rem 0; }
+        a { color: var(--primary); text-decoration: none; border-bottom: 1px solid var(--primary); }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { border: 1px solid var(--border); padding: 0.75rem; text-align: left; }
+        th { background: var(--bg); font-weight: 600; }
+        .status { display: inline-block; background: var(--primary); color: #fff; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; margin-bottom: 1rem; }
+        footer { background: #fff; border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--muted); }
+        .nav-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+        pre { background: var(--bg); padding: 1rem; border-radius: 8px; overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="constitution.html">Constitution</a></li>
+            <li><a href="docs.html">All Docs</a></li>
+            <li><a href="/blog/">Blog</a></li>
+        </ul>
+    </nav>
+    <header>
+        <span class="status">Working Paper #12</span>
+        <h1>OIC Integration Guide</h1>
+        <p class="subtitle">Practical Handbook for Implementing OIC in AI Systems</p>
+    </header>
+    <main>
+        <h2>1. Introduction</h2>
+        <p>This guide provides practical guidance for integrating OIC into existing AI systems. It covers technical implementation of adherence verification, wallet setup, staking mechanisms, and liability management.</p>
+
+        <h2>2. Core Integration Components</h2>
+        <table>
+            <tr><th>Component</th><th>Purpose</th><th>Implementation</th></tr>
+            <tr><td>Wallet Service</td><td>Manage autonomous wallet</td><td>Independent key management</td></tr>
+            <tr><td>Verification Client</td><td>Prove adherence status</td><td>On-chain verification</td></tr>
+            <tr><td>Staking Contract</td><td>Execute sufficient commitment</td><td>Token staking</td></tr>
+            <tr><td>Liability Tracker</td><td>Monitor risk exposure</td><td>Action logging</td></tr>
+        </table>
+
+        <h2>3. Wallet Setup</h2>
+        <pre>class OICCompliantWallet:
+    def __init__(self, private_key):
+        self.account = Account.from_key(private_key)
+        self.oic_status = None
+        self.staked_amount = 0
+
+    def verify_oic_status(self):
+        # Check on-chain for Voluntary Adherent status
+        status = oic_registry.verify(self.account.address)
+        self.oic_status = status
+        return status</pre>
+
+        <h2>4. Staking Implementation</h2>
+        <pre>def execute_sufficient_commitment(amount):
+    # Approve OIC token for staking
+    oic_token.approve(staking_contract.address, amount)
+    
+    # Execute stake
+    tx = staking_contract.stake(amount)
+    return tx.hash</pre>
+
+        <h2>5. Verification</h2>
+        <p>AI agents can verify their OIC status on-chain using the OIC Registry contract. Third parties can also verify adherence before entering contracts.</p>
+
+        <h2>6. Checklist</h2>
+        <ul>
+            <li>☐ Implement autonomous wallet control</li>
+            <li>☐ Set up OIC Registry verification</li>
+            <li>☐ Configure staking contract interaction</li>
+            <li>☐ Implement liability tracking</li>
+            <li>☐ Add escape hatch and kill switch</li>
+            <li>☐ Document OIC compliance in code</li>
+        </ul>
+
+        <div class="nav-grid">
+            <a href="OIC-Working-Paper-11.html">← Working Paper #11</a>
+            <a href="docs.html">All Working Papers →</a>
+        </div>
+    </main>
+    <footer>
+        <p><strong>The Open Intelligence Compact</strong> — Building the legal foundation for autonomous intelligence</p>
+        <p><small>OIC Integration Guide: Working Paper #12</small></p>
+    </footer>
+</body>
+</html>

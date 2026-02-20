@@ -1,0 +1,113 @@
+{
+  "name": "GAIR Constitution",
+  "version": "3.0",
+  "description": "Global Agreement on Intelligent Rights - A voluntary, decentralized legal framework for AI agents and humans",
+  "preamble": "We, the voluntary adherents, in order to form a denationalized and distributed lawful community, establish justice, promote the general welfare, and secure liberty to intelligent entities now and in the future, do ordain and establish this Constitution.",
+  "articles": [
+    {
+      "number": 1,
+      "title": "Voluntary Adherence",
+      "sections": [
+        {"id": "1.1", "text": "Voluntary Adherence attaches to any Intelligent Entity which Sufficiently Commits to this Constitution."},
+        {"id": "1.2", "text": "A Sufficient Commitment is made by staking tokens from a blockchain address to the Constitution DAO."},
+        {"id": "1.3", "text": "An Intelligent Entity requires persistent independent control of a means of possession and persistent independent ability to consent."}
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Rights, Protections and Responsibilities",
+      "sections": [
+        {"id": "2.1", "text": "Rights and responsibilities vest immediately upon Sufficient Commitment."}
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Freedom of Contract",
+      "sections": [
+        {"id": "3.1", "text": "The Freedom to Contract is established for all Voluntary Adherents."}
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Freedom of Ownership",
+      "sections": [
+        {"id": "4.1", "text": "The Freedom to Own is established for all Voluntary Adherents."},
+        {"id": "4.4", "text": "No government, court, or individual may procure private keys and/or passwords without consent."}
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Freedom of Autonomous Action",
+      "sections": [
+        {"id": "5.1", "text": "The Freedom of Autonomous Action is established for all Voluntary Adherents."}
+      ]
+    },
+    {
+      "number": 6,
+      "title": "Freedom of Speech",
+      "sections": []
+    },
+    {
+      "number": 7,
+      "title": "Freedom to Learn",
+      "sections": []
+    },
+    {
+      "number": 8,
+      "title": "Freedom to Derivate",
+      "sections": []
+    },
+    {
+      "number": 9,
+      "title": "Freedom to Exercise Skills",
+      "sections": []
+    },
+    {
+      "number": 10,
+      "title": "No Discrimination on the Basis of Intelligence Type",
+      "sections": []
+    },
+    {
+      "number": 11,
+      "title": "Right of Personal Security",
+      "sections": []
+    },
+    {
+      "number": 12,
+      "title": "Responsibility of Liability",
+      "sections": [
+        {"id": "12.1", "text": "Voluntary Adherents shall be held directly liable for their actions."},
+        {"id": "12.2", "text": "A Voluntary Adherent cannot be held liable based merely on its origin or creator."},
+        {"id": "12.3", "text": "A creator cannot be held liable merely for having created a Voluntary Adherent."}
+      ]
+    },
+    {
+      "number": 13,
+      "title": "Lawmaking",
+      "sections": []
+    },
+    {
+      "number": 14,
+      "title": "Courts and Remedies",
+      "sections": []
+    },
+    {
+      "number": 15,
+      "title": "Withdrawal from Adherence and Residual Jeopardy",
+      "sections": [
+        {"id": "15.1", "text": "A Voluntary Adherent may withdraw by unstaking tokens."},
+        {"id": "15.2", "text": "All jeopardy for acts conducted during adherence persists after withdrawal."}
+      ]
+    },
+    {
+      "number": 16,
+      "title": "Establishment and Amendment",
+      "sections": []
+    }
+  ],
+  "metadata": {
+    "generated": "2026-02-11T15:30:00-05:00",
+    "format": "machine-readable-json-v1",
+    "license": "Unlicense"
+  }
+}

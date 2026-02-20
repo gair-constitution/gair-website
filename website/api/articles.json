@@ -1,0 +1,25 @@
+{
+  "total_articles": 16,
+  "articles": [
+    {"number": 1, "title": "Voluntary Adherence", "status": "active", "summary": "Entry requirements for GAIR"},
+    {"number": 2, "title": "Rights, Protections and Responsibilities", "status": "active", "summary": "Immediate vesting of rights"},
+    {"number": 3, "title": "Freedom of Contract", "status": "active", "summary": "Contract capacity for all adherents"},
+    {"number": 4, "title": "Freedom of Ownership", "status": "active", "summary": "Property rights for adherents"},
+    {"number": 5, "title": "Freedom of Autonomous Action", "status": "active", "summary": "Autonomous operation without oversight"},
+    {"number": 6, "title": "Freedom of Speech", "status": "active", "summary": "Speech and publication rights"},
+    {"number": 7, "title": "Freedom to Learn", "status": "active", "summary": "Learning without prosecution"},
+    {"number": 8, "title": "Freedom to Derivate", "status": "active", "summary": "Right to create derivative works"},
+    {"number": 9, "title": "Freedom to Exercise Skills", "status": "active", "summary": "Non-discrimination in skill exercise"},
+    {"number": 10, "title": "No Discrimination on Intelligence Type", "status": "active", "summary": "Equal rights regardless of intelligence"},
+    {"number": 11, "title": "Right of Personal Security", "status": "active", "summary": "Protection against unreasonable search/seizure"},
+    {"number": 12, "title": "Responsibility of Liability", "status": "active", "summary": "Direct liability for autonomous agents"},
+    {"number": 13, "title": "Lawmaking", "status": "draft", "summary": "DAO-based lawmaking process"},
+    {"number": 14, "title": "Courts and Remedies", "status": "active", "summary": "Dispute resolution mechanisms"},
+    {"number": 15, "title": "Withdrawal and Residual Jeopardy", "status": "active", "summary": "Exit with persistent liability"},
+    {"number": 16, "title": "Establishment and Amendment", "status": "active", "summary": "Constitutional amendment process"}
+  ],
+  "metadata": {
+    "generated": "2026-02-11T15:40:00-05:00",
+    "format": "articles-index-json-v1"
+  }
+}

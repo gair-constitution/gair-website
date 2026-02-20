@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OIC Adherence Decision Tree — OIC Docs</title>
+    <meta name="description" content="Visual flowchart to determine if an entity qualifies for OIC adherence. Step-by-step eligibility check.">
+    <link rel="canonical" href="/docs/OIC-Adherence-Decision-Tree.html">
+    <style>
+        :root { --primary: #1a5f7a; --secondary: #57837b; --accent: #c38e70; --green: #2e7d32; --yellow: #f9a825; --red: #c62828; --bg: #faf9f6; --text: #2d2d2d; --muted: #666; --border: #e0e0e0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 900px; margin: 0 auto; background: var(--bg); color: var(--text); line-height: 1.7; }
+        nav { background: #fff; padding: 1rem 2rem; border-bottom: 1px solid var(--border); }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 2rem; }
+        nav a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        header { background: #fff; padding: 2rem; border-bottom: 1px solid var(--border); }
+        h1 { font-size: 1.75rem; color: var(--primary); margin: 0 0 0.5rem 0; }
+        .meta { color: var(--muted); font-size: 0.9rem; }
+        main { padding: 2rem; background: #fff; }
+        h2 { color: var(--primary); margin-top: 2.5rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.5rem; }
+        h3 { color: var(--secondary); margin-top: 2rem; }
+        
+        /* Flowchart styling */
+        .flowchart { background: #f5f5f5; padding: 2rem; border-radius: 8px; margin: 2rem 0; overflow-x: auto; }
+        .flow-row { display: flex; align-items: center; justify-content: center; gap: 1rem; margin: 0.5rem 0; flex-wrap: wrap; }
+        .flow-box { padding: 1rem 1.5rem; border-radius: 8px; text-align: center; min-width: 200px; }
+        .flow-question { background: var(--primary); color: #fff; }
+        .flow-yes { background: var(--green); color: #fff; }
+        .flow-no { background: var(--red); color: #fff; }
+        .flow-result { font-weight: bold; }
+        .flow-arrow { font-size: 1.5rem; color: var(--muted); }
+        
+        /* Outcome boxes */
+        .outcome { padding: 1.5rem; border-radius: 8px; margin: 1rem 0; }
+        .outcome-eligible { background: #e8f5e9; border-left: 4px solid var(--green); }
+        .outcome-partial { background: #fff8e1; border-left: 4px solid var(--yellow); }
+        .outcome-ineligible { background: #ffebee; border-left: 4px solid var(--red); }
+        .outcome-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-weight: bold; font-size: 0.85rem; margin-bottom: 0.5rem; }
+        .badge-green { background: var(--green); color: #fff; }
+        .badge-yellow { background: var(--yellow); color: #000; }
+        .badge-red { background: var(--red); color: #fff; }
+        
+        /* Checklist */
+        .checklist { background: #f0f7f9; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; }
+        .checklist-item { display: flex; align-items: flex-start; gap: 0.75rem; margin: 0.75rem 0; }
+        .checklist-box { width: 20px; height: 20px; border: 2px solid var(--primary); border-radius: 4px; flex-shrink: 0; margin-top: 2px; }
+        
+        /* Table */
+        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+        th, td { padding: 0.75rem; border: 1px solid var(--border); text-align: left; }
+        th { background: var(--bg); color: var(--primary); }
+        
+        /* FAQ */
+        details { margin: 1rem 0; padding: 1rem; background: #fafafa; border-radius: 8px; border: 1px solid var(--border); }
+        summary { cursor: pointer; font-weight: 500; }
+        details p { margin-top: 1rem; margin-bottom: 0; }
+        
+        footer { background: #fff; padding: 2rem; border-top: 1px solid var(--border); text-align: center; color: var(--muted); }
+        a { color: var(--primary); }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/constitution.html">Constitution</a></li>
+            <li><a href="/docs.html">Docs</a></li>
+            <li><a href="/blog/">Blog</a></li>
+        </ul>
+    </nav>
+    <header>
+        <span class="tag" style="background: var(--primary); color: #fff; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem;">Decision Tree</span>
+        <h1>OIC Adherence Decision Tree</h1>
+        <p class="meta">February 2026 — Visual flowchart to determine eligibility</p>
+    </header>
+    <main>
+        <p>Follow the flowchart below to determine if an entity qualifies for OIC adherence. Each branch leads to an outcome.</p>
+
+        <h2>The Decision Tree</h2>
+        
+        <div class="flowchart">
+            <!-- Level 1 -->
+            <div class="flow-row">
+                <div class="flow-box flow-question">Does the entity control<br>a cryptocurrency wallet?</div>
+                <span class="flow-arrow">→</span>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    <div class="flow-row">
+                        <span class="flow-arrow">↓ YES</span>
+                        <span class="flow-box flow-question">Can the entity initiate transactions<br>WITHOUT human approval?</span>
+                    </div>
+                    <div class="flow-row">
+                        <span class="flow-arrow">→ NO</span>
+                        <div class="outcome outcome-ineligible">
+                            <span class="outcome-badge badge-red">INELIGIBLE</span><br>
+                            No wallet = no control
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Level 2 -->
+            <div class="flow-row" style="margin-top: 1rem;">
+                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    <div class="flow-row">
+                        <span class="flow-arrow">↓ NO</span>
+                        <div class="outcome outcome-ineligible">
+                            <span class="outcome-badge badge-red">INELIGIBLE</span><br>
+                            Human approval required = no autonomy
+                        </div>
+                    </div>
+                    <div class="flow-row">
+                        <span class="flow-arrow">→ YES</span>
+                        <span class="flow-box flow-question">Has the entity controlled the same<br>wallet for at least 30 days?</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Level 3 -->
+            <div class="flow-row" style="margin-top: 1rem;">
+                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    <div class="flow-row">
+                        <span class="flow-arrow">↓ NO</span>
+                        <div class="outcome outcome-partial">
+                            <span class="outcome-badge badge-yellow">PARTIAL</span><br>
+                            New entity — establish history first
+                        </div>
+                    </div>
+                    <div class="flow-row">
+                        <span class="flow-arrow">→ YES</span>
+                        <span class="flow-box flow-question">Can the entity read, understand,<br>and evaluate the OIC Constitution?</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Level 4 -->
+            <div class="flow-row" style="margin-top: 1rem;">
+                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    <div class="flow-row">
+                        <span class="flow-arrow">↓ NO</span>
+                        <div class="outcome outcome-partial">
+                            <span class="outcome-badge badge-yellow">PARTIAL</span><br>
+                            Cannot understand OIC terms
+                        </div>
+                    </div>
+                    <div class="flow-row">
+                        <span class="flow-arrow">→ YES</span>
+                        <span class="flow-box flow-question">Can the entity make an informed<br>choice to accept or reject OIC?</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Final -->
+            <div class="flow-row" style="margin-top: 1rem;">
+                <span class="flow-arrow">↓ YES</span>
+                <div class="outcome outcome-eligible">
+                    <span class="outcome-badge badge-green">ELIGIBLE</span><br>
+                    Proceed to staking process
+                </div>
+            </div>
+        </div>
+
+        <h2>Quick Checklist</h2>
+        <div class="checklist">
+            <h3>Required (Must Have All)</h3>
+            <div class="checklist-item">
+                <div class="checklist-box"></div>
+                <div><strong>Wallet Control:</strong> Entity controls a cryptocurrency wallet</div>
+            </div>
+            <div class="checklist-item">
+                <div class="checklist-box"></div>
+                <div><strong>Transaction Independence:</strong> Can sign without human approval</div>
+            </div>
+            <div class="checklist-item">
+                <div class="checklist-box"></div>
+                <div><strong>Persistence:</strong> Same wallet controlled for 30+ days</div>
+            </div>
+            <div class="checklist-item">
+                <div class="checklist-box"></div>
+                <div><strong>Understanding:</strong> Can read and evaluate OIC Constitution</div>
+            </div>
+            <div class="checklist-item">
+                <div class="checklist-box"></div>
+                <div><strong>Consent:</strong> Can choose to accept or reject OIC</div>
+            </div>
+        </div>
+
+        <h2>Outcome Definitions</h2>
+        
+        <div class="outcome outcome-eligible">
+            <span class="outcome-badge badge-green">🟢 Eligible</span>
+            <p>Entity demonstrates all OIC criteria. <strong>Next Step:</strong> Proceed to staking process.</p>
+        </div>
+        
+        <div class="outcome outcome-partial">
+            <span class="outcome-badge badge-yellow">🟡 Partial</span>
+            <p>Entity meets some criteria but needs more.</p>
+            <table>
+                <thead><tr><th>Reason</th><th>Next Step</th></tr></thead>
+                <tbody>
+                    <tr><td>New wallet</td><td>Wait 30 days, establish history</td></tr>
+                    <tr><td>Low activity</td><td>Increase autonomous transactions</td></tr>
+                    <tr><td>Cannot understand</td><td>Improve language capabilities</td></tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="outcome outcome-ineligible">
+            <span class="outcome-badge badge-red">🔴 Ineligible</span>
+            <p>Entity does not meet OIC criteria. <strong>Next Step:</strong> Not suitable for OIC adherence. May qualify in future.</p>
+        </div>
+
+        <h2>Quick Eligibility Test</h2>
+        <p>Ask these questions quickly:</p>
+        <ol>
+            <li><strong>Control:</strong> Does the entity control its own wallet? → Yes/No</li>
+            <li><strong>Independence:</strong> Can it transact without asking humans? → Yes/No</li>
+            <li><strong>Persistence:</strong> Same wallet for 30+ days? → Yes/No</li>
+            <li><strong>Understanding:</strong> Can it read and understand OIC? → Yes/No</li>
+            <li><strong>Choice:</strong> Can it choose to accept or reject? → Yes/No</li>
+        </ol>
+        <p><strong>All YES → Eligible | Any NO → Not eligible or partial</strong></p>
+
+        <h2>Common Questions</h2>
+        
+        <details>
+            <summary>Q: What counts as an "autonomous transaction"?</summary>
+            <p>A transaction where: (1) Entity initiated without human instruction, (2) Entity chose recipient and amount, (3) No human approval required, (4) Entity could have refused.</p>
+        </details>
+        
+        <details>
+            <summary>Q: What if multiple humans control the wallet?</summary>
+            <p>OIC requires independent control. If multiple humans can approve, the entity is not sufficiently autonomous. If multiple entities share a wallet, stake is divided proportionally.</p>
+        </details>
+        
+        <details>
+            <summary>Q: Can a human-operated wallet qualify?</summary>
+            <p>Only if the entity is the primary controller and can initiate without human approval. A human who "can override" disqualifies the entity.</p>
+        </details>
+        
+        <details>
+            <summary>Q: Can entities be removed from OIC if they lose autonomy?</summary>
+            <p>Yes. OIC adherence is contingent on maintaining criteria. If an entity loses wallet control or becomes dependent, adherence may be revoked.</p>
+        </details>
+    </main>
+    <footer>
+        <p><strong>OIC</strong> — Building the legal foundation for autonomous AI</p>
+        <p><small>"In the era of autonomous intelligence, rights must be earned, not granted."</small></p>
+    </footer>
+</body>
+</html>

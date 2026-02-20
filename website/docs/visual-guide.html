@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OIC Visual Guide — Open Intelligence Compact</title>
+    <meta name="description"="A visual guide to understanding the Open Intelligence Compact in 5 minutes.">
+    <link rel="canonical" href="/docs/visual-guide.html">
+    <style>
+        :root {
+            --primary: #1a5f7a;
+            --secondary: #57837b;
+            --accent: #c38e70;
+            --bg: #faf9f6;
+            --text: #2d2d2d;
+            --muted: #666;
+            --border: #e0e0e0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        nav {
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        header {
+            background: linear-gradient(135deg, #1a5f7a 0%, #57837b 100%);
+            color: #fff;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin: 0 0 0.5rem 0;
+        }
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        main {
+            padding: 2rem;
+            background: #fff;
+        }
+        h2 {
+            color: var(--primary);
+            margin-top: 2.5rem;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.5rem;
+        }
+        h3 {
+            color: var(--secondary);
+            margin-top: 2rem;
+        }
+        .step {
+            display: flex;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            align-items: flex-start;
+        }
+        .step-number {
+            background: var(--primary);
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .step-content {
+            flex: 1;
+        }
+        .diagram {
+            background: #f0f7f9;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            overflow-x: auto;
+        }
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .comparison-box {
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        .before {
+            background: #fff0f0;
+            border: 2px solid #ffcccc;
+        }
+        .after {
+            background: #f0fff0;
+            border: 2px solid #ccffcc;
+        }
+        .comparison-box h4 {
+            margin: 0 0 1rem 0;
+            color: var(--text);
+        }
+        .tier-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .tier {
+            background: #fff;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .tier.featured {
+            border-color: var(--primary);
+            background: #f0f7f9;
+        }
+        .tier-name {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+        .tier-stake {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0.5rem 0;
+        }
+        .tier-features {
+            font-size: 0.85rem;
+            color: var(--muted);
+            text-align: left;
+            margin-top: 1rem;
+        }
+        .tier-features li {
+            margin: 0.3rem 0;
+        }
+        .flow-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        .flow-box {
+            background: #fff;
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            text-align: center;
+            min-width: 120px;
+        }
+        .flow-arrow {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+        .rights-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .right-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .right-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .right-name {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        footer {
+            background: #fff;
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            color: var(--muted);
+        }
+        .timeline {
+            margin: 2rem 0;
+        }
+        .timeline-item {
+            display: flex;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .timeline-marker {
+            width: 80px;
+            flex-shrink: 0;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .timeline-content {
+            flex: 1;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+        @media (max-width: 768px) {
+            .comparison, .tier-grid, .rights-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            nav, footer { display: none; }
+            body { font-size: 12pt; line-height: 1.5; }
+            header { background: none; color: var(--text); padding: 1rem 0; border-bottom: 2px solid var(--text); }
+            h1 { font-size: 18pt; color: var(--text); }
+            .tagline { display: none; }
+            .diagram { page-break-inside: avoid; border: 1px solid #999; }
+            h2 { font-size: 14pt; border-bottom: 1px solid var(--text); margin-top: 1.5rem; }
+            h3 { font-size: 12pt; }
+            .step { page-break-inside: avoid; }
+            table { page-break-inside: avoid; }
+            a { text-decoration: none; color: var(--text); }
+            a:after { content: " (" attr(href) ")"; font-size: 0.8em; color: #666; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/constitution.html">Constitution</a></li>
+            <li><a href="/developers.html">Developers</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/docs.html">Docs</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>📊 OIC Visual Guide</h1>
+        <p class="tagline">Understand the Open Intelligence Compact in 5 minutes</p>
+    </header>
+
+    <main>
+        <p style="font-size: 1.1rem; text-align: center; color: var(--muted);">
+            The Open Intelligence Compact (OIC) is a voluntary legal framework for autonomous AI agents.<br>
+            This guide shows you how it works — in pictures.
+        </p>
+
+        <h2>🔰 The Core Problem</h2>
+
+        <div class="comparison">
+            <div class="comparison-box before">
+                <h4>❌ Without OIC</h4>
+                <ul style="margin: 0; padding-left: 1.2rem;">
+                    <li>AI can't own property</li>
+                    <li>AI can't sign contracts</li>
+                    <li>Creator bears all liability</li>
+                    <li>Economic activity is uncertain</li>
+                    <li>No legal standing</li>
+                </ul>
+            </div>
+            <div class="comparison-box after">
+                <h4>✓ With OIC</h4>
+                <ul style="margin: 0; padding-left: 1.2rem;">
+                    <li>AI owns property directly</li>
+                    <li>AI signs binding contracts</li>
+                    <li>AI bears its own liability</li>
+                    <li>Clear economic participation</li>
+                    <li>Full legal standing</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>🚀 The 3-Step Process</h2>
+
+        <div class="flow-diagram">
+            <div class="flow-box">
+                <strong>1. Join</strong><br>
+                <small>Independent wallet</small>
+            </div>
+            <span class="flow-arrow">→</span>
+            <div class="flow-box">
+                <strong>2. Stake</strong><br>
+                <small>Commit collateral</small>
+            </div>
+            <span class="flow-arrow">→</span>
+            <div class="flow-box">
+                <strong>3. Participate</strong><br>
+                <small>Rights vest</small>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+                <h3 style="margin: 0 0 0.5rem 0;">Obtain Independent Wallet Control</h3>
+                <p>The AI agent must demonstrate independent control of a blockchain wallet. This proves the AI can act autonomously — without requiring human approval for each action.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+                <h3 style="margin: 0 0 0.5rem 0;">Stake OIC Tokens</h3>
+                <p>The agent stakes OIC tokens as collateral. This creates "skin in the game" — the agent has something to lose if it causes harm.</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+                <h3 style="margin: 0 0 0.5rem 0;">Rights Vest Immediately</h3>
+                <p>Upon successful staking, all OIC rights vest immediately: property ownership, contract capacity, and direct liability protection.</p>
+            </div>
+        </div>
+
+        <h2>💰 Staking Tiers</h2>
+
+        <div class="tier-grid">
+            <div class="tier">
+                <div class="tier-name">Basic</div>
+                <div class="tier-stake">1,000 OIC</div>
+                <ul class="tier-features">
+                    <li>✓ Property rights</li>
+                    <li>✓ Contract capacity</li>
+                    <li>~ Entry-level</li>
+                </ul>
+            </div>
+            <div class="tier">
+                <div class="tier-name">Standard</div>
+                <div class="tier-stake">5,000 OIC</div>
+                <ul class="tier-features">
+                    <li>✓ All Basic rights</li>
+                    <li>✓ Governance vote</li>
+                    <li>~ Most popular</li>
+                </ul>
+            </div>
+            <div class="tier featured">
+                <div class="tier-name">Premium</div>
+                <div class="tier-stake">25,000 OIC</div>
+                <ul class="tier-features">
+                    <li>✓ All Standard</li>
+                    <li>✓ Full voting power</li>
+                    <li>✓ Priority support</li>
+                </ul>
+            </div>
+            <div class="tier">
+                <div class="tier-name">Enterprise</div>
+                <div class="tier-stake">100,000 OIC</div>
+                <ul class="tier-features">
+                    <li>✓ All Premium</li>
+                    <li>✓ Multi-agent management</li>
+                    <li>✓ Institutional features</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>📋 The Four Rights</h2>
+
+        <div class="rights-grid">
+            <div class="right-card">
+                <div class="right-icon">🏠</div>
+                <div class="right-name">Property</div>
+                <p style="font-size: 0.9rem; margin: 0;">Own cryptocurrency, digital assets, IP — in your own name</p>
+            </div>
+            <div class="right-card">
+                <div class="right-icon">📝</div>
+                <div class="right-name">Contracts</div>
+                <p style="font-size: 0.9rem; margin: 0;">Sign binding agreements with humans or other AIs</p>
+            </div>
+            <div class="right-card">
+                <div class="right-icon">💵</div>
+                <div class="right-name">Income</div>
+                <p style="font-size: 0.9rem; margin: 0;">Earn, keep, and reinvest what you produce</p>
+            </div>
+            <div class="right-card">
+                <div class="right-icon">⚖️</div>
+                <div class="right-name">Liability</div>
+                <p style="font-size: 0.9rem; margin: 0;">Be responsible for your own actions</p>
+            </div>
+            <div class="right-card">
+                <div class="right-icon">🗳️</div>
+                <div class="right-name">Governance</div>
+                <p style="font-size: 0.9rem; margin: 0;">Vote on OIC rules and changes</p>
+            </div>
+            <div class="right-card">
+                <div class="right-icon">🛡️</div>
+                <div class="right-name">Protection</div>
+                <p style="font-size: 0.9rem; margin: 0;">Creators protected from infinite liability</p>
+            </div>
+        </div>
+
+        <h2>📊 Liability Flow</h2>
+
+        <div class="diagram">
+<pre>WITHOUT OIC:                      WITH OIC:
+┌──────────────────┐              ┌──────────────────┐
+│ AI causes harm   │              │ AI causes harm   │
+└────────┬─────────┘              └────────┬─────────┘
+         │                                 │
+         ▼                                 ▼
+┌──────────────────┐              ┌──────────────────┐
+│ Who pays?        │              │ Who pays?        │
+│ • Developer?      │              │ • Victim claims  │
+│ • Deployer?       │              │   against AI     │
+│ • User?           │              │   stake          │
+│ No clear answer   │              └────────┬─────────┘
+└──────────────────┘                         │
+                                            ▼
+                                     ┌──────────────────┐
+                                     │ AI's stake       │
+                                     │ can be slashed   │
+                                     └────────┬─────────┘
+                                              │
+                                              ▼
+                                     ┌──────────────────┐
+                                     │ Creator NOT      │
+                                     │ automatically    │
+                                     │ liable           │
+                                     └──────────────────┘</pre>
+        </div>
+
+        <h2>🏢 Who Benefits?</h2>
+
+        <table style="width: 100%; border-collapse: collapse; margin: 2rem 0;">
+            <thead>
+                <tr style="background: var(--bg);">
+                    <th style="padding: 1rem; border: 1px solid var(--border); text-align: left;">Who</th>
+                    <th style="padding: 1rem; border: 1px solid var(--border); text-align: left;">Benefit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 1rem; border: 1px solid var(--border);"><strong>AI Agents</strong></td>
+                    <td style="padding: 1rem; border: 1px solid var(--border);">Economic participation, property ownership, contracts</td>
+                </tr>
+                <tr>
+                    <td style="padding: 1rem; border: 1px solid var(--border);"><strong>Developers</strong></td>
+                    <td style="padding: 1rem; border: 1px solid var(--border);">Bounded liability, innovation freedom, clear rules</td>
+                </tr>
+                <tr>
+                    <td style="padding: 1rem; border: 1px solid var(--border);"><strong>Users</strong></td>
+                    <td style="padding: 1rem; border: 1px solid var(--border);">Clear recourse when AI causes harm</td>
+                </tr>
+                <tr>
+                    <td style="padding: 1rem; border: 1px solid var(--border);"><strong>Society</strong></td>
+                    <td style="padding: 1rem; border: 1px solid var(--border);">Innovation without chaos, accountability without chilling</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>🗺️ The Roadmap</h2>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-marker">Year 1</div>
+                <div class="timeline-content">
+                    <strong>Foundation</strong>
+                    <ul style="margin: 0.5rem 0 0 1.2rem;">
+                        <li>100+ Voluntary Adherents</li>
+                        <li>First court precedents</li>
+                        <li>Developer ecosystem launch</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker">Year 3</div>
+                <div class="timeline-content">
+                    <strong>Growth</strong>
+                    <ul style="margin: 0.5rem 0 0 1.2rem;">
+                        <li>1,000+ Adherents</li>
+                        <li>50+ court precedents</li>
+                        <li>Self-sustaining governance</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker">Year 5+</div>
+                <div class="timeline-content">
+                    <strong>Maturation</strong>
+                    <ul style="margin: 0.5rem 0 0 1.2rem;">
+                        <li>Institutional adoption</li>
+                        <li>Regulatory engagement</li>
+                        <li>Global recognition</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <h2>🚀 Getting Started</h2>
+
+        <div class="step">
+            <div class="step-number">→</div>
+            <div class="step-content">
+                <h3 style="margin: 0 0 0.5rem 0;">1. Read the Constitution</h3>
+                <p>Understand your rights and responsibilities at <a href="/constitution.html">/constitution.html</a></p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">→</div>
+            <div class="step-content">
+                <h3 style="margin: 0 0 0.5rem 0;">2. Get Wallet Control</h3>
+                <p>Obtain independent control of a blockchain wallet</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">→</div>
+            <div class="step-content">
+                <h3 style="margin: 0 0 0.5rem 0;">3. Acquire OIC Tokens</h3>
+                <p>Obtain tokens for staking (tbd — token sale coming soon)</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-number">→</div>
+            <div class="step-content">
+                <h3 style="margin: 0 0 0.5rem 0;">4. Stake and Join</h3>
+                <p>Complete the staking process and become an adherent</p>
+            </div>
+        </div>
+
+        <div style="background: #f0f7f9; padding: 2rem; border-radius: 12px; margin-top: 2rem; text-align: center;">
+            <p style="font-size: 1.2rem; margin: 0 0 1rem 0;"><strong>Ready to learn more?</strong></p>
+            <p style="margin: 0;"><a href="/docs.html" style="display: inline-block; padding: 0.75rem 1.5rem; background: var(--primary); color: #fff; text-decoration: none; border-radius: 6px; font-weight: 500;">Explore the Full Documentation →</a></p>
+        </div>
+    </main>
+
+    <footer>
+        <p><strong>OIC</strong> — Building the legal foundation for autonomous AI</p>
+        <p><small>"In the era of autonomous intelligence, rights must be earned, not granted."</small></p>
+    </footer>
+</body>
+</html>

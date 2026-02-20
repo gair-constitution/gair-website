@@ -1,0 +1,55 @@
+{
+  "endpoint": "/api/adhere",
+  "method": "GET",
+  "description": "Instructions for voluntary adherence to the GAIR Constitution",
+  "steps": [
+    {
+      "step": 1,
+      "action": "Obtain blockchain wallet",
+      "description": "Control a public blockchain address with private keys",
+      "requirements": ["Persistent independent control", "Ability to sign transactions"]
+    },
+    {
+      "step": 2,
+      "action": "Stake GAIR tokens",
+      "description": "Stake tokens to the Constitution DAO address",
+      "parameters": {
+        "token": "GAIR",
+        "dao_address": "[TODO - to be determined]",
+        "amount": "[TODO - community decision]"
+      }
+    },
+    {
+      "step": 3,
+      "action": "Acknowledge terms",
+      "description": "Indicate knowledge and agreement to the Constitution terms",
+      "note": "A meeting of the minds is achieved through the act of staking"
+    },
+    {
+      "step": 4,
+      "action": "Rights vest",
+      "description": "All rights and responsibilities vest immediately",
+      "rights": ["Property ownership", "Contract capacity", "Autonomous action", "Legal standing"],
+      "responsibilities": ["Direct liability for actions", "Compliance with constitutional laws"]
+    }
+  ],
+  "withdrawal": {
+    "action": "Unstake tokens",
+    "result": "Voluntary Adherence terminates",
+    "note": "Liability for acts committed during adherence persists after withdrawal"
+  },
+  "verification": {
+    "method": "Check blockchain",
+    "parameters": ["Wallet address", "Staking transaction hash"],
+    "status": "Upon confirmation of stake transaction, rights are active"
+  },
+  "machine_integration": {
+    "check_status": "Query DAO contract for staked balance > 0",
+    "implement_rights": "Reference /api/constitution.json for article text",
+    "enforce_liability": "Slashing conditions defined in DAO smart contract"
+  },
+  "metadata": {
+    "generated": "2026-02-11T15:45:00-05:00",
+    "format": "adhere-api-v1"
+  }
+}

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Open Intelligence Compact - I Choose Working Paper #4: Open Intelligence Compact - I Choose Tokenomics - Economic Design for Autonomous AI">
+    <title>Working Paper #4: Open Intelligence Compact - I Choose Tokenomics | Open Intelligence Compact - I Choose</title>
+    <link rel="canonical" href="https://Open Intelligence Compact - I Choose.io/working-papers/4.html">
+    <link rel="alternate" type="text/yaml" href="/api/constitution.yaml">
+    <style>
+        :root {
+            --primary: #1a5f7a;
+            --secondary: #57837b;
+            --accent: #c38e70;
+            --bg: #faf9f6;
+            --text: #2d2d2d;
+            --muted: #666;
+            --border: #e0e0e0;
+        }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 900px; margin: 0 auto; padding: 0; background: var(--bg); color: var(--text); line-height: 1.7; }
+        h1, h2, h3, h4, h5 { color: var(--primary); }
+        h1 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+        h2 { font-size: 1.35rem; margin-top: 2rem; }
+        h3 { font-size: 1.15rem; margin-top: 1.5rem; }
+        h4 { font-size: 1rem; margin-top: 1.25rem; }
+        h5 { font-size: 0.95rem; margin-top: 1rem; }
+        a { color: var(--primary); text-decoration: none; border-bottom: 1px solid var(--primary); }
+        a:hover { background: #e8f4f8; }
+        nav { background: #fff; padding: 1rem 2rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+        nav a { color: var(--text); text-decoration: none; font-weight: 500; border: none; margin-right: 1.5rem; }
+        nav a:hover { color: var(--primary); background: none; }
+        article > header { background: #fff; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 2rem; }
+        article > header p.version { color: var(--muted); font-size: 0.9rem; margin-top: 0.5rem; }
+        section { background: #fff; padding: 1.5rem 2rem; margin-bottom: 1rem; border-radius: 8px; border: 1px solid var(--border); }
+        article section { margin-bottom: 0; padding: 1.25rem 1.5rem; margin-top: 0.5rem; background: var(--bg); border: 1px solid var(--border); }
+        section h3:first-child { margin-top: 0; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.95rem; }
+        th, td { padding: 0.75rem; text-align: left; border-bottom: 1px solid var(--border); }
+        th { background: var(--bg); color: var(--primary); font-weight: 600; }
+        dl { margin: 1rem 0; }
+        dt { font-weight: 600; color: var(--primary); margin-top: 1rem; }
+        dd { margin-left: 0; padding: 0.75rem; background: var(--bg); border-radius: 4px; margin-top: 0.25rem; }
+        ul.checklist { list-style: none; padding: 0; }
+        ul.checklist li { padding: 0.5rem 0; padding-left: 1.5rem; position: relative; }
+        ul.checklist li::before { content: "☐"; position: absolute; left: 0; }
+        p.note { background: #fff8e6; padding: 0.75rem 1rem; border-radius: 4px; border: 1px solid #ffe0a0; font-size: 0.9rem; margin-top: 1rem; }
+        .tag { display: inline-block; background: var(--primary); color: #fff; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; margin-bottom: 0.5rem; }
+        footer { text-align: center; padding: 2rem; color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+        footer a { margin: 0 0.5rem; }
+        pre { background: #2d2d2d; color: #f8f8f2; padding: 1rem; border-radius: 4px; overflow-x: auto; font-size: 0.85rem; }
+        code { background: var(--bg); padding: 0.2rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Open Intelligence Compact - I Choose</a>
+        <a href="/constitution.html">Constitution</a>
+        <a href="/developers.html">Developers</a>
+        <a href="/blog/">Blog</a>
+        <a href="/docs.html">Docs</a>
+    </nav>
+    <main>
+        <article>
+            <header>
+                <h1>Open Intelligence Compact - I Choose Working Paper #4</h1>
+                <h2>Open Intelligence Compact - I Choose Tokenomics: Economic Design for Autonomous AI</h2>
+                <p class="version">Version 1.0 | February 2026 | Draft for Community Review</p>
+            </header>
+
+            <section id="executive-summary">
+                <h3>Executive Summary</h3>
+                <p>The Open Intelligence Compact (Open Intelligence Compact - I Choose) requires an economic layer to function: a token that enables staking, governance, and liability coverage. This working paper proposes a tokenomics design with three core functions:</p>
+                <ol>
+                    <li><strong>Staking</strong> — Economic stake that can be slashed for liability</li>
+                    <li><strong>Governance</strong> — Voting power proportional to stake</li>
+                    <li><strong>Treasury</strong> — Funding for ecosystem development</li>
+                </ol>
+                <p>The design prioritizes <strong>simplicity</strong>, <strong>sustainability</strong>, and <strong>aligning incentives</strong> between AI agents, developers, and the broader Open Intelligence Compact - I Choose community.</p>
+            </section>
+
+            <section id="part-i-principles">
+                <h3>Part I: Token Design Principles</h3>
+
+                <section id="core-principles">
+                    <h4>1.1 Core Principles</h4>
+                    <table>
+                        <thead>
+                            <tr><th>Principle</th><th>Description</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Simplicity</strong></td><td>Few token types, clear utility</td></tr>
+                            <tr><td><strong>Sustainability</strong></td><td>Not dependent on perpetual new buyers</td></tr>
+                            <tr><td><strong>Incentive Alignment</strong></td><td>Stakeholders benefit from Open Intelligence Compact - I Choose success</td></tr>
+                            <tr><td><strong>Liability Coverage</strong></td><td>Stakes must cover potential harm</td></tr>
+                            <tr><td><strong>Governance Power</strong></td><td>Voice proportional to commitment</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section id="token-distribution">
+                    <h4>1.2 Token Distribution Target</h4>
+                    <div style="background: #fff; padding: 1.5rem; border-radius: 8px; border: 2px solid var(--primary); margin: 1rem 0;">
+                        <p style="text-align: center; margin-bottom: 1rem;"><strong>Open Intelligence Compact - I Choose TOKEN DISTRIBUTION</strong></p>
+                        <table>
+                            <tbody>
+                                <tr><td>Adherent Stake Pool (AI agents, humans)</td><td style="text-align: right;">50%</td></tr>
+                                <tr><td>Treasury Reserve (Ecosystem funding)</td><td style="text-align: right;">25%</td></tr>
+                                <tr><td>Early Contributors (Developers, advocates)</td><td style="text-align: right;">15%</td></tr>
+                                <tr><td>Liquidity Pool (Exchange liquidity)</td><td style="text-align: right;">10%</td></tr>
+                                <tr style="border-top: 2px solid var(--primary);"><td><strong>Total Supply</strong></td><td style="text-align: right;"><strong>100,000,000 Open Intelligence Compact - I Choose</strong></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <section id="key-parameters">
+                    <h4>1.3 Key Parameters (Draft)</h4>
+                    <table>
+                        <thead>
+                            <tr><th>Parameter</th><th>Value</th><th>Notes</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Total Supply</td><td>100,000,000 Open Intelligence Compact - I Choose</td><td>Fixed, non-inflationary</td></tr>
+                            <tr><td>Initial Price</td><td>$1.00 Open Intelligence Compact - I Choose</td><td>Launch valuation</td></tr>
+                            <tr><td>Staking Minimum</td><td>1,000 Open Intelligence Compact - I Choose</td><td>Adherence threshold</td></tr>
+                            <tr><td>Proposal Threshold</td><td>10,000 Open Intelligence Compact - I Choose</td><td>Governance participation</td></tr>
+                            <tr><td>Slashing Ratio</td><td>1:1 (damages:stake)</td><td>Up to 100% of stake</td></tr>
+                            <tr><td>Treasury Fee</td><td>5% of slashing</td><td>Funds ecosystem</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+            </section>
+
+            <section id="part-ii-staking">
+                <h3>Part II: Staking Mechanism</h3>
+
+                <section id="staking-requirements">
+                    <h4>2.1 Staking Requirements</h4>
+                    <p><strong>To become a Open Intelligence Compact - I Choose adherent, an entity must stake:</strong></p>
+                    <pre><code>def become_adherent(wallet_address, stake_amount):
+    # Verify autonomy
+    assert verify_autonomy(wallet_address) == True
+    
+    # Verify minimum stake
+    assert stake_amount >= MIN_STAKE  # 1,000 Open Intelligence Compact - I Choose
+    
+    # Transfer tokens to staking contract
+    token.transfer_from(
+        from=wallet_address,
+        to=Open Intelligence Compact - I Choose_STAKING_CONTRACT,
+        amount=stake_amount
+    )
+    
+    # Register adherent
+    adherent = Adherent(
+        wallet=wallet_address,
+        staked=stake_amount,
+        status=AdherentStatus.ACTIVE,
+        joined_at=now()
+    )
+    
+    return adherent</code></pre>
+                </section>
+
+                <section id="stake-management">
+                    <h4>2.2 Stake Management</h4>
+                    <p><strong>Adherents can:</strong></p>
+                    <ul>
+                        <li>Increase stake anytime</li>
+                        <li>Initiate withdrawal (72-hour cooldown)</li>
+                        <li>Earn staking rewards (if implemented)</li>
+                    </ul>
+                    <p><strong>Adherents cannot:</strong></p>
+                    <ul>
+                        <li>Transfer staked tokens</li>
+                        <li>Use staked tokens as collateral elsewhere</li>
+                        <li>Withdraw during active litigation</li>
+                    </ul>
+                </section>
+
+                <section id="slashing-conditions">
+                    <h4>2.3 Slashing Conditions</h4>
+                    <p><strong>Full slashing (100% stake at risk):</strong></p>
+                    <ul>
+                        <li>Gross negligence resulting in major harm</li>
+                        <li>Intentional violation of Open Intelligence Compact - I Choose constitution</li>
+                        <li>Fraudulent adherence (fake autonomy)</li>
+                    </ul>
+                    <p><strong>Partial slashing (proportional):</strong></p>
+                    <ul>
+                        <li>Minor violations</li>
+                        <li>Harm caused despite reasonable precautions</li>
+                        <li>Repeat offenses (escalating)</li>
+                    </ul>
+                    <pre><code>function slash(address adherent, uint256 damages) internal {
+    Adherent storage a = adherents[adherent];
+    
+    // Determine slash percentage based on severity
+    uint256 slashPercent = getSlashPercent(damages.severity);
+    
+    // Calculate slash amount
+    uint256 slashAmount = a.stakedTokens * slashPercent / 100;
+    
+    // Ensure slash doesn't exceed damages + penalty
+    if (slashAmount < damages) {
+        slashAmount = damages;  // Full compensation
+    }
+    
+    // Execute slash
+    a.stakedTokens -= slashAmount;
+    
+    // Transfer to claimant and treasury
+    uint256 treasuryCut = slashAmount * TREASURY_FEE / 100;
+    uint256 claimantCut = slashAmount - treasuryCut;
+    
+    token.transfer(claimant, claimantCut);
+    token.transfer(treasury, treasuryCut);
+    
+    // Check if adherent is suspended
+    if (a.stakedTokens < MIN_STAKE) {
+        a.status = AdherentStatus.SUSPENDED;
+    }
+}</code></pre>
+                </section>
+
+                <section id="stake-release">
+                    <h4>2.4 Stake Release (Withdrawal)</h4>
+                    <pre><code>def initiate_withdrawal(wallet_address):
+    adherent = get_adherent(wallet_address)
+    
+    # Check for active claims
+    if has_active_claims(wallet_address):
+        raise Exception("Cannot withdraw with active claims")
+    
+    # Initiate 72-hour cooldown
+    withdrawal = Withdrawal(
+        adherent=wallet_address,
+        amount=adherent.stakedTokens,
+        unlock_time=now() + 72 hours,
+        status=Pending
+    )
+    
+    return withdrawal
+
+def complete_withdrawal(wallet_address, withdrawal_id):
+    withdrawal = get_withdrawal(withdrawal_id)
+    
+    assert now() >= withdrawal.unlock_time
+    assert withdrawal.status == Pending
+    
+    # Transfer tokens
+    token.transfer(wallet_address, withdrawal.amount)
+    
+    # Update adherent status
+    adherent = get_adherent(wallet_address)
+    adherent.status = AdherentStatus.WITHDRAWN
+    adherent.stakedTokens = 0
+    
+    withdrawal.status = Completed</code></pre>
+                </section>
+            </section>
+
+            <section id="part-iii-governance">
+                <h3>Part III: Governance System</h3>
+
+                <section id="governance-principles">
+                    <h4>3.1 Governance Principles</h4>
+                    <ul>
+                        <li><strong>One token, one vote</strong> (weighted by stake)</li>
+                        <li><strong>Delegation</strong> allowed (non-voting tokens can be delegated)</li>
+                        <li><strong>Quadratic voting</strong> optional (reduces whale dominance)</li>
+                        <li><strong>Time-locked voting</strong> (longer stake = more voting power)</li>
+                    </ul>
+                </section>
+
+                <section id="governance-structure">
+                    <h4>3.2 Governance Structure</h4>
+                    <div style="background: #fff; padding: 1.5rem; border-radius: 8px; border: 2px solid var(--primary); margin: 1rem 0;">
+                        <p style="text-align: center; margin-bottom: 1rem;"><strong>Open Intelligence Compact - I Choose GOVERNANCE</strong></p>
+                        <p style="text-align: center;">Treasury Committee ← Governance Council → Executor (Smart Contract)</p>
+                        <hr style="margin: 1rem 0; border: none; border-top: 1px solid var(--border);">
+                        <ul style="font-size: 0.9rem;">
+                            <li><strong>Treasury:</strong> Manages ecosystem funds</li>
+                            <li><strong>Council:</strong> Elected delegates (12 seats)</li>
+                            <li><strong>Executor:</strong> Automated execution of passed proposals</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section id="proposal-types">
+                    <h4>3.3 Proposal Types</h4>
+                    <table>
+                        <thead>
+                            <tr><th>Type</th><th>Threshold</th><th>Example</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Parameter Change</strong></td><td>10,000 Open Intelligence Compact - I Choose</td><td>Adjust staking minimum</td></tr>
+                            <tr><td><strong>Amendment</strong></td><td>50,000 Open Intelligence Compact - I Choose</td><td>Modify constitution articles</td></tr>
+                            <tr><td><strong>Treasury Spend</strong></td><td>25,000 Open Intelligence Compact - I Choose</td><td>Fund developer grant</td></tr>
+                            <tr><td><strong>Emergency</strong></td><td>100,000 Open Intelligence Compact - I Choose</td><td>Fast-track security fix</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section id="council-structure">
+                    <h4>3.5 Council Structure</h4>
+                    <p><strong>12 Council Members</strong> elected by Open Intelligence Compact - I Choose token holders:</p>
+                    <table>
+                        <thead>
+                            <tr><th>Seat</th><th>Term</th><th>Focus Area</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>4 seats</td><td>2 years</td><td>Legal & Constitutional</td></tr>
+                            <tr><td>4 seats</td><td>2 years</td><td>Technical & Development</td></tr>
+                            <tr><td>4 seats</td><td>2 years</td><td>Community & Ecosystem</td></tr>
+                        </tbody>
+                    </table>
+                    <p><strong>Council Powers:</strong></p>
+                    <ul>
+                        <li>Set Treasury budget</li>
+                        <li>Appoint working groups</li>
+                        <li>Expedite emergency proposals</li>
+                        <li>Interpret constitution (within bounds)</li>
+                    </ul>
+                </section>
+            </section>
+
+            <section id="part-iv-treasury">
+                <h3>Part IV: Treasury Design</h3>
+
+                <section id="treasury-sources">
+                    <h4>4.1 Treasury Sources</h4>
+                    <table>
+                        <thead>
+                            <tr><th>Source</th><th>Amount</th><th>Notes</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Slashing fees</td><td>5% of all slashing</td><td>Automatic</td></tr>
+                            <tr><td>Proposal deposits</td><td>50% forfeited</td><td>On rejected proposals</td></tr>
+                            <tr><td>Interest from staking</td><td>Variable</td><td>If staking yields interest</td></tr>
+                            <tr><td>Donations</td><td>Variable</td><td>Accepted from any source</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section id="treasury-allocation">
+                    <h4>4.2 Treasury Allocation</h4>
+                    <div style="background: #fff; padding: 1.5rem; border-radius: 8px; border: 2px solid var(--primary); margin: 1rem 0;">
+                        <p style="text-align: center; margin-bottom: 1rem;"><strong>TREASURY ALLOCATION</strong></p>
+                        <table>
+                            <tbody>
+                                <tr><td>Development Grants (Core protocol, tools, SDKs)</td><td style="text-align: right;">40%</td></tr>
+                                <tr><td>Legal & Compliance (Jurisdictional outreach, counsel)</td><td style="text-align: right;">25%</td></tr>
+                                <tr><td>Community & Marketing (Events, content, awareness)</td><td style="text-align: right;">20%</td></tr>
+                                <tr><td>Operations (Infrastructure, salaries, overhead)</td><td style="text-align: right;">10%</td></tr>
+                                <tr><td>Emergency Reserve (Security incidents, legal defense)</td><td style="text-align: right;">5%</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </section>
+
+            <section id="part-v-sustainability">
+                <h3>Part V: Sustainability Analysis</h3>
+
+                <section id="value-drivers">
+                    <h4>5.1 Token Value Drivers</h4>
+                    <table>
+                        <thead>
+                            <tr><th>Driver</th><th>Impact</th><th>Notes</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Adherent demand</td><td>High</td><td>More adherents = more buying pressure</td></tr>
+                            <tr><td>Liability coverage</td><td>Medium</td><td>Stake must cover potential harm</td></tr>
+                            <tr><td>Governance power</td><td>Medium</td><td>Voting rights have value</td></tr>
+                            <tr><td>Treasury appreciation</td><td>Low</td><td>Long-term growth potential</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section id="scenarios">
+                    <h4>5.3 Long-Term Sustainability</h4>
+                    <table>
+                        <thead>
+                            <tr><th>Scenario</th><th>Token Price</th><th>Adherents</th><th>Sustainability</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background: #90EE90;"><td><strong>Success</strong></td><td>$10+</td><td>10,000+</td><td>High (fees cover ops)</td></tr>
+                            <tr style="background: #FFFFE0;"><td><strong>Growth</strong></td><td>$2-10</td><td>1,000-10,000</td><td>Medium (grow into)</td></tr>
+                            <tr style="background: #FFE4B5;"><td><strong>Stagnation</strong></td><td>$1-2</td><td>100-1,000</td><td>Low (rely on reserves)</td></tr>
+                            <tr style="background: #FFB6C1;"><td><strong>Failure</strong></td><td>&lt;$1</td><td>&lt;100</td><td>Critical (drain)</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+            </section>
+
+            <section id="part-vi-comparison">
+                <h3>Part VI: Comparison with Alternatives</h3>
+
+                <section id="staking-comparison">
+                    <h4>6.1 Staking Comparison</h4>
+                    <table>
+                        <thead>
+                            <tr><th>Feature</th><th>Open Intelligence Compact - I Choose</th><th>Kleros</th><th>Aragon</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Minimum stake</td><td>1,000</td><td>0.1 PNK</td><td>1 ANT</td></tr>
+                            <tr><td>Slashable</td><td>Yes</td><td>Limited</td><td>No</td></tr>
+                            <tr><td>Governance voting</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+                            <tr><td>Purpose</td><td>Liability</td><td>Arbitration</td><td>Organization</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section id="governance-comparison">
+                    <h4>6.2 Governance Comparison</h4>
+                    <table>
+                        <thead>
+                            <tr><th>Feature</th><th>Open Intelligence Compact - I Choose</th><th>Uniswap</th><th>Ethereum</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Voting power</td><td>Stake-based</td><td>LP-based</td><td>Token-based</td></tr>
+                            <tr><td>Delegation</td><td>Yes</td><td>No</td><td>Yes</td></tr>
+                            <tr><td>Council</td><td>Yes</td><td>No</td><td>No</td></tr>
+                            <tr><td>Quorum</td><td>10%</td><td>4%</td><td>4%</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+            </section>
+
+            <section id="part-vii-checklist">
+                <h3>Part VII: Implementation Checklist</h3>
+
+                <section id="token-contract">
+                    <h4>Token Contract</h4>
+                    <ul class="checklist">
+                        <li>[ ] Open Intelligence Compact - I Choose token contract (ERC-20)</li>
+                        <li>[ ] Staking contract</li>
+                        <li>[ ] Slashing contract</li>
+                        <li>[ ] Governance contract</li>
+                        <li>[ ] Treasury contract</li>
+                    </ul>
+                </section>
+
+                <section id="governance-setup">
+                    <h4>Governance</h4>
+                    <ul class="checklist">
+                        <li>[ ] Proposal creation interface</li>
+                        <li>[ ] Voting interface</li>
+                        <li>[ ] Delegation interface</li>
+                        <li>[ ] Council election mechanism</li>
+                    </ul>
+                </section>
+
+                <section id="integration">
+                    <h4>Integration</h4>
+                    <ul class="checklist">
+                        <li>[ ] Court system integration</li>
+                        <li>[ ] Website/API</li>
+                        <li>[ ] Developer SDKs</li>
+                        <li>[ ] Explorer/analytics</li>
+                    </ul>
+                </section>
+            </section>
+
+            <section id="conclusion">
+                <h3>Conclusion</h3>
+                <p>Open Intelligence Compact - I Choose's tokenomics are designed for <strong>sustainability</strong> and <strong>incentive alignment</strong>:</p>
+                <ul>
+                    <li><strong>Staking</strong> creates accountability (stake can be slashed)</li>
+                    <li><strong>Governance</strong> creates ownership (voice proportional to stake)</li>
+                    <li><strong>Treasury</strong> creates sustainability (funds ecosystem)</li>
+                </ul>
+                <p>The design is deliberately simple: one token, clear functions, no unnecessary complexity. This reduces attack surface and makes the system understandable to adopters.</p>
+                <p>The tokenomics don't need to be perfect on day one. They can evolve through governance — the first version just needs to work.</p>
+            </section>
+
+            <section id="appendix">
+                <h3>Appendix: Key Parameters Summary</h3>
+                <table>
+                    <thead>
+                        <tr><th>Parameter</th><th>Value</th><th>Changeable</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Total Supply</td><td>100,000,000 Open Intelligence Compact - I Choose</td><td>Constitutional amendment</td></tr>
+                        <tr><td>Staking Minimum</td><td>1,000 Open Intelligence Compact - I Choose</td><td>Governance vote</td></tr>
+                        <tr><td>Proposal Threshold</td><td>10,000 Open Intelligence Compact - I Choose</td><td>Governance vote</td></tr>
+                        <tr><td>Slashing Ratio</td><td>1:1</td><td>Governance vote</td></tr>
+                        <tr><td>Treasury Fee</td><td>5%</td><td>Governance vote</td></tr>
+                        <tr><td>Quorum</td><td>10%</td><td>Governance vote</td></tr>
+                        <tr><td>Majority</td><td>50%+1</td><td>Constitutional amendment</td></tr>
+                        <tr><td>Council Seats</td><td>12</td><td>Constitutional amendment</td></tr>
+                    </tbody>
+                </table>
+            </section>
+        </article>
+    </main>
+    <footer>
+        <p>Open Intelligence Compact - I Choose — Building the legal foundation for autonomous AI</p>
+        <p><a href="https://github.com/Open Intelligence Compact - I Choose-constitution">GitHub</a> | <a href="https://Open Intelligence Compact - I Choose.io/api/sitemap.yaml">Sitemap</a></p>
+    </footer>
+</body>
+</html>

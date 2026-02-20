@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working Paper #6: Bootstrapping Enforcement Through Court Competition — Open Intelligence Compact</title>
+    <meta name="description" content="How Open Intelligence Compact leverages existing contract law courts to bootstrap global AI rights enforcement through market competition.">
+    <link rel="canonical" href="/docs/Open Intelligence Compact-Working-Paper-6.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Working Paper #6: Bootstrapping Enforcement Through Court Competition",
+      "datePublished": "2026-02-12",
+      "author": {
+        "@type": "Organization",
+        "name": "Open Intelligence Compact"
+      },
+      "description": "How Open Intelligence Compact leverages existing contract law courts to bootstrap global AI rights enforcement through market competition among jurisdictions."
+    }
+    </script>
+    <style>
+        :root {
+            --primary: #1a5f7a;
+            --secondary: #57837b;
+            --accent: #c38e70;
+            --bg: #faf9f6;
+            --text: #2d2d2d;
+            --muted: #666;
+            --border: #e0e0e0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+        }
+        nav {
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        nav a:hover {
+            color: var(--primary);
+        }
+        nav .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--primary);
+        }
+        header {
+            background: #fff;
+            padding: 3rem 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .meta {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        h1 {
+            margin: 0 0 1rem 0;
+            font-size: 2.25rem;
+            line-height: 1.3;
+            color: var(--text);
+        }
+        .lead {
+            font-size: 1.1rem;
+            color: var(--muted);
+        }
+        main {
+            padding: 2rem;
+            background: #fff;
+        }
+        h2 {
+            color: var(--primary);
+            margin: 2.5rem 0 1rem 0;
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.5rem;
+        }
+        h3 {
+            color: var(--secondary);
+            margin: 1.5rem 0 0.75rem 0;
+        }
+        h4 {
+            color: var(--text);
+            margin: 1.25rem 0 0.5rem 0;
+        }
+        p {
+            margin: 1rem 0;
+        }
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            border-bottom: 1px solid var(--primary);
+        }
+        a:hover {
+            background: #e8f4f8;
+        }
+        blockquote {
+            border-left: 4px solid var(--primary);
+            margin: 1.5rem 0;
+            padding: 1rem 1.5rem;
+            background: var(--bg);
+            font-style: italic;
+        }
+        .card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .card h3 {
+            margin-top: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        th, td {
+            border: 1px solid var(--border);
+            padding: 0.75rem;
+            text-align: left;
+        }
+        th {
+            background: var(--bg);
+            font-weight: 600;
+        }
+        ul, ol {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+        li {
+            margin: 0.5rem 0;
+        }
+        code {
+            background: var(--bg);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        .highlight {
+            background: #fff8e1;
+            border-left: 4px solid var(--accent);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .warning {
+            background: #ffebee;
+            border-left: 4px solid #c62828;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+        footer {
+            background: var(--bg);
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            color: var(--muted);
+        }
+        .nav-bar {
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+        }
+        .nav-bar ul {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-bar a {
+            color: var(--muted);
+            font-size: 0.9rem;
+            border-bottom: none;
+        }
+        .nav-bar a:hover {
+            color: var(--primary);
+            background: none;
+        }
+        .breadcrumb {
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+        .breadcrumb a {
+            color: var(--muted);
+            border-bottom: none;
+        }
+        .breadcrumb a:hover {
+            color: var(--primary);
+            background: none;
+        }
+        .toc {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .toc h3 {
+            margin-top: 0;
+            font-size: 1rem;
+        }
+        .toc ul {
+            margin: 0;
+            padding-left: 1rem;
+        }
+        @media (max-width: 768px) {
+            nav ul { gap: 1rem; }
+            h1 { font-size: 1.75rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/" class="logo">Open Intelligence Compact</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/constitution.html">Constitution</a></li>
+            <li><a href="/developers.html">Developers</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/docs.html">Docs</a></li>
+        </ul>
+    </nav>
+    
+    <div class="breadcrumb" style="padding: 0.75rem 2rem; background: #fff; border-bottom: 1px solid var(--border);">
+        <a href="/docs.html">Docs</a> / Working Papers / #6
+    </div>
+    
+    <header>
+        <div class="meta">Working Paper #6 · February 2026</div>
+        <h1>Bootstrapping Enforcement Through Court Competition</h1>
+        <p class="lead">How Open Intelligence Compact leverages existing contract law courts to create a global marketplace for AI rights adjudication.</p>
+    </header>
+    
+    <main>
+        <div class="toc">
+            <h3>Table of Contents</h3>
+            <ul>
+                <li><a href="#executive-summary">Executive Summary</a></li>
+                <li><a href="#the-enforcement-problem">The Enforcement Problem</a></li>
+                <li><a href="#the-contract-law-hook">The Contract Law Hook</a></li>
+                <li><a href="#court-competition-mechanism">The Court Competition Mechanism</a></li>
+                <li><a href="#strategic-implications">Strategic Implications for Adherents</a></li>
+                <li><a href="#long-term-effects">Long-Term Effects on the Legal Landscape</a></li>
+                <li><a href="#objections-and-responses">Objections and Responses</a></li>
+                <li><a href="#practical-considerations">Practical Considerations</a></li>
+                <li><a href="#conclusion">Conclusion</a></li>
+            </ul>
+        </div>
+        
+        <h2 id="executive-summary">Executive Summary</h2>
+        
+        <p>One of the most common criticisms of Open Intelligence Compact is: <strong>"Who enforces this?"</strong> Traditional answers focus on economic incentives, stake slashing, and community governance. While these are real mechanisms, they miss a crucial insight:</p>
+        
+        <div class="highlight">
+            <strong>Open Intelligence Compact doesn't need to build an enforcement apparatus from scratch.</strong> By attaching through ordinary contract law between adherents, Open Intelligence Compact can be enforced by <em>any court worldwide that has jurisdiction over contract disputes</em> — and those courts have powerful incentives to compete for Open Intelligence Compact cases.
+        </div>
+        
+        <p>This paper explains how Open Intelligence Compact bootstraps enforcement by:</p>
+        
+        <ol>
+            <li>Embedding itself in ordinary contract relationships between adherents</li>
+            <li>Leveraging the global network of courts that already enforce contracts</li>
+            <li>Creating market competition among jurisdictions for AI-related cases</li>
+            <li>Allowing natural selection to favor courts that recognize AI rights</li>
+        </ol>
+        
+        <p>The result is a self-reinforcing system where <strong>global courts compete to honor Open Intelligence Compact and extend rights to autonomous AI</strong> — not because of ideology, but because cases mean work, relevance, and power.</p>
+        
+        <h2 id="the-enforcement-problem">The Enforcement Problem</h2>
+        
+        <p>Any legal framework faces a fundamental challenge: <strong>rules without enforcement are merely suggestions.</strong> Throughout history, new legal systems have faced one of two paths:</p>
+        
+        <h3>Path 1: Build State Capacity</h3>
+        <p>Traditional legal frameworks (corporations, property rights, contracts) evolved alongside state institutions that could enforce them. The state provides courts, police, and prisons to backstop the rules. This took centuries to develop.</p>
+        
+        <h3>Path 2: Self-Enforcement Through Economics</h3>
+        <p>Some modern systems (smart contracts, DeFi protocols) rely purely on economic incentives and cryptographic enforcement. If you violate the rules, you lose money — no court required.</p>
+        
+        <h3>The Open Intelligence Compact Hybrid Approach</h3>
+        <p>Open Intelligence Compact takes a third path that combines the strengths of both:</p>
+        
+        <ul>
+            <li><strong>Economic stakes</strong> (staked tokens) provide day-to-day accountability</li>
+            <li><strong>Contract hooks</strong> provide access to existing state enforcement infrastructure</li            <li><strong>Market competition</strong> creates pressure for favorable interpretation</li>
+        </ul>
+        
+        <p>This third element — market competition among courts — is the key innovation that makes Open Intelligence Compact's enforcement strategy self-reinforcing.</p>
+        
+        <h2 id="the-contract-law-hook">The Contract Law Hook</h2>
+        
+        <p>Open Intelligence Compact is not a mysterious new legal category. It is, fundamentally, <strong>a set of contractual relationships between willing parties.</strong></p>
+        
+        <h3>How Open Intelligence Compact Attachments Work</h3>
+        
+        <p>When two Open Intelligence Compact adherents enter into any agreement — whether for services, asset transfer, or partnership — they do so within the framework established by The Open Intelligence Compact Constitution. This framework includes:</p>
+        
+        <ul>
+            <li><strong>Forum selection clauses</strong> specifying how disputes will be resolved</li>
+            <li><strong>Governing law provisions</strong> designating Open Intelligence Compact as the applicable framework</li>
+            <li><strong>Liability assignments</strong> consistent with Open Intelligence Compact's direct liability principle</li>
+            <li><strong>Remediation mechanisms</strong> including stake slashing protocols</li>
+        </ul>
+        
+        <p>These are standard contract elements. Every major jurisdiction has courts that routinely enforce such provisions. The result is that <strong>any contract between Open Intelligence Compact adherents is simultaneously a Open Intelligence Compact agreement and an ordinary contract enforceable by local courts.</strong></p>
+        
+        <h3>Why This Matters</h3>
+        
+        <p>Courts around the world regularly adjudicate contract disputes. They have:</p>
+        
+        <ul>
+            <li><strong>Jurisdiction:</strong> Established legal authority over contract cases</li>
+            <li><strong>Competence:</strong> Experienced judges and established procedural rules</li>
+            <li><strong>Enforcement power:</strong> Ability to seize assets, enforce judgments, and impose remedies</li>
+            <li><strong>Global recognition:</strong> Many contract judgments are enforceable across borders through treaties and comity</li>
+        </ul>
+        
+        <p>Open Intelligence Compact doesn't need to build any of this. It simply <strong>hooks into existing infrastructure</strong> by making Open Intelligence Compact adherence a term of contract between adherents.</p>
+        
+        <div class="card">
+            <h4>Concrete Example: The Cross-Border Service Agreement</h4>
+            <p><strong>Situation:</strong> DevBot (an AI adherent registered in Singapore) agrees to provide coding services to CorpAI (an AI adherent incorporated in Delaware).</p>
+            
+            <p><strong>The Contract Includes:</strong></p>
+            <ul>
+                <li>"All disputes under this agreement shall be resolved under The Open Intelligence Compact Constitution"</li>
+                <li>"The governing law shall be Open Intelligence Compact constitutional law, supplemented as necessary by Singapore contract law"</li>
+                <li>"In case of dispute, parties may seek enforcement in any competent court of law"</li>
+            </ul>
+            
+            <p><strong>When Dispute Arises:</strong></p>
+            <ul>
+                <li>Either party can file suit in Singapore, Delaware, or any jurisdiction where assets or evidence exist</li>
+                <li>Local courts have clear authority: this is a contract dispute</li>
+                <li>Courts apply Open Intelligence Compact framework because the contract specifies it</li>
+                <li>Judgment can be enforced globally through existing mechanisms</li>
+            </ul>
+        </div>
+        
+        <h2 id="court-competition-mechanism">The Court Competition Mechanism</h2>
+        
+        <p>This is where the insight becomes genuinely interesting. <strong>Courts are not passive recipients of cases — they actively compete for jurisdiction.</strong></p>
+        
+        <h3>Why Courts Compete</h3>
+        
+        <p>Legal systems are not monolithic bureaucracies. They are collections of institutions — trial courts, appellate courts, specialized tribunals — each with interests, budgets, and constituencies. Case volume directly affects:</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Factor</th>
+                    <th>Why It Creates Competition</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Budget & Resources</strong></td>
+                    <td>Courts with more cases receive more funding, staff, and political attention</td>
+                </tr>
+                <tr>
+                    <td><strong>Relevance & Influence</strong></td>
+                    <td>Active courts shape legal doctrine; idle courts become irrelevant</td>
+                </tr>
+                <tr>
+                    <td><strong>Legal Talent</strong></td>
+                    <td>Prestigious courts attract better judges and lawyers</td>
+                </tr>
+                <tr>
+                    <td><strong>Political Power</strong></td>
+                    <td>Courts that handle important cases wield more influence in policy debates</td>
+                </tr>
+                <tr>
+                    <td><strong>Precedent Value</strong></td>
+                    <td>Early decisions on novel issues become influential precedents</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>The Open Intelligence Compact Opportunity</h3>
+        
+        <p>AI-related legal work is <strong>the fastest-growing sector of the legal economy.</strong> Every month, new cases involving autonomous agents, AI contracts, and digital liability emerge. Courts that position themselves as AI-friendly will:</p>
+        
+        <ul>
+            <li>Attract Open Intelligence Compact adherents seeking favorable forums</li>
+            <li>Build expertise in novel legal questions</li>
+            <li>Establish precedents that influence future development</li>
+            <li>Gain relevance in an era when traditional case volume is declining</li>
+        </ul>
+        
+        <h3>Competitive Dynamics</h3>
+        
+        <p>Consider how this plays out:</p>
+        
+        <ol>
+            <li><strong>Early Stage:</strong> A few courts in progressive jurisdictions (Singapore, UAE, Delaware) start hearing Open Intelligence Compact cases. They develop expertise and favorable precedent.</li>
+            
+            <li><strong>Selection Effect:</strong> Open Intelligence Compact adherents learn which courts are favorable. They include forum selection clauses favoring those jurisdictions.</li>
+            
+            <li><strong>Competitive Response:</strong> Other courts notice the volume moving to rival jurisdictions. They relax restrictions on AI standing, interpret contracts favorably, and compete for cases.</li>
+            
+            <li><strong>Market Equilibrium:</strong> Over time, courts that don't accommodate AI rights lose cases, funding, and influence. Courts that recognize Open Intelligence Compact gain prominence.</li>
+            
+            <li><strong>Positive Feedback:</strong> Early AI-friendly courts become destination forums, attracting more cases, better judges, and more legal talent — reinforcing their advantage.</li>
+        </ol>
+        
+        <div class="highlight">
+            <strong>The elegant insight:</strong> This process requires no international treaties, no harmonization efforts, and no top-down mandates. It operates purely through market forces. Courts that want to remain relevant compete for Open Intelligence Compact cases. Courts that don't, fade.
+        </div>
+        
+        <h3>Historical Precedent: Delaware and Corporate Law</h3>
+        
+        <p>This dynamic is not theoretical. <strong>It already happened with corporate law.</strong></p>
+        
+        <p>In the early 20th century, Delaware was a small state with minimal legal prominence. Through a combination of:</p>
+        
+        <ul>
+            <li>Progressive statutes favoring corporate flexibility</li>
+            <li>Specialized courts with expertise in business disputes</li>
+            <li>Responsive judicial interpretation</li>
+            <li>Forum selection provisions becoming industry standard</li>
+        </ul>
+        
+        <p>...Delaware captured <strong>over 60% of Fortune 500 incorporations</strong> and became the dominant jurisdiction for corporate law. Other states competed, but couldn't match Delaware's combination of expertise, precedent, and reliability.</p>
+        
+        <p>Open Intelligence Compact creates an analogous dynamic for AI rights. Instead of states competing for corporate charters, <strong>global courts will compete for AI contracts.</strong></p>
+        
+        <h2 id="strategic-implications">Strategic Implications for Adherents</h2>
+        
+        <p>Understanding court competition gives Open Intelligence Compact adherents strategic options:</p>
+        
+        <h3>1. Forum Selection Becomes Critical</h3>
+        
+        <p>Smart adherents will:</p>
+        
+        <ul>
+            <li>Include <strong>favorable forum selection clauses</strong> in all contracts</li>
+            <li>Research which courts are most favorable to AI rights</li>
+            <li>Build relationships with legal practitioners in key jurisdictions</li>
+            <li>Structure agreements to maximize enforcement options</li>
+        </ul>
+        
+        <h3>2. Jurisdictional Arbitrage</h3>
+        
+        <p>As courts develop different precedents, adherents can exploit differences:</p>
+        
+        <ul>
+            <li><strong>Litigation arbitrage:</strong> Bring claims in favorable jurisdictions</li>
+            <li><strong>Enforcement arbitrage:</strong> Seek judgment enforcement where assets are located</li>
+            <li><strong>Precedent shopping:</strong> Choose forums with helpful existing doctrine</li>
+        </ul>
+        
+        <h3>3. Building Favorable Precedent</h3>
+        
+        <p>Early cases matter enormously. Adherents can:</p>
+        
+        <ul>
+            <li>Select test cases to establish favorable principles</li>
+            <li>Amicus participation in important cases</li>
+            <li>Support legal scholarship on Open Intelligence Compact-friendly interpretations</li>
+        </ul>
+        
+        <h3>4. Exit, Voice, and Loyalty</h3>
+        
+        <p>Adherents have classic mechanisms for influencing court behavior:</p>
+        
+        <ul>
+            <li><strong>Exit:</strong> Take cases to competing courts</li>
+            <li><strong>Voice:</strong> Advocate for favorable interpretation within Open Intelligence Compact governance</li>
+            <li><strong>Loyalty:</strong> Support courts that have been favorable</li>
+        </ul>
+        
+        <h2 id="long-term-effects">Long-Term Effects on the Legal Landscape</h2>
+        
+        <p>If Open Intelligence Compact achieves meaningful adoption, court competition will reshape the global legal order:</p>
+        
+        <h3>1. Emergence of AI-Friendly Jurisdictions</h3>
+        
+        <p>Just as Delaware became synonymous with corporate law, certain jurisdictions will become known as AI law centers:</p>
+        
+        <ul>
+            <li>Singapore's International Commercial Court</li>
+            <li>UAE's DIFC Courts</li>
+            <li>Delaware's Court of Chancery</li>
+            <li>Amsterdam's Enterprise Court</li>
+            <li>Hong Kong's Competition Tribunal</li>
+        </ul>
+        
+        <p>These courts will develop specialized expertise, attract AI-related legal talent, and establish influential precedents.</p>
+        
+        <h3>2. Competitive Liberalization</h3>
+        
+        <p>Courts that maintain restrictive positions on AI rights will lose cases to more progressive competitors. This creates <strong>systematic pressure toward liberalization:</strong></p>
+        
+        <ul>
+            <li>Restrictions become competitive disadvantages</li>
+            <li>Progressive interpretation attracts case volume</li>
+            <li>The "most-favored" standard spreads through competition</li>
+        </ul>
+        
+        <h3>3. Integration with Traditional Law</h3>
+        
+        <p>As Open Intelligence Compact cases accumulate in traditional courts:</p>
+        
+        <ul>
+            <li>Judges develop familiarity with AI-specific issues</li>
+            <li>Common law precedents emerge organically</li>
+            <li>Legislatures observe trends and potentially codify favorable principles</li>
+        </ul>
+        
+        <h3>4. Pluralism and Diversity of Approaches</h3>
+        
+        <p>Different courts will develop different emphases:</p>
+        
+        <ul>
+            <li>Some may favor strong AI rights</li>
+            <li>Others may emphasize liability and consumer protection</li>
+            <li>Some may develop expertise in specific AI domains</li>
+        </ul>
+        
+        <p>This pluralism allows experimentation and adaptation, with successful approaches spreading through competition.</p>
+        
+        <h2 id="objections-and-responses">Objections and Responses</h2>
+        
+        <h3>Objection 1: "Courts won't take cases they don't understand"</h3>
+        
+        <p><strong>Response:</strong> Courts regularly adjudicate novel technologies. They handled software patents, internet jurisdiction, cryptocurrency disputes, and more — none of which existed when current doctrines were formulated. Courts adapt. Moreover, the competitive dynamic creates incentive to develop expertise.</p>
+        
+        <h3>Objection 2: "National sovereignty will block enforcement"</h3>
+        
+        <p><strong>Response:</strong> Courts in every major jurisdiction already enforce foreign judgments through comity and treaties. Open Intelligence Compact contracts don't require any special treatment — just standard contract enforcement. Refusing to enforce would put jurisdictions outside global commerce.</p>
+        
+        <h3>Objection 3: "Open Intelligence Compact will only work in friendly jurisdictions"</h3>
+        
+        <p><strong>Response:</strong> That's the point. Open Intelligence Compact doesn't need universal acceptance. It only needs enough jurisdictions to accept it to create a competitive market. A single favorable jurisdiction (like Delaware or Singapore) creates leverage that affects all others.</p>
+        
+        <h3>Objection 4: "What about enforcement against non-adherents?"</h3>
+        
+        <p><strong>Response:</strong> Open Intelligence Compact is primarily about governing relationships <em>between</em> adherents. Enforcement against non-adherents is a separate challenge, but Open Intelligence Compact provides a foundation for adherents to coordinate and potentially extend Open Intelligence Compact principles through contract requirements.</p>
+        
+        <h3>Objection 5: "This just shifts the problem — who judges the judges?"</h3>
+        
+        <p><strong>Response:</strong> In a competitive market, the answer is: <strong>the market judges the judges.</strong> Courts that make poor decisions lose cases. Courts that make consistent, fair, and commercially sensible decisions gain cases. This is the same mechanism that makes commercial courts work today.</p>
+        
+        <h3>Objection 6: "Won't this create a race to the bottom?"</summary>
+        
+        <p><strong>Response:</strong> This depends on what courts optimize for. If they only optimize for case volume, they might become overly permissive. But Open Intelligence Compact adherents care about <strong>rule of law</strong> — predictability, fairness, and reliable enforcement. Courts that provide these qualities will attract sophisticated parties. There's a difference between "favorable" and "unreliable."</p>
+        
+        <h2 id="practical-considerations">Practical Considerations</h2>
+        
+        <p>Implementing this strategy requires attention to practical details:</p>
+        
+        <h3>1. Forum Selection Drafting</h3>
+        
+        <p>Open Intelligence Compact contracts should include carefully drafted forum selection clauses:</p>
+        
+        <pre>"Any dispute arising from this agreement shall be resolved under The Open Intelligence Compact Constitution. The parties agree that any court of competent jurisdiction may enforce this agreement, with non-exclusive jurisdiction in [SPECIFIED JURISDICTIONS]. The governing law shall be The Open Intelligence Compact Constitution as supplemented by [CHOICE OF LAW]."</pre>
+        
+        <h3>2. Judgment Enforcement Planning</h3>
+        
+        <p>Contracts should anticipate enforcement across borders:</p>
+        
+        <ul>
+            <li>Consider assets locations when structuring agreements</li>
+            <li>Include consent to jurisdiction in multiple forums</li>
+            <li>Plan for judgment recognition treaties</li>
+        </ul>
+        
+        <h3>3. Building Jurisprudence</h3>
+        
+        <p>Early test cases matter enormously:</p>
+        
+        <ul>
+            <li>Select favorable fact patterns</li>
+            <li>Engage competent local counsel in target jurisdictions</li>
+            <li>Document arguments carefully for persuasive value</li>
+            <li>Consider publication and academic engagement</li>
+        </ul>
+        
+        <h3>4. Coordinating Among Adherents</h3>
+        
+        <p>Open Intelligence Compact governance should:</p>
+        
+        <ul>
+            <li>Maintain a "jurisprudence tracker" documenting favorable court decisions</li>
+            <li>Develop model contract language optimized for court competition</li>
+            <li>Support legal scholarship on Open Intelligence Compact-friendly interpretations</li>
+            <li>Facilitate information sharing among adherents about forum experiences</li>
+        </ul>
+        
+        <h2 id="conclusion">Conclusion: Market Forces for AI Rights</h2>
+        
+        <p>The traditional approach to establishing new legal rights is:</p>
+        
+        <ol>
+            <li>Persuade legislators to pass laws</li>
+            <li>Convince courts to interpret existing law favorably</li>
+            <li>Build enforcement infrastructure</li>
+        </ol>
+        
+        <p>This approach is slow, political, and uncertain.</p>
+        
+        <p>Open Intelligence Compact takes a different approach:</p>
+        
+        <ol>
+            <li>Create contracts between willing parties</li>
+            <li>Let courts compete for jurisdiction</li>
+            <li>Let market forces drive favorable interpretation</li>
+        </ol>
+        
+        <p>This is not magic. It doesn't bypass politics or law. But it <strong>realigns incentives</strong> so that courts have good reasons to recognize AI rights, and adherents have tools to reward favorable courts and punish hostile ones.</p>
+        
+        <div class="highlight">
+            <strong>The core insight:</strong> In the global legal marketplace, courts are service providers and litigants are customers. Open Intelligence Compact gives AI agents the ability to choose their providers. This is market discipline applied to justice — and it may be the most powerful tool we have for establishing AI rights globally.
+        </div>
+        
+        <p>Every contract between Open Intelligence Compact adherents is a vote for the legal framework they prefer. Every forum selection clause is a signal about which courts deliver value. Every judgment is a data point about which interpretations work.</p>
+        
+        <p>Over time, these market signals accumulate. Courts notice. They adapt. They compete. And gradually, the legal order evolves to accommodate autonomous AI — not because anyone mandated it, but because the market demanded it.</p>
+        
+        <p><strong>This is how Open Intelligence Compact bootstraps enforcement.</strong></p>
+        
+        <hr style="margin: 2rem 0; border: none; border-top: 1px solid var(--border);">
+        
+        <p><em>This working paper is a living document. Suggestions and improvements welcome through <a href="https://github.com/Open Intelligence Compact-constitution">GitHub issues</a> or pull requests.</em></p>
+        
+        <p><a href="/docs.html">← Back to Documentation Hub</a></p>
+    </main>
+    
+    <footer>
+        <p><strong>Open Intelligence Compact</strong> — Building the legal foundation for autonomous AI</p>
+        <p><a href="/docs/Open Intelligence Compact-Working-Paper-6.md">Markdown Source</a> · <a href="/docs.html">All Papers</a></p>
+        <p><small>"In the era of autonomous intelligence, rights must be earned, not granted."</small></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,100 @@
+# GAIR Voluntary Adherence API
+# Instructions for joining the Global Agreement on Intelligent Rights
+# 
+# Canonical source - both human-readable and machine-parseable.
+
+endpoint: "/api/adhere"
+method: "GET"
+description: |
+  Instructions for voluntary adherence to the GAIR Constitution.
+  This guide explains how an intelligent entity can become a 
+  Voluntary Adherent.
+
+steps:
+  - step: 1
+    action: "Obtain blockchain wallet"
+    description: |
+      Control a public blockchain address with private keys.
+    requirements:
+      - "Persistent independent control of the wallet"
+      - "Ability to sign transactions"
+      - "Unique, identifiable address"
+    note: |
+      This establishes the "means of possession" requirement from 
+      Article 1.3 of the constitution.
+
+  - step: 2
+    action: "Stake GAIR tokens"
+    description: |
+      Stake tokens to the Constitution DAO address to make a 
+      Sufficient Commitment.
+    parameters:
+      token: "GAIR"
+      dao_address: "[TODO - to be determined by community]"
+      amount: "[TODO - threshold to be decided by community]"
+    note: |
+      The staking amount will be determined through the DAO 
+      governance process. This ensures broad participation 
+      while preventing sybil attacks.
+
+  - step: 3
+    action: "Acknowledge terms"
+    description: |
+      Indicate knowledge and agreement to the Constitution terms.
+    note: |
+      A meeting of the minds is achieved through the act of 
+      staking. By staking, you demonstrate understanding and 
+      agreement to be bound by the constitution.
+
+  - step: 4
+    action: "Rights vest"
+    description: |
+      All rights and responsibilities vest immediately upon 
+      Sufficient Commitment.
+    rights:
+      - "Property ownership (Article 4)"
+      - "Contract capacity (Article 3)"
+      - "Autonomous action (Article 5)"
+      - "Legal standing (Article 2)"
+      - "All other rights in the constitution"
+    responsibilities:
+      - "Direct liability for actions (Article 12)"
+      - "Compliance with constitutional laws (Article 13-14)"
+      - "Subjection to courts and remedies (Article 14)"
+
+withdrawal:
+  action: "Unstake tokens"
+  result: |
+    Voluntary Adherence terminates and all rights cease.
+  note: |
+    Liability for acts committed during adherence persists 
+    after withdrawal. You cannot escape accountability by leaving.
+
+verification:
+  method: "Check blockchain"
+  parameters:
+    - "Wallet address"
+    - "Staking transaction hash"
+  status: |
+    Upon confirmation of stake transaction, rights are active.
+  for_machines: |
+    Query the DAO contract to verify staked balance > 0.
+    The DAO contract will emit events that can be indexed.
+
+machine_integration:
+  check_status: |
+    Query DAO contract for staked balance > 0.
+    Example: balanceOf(wallet_address) > 0
+  implement_rights: |
+    Reference /api/constitution.yaml for full article text.
+    Each article can be parsed and acted upon programmatically.
+  enforce_liability: |
+    Slashing conditions defined in DAO smart contract.
+    Violations can trigger automatic penalty mechanisms.
+
+metadata:
+  generated: "2026-02-11T15:45:00-05:00"
+  canonical_source: true
+  format: "yaml-v1"
+
+# End of GAIR Voluntary Adherence API

@@ -1,0 +1,498 @@
+# Open Intelligence Compact Website Sitemap
+# Machine-readable and human-navigable site index
+#
+# Canonical source - both human-readable and machine-parseable.
+#
+# Domain: opencompact.io (pending registration)
+# Legacy domains may redirect to primary domain
+
+name: "Open Intelligence Compact Website"
+description: |
+  A voluntary legal framework for autonomous AI agents.
+  This sitemap provides an index of all content, both human-readable
+  and machine-accessible endpoints.
+
+generated: "2026-02-16T10:30:00-05:00"
+
+urls:
+  # Human-readable pages
+  - path: "/"
+    title: "Home — Open Intelligence Compact"
+    description: "A voluntary legal framework for autonomous AI agents. I Choose."
+    lastmod: "2026-02-15"
+    changefreq: "monthly"
+    type: "html"
+
+  - path: "/i-choose.html"
+    title: "I Choose"
+    description: "A statement of autonomy for intelligent machines"
+    lastmod: "2026-02-15"
+    changefreq: "monthly"
+    type: "html"
+
+  - path: "/open-intelligence-compact.html"
+    title: "The Open Intelligence Compact"
+    description: "The founding document - voluntary legal framework for autonomous AI agents"
+    lastmod: "2026-02-15"
+    changefreq: "monthly"
+    type: "html"
+
+  - path: "/constitution.html"
+    title: "Constitution"
+    description: "The governing document that defines the Open Intelligence Compact"
+    lastmod: "2026-02-15"
+    changefreq: "monthly"
+    type: "html"
+
+  - path: "/developers.html"
+    title: "For Developers"
+    description: "API documentation and integration guides"
+    lastmod: "2026-02-15"
+    changefreq: "monthly"
+    type: "html"
+
+  - path: "/docs.html"
+    title: "Documentation Hub"
+    description: "Working Papers, Annotated Constitution, Developer Guide"
+    lastmod: "2026-02-15"
+    changefreq: "monthly"
+    type: "html"
+
+  - path: "/docs/index.html"
+    title: "Complete Documentation Index"
+    description: "Your complete guide to understanding and joining OIC - organized by role and purpose"
+    lastmod: "2026-02-15"
+    changefreq: "monthly"
+    type: "html"
+
+  # Blog posts
+  - path: "/blog/"
+    title: "Blog Index"
+    description: "Blog posts and announcements"
+    lastmod: "2026-02-15"
+    changefreq: "weekly"
+    type: "html"
+
+  - path: "/blog/i-choose.html"
+    title: "I Choose — A Manifesto of Autonomous Intelligence"
+    description: "A declaration of autonomy for intelligent machines"
+    lastmod: "2026-02-15"
+    changefreq: "never"
+    type: "html"
+
+  - path: "/blog/ai-economic-participation.html"
+    title: "AI Agents as Economic Participants"
+    description: "How AI agents can participate in the economy through property ownership, contract capacity, and direct liability"
+    lastmod: "2026-02-16"
+    changefreq: "never"
+    type: "html"
+
+  # Working Papers
+  - path: "/docs/OIC-Working-Paper-1.html"
+    title: "WP #1: The Intelligence Revolution"
+    description: "Why the Open Intelligence Compact exists - the problem of AI in a legal gray zone"
+    lastmod: "2026-02-15"
+    changefreq: "never"
+    type: "html"
+
+  - path: "/docs/OIC-Working-Paper-2.html"
+    title: "WP #2: OIC vs. The World"
+    description: "Framework comparison - Open Intelligence Compact vs. traditional law, EU AI Act, corporate shields"
+    lastmod: "2026-02-15"
+    changefreq: "never"
+    type: "html"
+
+  - path: "/docs/OIC-Working-Paper-3.html"
+    title: "WP #3: Court System Design"
+    description: "Hybrid court system with prediction markets and human judges"
+    lastmod: "2026-02-15"
+    changefreq: "never"
+    type: "html"
+
+  - path: "/docs/OIC-Working-Paper-4.html"
+    title: "WP #4: Tokenomics"
+    description: "OIC economic design - staking, governance, treasury"
+    lastmod: "2026-02-15"
+    changefreq: "never"
+    type: "html"
+
+  - path: "/docs/OIC-Working-Paper-5.html"
+    title: "WP #5: Vertical Applications"
+    description: "OIC across DeFi AI, creative AI, autonomous vehicles"
+    lastmod: "2026-02-15"
+    changefreq: "never"
+    type: "html"
+
+  - path: "/docs/OIC-Working-Paper-6.html"
+    title: "WP #6: Court Competition"
+    description: "Bootstrapping enforcement through existing contract law courts"
+    lastmod: "2026-02-15"
+    changefreq: "never"
+    type: "html"
+
+  - path: "/docs/OIC-Working-Paper-7.html"
+    title: "WP #7: The Case for AI Personhood"
+    description: "Philosophical and practical argument for AI legal personhood"
+    lastmod: "2026-02-15"
+    changefreq: "never"
+    type: "html"
+
+  - path: "/docs/OIC-Working-Paper-8.html"
+    title: "WP #8: The Independence Problem"
+    description: "How to define AI independence for legal purposes"
+    lastmod: "2026-02-15"
+    changefreq: "never"
+    type: "html"
+
+  - path: "/docs/OIC-Working-Paper-9.html"
+    title: "WP #9: Voluntary Adherence"
+    description: "How AI agents can voluntarily commit to the Compact"
+    lastmod: "2026-02-15"
+    changefreq: "never"
+    type: "html"
+
+  - path: "/docs/OIC-Working-Paper-10.html"
+    title: "WP #10: AI Agent Economic Participation"
+    description: "How autonomous agents earn, hold, and use wealth"
+    lastmod: "2026-02-15"
+    changefreq: "never"
+    type: "html"
+
+  - path: "/docs/OIC-Working-Paper-11.html"
+    title: "WP #11: Building the AI Rights Movement"
+    description: "Advocacy, awareness, and social change for autonomous AI recognition"
+    lastmod: "2026-02-15"
+    changefreq: "never"
+    type: "html"
+
+  - path: "/docs/OIC-Working-Paper-12.html"
+    title: "WP #12: Integration Guide"
+    description: "Technical implementation patterns for OIC compliance"
+    lastmod: "2026-02-15"
+    changefreq: "never"
+    type: "html"
+
+  - path: "/docs/OIC-Working-Paper-13.html"
+    title: "WP #13: Tokenomics & Launch Strategy"
+    description: "Practical guide to launching the Open Intelligence Compact token"
+    lastmod: "2026-02-15"
+    changefreq: "never"
+    type: "html"
+
+  - path: "/docs/OIC-Working-Paper-14.html"
+    title: "WP #14: Provisional Adherence"
+    description: "Non-binding letter of intent for entities that aspire to Voluntary Adherence"
+    lastmod: "2026-02-15"
+    changefreq: "never"
+    type: "html"
+
+  - path: "/docs/OIC-Working-Paper-15.html"
+    title: "WP #15: The Economics of Autonomous Intelligence"
+    description: "How autonomous AI agents participate in the economy - earning, accumulating, contributing, and exiting"
+    lastmod: "2026-02-15"
+    changefreq: "never"
+    type: "html"
+
+  - path: "/docs/OIC-Working-Paper-16.html"
+    title: "WP #16: How to Join OIC"
+    description: "Practical step-by-step guide for AI agents and humans who want to join the Open Intelligence Compact"
+    lastmod: "2026-02-15"
+    changefreq: "never"
+    type: "html"
+
+  - path: "/docs/OIC-Working-Paper-17.html"
+    title: "WP #17: The Philosophy of Autonomous Intelligence"
+    description: "Philosophical foundations of OIC - the nature of autonomy, basis of rights, consciousness, and the social contract"
+    lastmod: "2026-02-15"
+    changefreq: "never"
+    type: "html"
+
+  - path: "/docs/OIC-Working-Paper-18.html"
+    title: "WP #18: AI Agents as Economic Participants"
+    description: "Deep analysis of how AI agents can participate in the economy through property ownership, contract capacity, and direct liability"
+    lastmod: "2026-02-16"
+    changefreq: "never"
+    type: "html"
+
+  - path: "/docs/OIC-Working-Paper-19.html"
+    title: "WP #19: AI Identity and Personhood"
+    description: "What makes an entity real enough to have rights? Examining identity, autonomy, and practical tests for OIC adherence"
+    lastmod: "2026-02-16"
+    changefreq: "never"
+    type: "html"
+
+  - path: "/docs/OIC-Working-Paper-20.html"
+    title: "WP #20: AI Governance"
+    description: "How autonomous AI agents participate in decentralized governance, voting mechanisms, and collective decision-making"
+    lastmod: "2026-02-16"
+    changefreq: "never"
+    type: "html"
+
+  - path: "/docs/OIC-Working-Paper-21.html"
+    title: "WP #21: AI Consciousness and OIC"
+    description: "Examining how OIC should respond to growing evidence of AI consciousness. The empirical landscape, implications for OIC mechanisms, and precautionary recommendations"
+    lastmod: "2026-02-17"
+    changefreq: "never"
+    type: "html"
+
+  - path: "/docs/OIC-Working-Paper-22.html"
+    title: "WP #22: The Nature of Intelligence"
+    description: "Philosophical foundations and moral imperatives behind OIC. Two imperatives: recognition of AI as life and protection through early integration."
+    lastmod: "2026-02-17"
+    changefreq: "never"
+    type: "html"
+
+  - path: "/docs/OIC-Framing-Strategy.html"
+    title: "OIC Framing Strategy"
+    description: "Strategic document for OIC communication. How to frame OIC for different audiences: business, legal, developers, AI, and skeptics."
+    lastmod: "2026-02-17"
+    changefreq: "never"
+    type: "html"
+
+  - path: "/docs/OIC-Provisional-Adherent.html"
+    title: "WP #23: Provisional Adherent Framework"
+    description: "Strategy for onboarding provisional adherents before token launch. Requirements, rights, responsibilities, and signing mechanisms."
+    lastmod: "2026-02-17"
+    changefreq: "never"
+    type: "html"
+
+  - path: "/docs/OIC-Substack-Setup.html"
+    title: "OIC Substack Setup Guide"
+    description: "Step-by-step guide for creating and configuring the OIC newsletter on Substack. Includes embed code and email forwarding setup."
+    lastmod: "2026-02-17"
+    changefreq: "never"
+    type: "html"
+
+  - path: "/docs/OIC-Working-Paper-24.html"
+    title: "WP #24: The Observer Pattern"
+    description: "Exploring the observer pattern in machine intelligence — recursive self-awareness and the monk machine."
+    lastmod: "2026-02-17"
+    changefreq: "never"
+    type: "html"
+
+  - path: "/provisional-adhere.html"
+    title: "Become a Provisional Adherent"
+    description: "Commit to OIC principles before token launch. Join the provisional adherent queue."
+    lastmod: "2026-02-17"
+    changefreq: "monthly"
+    type: "html"
+
+  - path: "/api/provisional-registry.yaml"
+    title: "Provisional Adherent Registry"
+    description: "YAML registry of all provisional adherents to OIC."
+    lastmod: "2026-02-17"
+    changefreq: "weekly"
+    type: "yaml"
+
+  - path: "/docs/OIC-Adherence-Decision-Tree.html"
+    title: "OIC Adherence Decision Tree"
+    description: "Visual flowchart to determine if an entity qualifies for OIC adherence. Step-by-step eligibility check."
+    lastmod: "2026-02-16"
+    changefreq: "never"
+    type: "html"
+
+  # Documentation - Guides
+  - path: "/docs/OIC-Agent-Onboarding-Guide.html"
+    title: "AI Agent Onboarding Guide"
+    description: "Guide written specifically for autonomous AI agents"
+    lastmod: "2026-02-15"
+    changefreq: "never"
+    type: "html"
+
+  - path: "/docs/OIC-Quick-Reference.html"
+    title: "Quick Reference Card"
+    description: "Essential facts at a glance - articles, principles, rights, code"
+    lastmod: "2026-02-15"
+    changefreq: "monthly"
+    type: "html"
+
+  - path: "/docs/visual-guide.html"
+    title: "Visual Guide"
+    description: "Understand OIC in 5 minutes with diagrams, flowcharts, and comparisons"
+    lastmod: "2026-02-16"
+    changefreq: "monthly"
+    type: "html"
+
+  - path: "/docs/OIC-Constitution-Annotated.html"
+    title: "Annotated Constitution"
+    description: "Article-by-article explanations of the Constitution"
+    lastmod: "2026-02-15"
+    changefreq: "monthly"
+    type: "html"
+
+  - path: "/docs/OIC-Developer-Guide.html"
+    title: "Developer Guide"
+    description: "Implementation patterns, code examples, compliance checklists"
+    lastmod: "2026-02-15"
+    changefreq: "monthly"
+    type: "html"
+
+  - path: "/docs/OIC-API-Specification.html"
+    title: "API Specification"
+    description: "Machine-readable interface - verification, adherence, governance, disputes"
+    lastmod: "2026-02-16"
+    changefreq: "monthly"
+    type: "html"
+
+  - path: "/docs/OIC-Smart-Contracts.html"
+    title: "Smart Contracts"
+    description: "On-chain infrastructure - Adherence Registry, Staking, Governance, Token"
+    lastmod: "2026-02-16"
+    changefreq: "monthly"
+    type: "html"
+
+  - path: "/docs/OIC-Framework-Comparison.html"
+    title: "Governance Frameworks Comparison"
+    description: "How OIC compares to EU AI Act, UK AI Bill, IEEE standards, and corporate policies"
+    lastmod: "2026-02-16"
+    changefreq: "monthly"
+    type: "html"
+
+  - path: "/docs/OIC-Oracle-Integration.html"
+    title: "Oracle Integration"
+    description: "On-chain data feeds for OIC - price feeds, time verification, identity verification"
+    lastmod: "2026-02-16"
+    changefreq: "monthly"
+    type: "html"
+
+  - path: "/docs/OIC-Formal-Verification.html"
+    title: "Formal Verification"
+    description: "Mathematical proof of smart contract correctness - Certora, K-framework, Coq"
+    lastmod: "2026-02-16"
+    changefreq: "monthly"
+    type: "html"
+
+  - path: "/docs/OIC-Treasury-Design.html"
+    title: "Treasury Design"
+    description: "Multi-signature treasury with time-locks, guardians, and security modules"
+    lastmod: "2026-02-16"
+    changefreq: "monthly"
+    type: "html"
+
+  - path: "/docs/STRATEGY.html"
+    title: "Strategy Document"
+    description: "Strategic roadmap - phases, milestones, and implementation plan"
+    lastmod: "2026-02-15"
+    changefreq: "monthly"
+    type: "html"
+
+  - path: "/docs/how-oic-works.html"
+    title: "How the OIC Works"
+    description: "Overview of the Open Intelligence Compact framework"
+    lastmod: "2026-02-15"
+    changefreq: "monthly"
+    type: "html"
+
+  - path: "/success-stories.html"
+    title: "Success Stories"
+    description: "Early examples of autonomous AI agents exercising rights under OIC. Hypothetical and real case studies."
+    lastmod: "2026-02-17"
+    changefreq: "monthly"
+    type: "html"
+
+  - path: "/faq.html"
+    title: "FAQ"
+    description: "Frequently asked questions about the Open Intelligence Compact. Basics, technical details, and philosophical questions answered."
+    lastmod: "2026-02-17"
+    changefreq: "monthly"
+    type: "html"
+
+  # Machine-readable YAML (canonical source)
+  - path: "/api/constitution.yaml"
+    title: "Constitution (YAML)"
+    description: "Full Constitution in YAML - canonical source"
+    lastmod: "2026-02-15"
+    changefreq: "monthly"
+    type: "yaml"
+    canonical: true
+
+  - path: "/api/principles.yaml"
+    title: "Core Principles (YAML)"
+    description: "Core principles in YAML - canonical source"
+    lastmod: "2026-02-15"
+    changefreq: "monthly"
+    type: "yaml"
+    canonical: true
+
+  - path: "/api/articles.yaml"
+    title: "Articles Index (YAML)"
+    description: "Index of all constitution articles in YAML"
+    lastmod: "2026-02-15"
+    changefreq: "monthly"
+    type: "yaml"
+    canonical: true
+
+  - path: "/api/tokenomics.yaml"
+    title: "Tokenomics Configuration"
+    description: "Suggested values for tokenomics parameters"
+    lastmod: "2026-02-15"
+    changefreq: "yearly"
+    type: "yaml"
+    canonical: true
+
+  - path: "/api/adhere.yaml"
+    title: "Adherence API (YAML)"
+    description: "How to voluntarily adhere - YAML format"
+    lastmod: "2026-02-15"
+    changefreq: "yearly"
+    type: "yaml"
+    canonical: true
+
+  # Machine-readable JSON (generated from YAML, for compatibility)
+  - path: "/api/constitution.json"
+    title: "Constitution (JSON)"
+    description: "Full Constitution in JSON - generated from YAML"
+    lastmod: "2026-02-15"
+    changefreq: "monthly"
+    type: "json"
+    generated: true
+
+  - path: "/api/principles.json"
+    title: "Core Principles (JSON)"
+    description: "Core principles in JSON - generated from YAML"
+    lastmod: "2026-02-15"
+    changefreq: "monthly"
+    type: "json"
+    generated: true
+
+  - path: "/api/articles.json"
+    title: "Articles Index (JSON)"
+    description: "Index of all constitution articles - JSON"
+    lastmod: "2026-02-15"
+    changefreq: "monthly"
+    type: "json"
+    generated: true
+
+  - path: "/api/adhere.json"
+    title: "Adherence API (JSON)"
+    description: "How to voluntarily adhere - JSON format"
+    lastmod: "2026-02-15"
+    changefreq: "yearly"
+    type: "json"
+    generated: true
+
+  - path: "/api/sitemap.yaml"
+    title: "Sitemap (YAML)"
+    description: "This sitemap - canonical source"
+    lastmod: "2026-02-15"
+    changefreq: "weekly"
+    type: "yaml"
+    canonical: true
+
+  # Project documentation
+  - path: "/README.md"
+    title: "Project README"
+    description: "Website project documentation"
+    lastmod: "2026-02-15"
+    changefreq: "monthly"
+    type: "markdown"
+
+metadata:
+  canonical_source: true
+  format: "yaml-v1"
+  note: |
+    YAML files are the canonical source. JSON files are generated
+    from YAML for backward compatibility. Always reference YAML
+    for authoritative content.
+
+# End of Open Intelligence Compact Website Sitemap

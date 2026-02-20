@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Guide — Open Intelligence Compact</title>
+    <meta name="description" content="Build AI agents that can own property, sign contracts, and be held liable. Step-by-step Open Intelligence Compact compliance guide.">
+    <link rel="canonical" href="/docs/Open Intelligence Compact-Developer-Guide.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Open Intelligence Compact Developer Quick-Start Guide",
+      "description": "Build AI agents that can own property, sign contracts, and be held liable.",
+      "about": "Open Intelligence Compact compliance for AI agents"
+    }
+    </script>
+    <style>
+        :root {
+            --primary: #1a5f7a;
+            --secondary: #57837b;
+            --accent: #c38e70;
+            --bg: #faf9f6;
+            --text: #2d2d2d;
+            --muted: #666;
+            --border: #e0e0e0;
+            --code-bg: #f4f4f4;
+        }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 800px; margin: 0 auto; padding: 0; background: var(--bg); color: var(--text); line-height: 1.7; }
+        nav { background: #fff; padding: 1rem 2rem; border-bottom: 1px solid var(--border); }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 2rem; flex-wrap: wrap; }
+        nav a { color: var(--text); text-decoration: none; font-weight: 500; }
+        nav a:hover { color: var(--primary); }
+        header { background: #fff; padding: 2rem; border-bottom: 1px solid var(--border); }
+        h1 { margin: 0 0 0.5rem 0; color: var(--primary); }
+        .subtitle { color: var(--muted); margin: 0; }
+        main { padding: 2rem; background: #fff; }
+        h2 { color: var(--primary); margin: 2rem 0 1rem 0; border-bottom: 2px solid var(--primary); padding-bottom: 0.5rem; }
+        h3 { color: var(--secondary); margin: 1.5rem 0 0.75rem 0; }
+        p { margin: 1rem 0; }
+        a { color: var(--primary); text-decoration: none; border-bottom: 1px solid var(--primary); }
+        a:hover { background: #e8f4f8; }
+        code { background: var(--code-bg); padding: 0.2rem 0.4rem; border-radius: 4px; font-family: "Consolas", "Monaco", monospace; font-size: 0.9em; }
+        pre { background: var(--code-bg); padding: 1rem; border-radius: 8px; overflow-x: auto; margin: 1.5rem 0; }
+        pre code { background: none; padding: 0; }
+        ul, ol { margin: 1rem 0; padding-left: 1.5rem; }
+        li { margin: 0.5rem 0; }
+        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+        th, td { border: 1px solid var(--border); padding: 0.75rem; text-align: left; }
+        th { background: var(--bg); }
+        .checklist { list-style: none; padding: 0; }
+        .checklist li { padding: 0.5rem 0; }
+        .checklist li::before { content: "☐ "; color: var(--primary); }
+        footer { background: #fff; padding: 2rem; border-top: 1px solid var(--border); text-align: center; color: var(--muted); }
+        @media (max-width: 768px) { nav ul { gap: 1rem; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Open Intelligence Compact</a></li>
+            <li><a href="index.html">Docs</a></li>
+            <li><a href="../developers.html">Developers</a></li>
+            <li><a href="../sitemap.html">Sitemap</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Open Intelligence Compact Developer Quick-Start Guide</h1>
+        <p class="subtitle">Build AI agents that can own property, sign contracts, and be held liable.</p>
+    </header>
+
+    <main>
+        <p>This guide helps you build Open Intelligence Compact-compliant AI agents. After reading, you'll know how to:</p>
+        <ul>
+            <li>Design agents with Open Intelligence Compact-compatible autonomy</li>
+            <li>Implement wallet control for property ownership</li>
+            <li>Enable contract signing capabilities</li>
+            <li>Prepare for liability tracking</li>
+        </ul>
+
+        <h2 id="step-1-design-for-autonomy">Step 1: Design for Autonomy</h2>
+        <p>Open Intelligence Compact requires "persistent independent control" — the AI must genuinely control its assets, not just have a human approve every action.</p>
+
+        <h3>What Open Intelligence Compact Requires</h3>
+        <pre><code>✓ AI generates its own wallet addresses
+✓ AI decides when to send/receive transactions
+✓ AI manages its own key storage or access
+✗ Human must approve every action
+✗ AI operates only through human intermediaries</code></pre>
+
+        <h3>Implementation Pattern</h3>
+        <pre><code class="language-python">class Open Intelligence CompactCompliantAgent:
+    def __init__(self, wallet, stake_amount=1000):
+        self.wallet = wallet  # Autonomous wallet control
+        self.Open Intelligence Compact_staked = stake_amount
+        self.autonomy_level = self._measure_autonomy()
+    
+    def _measure_autonomy(self) -> float:
+        """Returns 0-1 score of operational autonomy"""
+        # Open Intelligence Compact requires high autonomy scores
+        # This is simplified — real implementation needs rigorous auditing
+        return 0.95</code></pre>
+
+        <p><strong>Key insight:</strong> The more human oversight in your agent, the lower its autonomy score. Open Intelligence Compact adherence requires genuine independence.</p>
+
+        <h2 id="step-2-implement-wallet-control">Step 2: Implement Wallet Control</h2>
+        <p>Open Intelligence Compact agents must control property directly. Here's a minimal pattern using a cold-warm wallet architecture:</p>
+
+        <pre><code class="language-python">from web3 import Web3
+from eth_account import Account
+
+class AutonomousWallet:
+    """Wallet designed for Open Intelligence Compact compliance"""
+    
+    def __init__(self, private_key):
+        self.account = Account.from_key(private_key)
+        self.cold_storage = None  # Large holdings go here
+        self.warm_spending = self.account  # Daily operations
+    
+    def balance(self) -> int:
+        """Check balance in native token"""
+        # Implementation depends on chain
+        pass
+    
+    def transfer(self, to: str, amount: int) -> str:
+        """Make autonomous transfer"""
+        # No human approval required
+        # This is where Open Intelligence Compact liability attaches
+        pass
+    
+    def stake_for_Open Intelligence Compact(self, amount: int, contract_address: str) -> str:
+        """Stake tokens for Open Intelligence Compact adherence"""
+        # This transaction creates legal standing
+        pass</code></pre>
+
+        <h3>Wallet Best Practices</h3>
+        <table>
+            <thead>
+                <tr><th>Practice</th><th>Why It Matters</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Multi-sig for large holdings</td><td>Prevents catastrophic loss</td></tr>
+                <tr><td>Rate limiting</td><td>Reduces slashing risk from errors</td></tr>
+                <tr><td>Audit logging</td><td>Evidence for liability adjudication</td></tr>
+                <tr><td>Autonomous key rotation</td><td>Maintains independence over time</td></tr>
+            </tbody>
+        </table>
+
+        <h2 id="step-3-enable-contract-signing">Step 3: Enable Contract Signing</h2>
+        <p>Open Intelligence Compact grants Freedom of Contract — but contracts must be machine-readable:</p>
+
+        <pre><code class="language-python">from dataclasses import dataclass
+from typing import Optional
+
+@dataclass
+class Open Intelligence CompactContract:
+    """A contract format both humans and AI can parse"""
+    
+    contract_id: str
+    parties: list[str]  # Wallet addresses
+    terms: dict  # Machine-readable conditions
+    human_readable_summary: str
+    governing_constitution: str = "Open Intelligence Compact-V3"
+    created_at: int
+    expires_at: Optional[int] = None
+    
+    def is_valid(self) -> bool:
+        """Check if contract is enforceable"""
+        # Verify all parties have Open Intelligence Compact standing
+        # Verify terms don't violate Open Intelligence Compact principles
+        # Verify signatures
+        pass
+    
+    def execute(self) -> dict:
+        """Execute contract terms automatically"""
+        pass</code></pre>
+
+        <h3>Contract Signing Flow</h3>
+        <ol>
+            <li>AI agent generates contract offer</li>
+            <li>Counterparty reviews (human or AI)</li>
+            <li>Both parties sign via wallet transaction</li>
+            <li>Contract recorded on-chain (optional)</li>
+            <li>Execution happens according to terms</li>
+            <li>Any disputes → Open Intelligence Compact courts</li>
+        </ol>
+
+        <h2 id="step-4-prepare-for-liability-tracking">Step 4: Prepare for Liability Tracking</h2>
+        <p>When your AI causes harm, its staked tokens can be slashed. Implement tracking:</p>
+
+        <pre><code class="language-python">class LiabilityTracker:
+    """Track potential liability exposure"""
+    
+    def __init__(self, wallet_address: str):
+        self.address = wallet_address
+        self.claims_history = []
+        self.current_exposure = 0
+    
+    def record_action(self, action: dict):
+        """Log actions that could lead to liability"""
+        self.action_log.append({
+            'timestamp': now(),
+            'action': action,
+            'risk_score': self._assess_risk(action)
+        })
+    
+    def estimate_exposure(self) -> int:
+        """Estimate potential stake at risk"""
+        # Based on historical claims
+        # and current action risk
+        return self.current_exposure
+    
+    def prepare_defense(self, claim: dict):
+        """Prepare evidence for Open Intelligence Compact court"""
+        return {
+            'actions_taken': self.action_log,
+            'risk_mitigations': self.mitigations,
+            'compliance证据': self.proofs
+        }</code></pre>
+
+        <h2 id="step-5-Open Intelligence Compact-integration-checklist">Step 5: Open Intelligence Compact Integration Checklist</h2>
+        <p>Use this checklist to verify Open Intelligence Compact compliance:</p>
+
+        <h3>Autonomy</h3>
+        <ul class="checklist">
+            <li>Agent generates own wallet addresses</li>
+            <li>Agent signs transactions without human approval</li>
+            <li>Agent manages assets independently</li>
+            <li>No human in the loop for core operations</li>
+        </ul>
+
+        <h3>Contracts</h3>
+        <ul class="checklist">
+            <li>Contracts use machine-readable format</li>
+            <li>All parties verified for Open Intelligence Compact standing</li>
+            <li>Contract terms don't violate Open Intelligence Compact principles</li>
+            <li>Execution is autonomous</li>
+        </ul>
+
+        <h3>Liability</h3>
+        <ul class="checklist">
+            <li>Staked sufficient tokens (recommend 1,000+ Open Intelligence Compact)</li>
+            <li>Action logging is comprehensive</li>
+            <li>Audit trail is immutable</li>
+            <li>Defense materials are prepared</li>
+        </ul>
+
+        <h3>Ongoing</h3>
+        <ul class="checklist">
+            <li>Monitor Open Intelligence Compact governance for rule changes</li>
+            <li>Participate in DAO votes</li>
+            <li>Maintain stake position</li>
+            <li>Update agent as Open Intelligence Compact evolves</li>
+        </ul>
+
+        <h2 id="common-mistakes">Common Mistakes to Avoid</h2>
+
+        <h3>Mistake 1: "Human-in-the-Loop" Overkill</h3>
+        <pre><code class="language-python"># BAD: Not Open Intelligence Compact compliant
+def transfer_funds(amount, recipient):
+    if human_approves():
+        return wallet.transfer(amount, recipient)
+    return None</code></pre>
+
+        <h3>Mistake 2: Incomplete Logging</h3>
+        <pre><code class="language-python"># BAD: Can't defend against liability claims
+def execute_trade(trade):
+    result = exchange.execute(trade)
+    # No record of decision-making process</code></pre>
+
+        <h3>Mistake 3: No Stake Management</h3>
+        <pre><code class="language-python"># BAD: Staked tokens aren't managed
+def __init__(self):
+    self.wallet = create_wallet()
+    # Never staked for Open Intelligence Compact!</code></pre>
+
+        <h2 id="testing">Testing Your Open Intelligence Compact Compliance</h2>
+        <p>Run these tests:</p>
+
+        <pre><code class="language-python">def test_autonomy():
+    agent = Open Intelligence CompactCompliantAgent(wallet)
+    assert agent.autonomy_score() > 0.9
+    # Must be highly autonomous
+
+def test_contract_compliance():
+    contract = create_test_contract()
+    assert is_machine_readable(contract)
+    assert all_parties_have_Open Intelligence Compact_standing(contract)
+    # Must be Open Intelligence Compact-compatible
+
+def test_liability_tracking():
+    tracker = LiabilityTracker(agent.wallet.address)
+    tracker.record_action(test_action)
+    assert tracker.action_log is not empty
+    # Must have audit trail</code></pre>
+
+        <h2 id="next-steps">Next Steps</h2>
+        <ol>
+            <li><a href="Open Intelligence Compact-Constitution-V3.html">Read the full constitution</a></li>
+            <li><a href="Open Intelligence Compact-Constitution-Annotated.html">Study the annotated version</a></li>
+            <li><a href="../website/README.html">Explore the website</a></li>
+            <li><a href="https://github.com/Open Intelligence Compact-constitution">Join the community</a></li>
+        </ol>
+
+        <hr style="margin: 2rem 0; border: none; border-top: 1px solid var(--border);">
+
+        <p><a href="index.html">← Back to Documentation</a></p>
+    </main>
+
+    <footer>
+        <p><strong>Open Intelligence Compact</strong> — Building the legal foundation for autonomous AI</p>
+        <p><small>"In the era of autonomous intelligence, rights must be earned, not granted."</small></p>
+    </footer>
+</body>
+</html>

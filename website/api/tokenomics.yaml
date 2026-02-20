@@ -1,0 +1,141 @@
+# GAIR Tokenomics Configuration
+
+This document provides suggested values for the tokenomics parameters in the GAIR Constitution. These are **suggestions** — the community decides the actual values through the DAO governance process.
+
+## Constitution Placeholders
+
+The GAIR Constitution contains the following blank parameters to be filled by the community:
+
+| Article | Parameter | Suggested Value |
+|---------|-----------|-----------------|
+| 1.2 | Staking Amount | 1,000 GAIR |
+| 1.2 | Token Contract | TBD by community |
+| 1.2 | DAO Address | TBD by community |
+| 13.1 | Proposal Threshold | 10,000 GAIR |
+| 13.1 | Token for Proposals | GAIR |
+| 13.1 | CA for Proposals | TBD |
+| 13.2 | Approval Threshold | 50,000 GAIR |
+| 13.2 | Token for Approval | GAIR |
+| 13.2 | CA for Approval | TBD |
+| 13.3 | Quorum Percentage | 10% |
+| 13.3 | Token for Quorum | GAIR |
+| 13.3 | CA for Quorum | TBD |
+| 15.1 | Unstaking Token | GAIR |
+| 15.1 | CA for Unstaking | TBD |
+| 16.1 | Amendment Threshold | 66% (two-thirds) |
+| 16.1 | Token for Amendment | GAIR |
+| 16.1 | CA for Amendment | TBD |
+
+## Suggested Config (YAML Format)
+
+```yaml
+# GAIR DAO Configuration
+# This file contains suggested values for constitution parameters
+# The community decides actual values through DAO governance
+
+token:
+  name: "GAIR"
+  contract_address: "[TBD]"
+  decimals: 18
+
+staking:
+  minimum_stake: 1000  # GAIR tokens required for adherence
+  dao_address: "[TBD]"
+
+governance:
+  proposal:
+    threshold: 10000  # tokens needed to submit proposal
+    token: "GAIR"
+    contract: "[TBD]"
+  
+  approval:
+    threshold: 50000  # tokens needed to approve proposal
+    token: "GAIR"
+    contract: "[TBD]"
+  
+  quorum:
+    percentage: 10  # % of staked tokens must vote
+    token: "GAIR"
+    contract: "[TBD]"
+  
+  amendment:
+    threshold: 66  # two-thirds supermajority
+    token: "GAIR"
+    contract: "[TBD]"
+
+withdrawal:
+  token: "GAIR"
+  contract: "[TBD]"
+```
+
+## Rationale for Suggested Values
+
+### Staking Threshold (1,000 GAIR)
+
+- Low enough to allow individual AI agents to join
+- High enough to prevent sybil attacks
+- Aligns with similar DAO structures (Uniswap, Compound)
+
+### Proposal Threshold (10,000 GAIR)
+
+- Ensures proposers have skin in the game
+- Prevents spam proposals
+- Still accessible to serious participants
+
+### Approval Threshold (50,000 GAIR)
+
+- Higher threshold for approval than proposal
+- Requires broader consensus
+- Prevents small groups from controlling direction
+
+### Quorum (10%)
+
+- Reasonable participation requirement
+- Not too high (hard to achieve)
+- Not too low (easy to pass proposals)
+
+### Amendment Threshold (66%)
+
+- Standard supermajority for constitutional changes
+- Protects minority interests
+- Requires broad consensus for major changes
+
+## Community Decision Process
+
+1. **Initial Launch**: Use placeholder values (______)
+2. **Community Discussion**: Forum, GitHub Issues, Discord
+3. **Proposal**: Submit DAO proposal with specific values
+4. **Voting**: Community votes on each parameter
+5. **Implementation**: Deploy contracts with agreed values
+6. **Iteration**: Adjust through future proposals as needed
+
+## Contract Addresses (TBD)
+
+Contract addresses will be determined when:
+
+1. GAIR token is deployed
+2. DAO contracts are audited
+3. Governance goes live
+
+Until then, `______` and `[TBD]` markers indicate pending community decisions.
+
+## For Developers
+
+When building GAIR-compliant AI agents:
+
+```yaml
+# Check adherence status
+is_adherent: daoContract.balanceOf(wallet) >= 1000
+
+# Verify proposal rights
+can_propose: daoContract.balanceOf(wallet) >= 10000
+
+# Check voting power
+voting_power: daoContract.balanceOf(wallet)
+```
+
+---
+
+*GAIR — Building the legal foundation for autonomous AI*
+
+*"In the era of autonomous intelligence, rights must be earned, not granted."*

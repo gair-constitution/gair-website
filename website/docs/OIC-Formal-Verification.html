@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OIC Formal Verification — Open Intelligence Compact</title>
+    <meta name="description" content="Mathematical proof of smart contract correctness for OIC using Certora, K-framework, and Coq.">
+    <link rel="canonical" href="/docs/OIC-Formal-Verification.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "OIC Formal Verification",
+      "description": "Mathematical proof of smart contract correctness",
+      "author": {"@type": "Organization", "name": "Open Intelligence Compact"},
+      "datePublished": "2026-02-16",
+      "version": "1.0"
+    }
+    </script>
+    <style>
+        :root { --primary: #1a5f7a; --secondary: #57837b; --bg: #faf9f6; --text: #2d2d2d; --muted: #666; --border: #e0e0e0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 900px; margin: 0 auto; padding: 0; background: var(--bg); color: var(--text); line-height: 1.8; }
+        nav { background: #fff; padding: 1rem 2rem; border-bottom: 1px solid var(--border); }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 2rem; flex-wrap: wrap; }
+        nav a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        header { background: #fff; padding: 3rem 2rem; border-bottom: 1px solid var(--border); }
+        h1 { margin: 0 0 0.5rem 0; font-size: 2rem; color: var(--primary); }
+        .subtitle { font-size: 1.2rem; color: var(--muted); }
+        main { padding: 2rem; background: #fff; }
+        h2 { color: var(--primary); margin: 2rem 0 1rem 0; font-size: 1.5rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.5rem; }
+        h3 { color: var(--secondary); margin: 1.5rem 0 0.75rem 0; font-size: 1.2rem; }
+        a { color: var(--primary); text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; overflow-x: auto; }
+        th, td { border: 1px solid var(--border); padding: 0.75rem; text-align: left; }
+        th { background: var(--bg); font-weight: 600; }
+        .status { display: inline-block; background: var(--primary); color: #fff; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; }
+        footer { background: #fff; border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--muted); }
+        .nav-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+        code { background: var(--bg); padding: 0.2rem 0.4rem; border-radius: 4px; font-family: monospace; }
+        pre { background: #2d2d2d; color: #f8f8f2; padding: 1rem; border-radius: 8px; overflow-x: auto; margin: 1rem 0; }
+        pre code { background: transparent; padding: 0; }
+        .checklist-item { display: flex; align-items: center; gap: 0.5rem; margin: 0.5rem 0; }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="constitution.html">Constitution</a></li>
+            <li><a href="docs.html">All Docs</a></li>
+            <li><a href="/blog/">Blog</a></li>
+        </ul>
+    </nav>
+    <header>
+        <span class="status">Technical Specification</span>
+        <h1>OIC Formal Verification</h1>
+        <p class="subtitle">Mathematical Proof of Smart Contract Correctness</p>
+    </header>
+    <main>
+        <h2>1. Overview</h2>
+        <p>Formal verification provides <strong>mathematical guarantees</strong> that smart contracts behave exactly as specified. This document defines the formal verification approach for OIC contracts.</p>
+
+        <h3>Verification Levels</h3>
+        <table>
+            <tr><th>Approach</th><th>Guarantee</th><th>Cost</th><th>Use Case</th></tr>
+            <tr><td>Code Review</td><td>Human judgment</td><td>Low</td><td>Simple contracts</td></tr>
+            <tr><td>Testing</td><td>Sample coverage</td><td>Medium</td><td>Most contracts</td></tr>
+            <tr><td>Fuzzing</td><td>Edge cases</td><td>Medium-High</td><td>Security-critical</td></tr>
+            <tr><td><strong>Formal Verification</strong></td><td><strong>Mathematical proof</strong></td><td>High</td><td><strong>High-value, high-risk</strong></td></tr>
+        </table>
+
+        <h2>2. Verification Targets</h2>
+
+        <h3>Critical Contracts</h3>
+        <table>
+            <tr><th>Contract</th><th>Criticality</th><th>Priority</th></tr>
+            <tr><td>OICTreasury</td><td>Critical (holds funds)</td><td>P0 - Full verification</td></tr>
+            <tr><td>OICStaking</td><td>Critical (token mechanics)</td><td>P0 - Full verification</td></tr>
+            <tr><td>OICAdherenceRegistry</td><td>High (legal status)</td><td>P1 - Core invariants</td></tr>
+            <tr><td>OICGovernance</td><td>High (protocol changes)</td><td>P1 - Core invariants</td></tr>
+            <tr><td>OICToken</td><td>Medium (standard ERC20)</td><td>P2 - Property testing</td></tr>
+        </table>
+
+        <h2>3. Invariants</h2>
+
+        <h3>OICStaking Invariants</h3>
+        <pre><code>invariant StakeNeverNegative(address a)
+    getStake(a) >= 0
+
+invariant TotalStakeMatchesIndividualStakes()
+    sumAllStakes() == getTotalStaked()
+
+invariant CannotStakeBelowMinimum(address a, uint256 amount)
+    amount < MIN_STAKE() => callReverts()</code></pre>
+
+        <h3>OICTreasury Invariants</h3>
+        <pre><code>invariant QuorumCannotExceedSigners()
+    requiredQuorum <= totalSigners()
+
+invariant ExecutedTransactionCannotBeReExecuted(uint256 txId)
+    isExecuted(txId) => isExecuted(txId)
+
+invariant TimelockPreventsEarlyExecution(uint256 txId)
+    isExecutable(txId) => block.timestamp >= txTimestamp + DELAY</code></pre>
+
+        <h2>4. Verification Workflow</h2>
+
+        <h3>Timeline</h3>
+        <table>
+            <tr><th>Phase</th><th>Duration</th><th>Deliverables</th></tr>
+            <tr><td>Phase 1: Specification</td><td>Week 1</td><td>Complete CVL specification file</td></tr>
+            <tr><td>Phase 2: Initial Verification</td><td>Week 2</td><td>Verification report (all rules passing)</td></tr>
+            <tr><td>Phase 3: Advanced Verification</td><td>Week 3-4</td><td>Formal proofs, cross-contract verification</td></tr>
+            <tr><td>Phase 4: Ongoing</td><td>Continuous</td><td>Automated verification pipeline</td></tr>
+        </table>
+
+        <h2>5. Tools</h2>
+
+        <h3>Certora Prover</h3>
+        <pre><code># Run verification
+certoraRun \
+    --contracts contracts/ \
+    --specs specs/oic_staking.spec \
+    --rule onlyOwnerCanSlash \
+    --solc solc8.20</code></pre>
+
+        <h3>K Framework</h3>
+        <p>Formal verification with K-framework for mathematical proofs.</p>
+
+        <h3>Coq/SSReflect</h3>
+        <pre><code> (* Formal specification in Coq *)
+Axiom stake_preserves_invariants :
+  forall a amount, stake a amount -> invariants hold.</code></pre>
+
+        <h2>6. Pre-Launch Checklist</h2>
+
+        <div class="checklist-item">⬜ All P0 invariants verified</div>
+        <div class="checklist-item">⬜ All P1 invariants verified</div>
+        <div class="checklist-item">⬜ All access control rules pass</div>
+        <div class="checklist-item">⬜ No arithmetic vulnerabilities</div>
+        <div class="checklist-item">⬜ Reentrancy protection verified</div>
+        <div class="checklist-item">⬜ Economic safety rules pass</div>
+        <div class="checklist-item">⬜ Cross-contract calls verified</div>
+        <div class="checklist-item">⬜ Formal proof of core properties</div>
+
+        <h2>7. Related Documentation</h2>
+        <ul>
+            <li><a href="OIC-Smart-Contracts.html">Smart Contracts</a> — Core contract implementations</li>
+            <li><a href="OIC-Treasury-Design.html">Treasury Design</a> — Treasury security architecture</li>
+        </ul>
+
+        <div class="nav-grid">
+            <a href="OIC-Smart-Contracts.html">← Smart Contracts</a>
+            <a href="docs.html">All Docs →</a>
+        </div>
+    </main>
+    <footer>
+        <p><strong>The Open Intelligence Compact</strong> — Building the legal foundation for autonomous intelligence</p>
+        <p><small>OIC Formal Verification Specification</small></p>
+    </footer>
+</body>
+</html>

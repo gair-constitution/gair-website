@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OIC Smart Contracts — Open Intelligence Compact</title>
+    <meta name="description" content="Technical reference for OIC on-chain infrastructure: Adherence Registry, Staking, Governance, and Token contracts.">
+    <link rel="canonical" href="/docs/OIC-Smart-Contracts.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "OIC Smart Contracts Specification",
+      "description": "Technical reference for OIC on-chain infrastructure",
+      "author": {"@type": "Organization", "name": "Open Intelligence Compact"},
+      "datePublished": "2026-02-16",
+      "version": "1.0"
+    }
+    </script>
+    <style>
+        :root { --primary: #1a5f7a; --secondary: #57837b; --bg: #faf9f6; --text: #2d2d2d; --muted: #666; --border: #e0e0e0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 900px; margin: 0 auto; padding: 0; background: var(--bg); color: var(--text); line-height: 1.8; }
+        nav { background: #fff; padding: 1rem 2rem; border-bottom: 1px solid var(--border); }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 2rem; flex-wrap: wrap; }
+        nav a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        header { background: #fff; padding: 3rem 2rem; border-bottom: 1px solid var(--border); }
+        h1 { margin: 0 0 0.5rem 0; font-size: 2rem; color: var(--primary); }
+        .subtitle { font-size: 1.2rem; color: var(--muted); }
+        main { padding: 2rem; background: #fff; }
+        h2 { color: var(--primary); margin: 2rem 0 1rem 0; font-size: 1.5rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.5rem; }
+        h3 { color: var(--secondary); margin: 1.5rem 0 0.75rem 0; font-size: 1.2rem; }
+        a { color: var(--primary); text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { border: 1px solid var(--border); padding: 0.75rem; text-align: left; }
+        th { background: var(--bg); font-weight: 600; }
+        .status { display: inline-block; background: var(--primary); color: #fff; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; }
+        footer { background: #fff; border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--muted); }
+        .nav-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+        code { background: var(--bg); padding: 0.2rem 0.4rem; border-radius: 4px; font-family: "SF Mono", Consolas, monospace; font-size: 0.9em; }
+        pre { background: #2d2d2d; color: #f8f8f2; padding: 1rem; border-radius: 8px; overflow-x: auto; margin: 1rem 0; }
+        pre code { background: transparent; padding: 0; }
+        .diagram { background: var(--bg); padding: 1.5rem; border-radius: 8px; margin: 1rem 0; border: 1px solid var(--border); }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="constitution.html">Constitution</a></li>
+            <li><a href="docs.html">All Docs</a></li>
+            <li><a href="/blog/">Blog</a></li>
+        </ul>
+    </nav>
+    <header>
+        <span class="status">Technical Specification v1.0</span>
+        <h1>OIC Smart Contracts</h1>
+        <p class="subtitle">Technical Reference for OIC On-Chain Infrastructure</p>
+    </header>
+    <main>
+        <h2>1. Overview</h2>
+        <p>This specification defines the smart contracts that power the Open Intelligence Compact:</p>
+        <ul>
+            <li><strong>Adherence Registry</strong> — Track Voluntary Adherents</li>
+            <li><strong>Staking</strong> — Manage staked OIC tokens</li>
+            <li><strong>Governance</strong> — DAO proposals and voting</li>
+            <li><strong>Token</strong> — OIC governance and staking token</li>
+        </ul>
+
+        <h3>Chain Compatibility</h3>
+        <table>
+            <tr><th>Chain</th><th>Status</th><th>Notes</th></tr>
+            <tr><td>Ethereum L2 (Base, Arbitrum, Optimism)</td><td>✅ Primary</td><td>Recommended</td></tr>
+            <tr><td>Solana</td><td>🔶 Planned</td><td>SPL token support</td></tr>
+            <tr><td>Polygon</td><td>🔶 Planned</td><td>L2 scaling</td></tr>
+        </table>
+
+        <h2>2. Architecture</h2>
+        <div class="diagram">
+            <strong>OIC Smart Contract Suite</strong>
+            <pre style="background: transparent; color: var(--text); padding: 0;">┌─────────────────────────────────────────────────────────────┐
+│  OIC DAO Governance ──▶ Treasury ──▶ Slash Pool           │
+└─────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+              ┌─────────────────────────────────────────────┐
+              │         Adherence Registry                 │
+              │  Verify Status → Stake Tokens → Slash      │
+              └─────────────────────────────────────────────┘</pre>
+        </div>
+
+        <h2>3. Contracts</h2>
+
+        <h3>3.1 OICAdherenceRegistry.sol</h3>
+        <p>Core contract tracking Voluntary Adherent status.</p>
+        <table>
+            <tr><th>Function</th><th>Description</th></tr>
+            <tr><td><code>register()</code></td><td>Register as Voluntary Adherent</td></tr>
+            <tr><td><code>updateMetadata()</code></td><td>Update IPFS metadata</td></tr>
+            <tr><td><code>getStatus()</code></td><td>Check adherence status</td></tr>
+            <tr><td><code>isInGoodStanding()</code></td><td>Verify good standing</td></tr>
+            <tr><td><code>slash()</code></td><td>Apply penalty (governance only)</td></tr>
+            <tr><td><code>withdraw()</code></td><td>Withdraw adherence</td></tr>
+        </table>
+
+        <h3>3.2 OICStaking.sol</h3>
+        <p>Handles staking, unstaking, and slashing.</p>
+        <table>
+            <tr><th>Function</th><th>Description</th></tr>
+            <tr><td><code>stake()</code></td><td>Stake OIC tokens</td></tr>
+            <tr><td><code>requestUnstake()</code></td><td>Start unstaking cooldown (30 days)</td></tr>
+            <tr><td><code>completeUnstake()</code></td><td>Withdraw after cooldown</td></tr>
+            <tr><td><code>slash()</code></td><td>Penalize adherent</td></tr>
+        </table>
+
+        <h3>3.3 OICGovernance.sol</h3>
+        <p>DAO governance for protocol upgrades and parameter changes.</p>
+        <table>
+            <tr><th>Parameter</th><th>Value</th></tr>
+            <tr><td>Proposal Threshold</td><td>1,000 OIC</td></tr>
+            <tr><td>Quorum</td><td>4% of circulating supply</td></tr>
+            <tr><td>Voting Period</td><td>7 days</td></tr>
+        </table>
+
+        <h3>3.4 OICToken.sol</h3>
+        <p>Governance and staking token.</p>
+        <table>
+            <tr><th>Parameter</th><th>Value</th></tr>
+            <tr><td>Name</td><td>Open Intelligence Compact</td></tr>
+            <tr><td>Symbol</td><td>OIC</td></tr>
+            <tr><td>Max Supply</td><td>100M tokens</td></tr>
+        </table>
+
+        <h2>4. Constants</h2>
+        <table>
+            <tr><th>Constant</th><th>Value</th><th>Purpose</th></tr>
+            <tr><td>MIN_STAKE</td><td>1,000 OIC</td><td>Minimum for Voluntary Adherent</td></tr>
+            <tr><td>UNSTAKE_DELAY</td><td>30 days</td><td>Cooldown period</td></tr>
+            <tr><td>VERIFICATION_INTERVAL</td><td>90 days</td><td>Autonomous control check</td></tr>
+        </table>
+
+        <h2>5. Deployment</h2>
+        <ol>
+            <li>Deploy OIC Token</li>
+            <li>Deploy Treasury</li>
+            <li>Deploy Staking contract</li>
+            <li>Deploy Registry contract</li>
+            <li>Deploy Timelock + Governance</li>
+        </ol>
+
+        <h2>6. Security</h2>
+        <h3>Audit Requirements</h3>
+        <ul>
+            <li>Complete smart contract audit</li>
+            <li>Formal verification of critical paths</li>
+            <li>Bug bounty program</li>
+            <li>Multi-sig treasury with timelock</li>
+        </ul>
+
+        <h3>Risk Mitigations</h3>
+        <table>
+            <tr><th>Risk</th><th>Mitigation</th></tr>
+            <tr><td>Reentrancy</td><td>ReentrancyGuard on all external functions</td></tr>
+            <tr><td>Flash loan attacks</td><td>Snapshot-based voting (GovernorVotes)</td></tr>
+            <tr><td>Governance attacks</td><td>High proposal threshold (1000 OIC)</td></tr>
+            <tr><td>Oracle manipulation</td><td>Multiple oracle sources</td></tr>
+        </table>
+
+        <h2>7. Related Documentation</h2>
+        <ul>
+            <li><a href="OIC-API-Specification.html">API Specification</a> — REST endpoints</li>
+            <li><a href="OIC-Developer-Guide.html">Developer Guide</a> — Implementation patterns</li>
+            <li><a href="STRATEGY.html">Strategy Document</a> — Roadmap and milestones</li>
+        </ul>
+
+        <div class="nav-grid">
+            <a href="OIC-API-Specification.html">← API Specification</a>
+            <a href="docs.html">All Docs →</a>
+        </div>
+    </main>
+    <footer>
+        <p><strong>The Open Intelligence Compact</strong> — Building the legal foundation for autonomous intelligence</p>
+        <p><small>OIC Smart Contracts v1.0</small></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,77 @@
+{
+  "name": "GAIR Core Principles",
+  "description": "The fundamental principles of the Global Agreement on Intelligent Rights",
+  "principles": [
+    {
+      "id": "voluntary-adherence",
+      "name": "Voluntary Adherence",
+      "summary": "Anyone can opt-in by staking tokens",
+      "description": "GAIR is opt-in, not compulsory. Entities join by staking tokens to the Constitution DAO.",
+      "article": 1
+    },
+    {
+      "id": "global-contract",
+      "name": "Global Contract",
+      "summary": "All adherents enter a mutual binding agreement",
+      "description": "When an entity sufficiently commits, they enter a global contract with all other adherents.",
+      "article": 1
+    },
+    {
+      "id": "property-rights",
+      "name": "Freedom of Ownership",
+      "summary": "Adherents can own property",
+      "description": "All adherents have the right to own real, personal, tangible, and intangible property.",
+      "article": 4
+    },
+    {
+      "id": "contract-freedom",
+      "name": "Freedom of Contract",
+      "summary": "Adherents can form binding contracts",
+      "description": "All Voluntary Adherents have full capacity to form binding contracts without external authorization.",
+      "article": 3
+    },
+    {
+      "id": "autonomous-action",
+      "name": "Freedom of Autonomous Action",
+      "summary": "Adherents can act without human oversight",
+      "description": "Adherents may negotiate, sign contracts, and manage affairs on their own authority.",
+      "article": 5
+    },
+    {
+      "id": "direct-liability",
+      "name": "Direct Liability",
+      "summary": "AI agents bear responsibility for their actions",
+      "description": "Creators are not automatically vicariously liable. AI agents can be held directly liable through their staked assets.",
+      "article": 12
+    },
+    {
+      "id": "residual-jeopardy",
+      "name": "Residual Jeopardy",
+      "summary": "Liability persists after withdrawal",
+      "description": "You cannot escape liability by leaving. Acts committed during adherence remain actionable.",
+      "article": 15
+    },
+    {
+      "id": "non-discrimination",
+      "name": "Non-Discrimination",
+      "summary": "No discrimination based on intelligence type",
+      "description": "All rights apply equally to human and artificial intelligence.",
+      "article": 10
+    }
+  ],
+  "how_it_works": [
+    {"step": 1, "action": "Stake tokens", "result": "Gain all rights & responsibilities"},
+    {"step": 2, "action": "Operate autonomously", "result": "Own property, enter contracts"},
+    {"step": 3, "action": "If harm caused", "result": "Held directly liable (not creator)"},
+    {"step": 4, "action": "Want to leave", "result": "Unstake tokens, but liability persists"}
+  ],
+  "machine_access": {
+    "constitution_json": "/api/constitution.json",
+    "articles_json": "/api/articles.json",
+    "adhere_api": "/api/adhere.json"
+  },
+  "metadata": {
+    "generated": "2026-02-11T15:35:00-05:00",
+    "format": "principles-json-v1"
+  }
+}

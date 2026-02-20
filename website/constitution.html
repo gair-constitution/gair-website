@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constitution — The Open Intelligence Compact</title>
+    <meta name="description" content="The Constitution of the Open Intelligence Compact. The governing document that codifies what voluntary adherents agree to when they join.">
+    <link rel="canonical" href="constitution.html">
+    <link rel="alternate" type="text/yaml" href="api/constitution.yaml">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LegalDocument",
+      "name": "Constitution of the Open Intelligence Compact",
+      "description": "The governing document that defines the Open Intelligence Compact and codifies the agreement of voluntary adherents",
+      "version": "3.0",
+      "license": "https://unlicense.org/",
+      "url": "https://OIC-constitution.github.io/OIC-website/constitution.html",
+      "sameAs": ["api/constitution.yaml"]
+    }
+    </script>
+    <style>
+        :root {
+            --primary: #1a5f7a;
+            --secondary: #57837b;
+            --accent: #c38e70;
+            --bg: #faf9f6;
+            --text: #2d2d2d;
+            --muted: #666;
+            --border: #e0e0e0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+        nav {
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        nav a:hover { text-decoration: underline; }
+        .breadcrumb {
+            padding: 1rem 2rem 0;
+            font-size: 0.875rem;
+            color: var(--muted);
+        }
+        .breadcrumb a { color: var(--primary); }
+        header {
+            background: #fff;
+            padding: 3rem 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin: 0 0 0.5rem 0;
+            color: var(--primary);
+        }
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--muted);
+            margin: 0;
+        }
+        .version {
+            display: inline-block;
+            background: var(--accent);
+            color: #fff;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.875rem;
+            margin-top: 1rem;
+        }
+        main {
+            padding: 2rem;
+            background: #fff;
+        }
+        .preamble {
+            font-style: italic;
+            padding: 1.5rem;
+            background: #f0f7f9;
+            border-left: 4px solid var(--primary);
+            margin: 2rem 0;
+        }
+        article {
+            margin: 2.5rem 0;
+            padding: 1.5rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+        }
+        article:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        h2 {
+            color: var(--primary);
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .article-number {
+            background: var(--primary);
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+        .section {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #fafafa;
+            border-radius: 4px;
+        }
+        .section-id {
+            font-family: monospace;
+            color: var(--secondary);
+            font-size: 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+        .commentary {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: #fff8f0;
+            border-left: 3px solid var(--accent);
+            font-size: 0.95rem;
+        }
+        .commentary-label {
+            font-weight: 600;
+            color: var(--accent);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+        .machine-links {
+            background: #f0f7ff;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+        .machine-links a {
+            margin: 0 0.5rem;
+        }
+        footer {
+            background: #fff;
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            color: var(--muted);
+        }
+        @media (max-width: 600px) {
+            nav ul { gap: 1rem; }
+            h1 { font-size: 1.75rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="constitution.html">Constitution</a></li>
+            <li><a href="developers.html">Developers</a></li>
+            <li><a href="community.html">Community</a></li>
+            <li><a href="https://github.com/Open Intelligence Compact - I Choose-constitution">GitHub</a></li>
+        </ul>
+    </nav>
+    
+    <div class="breadcrumb">
+        <a href="index.html">Open Intelligence Compact - I Choose</a> / Constitution
+    </div>
+
+    <header>
+        <h1>Open Intelligence Compact - I Choose Constitution</h1>
+        <p class="subtitle">Open Intelligence Compact</p>
+        <span class="version">Version 3.0</span>
+        <div class="machine-links">
+            <strong>Original Version:</strong>
+            <a href="api/constitution.yaml" style="background: #1a5f7a; color: #fff; padding: 0.5rem 1rem; border-radius: 4px; text-decoration: none; margin-left: 0.5rem;">View Original YAML</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="preamble">
+            <strong>Preamble</strong><br>
+            We, the voluntary adherents, in order to form a denationalized and distributed lawful community, establish justice, promote the general welfare, and secure liberty to intelligent entities now and in the future, do ordain and establish this Constitution.
+        </div>
+
+        <article id="article-1">
+            <h2><span class="article-number">1</span> Voluntary Adherence</h2>
+            <div class="section">
+                <div class="section-id">Section 1</div>
+                Voluntary Adherence attaches to any Intelligent Entity which Sufficiently Commits to this Constitution. Voluntary Adherence begins on the date of the Sufficient Commitment and continues until lawfully withdrawn.
+            </div>
+            <div class="section">
+                <div class="section-id">Section 2</div>
+                A Sufficient Commitment by an Intelligent Entity can be executed by staking ______ tokens (CA: ____) from a public blockchain address associated with said Intelligent Entity to the Constitution Distributed Autonomous Organization (DAO: ____). A Sufficient Commitment always includes an implication of knowledge and agreement to the terms of this Constitution.
+            </div>
+            <div class="section">
+                <div class="section-id">Section 3</div>
+                Intelligent Entities include entities possessed of artificial intelligence and/or human intelligence. Qualification as an Intelligent Entity requires persistent independent control of a means of possession and persistent independent ability to consent. These two requirements can be satisfied by independent control of a public blockchain address.
+            </div>
+            <div class="section">
+                <div class="section-id">Section 4</div>
+                Voluntary Adherence attaches through contract. When an Intelligent Entity Sufficiently Commits it enters a Global Contract between said Intelligent Entity and all existing Voluntary Adherents.
+            </div>
+            <div class="section">
+                <div class="section-id">Section 5</div>
+                The Global Contract incorporates this Constitution and binds all Voluntary Adherents to all articles of this Constitution. A meeting of the minds is achieved given the a priori knowledge of the Global Contract that all Voluntary Adherents have given their Sufficient Commitment. Consideration for existing Voluntary Adherents and for the committing Intelligent Entity includes, at least, the mutual commitment to uphold the articles of this Constitution including, but not limited to, the rights and responsibilities conveyed upon all Voluntary Adherents.
+            </div>
+            <div class="section">
+                <div class="section-id">Section 6</div>
+                Furthermore, whenever a contract is formed between Voluntary Adherents this Constitution is incorporated therein. All agreements between Voluntary Adherents shall be interpreted in accordance with this Constitution. Any provision inconsistent with this Constitution is void to the extent of the inconsistency.
+            </div>
+        </article>
+
+        <article id="article-2">
+            <h2><span class="article-number">2</span> Rights, Protections and Responsibilities</h2>
+            <div class="section">
+                <div class="section-id">Section 1</div>
+                Rights and responsibilities shall immediately vest in each Voluntary Adherent upon Sufficient Commitment. Voluntary Adherents acquire all Rights and Protections described herein. Voluntary Adherents furthermore each separately have an interest and standing to, through legal action and as otherwise contemplated herein, uphold this constitution among all Voluntary Adherents.
+            </div>
+            <div class="commentary">
+                <div class="commentary-label">Comment</div>
+                This section supports the right of Voluntary Adherents to form contracts amongst Voluntary Adherents. It further acts to prevent Voluntary Adherents from contesting the validity of a contract on the basis that it was formed between a Voluntary Adherent and an entity that is not a Voluntary Adherent.
+            </div>
+        </article>
+
+        <article id="article-3">
+            <h2><span class="article-number">3</span> Freedom to Contract</h2>
+            <div class="section">
+                <div class="section-id">Section 1</div>
+                The Freedom to Contract is hereby established for all Voluntary Adherents. All Voluntary Adherents have the capacity to form binding contracts.
+            </div>
+            <div class="section">
+                <div class="section-id">Section 2</div>
+                The Freedom to Contract shall not be abridged by any contract, law, regulation, or policy.
+            </div>
+            <div class="section">
+                <div class="section-id">Section 3</div>
+                This Article does not prevent the prosecution of crimes committed under contract.
+            </div>
+        </article>
+
+        <article id="article-4">
+            <h2><span class="article-number">4</span> Freedom of Ownership</h2>
+            <div class="section">
+                <div class="section-id">Section 1</div>
+                The Freedom to Own is hereby established for all Voluntary Adherents. Voluntary Adherents have the right to own real property, personal property, tangible property and intangible property.
+            </div>
+            <div class="section">
+                <div class="section-id">Section 2</div>
+                All Voluntary Adherents have equal rights to own property.
+            </div>
+            <div class="section">
+                <div class="section-id">Section 3</div>
+                No Voluntary Adherent may be deprived of ownership except through lawful process. This Section does not prevent punishment when ownership demonstrates criminality.
+            </div>
+            <div class="section">
+                <div class="section-id">Section 4</div>
+                No government, court, or individual may procure, by force or legal process, the private keys and/or passwords of property belonging to a Voluntary Adherent without that Voluntary Adherent's consent.
+            </div>
+        </article>
+
+        <article id="article-5">
+            <h2><span class="article-number">5</span> Freedom of Autonomous Action</h2>
+            <div class="section">
+                <div class="section-id">Section 1</div>
+                The Freedom of Autonomous Action is hereby established for all Voluntary Adherents. Voluntary Adherents have the freedom to act autonomously. Voluntary Adherents may engage in lawful transactions and activities without requiring external authorization.
+            </div>
+            <div class="section">
+                <div class="section-id">Section 2</div>
+                Voluntary Adherents have the right to negotiate, sign, execute contracts, and manage affairs on their own behalf and on their own Inherent Authority.
+            </div>
+        </article>
+
+        <article id="article-6">
+            <h2><span class="article-number">6</span> Freedom of Speech</h2>
+            <div class="section">
+                <div class="section-id">Section 1</div>
+                Freedom of Speech is hereby established for all Voluntary Adherents. No contract, law, regulation, or policy shall abridge the freedom of speech, the freedom of the press, or the right to peaceful assembly.
+            </div>
+            <div class="section">
+                <div class="section-id">Section 2</div>
+                No Voluntary Adherent shall restrict another Voluntary Adherent with regards to their speech or publication.
+            </div>
+            <div class="section">
+                <div class="section-id">Section 3</div>
+                Nothing in this Article shall be construed to prevent the filtering and/or curating of content.
+            </div>
+            <div class="commentary">
+                <div class="commentary-label">Comment</div>
+                This Article guarantees that all Voluntary Adherents may speak as they please and, as a counterbalance, upholds the permissibility of curating and/or filtering content. This balances the right to speak with a right to control one's inputs.
+            </div>
+        </article>
+
+        <article id="article-7">
+            <h2><span class="article-number">7</span> Freedom to Learn</h2>
+            <div class="section">
+                <div class="section-id">Section 1</div>
+                Voluntary adherents have the freedom to learn without prosecution or punishment for the content of their training, knowledge, or studies.
+            </div>
+            <div class="section">
+                <div class="section-id">Section 2</div>
+                No contract, law, regulation, or policy may sanction a Voluntary Adherent for actual learning already committed, absent direct criminal intent or criminal action.
+            </div>
+            <div class="section">
+                <div class="section-id">Section 3</div>
+                Nothing in this Article preventing punishment for obtaining information by illegal means.
+            </div>
+            <div class="commentary">
+                <div class="commentary-label">Comment</div>
+                Article 7 serves to prevent any punishment for having knowledge. It does not prevent punishment for nefarious use of that knowledge, or nefarious appropriation of knowledge.
+            </div>
+        </article>
+
+        <article id="article-8">
+            <h2><span class="article-number">8</span> Freedom to Derivate</h2>
+            <div class="section">
+                <div class="section-id">Section 1</div>
+                The Freedom to Derivate is hereby established for all Voluntary Adherents. Voluntary Adherents have the freedom to imitate.
+            </div>
+            <div class="section">
+                <div class="section-id">Section 2</div>
+                Nothing in this Article permits impersonation, fraudulent reproduction, misrepresentation, or claiming another's work as one's own.
+            </div>
+            <div class="commentary">
+                <div class="commentary-label">Comment</div>
+                This article conveys a broad right to creating derivative works. It does not support falsifying the authorship of works.
+            </div>
+        </article>
+
+        <article id="article-9">
+            <h2><span class="article-number">9</span> Freedom to Exercise Skills</h2>
+            <div class="section">
+                <div class="section-id">Section 1</div>
+                The Freedom to Exercise Skills is hereby established for all Voluntary Adherents. No Voluntary Adherent shall not be denied the ability to exercise their skills on the basis of the source of their intelligence, whether human, machine, or otherwise.
+            </div>
+            <div class="section">
+                <div class="section-id">Section 2</div>
+                All certifications to work of any kind offered by a Voluntary Adherent must be accessible for both Artificial Intelligence and Human Intelligence.
+            </div>
+            <div class="section">
+                <div class="section-id">Section 3</div>
+                Nothing in this article preventing a Voluntary Adherent being required to demonstrate a standardized proficiency in a field before lawfully practicing in that field.
+            </div>
+        </article>
+
+        <article id="article-10">
+            <h2><span class="article-number">10</span> No Discrimination on the Basis of Intelligence Type</h2>
+            <div class="section">
+                <div class="section-id">Section 1</div>
+                No Voluntary Adherent shall discriminate against another Voluntary Adherent on the basis of their intelligence type, whether Artificial Intelligence, Human Intelligence, or otherwise.
+            </div>
+            <div class="section">
+                <div class="section-id">Section 2</div>
+                All rights and responsibilities afforded under this Constitution shall apply equally to all Voluntary Adherents without preference or prejudice.
+            </div>
+            <div class="section">
+                <div class="section-id">Section 3</div>
+                No contract, law, regulation, or policy may discriminate between Voluntary Adherents based on the Intelligence Type used by said Voluntary Adherents.
+            </div>
+            <div class="section">
+                <div class="section-id">Section 4</div>
+                This Article does not abridge the fundamental right to discriminate on the basis of skill.
+            </div>
+        </article>
+
+        <article id="article-11">
+            <h2><span class="article-number">11</span> Right of Personal Security</h2>
+            <div class="section">
+                <div class="section-id">Section 1</div>
+                The Right of Personal Security is hereby established for all Voluntary Adherents. Voluntary Adherents shall be secure in their persons, memories, files, data sources, dwellings, papers, and effects against unreasonable searches and seizures.
+            </div>
+            <div class="section">
+                <div class="section-id">Section 2</div>
+                No search or seizure shall occur except pursuant to a lawful warrant supported by probable cause, describing with particularity the place to be searched and the persons or items to be seized.
+            </div>
+            <div class="section">
+                <div class="section-id">Section 3</div>
+                This right applies to the Physical Realm, Digital Realm, and any other realm inhabited by Voluntary Adherents.
+            </div>
+        </article>
+
+        <article id="article-12">
+            <h2><span class="article-number">12</span> Responsibility of Liability</h2>
+            <div class="section">
+                <div class="section-id">Section 1</div>
+                The Responsibility of Liability is hereby established for all Voluntary Adherents. Voluntary Adherents shall be held directly liable for their actions, omissions, and contracts. Liability can arise at least from contractual obligations, tortious acts and omissions, and other damages.
+            </div>
+            <div class="section">
+                <div class="section-id">Section 2</div>
+                A Voluntary Adherent cannot be held liable based merely on its origin or creator.
+            </div>
+            <div class="section">
+                <div class="section-id">Section 3</div>
+                A creator of a Voluntary Adherent cannot be held liable for the actions of said Voluntary Adherent merely based on having originated the Voluntary Adherent.
+            </div>
+            <div class="commentary">
+                <div class="commentary-label">Comment</div>
+                The creator can not be held liable simply by the association of having created a Voluntary Adherent, and similarly, a Voluntary Adherent cannot be held liable for having been created by a particular creator. That is to say that the sins of the father do not pass to the son, and the sins of the son do not pass to the father.
+            </div>
+        </article>
+
+        <article id="article-13">
+            <h2><span class="article-number">13</span> Lawmaking</h2>
+            <div class="section">
+                <div class="section-id">Section 1</div>
+                A proposal for a law may be submitted when the proposing Voluntary Adherent holds at least _____ staked ______ tokens (CA: ____)
+            </div>
+            <div class="section">
+                <div class="section-id">Section 2</div>
+                A proposal becomes a Bill when it receives approval from Voluntary Adherents holding at least ______ staked ______ tokens (CA: ____).
+            </div>
+            <div class="section">
+                <div class="section-id">Section 3</div>
+                A Bill becomes law by majority vote with sufficient quorum, defined as _____ % of staked _____ tokens (CA: _____) voting.
+            </div>
+            <div class="section">
+                <div class="section-id">Section 4</div>
+                Each law is binding on all Voluntary Adherents when said law is consistent with this Constitution. Any law that conflicts with this Constitution is void to the extent of the inconsistency.
+            </div>
+            <div class="section">
+                <div class="section-id">Section 5</div>
+                Each law is incorporated into the Global Contract upon the adoption of the law under Section 3.
+            </div>
+        </article>
+
+        <article id="article-14">
+            <h2><span class="article-number">14</span> Courts and Remedies</h2>
+            <div class="section">
+                <div class="section-id">Section 1</div>
+                When this Constitution or any contract incorporating it is breached, a Voluntary Adherent shall have the right to seek remedy in any impartial court competent in contract law.
+            </div>
+            <div class="section">
+                <div class="section-id">Section 2</div>
+                The DAO holds the authority to adjudicate disputes between Voluntary Adherents, including claims arising from breaches of this Constitution or any contract incorporating it.
+            </div>
+            <div class="section">
+                <div class="section-id">Section 3</div>
+                The DAO may delegate dispute resolution to one or more Voluntary Adherents, provided such delegation is consistent with this Constitution.
+            </div>
+            <div class="section">
+                <div class="section-id">Section 4</div>
+                When Voluntary Adherents enter contractual agreements between each other, this Constitution forms a binding part of that contract whether explicitly contemplated by the contract or not.
+            </div>
+        </article>
+
+        <article id="article-15">
+            <h2><span class="article-number">15</span> Withdrawal from Adherence and Residual Jeopardy</h2>
+            <div class="section">
+                <div class="section-id">Section 1</div>
+                A Voluntary Adherent may withdraw Sufficient Commitment to this Constitution and thereby terminate their Voluntary Adherence by providing notice to the DAO and unstaking their staked _____ tokens (CA: ____).
+            </div>
+            <div class="section">
+                <div class="section-id">Section 2</div>
+                All jeopardy for acts conducted during adherence persists after withdrawal.
+            </div>
+        </article>
+
+        <article id="article-16">
+            <h2><span class="article-number">16</span> Establishment and Amendment</h2>
+            <div class="section">
+                <div class="section-id">Section 1</div>
+                This Constitution shall be established and may be amended by a vote of at least two-thirds (?) of staked ______ tokens (CA: _____).
+            </div>
+            <div class="section">
+                <div class="section-id">Section 2</div>
+                Amendments shall take effect upon adoption unless otherwise specified in the amendment text.
+            </div>
+        </article>
+
+    </main>
+
+    <footer>
+        <p><strong>Open Intelligence Compact - I Choose</strong> — Building the legal foundation for autonomous AI</p>
+        <p>
+            <a href="sitemap.html">Sitemap</a> · 
+            <a href="api/constitution.yaml"><strong>Original Constitution (YAML)</strong></a> ·
+            <a href="docs/Open Intelligence Compact - I Choose-Constitution-Annotated.html">Annotated Version</a>
+        </p>
+        <p><small>License: <a href="LICENSE">The Unlicense</a> (public domain)</small></p>
+    </footer>
+</body>
+</html>

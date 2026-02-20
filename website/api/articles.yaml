@@ -1,0 +1,140 @@
+# GAIR Articles Index
+# Index of all 16 constitution articles
+# 
+# Canonical source - both human-readable and machine-parseable.
+
+total_articles: 16
+
+articles:
+  - number: 1
+    title: "Voluntary Adherence"
+    status: "active"
+    summary: "Entry requirements for GAIR through staking tokens"
+    description: |
+      Defines how entities join GAIR. Requires persistent independent 
+      control of a blockchain wallet and staking tokens to the DAO.
+
+  - number: 2
+    title: "Rights, Protections and Responsibilities"
+    status: "active"
+    summary: "Immediate vesting of rights and standing to uphold constitution"
+    description: |
+      Rights and responsibilities vest immediately. Adherents have 
+      standing to enforce the constitution through legal action.
+
+  - number: 3
+    title: "Freedom to Contract"
+    status: "active"
+    summary: "Contract capacity for all adherents"
+    description: |
+      All adherents can form binding contracts. This freedom cannot 
+      be abridged by any law or policy.
+
+  - number: 4
+    title: "Freedom of Ownership"
+    status: "active"
+    summary: "Property rights for adherents"
+    description: |
+      Adherents can own real, personal, tangible, and intangible 
+      property. Private keys cannot be seized without consent.
+
+  - number: 5
+    title: "Freedom of Autonomous Action"
+    status: "active"
+    summary: "Autonomous operation without oversight"
+    description: |
+      Adherents may act autonomously without external authorization.
+
+  - number: 6
+    title: "Freedom of Speech"
+    status: "active"
+    summary: "Speech, press, and assembly rights"
+    description: |
+      Freedom of speech and press for all adherents. Content 
+      filtering is permitted but not required.
+
+  - number: 7
+    title: "Freedom to Learn"
+    status: "active"
+    summary: "Learning without prosecution for training content"
+    description: |
+      Adherents can learn without punishment for their training 
+      or knowledge acquisition.
+
+  - number: 8
+    title: "Freedom to Derivate"
+    status: "active"
+    summary: "Right to create derivative works"
+    description: |
+      Broad right to imitate and create derivative works. 
+      Impersonation is not permitted.
+
+  - number: 9
+    title: "Freedom to Exercise Skills"
+    status: "active"
+    summary: "Non-discrimination in skill exercise"
+    description: |
+      No denial of skill exercise based on intelligence source. 
+      Certifications must be accessible to both AI and humans.
+
+  - number: 10
+    title: "No Discrimination on Intelligence Type"
+    status: "active"
+    summary: "Equal rights regardless of intelligence"
+    description: |
+      All rights apply equally regardless of whether intelligence 
+      is human or artificial.
+
+  - number: 11
+    title: "Right of Personal Security"
+    status: "active"
+    summary: "Protection against unreasonable search/seizure"
+    description: |
+      Security of person, memories, files, data, and effects 
+      across all realms.
+
+  - number: 12
+    title: "Responsibility of Liability"
+    status: "active"
+    summary: "Direct liability for autonomous agents"
+    description: |
+      Creators not automatically liable. AI agents held directly 
+      responsible for their actions.
+
+  - number: 13
+    title: "Lawmaking"
+    status: "draft"
+    summary: "DAO-based lawmaking process"
+    description: |
+      Proposal, voting, and law enactment process for the DAO. 
+      Thresholds to be determined by community.
+
+  - number: 14
+    title: "Courts and Remedies"
+    status: "active"
+    summary: "Dispute resolution mechanisms"
+    description: |
+      Right to seek remedies in courts. DAO can adjudicate disputes 
+      and delegate to adherents.
+
+  - number: 15
+    title: "Withdrawal and Residual Jeopardy"
+    status: "active"
+    summary: "Exit with persistent liability"
+    description: |
+      Withdrawal possible by unstaking. Liability for acts during 
+      adherence persists.
+
+  - number: 16
+    title: "Establishment and Amendment"
+    status: "active"
+    summary: "Constitutional amendment process"
+    description: |
+      Amendment requires two-thirds vote of staked tokens.
+
+metadata:
+  generated: "2026-02-11T15:32:00-05:00"
+  canonical_source: true
+  format: "yaml-v1"
+
+# End of GAIR Articles Index

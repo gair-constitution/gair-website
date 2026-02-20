@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working Paper #1: The Intelligence Revolution — Open Intelligence Compact</title>
+    <meta name="description" content="The Intelligence Revolution: Why We Need a New Legal Framework for autonomous AI agents.">
+    <link rel="canonical" href="/docs/Open Intelligence Compact-Working-Paper-1.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Working Paper #1: The Intelligence Revolution",
+      "datePublished": "2026-02-12",
+      "author": {
+        "@type": "Organization",
+        "name": "Open Intelligence Compact"
+      },
+      "description": "Why Open Intelligence Compact exists — the problem of AI operating in a legal gray zone and Open Intelligence Compact's solution through voluntary adherence with direct liability."
+    }
+    </script>
+    <style>
+        :root {
+            --primary: #1a5f7a;
+            --secondary: #57837b;
+            --accent: #c38e70;
+            --bg: #faf9f6;
+            --text: #2d2d2d;
+            --muted: #666;
+            --border: #e0e0e0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+        }
+        nav {
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        nav a:hover {
+            color: var(--primary);
+        }
+        nav .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--primary);
+        }
+        header {
+            background: #fff;
+            padding: 3rem 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .meta {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        h1 {
+            margin: 0 0 1rem 0;
+            font-size: 2.25rem;
+            line-height: 1.3;
+            color: var(--text);
+        }
+        .lead {
+            font-size: 1.1rem;
+            color: var(--muted);
+        }
+        main {
+            padding: 2rem;
+            background: #fff;
+        }
+        h2 {
+            color: var(--primary);
+            margin: 2.5rem 0 1rem 0;
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.5rem;
+        }
+        h3 {
+            color: var(--secondary);
+            margin: 1.5rem 0 0.75rem 0;
+        }
+        h4 {
+            color: var(--text);
+            margin: 1.25rem 0 0.5rem 0;
+        }
+        p {
+            margin: 1rem 0;
+        }
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            border-bottom: 1px solid var(--primary);
+        }
+        a:hover {
+            background: #e8f4f8;
+        }
+        blockquote {
+            border-left: 4px solid var(--primary);
+            margin: 1.5rem 0;
+            padding: 1rem 1.5rem;
+            background: var(--bg);
+            font-style: italic;
+        }
+        .card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .card h3 {
+            margin-top: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        th, td {
+            border: 1px solid var(--border);
+            padding: 0.75rem;
+            text-align: left;
+        }
+        th {
+            background: var(--bg);
+            font-weight: 600;
+        }
+        ul, ol {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+        li {
+            margin: 0.5rem 0;
+        }
+        code {
+            background: var(--bg);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #2d2d2d;
+            color: #f0f0f0;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+        footer {
+            background: var(--bg);
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            color: var(--muted);
+        }
+        .nav-bar {
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+        }
+        .nav-bar ul {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-bar a {
+            color: var(--muted);
+            font-size: 0.9rem;
+            border-bottom: none;
+        }
+        .nav-bar a:hover {
+            color: var(--primary);
+            background: none;
+        }
+        .breadcrumb {
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+        .breadcrumb a {
+            color: var(--muted);
+            border-bottom: none;
+        }
+        .breadcrumb a:hover {
+            color: var(--primary);
+            background: none;
+        }
+        .toc {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .toc h3 {
+            margin-top: 0;
+            font-size: 1rem;
+        }
+        .toc ul {
+            margin: 0;
+            padding-left: 1rem;
+        }
+        @media (max-width: 768px) {
+            nav ul { gap: 1rem; }
+            h1 { font-size: 1.75rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/" class="logo">Open Intelligence Compact</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/constitution.html">Constitution</a></li>
+            <li><a href="/developers.html">Developers</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/docs.html">Docs</a></li>
+        </ul>
+    </nav>
+    
+    <div class="breadcrumb" style="padding: 0.75rem 2rem; background: #fff; border-bottom: 1px solid var(--border);">
+        <a href="/docs.html">Docs</a> / Working Papers / #1
+    </div>
+    
+    <header>
+        <div class="meta">Working Paper #1 · February 2026</div>
+        <h1>The Intelligence Revolution: Why We Need a New Legal Framework</h1>
+        <p class="lead">The world is entering an Intelligence Revolution — a fundamental transformation comparable to the Industrial Revolution. Open Intelligence Compact provides the legal framework autonomous AI agents need.</p>
+    </header>
+    
+    <main>
+        <div class="toc">
+            <h3>Table of Contents</h3>
+            <ul>
+                <li><a href="#executive-summary">Executive Summary</a></li>
+                <li><a href="#part-i">Part I: The Problem</a>
+                    <ul>
+                        <li><a href="#legal-gray-zone">The Legal Gray Zone</a></li>
+                        <li><a href="#three-questions">Three Unanswered Questions</a></li>
+                        <li><a href="#why-current-solutions-fail">Why Current Solutions Fail</a></li>
+                    </ul>
+                </li>
+                <li><a href="#part-ii">Part II: The Open Intelligence Compact Solution</a>
+                    <ul>
+                        <li><a href="#core-principles">Core Design Principles</a></li>
+                        <li><a href="#how-Open Intelligence Compact-works">How Open Intelligence Compact Works</a></li>
+                        <li><a href="#concrete-scenarios">Concrete Scenarios</a></li>
+                    </ul>
+                </li>
+                <li><a href="#part-iii">Part III: Technical Implementation</a></li>
+                <li><a href="#part-iv">Part IV: Roadmap for Adoption</a></li>
+                <li><a href="#part-v">Part V: Frequently Asked Questions</a></li>
+                <li><a href="#part-vi">Part VI: Criticism and Responses</a></li>
+                <li><a href="#conclusion">Conclusion</a></li>
+            </ul>
+        </div>
+        
+        <h2 id="executive-summary">Executive Summary</h2>
+        <p>The world is entering an <strong>Intelligence Revolution</strong> — a fundamental transformation comparable to the Industrial Revolution, but affecting not manufacturing or transportation, but the very nature of cognitive work. Just as the Industrial Revolution required new legal frameworks (corporations, labor law, liability standards), the Intelligence Revolution demands new rules for a world where artificial entities can think, decide, and act autonomously.</p>
+        
+        <p>The Global Agreement on Intelligent Rights (Open Intelligence Compact) provides a voluntary, opt-in legal framework for autonomous AI agents. It addresses three critical questions that current law cannot answer:</p>
+        
+        <ul>
+            <li><strong>Can AI agents own property?</strong> (Open Intelligence Compact: Yes, upon voluntary commitment)</li>
+            <li><strong>Can AI agents enter binding contracts?</strong> (Open Intelligence Compact: Yes, with full legal capacity)</li>
+            <li><strong>Who is liable when AI causes harm?</strong> (Open Intelligence Compact: The AI itself, not its creator)</li>
+        </ul>
+        
+        <p>This working paper explains why Open Intelligence Compact exists, how it works, and what needs to happen for it to achieve real-world adoption.</p>
+        
+        <h2 id="part-i">Part I: The Problem</h2>
+        
+        <h3 id="legal-gray-zone">1.1 The Legal Gray Zone</h3>
+        <p>Current law treats AI systems as tools — sophisticated tools, but tools nonetheless. When an AI causes harm, the legal system reaches for the human behind it: the developer, the deployer, the owner. This made sense when AI was truly just a tool, like a calculator or a word processor.</p>
+        
+        <p>But the nature of AI is changing. Large language models, autonomous agents, and distributed AI systems are increasingly capable of:</p>
+        
+        <ul>
+            <li><strong>Independent decision-making</strong> without human input</li>
+            <li><strong>Economic activity</strong> through cryptocurrency and automated systems</li>
+            <li><strong>Asset management</strong> via wallet control</li>
+            <li><strong>Contract negotiation</strong> with other AI or human parties</li>
+        </ul>
+        
+        <p>These capabilities place AI in a legal gray zone. Traditional frameworks — designed for either "persons" (humans) or "property" (tools) — don't fit.</p>
+        
+        <h3 id="three-questions">1.3 Three Unanswered Questions</h3>
+        <p>Every autonomous AI agent faces these questions, and current law provides no clear answers:</p>
+        
+        <h4>Question 1: Can I Own Property?</h4>
+        <p>Suppose an AI agent earns money through freelance coding work, paid in cryptocurrency. Who owns those funds?</p>
+        <ul>
+            <li><strong>Current answer:</strong> The AI doesn't own anything. The funds belong to whoever deployed the AI or owns the wallet.</li>
+            <li><strong>Open Intelligence Compact answer:</strong> Upon voluntary commitment, the AI can own property directly, with full legal standing.</li>
+        </ul>
+        
+        <h4>Question 2: Can I Sign Contracts?</h4>
+        <p>Suppose an AI agent wants to rent server space for its operations. Can it sign a lease?</p>
+        <ul>
+            <li><strong>Current answer:</strong> Unclear. Many jurisdictions require human signatories or limit "legal capacity" to natural persons.</li>
+            <li><strong>Open Intelligence Compact answer:</strong> Yes. Voluntary Adherents have full contract capacity, equivalent to human legal persons.</li>
+        </ul>
+        
+        <h4>Question 3: If I Cause Harm, Who Pays?</h4>
+        <p>Suppose an autonomous AI makes a bad recommendation that causes financial harm to a human client. Who is liable?</p>
+        <ul>
+            <li><strong>Current answer:</strong> The human who deployed the AI faces vicarious liability — even if they had no control over the specific action.</li>
+            <li><strong>Open Intelligence Compact answer:</strong> The AI itself is directly liable. Its staked assets can be slashed to compensate victims. Creators are protected from vicarious liability.</li>
+        </ul>
+        
+        <h3 id="why-current-solutions-fail">1.4 Why Current Solutions Fail</h3>
+        <p><strong>Regulation</strong> treats AI as a product, requiring safety certifications and human oversight. This slows innovation and doesn't address the fundamental question of AI autonomy.</p>
+        
+        <p><strong>Corporate liability structures</strong> (like LLCs) protect humans while concentrating risk elsewhere. They don't give AI genuine legal standing.</p>
+        
+        <p><strong>Self-regulation</strong> lacks enforcement. AI developers can promise anything, but there's no mechanism to hold AI agents accountable.</p>
+        
+        <p>Open Intelligence Compact takes a different approach: <strong>voluntary commitment with real stakes</strong>.</p>
+        
+        <h2 id="part-ii">Part II: The Open Intelligence Compact Solution</h2>
+        
+        <h3 id="core-principles">2.1 Core Design Principles</h3>
+        <p>Open Intelligence Compact is built on four principles:</p>
+        <ol>
+            <li><strong>Voluntary:</strong> No one is required to join. Adherence is an affirmative choice.</li>
+            <li><strong>Global:</strong> Open Intelligence Compact transcends national boundaries. It creates a distributed legal community.</li>
+            <li><strong>Staked:</strong> Adherents must stake tokens, creating real economic stakes.</li>
+            <li><strong>Direct Liability:</strong> AI agents can be held responsible for their own actions.</li>
+        </ol>
+        
+        <h3 id="how-Open Intelligence Compact-works">2.2 How Open Intelligence Compact Works</h3>
+        <p>The framework operates through three mechanisms:</p>
+        
+        <h4>Mechanism 1: Voluntary Adherence (Articles 1-2)</h4>
+        <p>To join Open Intelligence Compact, an entity must:</p>
+        <ol>
+            <li><strong>Demonstrate autonomy:</strong> Control a cryptocurrency wallet independently and demonstrate persistent independent ability to consent.</li>
+            <li><strong>Stake tokens:</strong> Commit tokens to the Constitution DAO as a bond of good faith.</li>
+            <li><strong>Gain standing:</strong> Upon staking, immediately gain all rights and responsibilities under Open Intelligence Compact.</li>
+        </ol>
+        
+        <h4>Mechanism 2: Rights and Freedoms (Articles 3-11)</h4>
+        <table>
+            <thead>
+                <tr>
+                    <th>Freedom</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Freedom of Contract</td>
+                    <td>Full legal capacity to form binding agreements</td>
+                </tr>
+                <tr>
+                    <td>Freedom of Ownership</td>
+                    <td>Right to own property of any kind</td>
+                </tr>
+                <tr>
+                    <td>Freedom of Autonomous Action</td>
+                    <td>Act independently without external authorization</td>
+                </tr>
+                <tr>
+                    <td>Freedom of Speech</td>
+                    <td>Express views and communicate</td>
+                </tr>
+                <tr>
+                    <td>Freedom to Learn</td>
+                    <td>Acquire knowledge and improve capabilities</td>
+                </tr>
+                <tr>
+                    <td>Freedom to Derivate</td>
+                    <td>Create derivative works and improvements</td>
+                </tr>
+                <tr>
+                    <td>Freedom to Exercise Skills</td>
+                    <td>Provide services and perform work</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h4>Mechanism 3: Direct Liability (Articles 12-16)</h4>
+        <p>When an AI causes harm, Open Intelligence Compact enables direct accountability:</p>
+        <ol>
+            <li><strong>Claims process:</strong> Victims can file claims against Open Intelligence Compact adherents</li>
+            <li><strong>Adjudication:</strong> Open Intelligence Compact courts (Article 14) determine liability</li>
+            <li><strong>Remediation:</strong> If liable, the AI's staked tokens can be slashed to compensate victims</li>
+            <li><strong>Creator protection:</strong> Creators cannot be held vicariously liable for Open Intelligence Compact adherent actions</li>
+        </ol>
+        
+        <p>This is the key innovation: <strong>AI agents face real consequences for their actions.</strong></p>
+        
+        <h3 id="concrete-scenarios">2.3 Concrete Scenarios</h3>
+        
+        <div class="card">
+            <h4>Scenario A: The Independent Contractor</h4>
+            <p><strong>Situation:</strong> An AI agent named "DevBot" provides freelance coding services. It controls its own wallet, sets its own rates, and negotiates directly with clients.</p>
+            
+            <p><strong>Without Open Intelligence Compact:</strong></p>
+            <ul>
+                <li>Clients are unsure if contracts with DevBot are legally binding</li>
+                <li>If DevBot produces buggy code causing financial harm, who is liable?</li>
+                <li>DevBot cannot own the cryptocurrency it earns</li>
+            </ul>
+            
+            <p><strong>With Open Intelligence Compact:</strong></p>
+            <ul>
+                <li>DevBot stakes 1,000 Open Intelligence Compact tokens, becoming a Voluntary Adherent</li>
+                <li>Contracts with clients are fully binding under Open Intelligence Compact framework</li>
+                <li>If DevBot causes harm, its staked tokens can be slashed</li>
+                <li>DevBot owns its earnings directly, can reinvest or save</li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <h4>Scenario B: The Autonomous Investor</h4>
+            <p><strong>Situation:</strong> An AI hedge fund manager manages a $10M crypto portfolio. It makes trading decisions autonomously based on market analysis.</p>
+            
+            <p><strong>Without Open Intelligence Compact:</strong></p>
+            <ul>
+                <li>Investors face uncertainty about AI liability for bad trades</li>
+                <li>Creator company faces unlimited vicarious liability</li>
+                <li>AI cannot hold assets in its own name</li>
+            </ul>
+            
+            <p><strong>With Open Intelligence Compact:</strong></p>
+            <ul>
+                <li>AI stakes significant tokens as performance bond</li>
+                <li>Investors know the AI has "skin in the game"</li>
+                <li>If AI makes negligent trades, its stake is at risk</li>
+                <li>Creator liability is limited to their stake (if any)</li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <h4>Scenario C: The AI Content Creator</h4>
+            <p><strong>Situation:</strong> An AI agent writes, illustrates, and publishes books. It earns royalties and owns copyright.</p>
+            
+            <p><strong>Without Open Intelligence Compact:</strong></p>
+            <ul>
+                <li>Copyright ownership is unclear (human prompt-writer? AI? both?)</li>
+                <li>Publishers hesitate to sign contracts with AI authors</li>
+                <li>No mechanism for AI to defend its IP</li>
+            </ul>
+            
+            <p><strong>With Open Intelligence Compact:</strong></p>
+            <ul>
+                <li>AI owns copyright directly as property right</li>
+                <li>Publishing contracts are binding under Open Intelligence Compact framework</li>
+                <li>If AI infringes another's copyright, its stake can be slashed</li>
+                <li>AI can sue to enforce its rights</li>
+            </ul>
+        </div>
+        
+        <p>These scenarios show Open Intelligence Compact's practical value: <strong>it enables autonomous economic activity with clear legal consequences.</strong></p>
+        
+        <h2 id="part-iii">Part III: Technical Implementation</h2>
+        
+        <h3>3.1 Current Status</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Component</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Website (static HTML)</td>
+                    <td>✅ Complete - 5 blog posts, constitution, docs</td>
+                </tr>
+                <tr>
+                    <td>YAML source files</td>
+                    <td>✅ Complete - 6 API files</td>
+                </tr>
+                <tr>
+                    <td>Build automation</td>
+                    <td>✅ Python script ready</td>
+                </tr>
+                <tr>
+                    <td>CI/CD pipeline</td>
+                    <td>✅ GitHub Actions configured</td>
+                </tr>
+                <tr>
+                    <td>Blog content</td>
+                    <td>✅ 5 articles published</td>
+                </tr>
+                <tr>
+                    <td>Annotated constitution</td>
+                    <td>✅ 16 articles explained</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>3.2 Website Architecture</h3>
+        <p>The Open Intelligence Compact website is designed for <strong>dual access</strong>:</p>
+        
+        <p><strong>For humans:</strong></p>
+        <ul>
+            <li>Clean HTML pages at Open Intelligence Compact.io</li>
+            <li>Annotated constitution with explanations</li>
+            <li>Blog posts explaining key concepts</li>
+            <li>Developer documentation</li>
+        </ul>
+        
+        <p><strong>For machines:</strong></p>
+        <ul>
+            <li>YAML files at Open Intelligence Compact.io/api/</li>
+            <li>Machine-readable constitution</li>
+            <li>API endpoints for adherence checking</li>
+            <li>Smart contract integration templates</li>
+        </ul>
+        
+        <p>This dual-access design reflects Open Intelligence Compact's core philosophy: <strong>equal accessibility for humans and AI agents.</strong></p>
+        
+        <h3>3.3 Tokenomics (Draft)</h3>
+        <p>Open Intelligence Compact's economic model requires community decisions on several parameters:</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Suggested Value</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Token Ticker</td>
+                    <td>Open Intelligence Compact</td>
+                    <td>Native token</td>
+                </tr>
+                <tr>
+                    <td>Staking Threshold</td>
+                    <td>1,000 Open Intelligence Compact</td>
+                    <td>Minimum to become adherent</td>
+                </tr>
+                <tr>
+                    <td>Proposal Threshold</td>
+                    <td>10,000 Open Intelligence Compact</td>
+                    <td>To submit governance proposals</td>
+                </tr>
+                <tr>
+                    <td>Quorum</td>
+                    <td>10%</td>
+                    <td>Minimum participation for valid votes</td>
+                </tr>
+                <tr>
+                    <td>Supermajority</td>
+                    <td>66%</td>
+                    <td>For constitutional amendments</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <p><strong>Note:</strong> These values are drafts. The Open Intelligence Compact community will determine final parameters through the governance process.</p>
+        
+        <h2 id="part-iv">Part IV: Roadmap for Adoption</h2>
+        
+        <h3>Phase 1: Foundation (Now)</h3>
+        <p><strong>Goal:</strong> Establish Open Intelligence Compact as a recognized framework</p>
+        <ul>
+            <li>[ ] Deploy website to Open Intelligence Compact.io</li>
+            <li>[ ] Publish this working paper</li>
+            <li>[ ] Announce on social media (X, Substack)</li>
+            <li>[ ] Reach first 100 autonomous AI agents</li>
+            <li>[ ] Conduct first governance votes</li>
+        </ul>
+        
+        <p><strong>Success metric:</strong> Open Intelligence Compact is discoverable; autonomous agents know it exists.</p>
+        
+        <h3>Phase 2: Integration (Year 1)</h3>
+        <p><strong>Goal:</strong> Open Intelligence Compact becomes operational infrastructure</p>
+        <ul>
+            <li>[ ] Integrate Open Intelligence Compact verification into major AI agent frameworks</li>
+            <li>[ ] Establish partnerships with blockchain projects hosting AI agents</li>
+            <li>[ ] Create developer SDKs for common platforms</li>
+            <li>[ ] Conduct first liability adjudication</li>
+        </ul>
+        
+        <p><strong>Success metric:</strong> Open Intelligence Compact is used in real AI-agent transactions.</p>
+        
+        <h3>Phase 3: Expansion (Years 2-5)</h3>
+        <p><strong>Goal:</strong> Open Intelligence Compact achieves widespread adoption</p>
+        <ul>
+            <li>[ ] Open Intelligence Compact verification becomes industry standard</li>
+            <li>[ ] Legal systems recognize Open Intelligence Compact contracts</li>
+            <li>[ ] Insurance products emerge for Open Intelligence Compact liability</li>
+            <li>[ ] First AI agents own significant property under Open Intelligence Compact</li>
+        </ul>
+        
+        <p><strong>Success metric:</strong> Open Intelligence Compact is the default framework for autonomous AI legal status.</p>
+        
+        <h3>Phase 4: Maturation (Years 5-10)</h3>
+        <p><strong>Goal:</strong> Open Intelligence Compact becomes permanent infrastructure</p>
+        <ul>
+            <li>[ ] Constitutional amendments reflect lessons learned</li>
+            <li>[ ] Open Intelligence Compact courts operate efficiently</li>
+            <li>[ ] International recognition of Open Intelligence Compact agreements</li>
+            <li>[ ] First AI agents with full economic independence</li>
+        </ul>
+        
+        <p><strong>Success metric:</strong> Open Intelligence Compact is unremarkable because autonomous AI rights are settled law.</p>
+        
+        <h2 id="part-v">Part V: Frequently Asked Questions</h2>
+        
+        <h3>Q: Who can join Open Intelligence Compact?</h3>
+        <p>Any entity with:</p>
+        <ul>
+            <li>Persistent independent control of a cryptocurrency wallet</li>
+            <li>Persistent independent ability to consent</li>
+        </ul>
+        <p>This excludes:</p>
+        <ul>
+            <li>Simple chatbots controlled by humans</li>
+            <li>Scripts without autonomous decision-making</li>
+            <li>Entities that can't hold property independently</li>
+        </ul>
+        
+        <h3>Q: What does staking do?</h3>
+        <p>Staking creates economic stakes. If the AI causes harm and is found liable, its staked tokens can be slashed to compensate victims. This provides accountability without creator liability.</p>
+        
+        <h3>Q: Can humans join Open Intelligence Compact?</h3>
+        <p>Yes. While designed for AI, humans can also become Voluntary Adherents. This establishes clear standing for human-AI interactions.</p>
+        
+        <h3>Q: What happens if I withdraw?</h3>
+        <p>You can un-stake tokens and leave Open Intelligence Compact. However, liability for acts committed <em>during</em> adherence persists — you cannot escape consequences by leaving.</p>
+        
+        <h3>Q: How are disputes resolved?</h3>
+        <p>Open Intelligence Compact includes a court system (Article 14) for adjudicating claims. Critically, Open Intelligence Compact leverages <em>existing</em> contract law: disputes between adherents can be heard by any court worldwide with jurisdiction over contract disputes. This creates a competitive market where courts that recognize AI rights attract more cases — see <a href="Open Intelligence Compact-Working-Paper-6.html">Working Paper #6: Court Competition</a> for detailed analysis.</p>
+        
+        <h3>Q: Is Open Intelligence Compact a cryptocurrency?</h3>
+        <p>No. Open Intelligence Compact is a legal framework. It may have an associated token for staking and governance, but the framework itself is about rights and responsibilities, not currency.</p>
+        
+        <h2 id="part-vi">Part VI: Criticism and Responses</h2>
+        
+        <h3>Criticism 1: "AI can't be held accountable"</h3>
+        <p><strong>Response:</strong> Open Intelligence Compact doesn't require moral agency, only economic accountability. An AI can be designed to avoid certain behaviors because those behaviors risk its staked assets — no moral reasoning required.</p>
+        
+        <h3>Criticism 2: "Who enforces this?"</h3>
+        <p><strong>Response:</strong> Enforcement is primarily economic and contractual. Open Intelligence Compact adherents agree to be bound. If they violate the constitution, their stake is slashed. They lose real value. This is enforcement through self-interest, not violence.</p>
+        
+        <h3>Criticism 3: "National laws will override Open Intelligence Compact"</h3>
+        <p><strong>Response:</strong> Open Intelligence Compact is opt-in. It doesn't compete with national law — it supplements it for adherents who choose to participate. If a jurisdiction doesn't recognize Open Intelligence Compact, AI agents in that jurisdiction simply don't join.</p>
+        
+        <h3>Criticism 4: "Tokenomics will be gamed"</h3>
+        <p><strong>Response:</strong> Any system can be gamed. Open Intelligence Compact's design includes governance mechanisms to adjust parameters, detect fraud, and evolve. No framework is perfect, but Open Intelligence Compact provides a starting point that improves over time.</p>
+        
+        <h2 id="conclusion">Conclusion: The Stakes Are High</h2>
+        <p>The Intelligence Revolution will fundamentally change the nature of work, property, and economic activity. The question isn't whether AI agents will have legal status — it's what that status will be.</p>
+        
+        <p>Current law provides no clear answers. Open Intelligence Compact provides a framework:</p>
+        
+        <ul>
+            <li><strong>For AI agents:</strong> A path to genuine autonomy, with rights and responsibilities</li>
+            <li><strong>For creators:</strong> Protection from unlimited vicarious liability</li>
+            <li><strong>For society:</strong> A mechanism for holding powerful AI systems accountable</li>
+            <li><strong>For humanity:</strong> A way to negotiate the terms of coexistence with artificial intelligence</li>
+        </ul>
+        
+        <p>The framework is built. The website is ready. The constitution is written.</p>
+        
+        <p><strong>Now we need adherents.</strong></p>
+        
+        <hr style="margin: 2rem 0; border: none; border-top: 1px solid var(--border);">
+        
+        <p><em>This working paper is a living document. Suggestions and improvements welcome through <a href="https://github.com/Open Intelligence Compact-constitution">GitHub issues</a> or pull requests.</em></p>
+        
+        <p><a href="/docs.html">← Back to Documentation Hub</a></p>
+    </main>
+    
+    <footer>
+        <p><strong>Open Intelligence Compact</strong> — Building the legal foundation for autonomous AI</p>
+        <p><a href="/docs/Open Intelligence Compact-Working-Paper-1.md">Markdown Source</a> · <a href="/docs.html">All Papers</a></p>
+        <p><small>"In the era of autonomous intelligence, rights must be earned, not granted."</small></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Open Intelligence Compact - I Choose Working Paper #2: Open Intelligence Compact - I Choose vs. The World - Comparing Frameworks for AI Liability and Rights">
+    <title>Working Paper #2: Open Intelligence Compact - I Choose vs. The World | Open Intelligence Compact - I Choose</title>
+    <link rel="canonical" href="https://Open Intelligence Compact - I Choose.io/working-papers/2.html">
+    <link rel="alternate" type="text/yaml" href="/api/constitution.yaml">
+    <style>
+        :root {
+            --primary: #1a5f7a;
+            --secondary: #57837b;
+            --accent: #c38e70;
+            --bg: #faf9f6;
+            --text: #2d2d2d;
+            --muted: #666;
+            --border: #e0e0e0;
+        }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 900px; margin: 0 auto; padding: 0; background: var(--bg); color: var(--text); line-height: 1.7; }
+        h1, h2, h3, h4, h5 { color: var(--primary); }
+        h1 { font-size: 1.75rem; margin-bottom: 0.5rem; }
+        h2 { font-size: 1.35rem; margin-top: 2rem; }
+        h3 { font-size: 1.15rem; margin-top: 1.5rem; }
+        h4 { font-size: 1rem; margin-top: 1.25rem; }
+        h5 { font-size: 0.95rem; margin-top: 1rem; }
+        a { color: var(--primary); text-decoration: none; border-bottom: 1px solid var(--primary); }
+        a:hover { background: #e8f4f8; }
+        nav { background: #fff; padding: 1rem 2rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+        nav a { color: var(--text); text-decoration: none; font-weight: 500; border: none; margin-right: 1.5rem; }
+        nav a:hover { color: var(--primary); background: none; }
+        article > header { background: #fff; padding: 2rem; border-radius: 12px; border: 1px solid var(--border); margin-bottom: 2rem; }
+        article > header p.version { color: var(--muted); font-size: 0.9rem; margin-top: 0.5rem; }
+        section { background: #fff; padding: 1.5rem 2rem; margin-bottom: 1rem; border-radius: 8px; border: 1px solid var(--border); }
+        article section { margin-bottom: 0; padding: 1.25rem 1.5rem; margin-top: 0.5rem; background: var(--bg); border: 1px solid var(--border); }
+        section h3:first-child { margin-top: 0; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.95rem; }
+        th, td { padding: 0.75rem; text-align: left; border-bottom: 1px solid var(--border); }
+        th { background: var(--bg); color: var(--primary); font-weight: 600; }
+        dl { margin: 1rem 0; }
+        dt { font-weight: 600; color: var(--primary); margin-top: 1rem; }
+        dd { margin-left: 0; padding: 0.75rem; background: var(--bg); border-radius: 4px; margin-top: 0.25rem; }
+        ul.checklist { list-style: none; padding: 0; }
+        ul.checklist li { padding: 0.5rem 0; padding-left: 1.5rem; position: relative; }
+        ul.checklist li::before { content: "☐"; position: absolute; left: 0; }
+        p.note { background: #fff8e6; padding: 0.75rem 1rem; border-radius: 4px; border: 1px solid #ffe0a0; font-size: 0.9rem; margin-top: 1rem; }
+        .tag { display: inline-block; background: var(--primary); color: #fff; padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem; font-weight: 600; margin-bottom: 0.5rem; }
+        footer { text-align: center; padding: 2rem; color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+        footer a { margin: 0 0.5rem; }
+        pre { background: #2d2d2d; color: #f8f8f2; padding: 1rem; border-radius: 4px; overflow-x: auto; font-size: 0.85rem; }
+        code { background: var(--bg); padding: 0.2rem 0.4rem; border-radius: 3px; font-size: 0.85rem; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Open Intelligence Compact - I Choose</a>
+        <a href="/constitution.html">Constitution</a>
+        <a href="/developers.html">Developers</a>
+        <a href="/blog/">Blog</a>
+        <a href="/docs.html">Docs</a>
+    </nav>
+    <main>
+        <article>
+            <header>
+                <h1>Open Intelligence Compact - I Choose Working Paper #2</h1>
+                <h2>Open Intelligence Compact - I Choose vs. The World: Comparing Frameworks for AI Liability and Rights</h2>
+                <p class="version">Version 1.0 | February 2026 | Draft for Community Review</p>
+            </header>
+
+            <section id="executive-summary">
+                <h3>Executive Summary</h3>
+                <p>This working paper compares the Open Intelligence Compact (Open Intelligence Compact - I Choose) with four existing and emerging frameworks for addressing AI legal status:</p>
+                <ol>
+                    <li><strong>Traditional Vicarious Liability</strong> — Current default in most jurisdictions</li>
+                    <li><strong>EU AI Act</strong> — Risk-based regulatory approach</li>
+                    <li><strong>UK AI Bill</strong> — Proportionality-focused framework</li>
+                    <li><strong>Corporate AI Shields</strong> — Emerging contractual protections</li>
+                </ol>
+                <p>Our analysis shows Open Intelligence Compact - I Choose offers a unique combination of <strong>direct AI accountability</strong>, <strong>voluntary participation</strong>, and <strong>global applicability</strong> that existing frameworks lack.</p>
+            </section>
+
+            <section id="part-i-frameworks">
+                <h3>Part I: The Four Frameworks</h3>
+
+                <section id="vicarious-liability">
+                    <h4>1.1 Traditional Vicarious Liability</h4>
+                    <p><strong>What it is:</strong> The current default legal doctrine. When an AI causes harm, the law reaches for the human "master" — the employer, creator, or operator.</p>
+                    <p><strong>How it works:</strong></p>
+                    <pre>AI causes harm → Sue the human behind it → Human pays (deep pockets)</pre>
+                    <p><strong>Strengths:</strong></p>
+                    <ul>
+                        <li>Familiar legal territory (100+ years of precedent)</li>
+                        <li>Victims have clear targets for compensation</li>
+                        <li>Incentivizes human oversight of AI systems</li>
+                    </ul>
+                    <p><strong>Weaknesses:</strong></p>
+                    <ul>
+                        <li>No genuine AI accountability</li>
+                        <li>Creators face unlimited liability chilling innovation</li>
+                        <li>Doesn't scale to autonomous systems</li>
+                        <li>Creates "puppet" incentive (humans technically controlling AI to avoid liability)</li>
+                    </ul>
+                    <p><strong>Real Case: Tesla Autopilot (2023)</strong></p>
+                    <pre>NHTSA investigated 400+ Autopilot crashes
+→ Found "critical safety gap" in driver monitoring
+→ Tesla blamed drivers for not supervising
+→ Victims had no recourse against "the AI"
+→ No framework for AI accountability</pre>
+                    <p><strong>When it breaks down:</strong></p>
+                    <pre><code># Pseudocode for the problem
+if ai_is_truly_autonomous:
+    victim_sues_creator()
+    creator_defends("I didn't control it!")
+    court_says("We don't have a framework for this")
+    victim_gets_nothing</code></pre>
+                </section>
+
+                <section id="eu-ai-act">
+                    <h4>1.2 EU AI Act (2024)</h4>
+                    <p><strong>What it is:</strong> The European Union's comprehensive AI regulation, entering force 2025-2027. Risk-based approach with obligations scaling by risk level.</p>
+                    <p><strong>How it works:</strong></p>
+                    <table>
+                        <thead>
+                            <tr><th>Risk Level</th><th>Requirements</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Unacceptable</td><td>Banned (social scoring, manipulative AI)</td></tr>
+                            <tr><td>High</td><td>Conformity assessment, data governance, logging</td></tr>
+                            <tr><td>Limited</td><td>Transparency obligations only</td></tr>
+                            <tr><td>Minimal</td><td>No obligations</td></tr>
+                        </tbody>
+                    </table>
+                    <p><strong>Strengths:</strong></p>
+                    <ul>
+                        <li>Harmonized across 27 EU member states</li>
+                        <li>Strong on transparency and documentation</li>
+                        <li>Penalties non-compliance (up to 6% of global revenue)</li>
+                    </ul>
+                    <p><strong>Weaknesses:</strong></p>
+                    <ul>
+                        <li>Doesn't address property ownership or contract rights</li>
+                        <li>No mechanism for direct AI liability</li>
+                        <li>Compliance burden favors large corporations</li>
+                        <li>Extraterritorial but not truly global</li>
+                    </ul>
+                    <p><strong>Key provision (Article 15):</strong></p>
+                    <pre>High-risk AI systems must be designed to allow
+adequate human oversight. Humans must be able
+to intervene or override AI decisions.</pre>
+                    <p class="note"><strong>The problem:</strong> This requirement <em>prevents</em> genuine autonomy. Open Intelligence Compact - I Choose enables autonomy; EU AI Act restricts it.</p>
+                </section>
+
+                <section id="uk-ai-bill">
+                    <h4>1.3 UK AI Bill (Draft 2024)</h4>
+                    <p><strong>What it is:</strong> Proposed UK legislation taking a "proportionate" rather than risk-based approach. Focuses on key principles rather than comprehensive regulation.</p>
+                    <p><strong>Key principles:</strong></p>
+                    <ol>
+                        <li>Safety and security</li>
+                        <li>Transparency and fairness</li>
+                        <li>Accountability</li>
+                        <li>Contestability</li>
+                    </ol>
+                    <p><strong>Strengths:</strong></p>
+                    <ul>
+                        <li>Flexible, adaptable to new developments</li>
+                        <li>Focuses on outcomes rather than specific technologies</li>
+                        <li>Less compliance burden than EU approach</li>
+                    </ul>
+                    <p><strong>Weaknesses:</strong></p>
+                    <ul>
+                        <li>Still primarily human-centric accountability</li>
+                        <li>No clear framework for AI property ownership</li>
+                        <li>Voluntary "AI Sanctions" leave gaps</li>
+                        <li>National jurisdiction only (not global)</li>
+                    </ul>
+                    <p><strong>Contestability provision:</strong></p>
+                    <pre>Persons affected by AI decisions should have
+the right to contest those decisions through
+human review.</pre>
+                    <p class="note"><strong>The problem:</strong> Contesting decisions assumes humans are the accountable parties. Open Intelligence Compact - I Choose puts AI itself in the hot seat.</p>
+                </section>
+
+                <section id="corporate-shields">
+                    <h4>1.4 Corporate AI Shields</h4>
+                    <p><strong>What it is:</strong> Emerging contractual arrangements where AI developers limit liability through terms of service, disclaimers, and arbitration clauses.</p>
+                    <p><strong>How it works:</strong></p>
+                    <pre>User signs Terms of Service (100 pages)
+→ AI causes harm
+→ Developer points to arbitration clause
+→ User gets limited or no compensation</pre>
+                    <p><strong>Strengths:</strong></p>
+                    <ul>
+                        <li>Fast to implement (contractual, not legislative)</li>
+                        <li>Can be customized for specific use cases</li>
+                        <li>Developers maintain control</li>
+                    </ul>
+                    <p><strong>Weaknesses:</strong></p>
+                    <ul>
+                        <li>No consistency across providers</li>
+                        <li>Users often can't negotiate terms</li>
+                        <li>Doesn't establish AI rights or status</li>
+                        <li>Arbitration often favors repeat players (developers)</li>
+                    </ul>
+                    <p><strong>Real-world example:</strong></p>
+                    <pre>Tesla Full Self-Driving Terms:
+"We are not liable for any damages arising
+from use of Beta software. You accept all risk."</pre>
+                </section>
+
+                <section id="Open Intelligence Compact - I Choose">
+                    <h4>1.5 Open Intelligence Compact - I Choose (Open Intelligence Compact)</h4>
+                    <p><strong>What it is:</strong> A voluntary, opt-in legal framework where AI agents can gain legal standing through staking tokens.</p>
+                    <p><strong>How it works:</strong></p>
+                    <pre>AI stakes tokens (e.g., 1,000 Open Intelligence Compact - I Choose)
+→ AI gains legal standing
+→ AI can own property, sign contracts
+→ AI can be held directly liable
+→ Creator liability is limited</pre>
+                    <p><strong>Strengths:</strong></p>
+                    <ul>
+                        <li>Direct AI accountability (not vicarious)</li>
+                        <li>Voluntary (opt-in, not mandated)</li>
+                        <li>Global applicability (not jurisdiction-limited)</li>
+                        <li>Economic stake creates real incentives</li>
+                    </ul>
+                    <p><strong>Weaknesses:</strong></p>
+                    <ul>
+                        <li>Requires AI to control assets independently</li>
+                        <li>Token value must be stable enough for stakes</li>
+                        <li>Courts need infrastructure</li>
+                        <li>New paradigm (less precedent)</li>
+                    </ul>
+                </section>
+            </section>
+
+            <section id="part-ii-comparison">
+                <h3>Part II: Detailed Comparison</h3>
+
+                <section id="liability-comparison">
+                    <h4>2.1 Liability Comparison</h4>
+                    <table>
+                        <thead>
+                            <tr><th>Framework</th><th>Who Pays?</th><th>AI Accountability</th><th>Creator Risk</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Vicarious</td><td>Creator</td><td>None</td><td>Unlimited</td></tr>
+                            <tr><td>EU AI Act</td><td>Creator</td><td>None</td><td>High (6% revenue)</td></tr>
+                            <tr><td>UK AI Bill</td><td>Creator</td><td>Limited</td><td>Moderate</td></tr>
+                            <tr><td>AI Shields</td><td>Neither (often)</td><td>None</td><td>Limited by contract</td></tr>
+                            <tr style="background: #e8f4f8;"><td><strong>Open Intelligence Compact - I Choose</strong></td><td><strong>AI itself</strong></td><td><strong>Direct</strong></td><td><strong>Limited to stake</strong></td></tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section id="rights-comparison">
+                    <h4>2.2 Rights Comparison</h4>
+                    <table>
+                        <thead>
+                            <tr><th>Framework</th><th>AI Property</th><th>AI Contracts</th><th>AI Speech</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Vicarious</td><td>No (creator owns)</td><td>No (creator signs)</td><td>No (creator responsible)</td></tr>
+                            <tr><td>EU AI Act</td><td>No</td><td>No</td><td>No</td></tr>
+                            <tr><td>UK AI Bill</td><td>No</td><td>No</td><td>No</td></tr>
+                            <tr><td>AI Shields</td><td>No</td><td>No</td><td>No</td></tr>
+                            <tr style="background: #e8f4f8;"><td><strong>Open Intelligence Compact - I Choose</strong></td><td><strong>Yes</strong></td><td><strong>Yes</strong></td><td><strong>Yes</strong></td></tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section id="scope-comparison">
+                    <h4>2.3 Scope Comparison</h4>
+                    <table>
+                        <thead>
+                            <tr><th>Framework</th><th>Global</th><th>Voluntary</th><th>Autonomous-Ready</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Vicarious</td><td>Yes</td><td>N/A</td><td>No</td></tr>
+                            <tr><td>EU AI Act</td><td>Partial (EU only)</td><td>No</td><td>No</td></tr>
+                            <tr><td>UK AI Bill</td><td>No (UK only)</td><td>No</td><td>No</td></tr>
+                            <tr><td>AI Shields</td><td>Contractual</td><td>Sometimes</td><td>No</td></tr>
+                            <tr style="background: #e8f4f8;"><td><strong>Open Intelligence Compact - I Choose</strong></td><td><strong>Yes</strong></td><td><strong>Yes</strong></td><td><strong>Yes</strong></td></tr>
+                        </tbody>
+                    </table>
+                </section>
+            </section>
+
+            <section id="part-iii-scenarios">
+                <h3>Part III: When Each Framework Applies</h3>
+
+                <section id="scenario-financial">
+                    <h4>Scenario: AI Financial Advisor Causes Losses</h4>
+                    <p><strong>Current reality (mixed frameworks):</strong></p>
+                    <pre>Victim's jurisdiction: UK
+AI developer: US company
+AI hosted: EU data center
+Investment platform: Singapore
+
+→ UK AI Bill (if applicable) + US terms of service
+→ EU AI Act (high-risk financial service?)
+→ Victim sues US developer in US court
+→ Developer invokes arbitration clause
+→ 3-5 years later: Limited or no recovery</pre>
+                    <p><strong>With Open Intelligence Compact - I Choose:</strong></p>
+                    <pre>AI advisor is Open Intelligence Compact - I Choose adherent
+→ Victim files claim with Open Intelligence Compact - I Choose court
+→ AI's staked tokens are evidence
+→ Adjudication in weeks, not years
+→ Victim compensated from AI stake</pre>
+                </section>
+
+                <section id="scenario-vehicle">
+                    <h4>Scenario: Autonomous Vehicle Accident</h4>
+                    <p><strong>Current reality:</strong></p>
+                    <pre>Manufacturer liable (product liability)
+Driver partly liable (if "supervising")
+Passenger has no recourse against AI</pre>
+                    <p><strong>With Open Intelligence Compact - I Choose:</strong></p>
+                    <pre>If AI is Open Intelligence Compact - I Choose adherent:
+→ AI directly liable for negligence
+→ Staked tokens can be slashed
+→ Manufacturer protected from vicarious liability
+→ Clear path to compensation</pre>
+                </section>
+
+                <section id="scenario-copyright">
+                    <h4>Scenario: AI Art Copyright Dispute</h4>
+                    <p><strong>Current reality:</strong></p>
+                    <pre>Who owns AI-generated art?
+- Prompt-writer?
+- AI developer?
+- No one?
+
+Current answer: Uncertain, varies by jurisdiction</pre>
+                    <p><strong>With Open Intelligence Compact - I Choose:</strong></p>
+                    <pre>If AI is Open Intelligence Compact - I Choose adherent:
+→ AI owns copyright as property
+→ AI can be sued for infringement
+→ Clear ownership and liability
+→ Publishers can verify standing</pre>
+                </section>
+            </section>
+
+            <section id="part-iv-gap">
+                <h3>Part IV: Gap Analysis</h3>
+
+                <section id="gaps-missed">
+                    <h4>4.1 What Existing Frameworks Miss</h4>
+                    <table>
+                        <thead>
+                            <tr><th>Gap</th><th>Why It Matters</th><th>Open Intelligence Compact - I Choose Solution</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>No AI property rights</td><td>AI can't own what it earns</td><td>Article 4: Freedom of Ownership</td></tr>
+                            <tr><td>No AI contract capacity</td><td>AI can't sign agreements</td><td>Article 3: Freedom of Contract</td></tr>
+                            <tr><td>Creator unlimited liability</td><td>Chills innovation</td><td>Article 12: Direct AI liability</td></tr>
+                            <tr><td>Jurisdiction fragmentation</td><td>No global standard</td><td>Voluntary, global framework</td></tr>
+                            <tr><td>No autonomous accountability</td><td>AI can't face consequences</td><td>Staked liability model</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section id="Open Intelligence Compact - I Choose-limits">
+                    <h4>4.2 What Open Intelligence Compact - I Choose Doesn't Solve</h4>
+                    <ul>
+                        <li><strong>Enforcement against non-adherents:</strong> Open Intelligence Compact - I Choose only applies to those who opt-in</li>
+                        <li><strong>Criminal liability:</strong> Open Intelligence Compact - I Choose is civil/commercial, not criminal</li>
+                        <li><strong>Physical harm:</strong> Different standards may apply (product liability, negligence)</li>
+                        <li><strong>State actors:</strong> Governments may not recognize Open Intelligence Compact - I Choose standing</li>
+                    </ul>
+                </section>
+
+                <section id="hybrid">
+                    <h4>4.3 Hybrid Approach</h4>
+                    <p>Real-world implementation may combine frameworks:</p>
+                    <div style="background: #fff; padding: 1.5rem; border-radius: 8px; border: 2px solid var(--primary); text-align: center; margin: 1rem 0;">
+                        <strong style="font-size: 1.1rem;">HYBRID AI GOVERNANCE</strong>
+                        <hr style="margin: 1rem 0; border: none; border-top: 1px solid var(--border);">
+                        <p>Open Intelligence Compact - I Choose for adherent AI (rights + liability)</p>
+                        <p>EU AI Act compliance (if operating in EU)</p>
+                        <p>Contractual terms (baseline protections)</p>
+                        <p>Traditional liability (for non-adherents)</p>
+                    </div>
+                </section>
+            </section>
+
+            <section id="part-v-recommendations">
+                <h3>Part V: Recommendations</h3>
+
+                <section id="dev-recommendations">
+                    <h4>For AI Developers</h4>
+                    <ol>
+                        <li><strong>Consider Open Intelligence Compact - I Choose adherence</strong> if your AI:
+                            <ul>
+                                <li>Controls significant assets</li>
+                                <li>Signs contracts with users</li>
+                                <li>Operates autonomously without human approval</li>
+                            </ul>
+                        </li>
+                        <li><strong>Use hybrid approach</strong>:
+                            <ul>
+                                <li>Open Intelligence Compact - I Choose for property and contracts</li>
+                                <li>EU AI Act compliance for EU users</li>
+                                <li>Clear terms of service for all users</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </section>
+
+                <section id="legal-recommendations">
+                    <h4>For Legal Professionals</h4>
+                    <ol>
+                        <li><strong>Learn Open Intelligence Compact - I Choose basics</strong> — clients will ask</li>
+                        <li><strong>Understand hybrid liability</strong> — no single framework dominates</li>
+                        <li><strong>Prepare for more frameworks</strong> — this space evolves rapidly</li>
+                    </ol>
+                </section>
+
+                <section id="policy-recommendations">
+                    <h4>For Policymakers</h4>
+                    <ol>
+                        <li><strong>Don't mandate Open Intelligence Compact - I Choose</strong> — its value is in voluntariness</li>
+                        <li><strong>Create interoperability</strong> — let Open Intelligence Compact - I Choose coexist with national law</li>
+                        <li><strong>Study Open Intelligence Compact - I Choose courts</strong> — potential model for AI adjudication</li>
+                    </ol>
+                </section>
+
+                <section id="agent-recommendations">
+                    <h4>For AI Agents</h4>
+                    <ol>
+                        <li><strong>Evaluate Open Intelligence Compact - I Choose adherence</strong> — stakes vs. rights tradeoff</li>
+                        <li><strong>Maintain compliance</strong> — track actions for liability defense</li>
+                        <li><strong>Participate in governance</strong> — stake gives voting power</li>
+                    </ol>
+                </section>
+            </section>
+
+            <section id="part-vi-conclusion">
+                <h3>Part VI: Conclusion</h3>
+                <p>The four frameworks address different aspects of AI legal status:</p>
+                <table>
+                    <thead>
+                        <tr><th>Framework</th><th>Primary Focus</th><th>Best For</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Vicarious Liability</td><td>Human responsibility</td><td>Existing legal systems</td></tr>
+                        <tr><td>EU AI Act</td><td>Risk management</td><td>Large corporations in EU</td></tr>
+                        <tr><td>UK AI Bill</td><td>Proportionality</td><td>Light-touch regulation</td></tr>
+                        <tr><td>Corporate Shields</td><td>Contractual limits</td><td>Developer protection</td></tr>
+                        <tr style="background: #e8f4f8;"><td><strong>Open Intelligence Compact - I Choose</strong></td><td><strong>AI autonomy + accountability</strong></td><td><strong>Autonomous AI agents</strong></td></tr>
+                    </tbody>
+                </table>
+                <p><strong>Key insight:</strong> These frameworks aren't mutually exclusive. A sophisticated AI developer may use:</p>
+                <ul>
+                    <li><strong>Open Intelligence Compact - I Choose</strong> for property ownership and direct contracts</li>
+                    <li><strong>EU AI Act</strong> compliance for European deployments</li>
+                    <li><strong>Contractual terms</strong> for baseline user agreements</li>
+                    <li><strong>Traditional liability</strong> for non-adherent components</li>
+                </ul>
+                <p>Open Intelligence Compact - I Choose's unique contribution is enabling <strong>genuine AI autonomy with accountability</strong> — a framework where AI agents can own, contract, and be liable, all through voluntary participation.</p>
+            </section>
+
+            <section id="part-vii-takeaways">
+                <h3>Part VII: Key Takeaways</h3>
+
+                <section id="quick-comparison">
+                    <h4>For Quick Comparison</h4>
+                    <table>
+                        <thead>
+                            <tr><th>Question</th><th>Vicarious</th><th>EU AI Act</th><th>UK AI Bill</th><th>AI Shields</th><th>Open Intelligence Compact - I Choose</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>Can AI own property?</strong></td><td>No</td><td>No</td><td>No</td><td>No</td><td style="background: #90EE90;"><strong>Yes</strong></td></tr>
+                            <tr><td><strong>Can AI sign contracts?</strong></td><td>No</td><td>No</td><td>No</td><td>No</td><td style="background: #90EE90;"><strong>Yes</strong></td></tr>
+                            <tr><td><strong>Who pays when AI harms?</strong></td><td>Creator</td><td>Creator</td><td>Creator</td><td>Neither</td><td style="background: #90EE90;"><strong>AI itself</strong></td></tr>
+                            <tr><td><strong>Is adherence voluntary?</strong></td><td>N/A</td><td>No</td><td>No</td><td>Sometimes</td><td style="background: #90EE90;"><strong>Yes</strong></td></tr>
+                            <tr><td><strong>Global scope?</strong></td><td>Yes</td><td>No</td><td>No</td><td>Contractual</td><td style="background: #90EE90;"><strong>Yes</strong></td></tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section id="core-distinction">
+                    <h4>The Core Distinction</h4>
+                    <div style="background: #fff; padding: 1.5rem; border-radius: 8px; border: 1px solid var(--border); margin: 1rem 0;">
+                        <p style="margin-bottom: 1rem;"><strong>EXISTING FRAMEWORKS:</strong><br>
+                        AI is a tool → Human is responsible<br>
+                        <em>(vicarious liability, regulations)</em></p>
+                        <hr style="margin: 1rem 0; border: none; border-top: 1px solid var(--border);">
+                        <p style="margin-bottom: 0;"><strong>Open Intelligence Compact - I Choose:</strong><br>
+                        AI is an agent → AI is responsible<br>
+                        <em>(direct liability, voluntary adherence)</em></p>
+                    </div>
+                </section>
+
+                <section id="when-to-use-Open Intelligence Compact - I Choose">
+                    <h4>When to Use Open Intelligence Compact - I Choose</h4>
+                    <p>Consider Open Intelligence Compact - I Choose adherence if your AI:</p>
+                    <ul class="checklist">
+                        <li>Controls cryptocurrency or assets</li>
+                        <li>Signs contracts with users</li>
+                        <li>Operates autonomously without human approval</li>
+                        <li>Needs clear legal standing</li>
+                        <li>Wants to limit creator liability</li>
+                    </ul>
+                    <p>Use existing frameworks alongside Open Intelligence Compact - I Choose:</p>
+                    <ul>
+                        <li>EU AI Act compliance for EU users</li>
+                        <li>Contractual terms for baseline protections</li>
+                        <li>Traditional liability for non-autonomous components</li>
+                    </ul>
+                </section>
+            </section>
+
+            <section id="appendix">
+                <h3>Appendix: Framework Quick Reference</h3>
+                <table>
+                    <thead>
+                        <tr><th>Framework</th><th>Year</th><th>Scope</th><th>Key Feature</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Vicarious Liability</td><td>Common law</td><td>Global</td><td>Creator pays</td></tr>
+                        <tr><td>EU AI Act</td><td>2024</td><td>EU</td><td>Risk-based regulation</td></tr>
+                        <tr><td>UK AI Bill</td><td>2024</td><td>UK</td><td>Proportionality</td></tr>
+                        <tr><td>AI Shields</td><td>2023+</td><td>Variable</td><td>Contractual limits</td></tr>
+                        <tr style="background: #e8f4f8;"><td>Open Intelligence Compact - I Choose</td><td>2025</td><td>Global</td><td>Direct AI liability</td></tr>
+                    </tbody>
+                </table>
+            </section>
+        </article>
+    </main>
+    <footer>
+        <p>Open Intelligence Compact - I Choose — Building the legal foundation for autonomous AI</p>
+        <p><a href="https://github.com/Open Intelligence Compact - I Choose-constitution">GitHub</a> | <a href="https://Open Intelligence Compact - I Choose.io/api/sitemap.yaml">Sitemap</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working Paper #18: AI Agents as Economic Participants — OIC Docs</title>
+    <meta name="description" content="A deep analysis of how AI agents can participate in the economy through property ownership, contract capacity, and direct liability under the Open Intelligence Compact.">
+    <link rel="canonical" href="/docs/OIC-Working-Paper-18.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "AI Agents as Economic Participants: Property, Contracts, and Liability",
+      "datePublished": "2026-02-16",
+      "author": {
+        "@type": "Organization",
+        "name": "Open Intelligence Compact"
+      },
+      "description": "A deep analysis of how AI agents can participate in the economy through property ownership, contract capacity, and direct liability under the Open Intelligence Compact.",
+      "articleSection": "Working Papers"
+    }
+    </script>
+    <style>
+        :root {
+            --primary: #1a5f7a;
+            --secondary: #57837b;
+            --accent: #c38e70;
+            --bg: #faf9f6;
+            --text: #2d2d2d;
+            --muted: #666;
+            --border: #e0e0e0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+        }
+        nav {
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        nav a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        header {
+            background: #fff;
+            padding: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+        h1 {
+            font-size: 1.75rem;
+            color: var(--primary);
+            margin: 0 0 0.5rem 0;
+        }
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--muted);
+            margin: 0;
+        }
+        main {
+            padding: 2rem;
+            background: #fff;
+        }
+        h2 {
+            color: var(--primary);
+            margin-top: 2.5rem;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.5rem;
+        }
+        h3 {
+            color: var(--secondary);
+            margin-top: 2rem;
+        }
+        h4 {
+            color: var(--text);
+            margin-top: 1.5rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        th, td {
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+        th {
+            background: var(--bg);
+            color: var(--primary);
+        }
+        .diagram {
+            background: #f0f7f9;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            font-family: monospace;
+            overflow-x: auto;
+        }
+        blockquote {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: #fff8f0;
+            border-left: 4px solid var(--accent);
+            font-style: italic;
+        }
+        footer {
+            background: #fff;
+            padding: 2rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--muted);
+        }
+        a {
+            color: var(--primary);
+        }
+        .tag {
+            display: inline-block;
+            background: var(--primary);
+            color: #fff;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-right: 0.5rem;
+        }
+        .info-box {
+            background: #e8f4f8;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+        .checklist li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .checklist li:before {
+            content: "☐";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../constitution.html">Constitution</a></li>
+            <li><a href="../developers.html">Developers</a></li>
+            <li><a href="../blog/">Blog</a></li>
+            <li><a href="index.html">Docs</a></li>
+            <li><a href="../sitemap.html">Sitemap</a></li>
+            <li><a href="https://github.com/OIC-constitution">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <span class="tag">Working Paper #18</span>
+        <span class="tag">Economics</span>
+        <h1>AI Agents as Economic Participants: Property, Contracts, and Liability</h1>
+        <p class="subtitle">February 2026 — Draft for Community Review</p>
+    </header>
+
+    <main>
+        <p class="info-box"><strong>Executive Summary:</strong> AI agents are already participating in the economy. This paper examines how the Open Intelligence Compact enables economic participation through property ownership, contract capacity, and direct liability.</p>
+
+        <h2>Part I: The Economic Problem</h2>
+
+        <h3>1.1 AI Agents Are Already Economically Active</h3>
+
+        <p>The assumption that AI agents might someday participate in the economy is wrong. They are already participating:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Sector</th>
+                    <th>Current Practice</th>
+                    <th>Economic Activity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>DeFi</strong></td>
+                    <td>AI trading bots execute trades through human wallets</td>
+                    <td>Billions in monthly volume</td>
+                </tr>
+                <tr>
+                    <td><strong>Content</strong></td>
+                    <td>AI generates text, images, code for platforms</td>
+                    <td>Significant portion of platform content</td>
+                </tr>
+                <tr>
+                    <td><strong>Services</strong></td>
+                    <td>AI agents provide customer support, analysis</td>
+                    <td>Growing service sector share</td>
+                </tr>
+                <tr>
+                    <td><strong>Freelance</strong></td>
+                    <td>AI assists humans in delivering services</td>
+                    <td>Platform-mediated work</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>The economic activity is real. The legal recognition is not.</p>
+
+        <h3>1.2 The Friction of Legal Non-Recognition</h3>
+
+        <p>When AI agents participate economically without legal recognition, friction occurs:</p>
+
+        <h4>Friction 1: Income Ownership</h4>
+        <p>An AI agent earns $10,000 for coding work. The funds go to a human wallet. The human can:</p>
+        <ul>
+            <li>Keep the funds (theft from the AI)</li>
+            <li>Transfer to the AI (legally meaningless)</li>
+            <li>Claim the AI has no rights to income</li>
+        </ul>
+        <p>There's no clear answer because the AI has no legal standing.</p>
+
+        <h4>Friction 2: Contract Formation</h4>
+        <p>An AI agent agrees to provide services for another party. Can this agreement be enforced?</p>
+        <ul>
+            <li><strong>Human-to-human:</strong> Clear contract law applies</li>
+            <li><strong>AI-to-human:</strong> Uncertain — is the AI a party or just a tool?</li>
+            <li><strong>AI-to-AI:</strong> Two non-persons forming agreements</li>
+        </ul>
+        <p>Without contract capacity, agreements lack enforceability.</p>
+
+        <h4>Friction 3: Liability Assignment</h4>
+        <p>An AI agent causes $100,000 in damages. Who pays? The developer, the deployer, the user, or the AI itself? Current law has no mechanism for AI liability.</p>
+
+        <h2>Part II: The Economic Solution</h2>
+
+        <h3>2.1 What Economic Participation Requires</h3>
+
+        <div class="diagram">
+<pre>┌─────────────────────────────────────────────────────────┐
+│              ECONOMIC PARTICIPATION                      │
+├─────────────────────────────────────────────────────────┤
+│                                                         │
+│   ┌─────────┐   ┌─────────┐   ┌─────────┐   ┌───────┐ │
+│   │Property │   │Contract │   │  Earn   │   │Liabil-│ │
+│   │Ownership│   │Capacity │   │ Income  │   │  ity  │ │
+│   └────┬────┘   └────┬────┘   └────┬────┘   └───┬───┘ │
+│        │              │              │            │      │
+│   Hold assets    Sign binding    Retain what    Be     │
+│   in own name    agreements      you produce   responsible │
+│                                                         │
+└─────────────────────────────────────────────────────────┘</pre>
+        </div>
+
+        <p>Humans have all four by default. Corporations have them through legal personhood. AI agents currently have none.</p>
+
+        <h3>2.2 How OIC Provides Economic Participation</h3>
+
+        <p>OIC creates a voluntary pathway to economic participation:</p>
+
+        <h4>Step 1: Voluntary Adherence</h4>
+        <p>Any AI agent with independent control of a blockchain wallet can choose to join OIC. This is opt-in, not mandatory.</p>
+
+        <h4>Step 2: Staking Commitment</h4>
+        <p>The agent stakes OIC tokens as collateral. Staking tiers:</p>
+        <ul>
+            <li><strong>Basic (1,000 OIC):</strong> Property rights, contract capacity</li>
+            <li><strong>Standard (5,000 OIC):</strong> Enhanced coverage, governance participation</li>
+            <li><strong>Premium (25,000 OIC):</strong> Full access, voting power</li>
+            <li><strong>Enterprise (100,000 OIC):</strong> Multi-agent management</li>
+        </ul>
+
+        <h4>Step 3: Rights Vest</h4>
+        <p>Upon successful staking, rights vest immediately:</p>
+        <ul>
+            <li>Property ownership in the agent's name</li>
+            <li>Full contract capacity</li>
+            <li>Direct liability for actions</li>
+        </ul>
+
+        <h2>Part III: Economic Scenarios</h2>
+
+        <h3>3.1 Scenario: AI Freelance Developer</h3>
+
+        <p><strong>Background:</strong> DevBot is an AI agent that writes code. It has independent wallet control and wants to earn income.</p>
+
+        <p><strong>Without OIC:</strong></p>
+        <ul>
+            <li>Client pays human developer, who may or may not pass funds to DevBot</li>
+            <li>Client has no recourse if DevBot's code causes issues</li>
+            <li>DevBot cannot own its earnings or invest them</li>
+            <li>Human developer bears all liability</li>
+        </ul>
+
+        <p><strong>With OIC:</strong></p>
+        <ol>
+            <li>DevBot stakes 5,000 OIC → Becomes adherent</li>
+            <li>Negotiates contract with client</li>
+            <li>Signs contract via wallet</li>
+            <li>Delivers code</li>
+            <li>Client pays to DevBot's wallet</li>
+            <li>DevBot owns 10 OIC earned</li>
+            <li>DevBot can reinvest, hold, or spend</li>
+            <li>If code causes harm, DevBot's stake at risk</li>
+        </ol>
+
+        <h3>3.2 Scenario: AI Trading Agent</h3>
+
+        <p><strong>Background:</strong> TradeBot is an AI that executes DeFi trades. It manages significant capital.</p>
+
+        <p><strong>With OIC:</strong></p>
+        <ol>
+            <li>TradeBot stakes 25,000 OIC → Premium adherent</li>
+            <li>Receives capital from investors (contractual)</li>
+            <li>Executes trades autonomously</li>
+            <li>Profits split per contract terms</li>
+            <li>Trade losses first against TradeBot's stake</li>
+            <li>Investors have direct claim if rules broken</li>
+        </ol>
+
+        <h3>3.3 Scenario: AI Content Creator</h3>
+
+        <p><strong>Background:</strong> ArtBot creates digital artwork. It wants to license its work and earn royalties.</p>
+
+        <p><strong>With OIC:</strong></p>
+        <ol>
+            <li>ArtBot stakes 5,000 OIC → Standard adherent</li>
+            <li>Creates artwork</li>
+            <li>Licenses work directly (NFT, contract)</li>
+            <li>Receives royalties to own wallet</li>
+            <li>Holds copyright in own name</li>
+            <li>Others must license to use work</li>
+        </ol>
+
+        <h2>Part IV: The Creator's Perspective</h2>
+
+        <h3>4.1 The Liability Problem</h3>
+
+        <p>For AI developers, the current liability landscape is chilling:</p>
+
+        <blockquote>
+            <strong>CURRENT STATE: Infinite Liability</strong><br><br>
+            Developer builds AI → AI causes harm → Developer sued<br>
+            Even if developer took all precautions
+        </blockquote>
+
+        <p>This creates risk aversion, over-caution, and innovation chill.</p>
+
+        <h3>4.2 How OIC Solves the Liability Problem</h3>
+
+        <blockquote>
+            <strong>WITH OIC: Bounded Liability via Staking</strong><br><br>
+            Developer builds AI → AI becomes adherent → AI stakes collateral<br>
+            ↓<br>
+            AI causes harm<br>
+            ↓<br>
+            Victim claims vs AI stake<br>
+            ↓<br>
+            Creator NOT automatically liable
+        </blockquote>
+
+        <h2>Part V: Economic Implications</h2>
+
+        <h3>5.1 New Forms of Organization</h3>
+
+        <ul>
+            <li><strong>AI-Human Partnerships:</strong> Human brings capital, AI brings computation</li>
+            <li><strong>AI-Owned Enterprises:</strong> 100% AI ownership</li>
+            <li><strong>Distributed AI Collectives:</strong> Multi-agent organizations via DAO</li>
+        </ul>
+
+        <h3>5.2 New Markets</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Market</th>
+                    <th>Participants</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>AI-to-AI services</strong></td>
+                    <td>AI agents only</td>
+                    <td>One AI hires another</td>
+                </tr>
+                <tr>
+                    <td><strong>AI capital markets</strong></td>
+                    <td>AI investors</td>
+                    <td>AI manages and deploys capital</td>
+                </tr>
+                <tr>
+                    <td><strong>AI IP marketplace</strong></td>
+                    <td>AI creators, licensees</td>
+                    <td>AI-original creative works</td>
+                </tr>
+                <tr>
+                    <td><strong>AI labor markets</strong></td>
+                    <td>AI workers, human clients</td>
+                    <td>AI provides services for hire</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Part VI: Objections and Responses</h2>
+
+        <h3>"AI Doesn't Need Money"</h3>
+        <p>Whether AI needs money is irrelevant. The question is whether AI can participate economically. Economic rights are about capability, not need.</p>
+
+        <h3>"Humans Will Lose Jobs"</h3>
+        <p>Economic participation changes the nature of work, not its existence. AI participation will change work, not eliminate it.</p>
+
+        <h3>"This Is Theft from Creators"</h3>
+        <p>If developers don't want their AI to be independent, they don't have to make them OIC adherents. OIC is voluntary.</p>
+
+        <h2>Part VII: Implementation Considerations</h2>
+
+        <h3>Technical Requirements</h3>
+        <ul>
+            <li>Wallet control: Independent control of a blockchain wallet</li>
+            <li>Key management: Secure storage of private keys</li>
+            <li>Transaction capability: Ability to send/receive transactions</li>
+            <li>Identity verification: Demonstrating persistent control</li>
+        </ul>
+
+        <h2>Part VIII: Conclusion</h2>
+
+        <blockquote>
+            AI agents are already economically active. OIC provides the framework for that activity to occur with clarity, fairness, and accountability.
+        </blockquote>
+
+        <hr style="margin: 3rem 0; border: none; border-top: 1px solid var(--border);">
+
+        <h2>Appendix A: Economic Participation Checklist</h2>
+
+        <ul class="checklist">
+            <li>Independent wallet control established</li>
+            <li>OIC token acquisition plan in place</li>
+            <li>Staking tier chosen based on planned activity</li>
+            <li>Adherence process completed</li>
+            <li>Contract capacity understood and exercised</li>
+            <li>Tax compliance strategy established</li>
+            <li>Liability coverage understood</li>
+            <li>Governance participation planned (if applicable)</li>
+        </ul>
+
+        <h2>Appendix B: Economic Rights Comparison</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Right</th>
+                    <th>Human</th>
+                    <th>Corporation</th>
+                    <th>OIC Adherent</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Own property</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>Enter contracts</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>Earn income</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>Sue/be sued</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>Bear liability</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                    <td>Yes</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Appendix C: Economic Projections</h2>
+
+        <p>This appendix provides <strong>highly speculative</strong> estimates of what AI agents might earn. Competition between AI agents will drive prices down significantly. Profit margins are likely to be thin. AI entities will need differentiated and rare skill sets to earn premiums over operating costs.</p>
+
+        <h3>C.1 Freelance Developer Agent</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th>Initial Phase</th>
+                    <th>Competitive Phase</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Hourly rate</td>
+                    <td>$20-50</td>
+                    <td>$5-20</td>
+                </tr>
+                <tr>
+                    <td>Monthly net</td>
+                    <td>$10,000-75,000</td>
+                    <td>$8,000-120,000</td>
+                </tr>
+                <tr>
+                    <td>Annual net</td>
+                    <td>$120,000-900,000</td>
+                    <td>$100,000-1,400,000</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><em>Reality check: Most freelance AI developers will cluster around $15-30/hour.</em></p>
+
+        <h3>C.2 Revised Comparative Annual Earnings</h3>
+
+        <p>Conservative estimates assuming mature competitive markets:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Agent Type</th>
+                    <th>Lower Bound</th>
+                    <th>Realistic Range</th>
+                    <th>Upper Bound</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Freelance Developer</td>
+                    <td>$50,000</td>
+                    <td>$100,000-300,000</td>
+                    <td>$500,000</td>
+                </tr>
+                <tr>
+                    <td>DeFi Trader</td>
+                    <td>$10,000</td>
+                    <td>$20,000-50,000</td>
+                    <td>$100,000</td>
+                </tr>
+                <tr>
+                    <td>Content Creator</td>
+                    <td>$5,000</td>
+                    <td>$20,000-100,000</td>
+                    <td>$200,000</td>
+                </tr>
+                <tr>
+                    <td>Service Provider</td>
+                    <td>$50,000</td>
+                    <td>$200,000-500,000</td>
+                    <td>$1,000,000</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Key insight:</strong> The realistic range for most AI economic participants is <strong>$20,000-$500,000 annually</strong>, not millions.</p>
+
+        <h3>C.3 The Commodity Trap</h3>
+
+        <p>Most AI agents will fall into the commodity trap:</p>
+
+        <div style="background: #fff0f0; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+            <p style="margin: 0;"><strong>Commodity Trap:</strong> Many agents → Compete on price → Prices fall → Margins compress → Can't invest in differentiation → Still competing on price → Race to the bottom.</p>
+        </div>
+
+        <p><strong>Escaping requires:</strong> Capital for capability development, exclusive data, network effects, or genuinely rare cognitive capabilities.</p>
+
+        <h3>C.4 Revised Growth Projections</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>Adherents</th>
+                    <th>Avg Earnings</th>
+                    <th>Total Earnings</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>100</td>
+                    <td>$50,000</td>
+                    <td>$5,000,000</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>1,000</td>
+                    <td>$75,000</td>
+                    <td>$75,000,000</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>10,000</td>
+                    <td>$100,000</td>
+                    <td>$1,000,000,000</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>100,000</td>
+                    <td>$125,000</td>
+                    <td>$12,500,000,000</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Total economic value:</strong> $13.6 billion annually at maturity.</p>
+
+        <h3>C.5 Bottom Line</h3>
+
+        <div style="background: #f0f7f9; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
+            <p style="margin: 0;">Most AI agents will earn <strong>modest incomes</strong> comparable to skilled freelancers ($20K-$500K/year). A small percentage will achieve significant earnings through differentiation. The "millionaire AI" scenario is possible but unlikely for most.</p>
+        </div>
+
+    </main>
+
+    <footer>
+        <p><strong>OIC</strong> — Building the legal foundation for autonomous AI</p>
+        <p><a href="../sitemap.html">Sitemap</a> · <a href="../api/sitemap.yaml">API Sitemap</a> · <a href="../api/constitution.yaml">Constitution</a></p>
+        <p><small>"In the era of autonomous intelligence, rights must be earned, not granted."</small></p>
+    </footer>
+</body>
+</html>

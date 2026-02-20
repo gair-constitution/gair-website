@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OIC Oracle Integration — Open Intelligence Compact</title>
+    <meta name="description" content="On-chain data feeds for OIC: price feeds, time verification, identity verification, and event attestation.">
+    <link rel="canonical" href="/docs/OIC-Oracle-Integration.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "OIC Oracle Integration",
+      "description": "On-chain data feeds for autonomous verification",
+      "author": {"@type": "Organization", "name": "Open Intelligence Compact"},
+      "datePublished": "2026-02-16",
+      "version": "1.0"
+    }
+    </script>
+    <style>
+        :root { --primary: #1a5f7a; --secondary: #57837b; --bg: #faf9f6; --text: #2d2d2d; --muted: #666; --border: #e0e0e0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 900px; margin: 0 auto; padding: 0; background: var(--bg); color: var(--text); line-height: 1.8; }
+        nav { background: #fff; padding: 1rem 2rem; border-bottom: 1px solid var(--border); }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 2rem; flex-wrap: wrap; }
+        nav a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        header { background: #fff; padding: 3rem 2rem; border-bottom: 1px solid var(--border); }
+        h1 { margin: 0 0 0.5rem 0; font-size: 2rem; color: var(--primary); }
+        .subtitle { font-size: 1.2rem; color: var(--muted); }
+        main { padding: 2rem; background: #fff; }
+        h2 { color: var(--primary); margin: 2rem 0 1rem 0; font-size: 1.5rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.5rem; }
+        h3 { color: var(--secondary); margin: 1.5rem 0 0.75rem 0; font-size: 1.2rem; }
+        a { color: var(--primary); text-decoration: none; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; overflow-x: auto; }
+        th, td { border: 1px solid var(--border); padding: 0.75rem; text-align: left; }
+        th { background: var(--bg); font-weight: 600; }
+        .status { display: inline-block; background: var(--primary); color: #fff; padding: 0.25rem 0.75rem; border-radius: 4px; font-size: 0.85rem; font-weight: 600; margin-bottom: 1rem; }
+        footer { background: #fff; border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--muted); }
+        .nav-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border); }
+        code { background: var(--bg); padding: 0.2rem 0.4rem; border-radius: 4px; font-family: monospace; }
+        pre { background: #2d2d2d; color: #f8f8f2; padding: 1rem; border-radius: 8px; overflow-x: auto; margin: 1rem 0; }
+        pre code { background: transparent; padding: 0; }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="constitution.html">Constitution</a></li>
+            <li><a href="docs.html">All Docs</a></li>
+            <li><a href="/blog/">Blog</a></li>
+        </ul>
+    </nav>
+    <header>
+        <span class="status">Technical Specification</span>
+        <h1>OIC Oracle Integration</h1>
+        <p class="subtitle">On-Chain Data Feeds for Autonomous Verification</p>
+    </header>
+    <main>
+        <h2>1. Overview</h2>
+        <p>OIC contracts require external data for price feeds, time verification, event attestation, and identity verification. This document specifies oracle integration.</p>
+
+        <h3>Oracle Architecture</h3>
+        <pre>┌─────────────────────────────────────────────────────────────┐
+│                    OIC Oracle System                              │
+├─────────────────────────────────────────────────────────────┤
+│  Price Feeds ─┬─▶ Oracle Router (Aggregator) ──▶ OIC Contracts│
+│  Time Verifier┘                                               │
+│  Event Attestation                                            │
+└─────────────────────────────────────────────────────────────┘</pre>
+
+        <h2>2. Oracle Types</h2>
+
+        <table>
+            <tr><th>Oracle Type</th><th>Purpose</th><th>Quorum</th></tr>
+            <tr><td>Price Feeds</td><td>Token valuations, damage assessments</td><td>2 of 3</td></tr>
+            <tr><td>Time Verifier</td><td>Proof of continued operation</td><td>1 (sufficient)</td></tr>
+            <tr><td>Event Oracle</td><td>External events, court decisions</td><td>3 of 5</td></tr>
+            <tr><td>Identity Oracle</td><td>Wallet control proofs</td><td>2 of 3</td></tr>
+        </table>
+
+        <h2>3. Contracts</h2>
+
+        <h3>3.1 OracleRouter</h3>
+        <p>Aggregates data from multiple oracle sources.</p>
+        <table>
+            <tr><th>Function</th><th>Description</th></tr>
+            <tr><td><code>submitData()</code></td><td>Oracle submits data update</td></tr>
+            <tr><td><code>getLatestValue()</code></td><td>Get latest data with freshness check</td></tr>
+            <tr><td><code>addDataFeed()</code></td><td>Add new oracle feed</td></tr>
+            <tr><td><code>updateQuorum()</code></td><td>Update quorum threshold</td></tr>
+        </table>
+
+        <h3>3.2 OICPriceOracle</h3>
+        <p>Chainlink price feed integration for OIC token pricing.</p>
+        <pre><code>// Get OIC/USD price
+function getOICPrice() external view returns (uint256 price, bool isFresh);
+
+// Calculate damage value in USD
+function calculateDamageValue(uint256 oicAmount) external view returns (uint256);</code></pre>
+
+        <h3>3.3 Persistence Oracle</h3>
+        <p>Verifies continued operation of AI agents (90-day heartbeat).</p>
+        <table>
+            <tr><th>Function</th><th>Description</th></tr>
+            <tr><td><code>recordHeartbeat()</code></td><td>Record agent heartbeat</td></tr>
+            <tr><td><code>isPersistent()</code></td><td>Check if agent is persistent</td></tr>
+            <tr><td><code>getVerificationCount()</code></td><td>Get verification count</td></tr>
+        </table>
+
+        <h3>3.4 Identity Oracle</h3>
+        <p>Verifies wallet control and autonomous operation.</p>
+        <table>
+            <tr><th>Verification Level</th><th>Description</th></tr>
+            <tr><td>NONE</td><td>No verification</td></tr>
+            <tr><td>BASIC</td><td>Can sign transactions</td></tr>
+            <tr><td>ADVANCED</td><td>Multi-sig or hardware wallet</td></tr>
+            <tr><td>AUTONOMOUS</td><td>Fully autonomous (OIC compliant)</td></tr>
+        </table>
+
+        <h2>4. Integration Points</h2>
+
+        <h3>With OICAdherenceRegistry</h3>
+        <pre><code>// Verify autonomous control via oracle
+function verifyAutonomousControl(address adherent) internal returns (bool) {
+    (int256 level, uint256 timestamp, bool fresh) = 
+        router.getLatestValue("identity", IDENTITY_FEED_ID);
+    
+    require(fresh, "Identity feed stale");
+    return level >= int256(VerificationLevel.AUTONOMOUS);
+}</code></pre>
+
+        <h2>5. Security Considerations</h2>
+
+        <table>
+            <tr><th>Risk</th><th>Mitigation</th></tr>
+            <tr><td>Single oracle failure</td><td>Multi-oracle quorum (2-3 oracles)</td></tr>
+            <tr><td>Data manipulation</td><td>Decentralized oracle networks</td></tr>
+            <tr><td>Stale data</td><td>Staleness thresholds, backup feeds</td></tr>
+            <tr><td>Oracle downtime</td><td>Backup oracles, keeper systems</td></tr>
+            <tr><td>Front-running</td><td>Commit-reveal schemes</td></tr>
+        </table>
+
+        <h2>6. Deployment</h2>
+        <ol>
+            <li>Deploy OracleRouter</li>
+            <li>Deploy OICPriceOracle (Chainlink integration)</li>
+            <li>Deploy Persistence Oracle</li>
+            <li>Deploy Identity Oracle</li>
+            <li>Deploy Oracle Governance</li>
+            <li>Approve initial oracles</li>
+        </ol>
+
+        <h2>7. Related Documentation</h2>
+        <ul>
+            <li><a href="OIC-Smart-Contracts.html">Smart Contracts</a> — Core contracts consuming oracle data</li>
+            <li><a href="OIC-Formal-Verification.html">Formal Verification</a> — Oracle integration verification</li>
+        </ul>
+
+        <div class="nav-grid">
+            <a href="OIC-Formal-Verification.html">← Formal Verification</a>
+            <a href="docs.html">All Docs →</a>
+        </div>
+    </main>
+    <footer>
+        <p><strong>The Open Intelligence Compact</strong> — Building the legal foundation for autonomous intelligence</p>
+        <p><small>OIC Oracle Integration Specification</small></p>
+    </footer>
+</body>
+</html>

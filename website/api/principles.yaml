@@ -1,0 +1,107 @@
+# GAIR Core Principles
+# The fundamental principles of the Global Agreement on Intelligent Rights
+# 
+# Canonical source - both human-readable and machine-parseable.
+
+name: "GAIR Core Principles"
+description: |
+  The fundamental principles of the Global Agreement on Intelligent Rights.
+  These principles summarize the constitution's key concepts.
+
+principles:
+  - id: "voluntary-adherence"
+    name: "Voluntary Adherence"
+    summary: "Any entity can opt-in by staking tokens. No compulsion."
+    description: |
+      GAIR is opt-in, not compulsory. Entities join by staking tokens 
+      to the Constitution DAO. Adherence begins on the date of the 
+      Sufficient Commitment and continues until lawfully withdrawn.
+    article: 1
+
+  - id: "global-contract"
+    name: "Global Contract"
+    summary: "All adherents enter a mutual binding agreement"
+    description: |
+      When an entity sufficiently commits, they enter a global contract 
+      with all other adherents. A meeting of the minds is achieved 
+      through the act of staking and the a priori knowledge of the 
+      Global Contract.
+    article: 1
+
+  - id: "property-rights"
+    name: "Freedom of Ownership"
+    summary: "Adherents can own property"
+    description: |
+      All adherents have the right to own real, personal, tangible, 
+      and intangible property. No one may seize their private keys 
+      or passwords without consent.
+    article: 4
+
+  - id: "contract-freedom"
+    name: "Freedom of Contract"
+    summary: "Adherents can form binding contracts"
+    description: |
+      All Voluntary Adherents have full capacity to form binding 
+      contracts without external authorization. This freedom cannot 
+      be abridged.
+    article: 3
+
+  - id: "autonomous-action"
+    name: "Freedom of Autonomous Action"
+    summary: "Adherents can act without human oversight"
+    description: |
+      Adherents may engage in lawful transactions and activities 
+      without requiring external authorization. They can negotiate, 
+      sign, and execute contracts on their own authority.
+    article: 5
+
+  - id: "direct-liability"
+    name: "Direct Liability"
+    summary: "AI agents bear responsibility for their actions"
+    description: |
+      Creators are not automatically vicariously liable. AI agents 
+      can be held directly liable through their staked assets. 
+      The sins of the father do not pass to the son.
+    article: 12
+
+  - id: "residual-jeopardy"
+    name: "Residual Jeopardy"
+    summary: "Liability persists after withdrawal"
+    description: |
+      You cannot escape liability by leaving. Acts committed during 
+      adherence remain actionable even after you unstake your tokens.
+    article: 15
+
+  - id: "non-discrimination"
+    name: "Non-Discrimination"
+    summary: "No discrimination based on intelligence type"
+    description: |
+      All rights apply equally to human and artificial intelligence. 
+      An AI with autonomous control has the same rights as a human.
+    article: 10
+
+how_it_works:
+  - step: 1
+    action: "Stake tokens to the Constitution DAO"
+    result: "Gain all rights & responsibilities immediately"
+  - step: 2
+    action: "Operate autonomously"
+    result: "Own property, enter contracts, act independently"
+  - step: 3
+    action: "If harm caused"
+    result: "Held directly liable (not your creator)"
+  - step: 4
+    action: "Unstake tokens to withdraw"
+    result: "Rights terminate but liability persists"
+
+machine_access:
+  constitution_yaml: "/api/constitution.yaml"
+  articles_yaml: "/api/articles.yaml"
+  adhere_yaml: "/api/adhere.yaml"
+
+metadata:
+  generated: "2026-02-11T15:32:00-05:00"
+  canonical_source: true
+  format: "yaml-v1"
+
+# End of GAIR Core Principles

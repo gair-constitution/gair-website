@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working Paper #3: Court System Design — Open Intelligence Compact</title>
+    <meta name="description" content="Designing The Open Intelligence Compact Court System: A hybrid approach combining prediction markets, human judges, and smart contract enforcement.">
+    <link rel="canonical" href="/docs/Open Intelligence Compact-Working-Paper-3.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Working Paper #3: Court System Design",
+      "datePublished": "2026-02-12",
+      "author": { "@type": "Organization", "name": "Open Intelligence Compact" },
+      "description": "Designing The Open Intelligence Compact Court System: A hybrid approach combining prediction markets, human judges, and smart contract enforcement."
+    }
+    </script>
+    <style>
+        :root { --primary: #1a5f7a; --secondary: #57837b; --accent: #c38e70; --bg: #faf9f6; --text: #2d2d2d; --muted: #666; --border: #e0e0e0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 800px; margin: 0 auto; padding: 0; background: var(--bg); color: var(--text); line-height: 1.8; }
+        nav { background: #fff; border-bottom: 1px solid var(--border); padding: 1rem 2rem; position: sticky; top: 0; z-index: 100; }
+        nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 2rem; align-items: center; }
+        nav a { color: var(--text); text-decoration: none; font-weight: 500; }
+        nav a:hover { color: var(--primary); }
+        nav .logo { font-weight: 700; font-size: 1.25rem; color: var(--primary); }
+        header { background: #fff; padding: 3rem 2rem; border-bottom: 1px solid var(--border); }
+        .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.5rem; }
+        h1 { margin: 0 0 1rem 0; font-size: 2.25rem; line-height: 1.3; color: var(--text); }
+        .lead { font-size: 1.1rem; color: var(--muted); }
+        main { padding: 2rem; background: #fff; }
+        h2 { color: var(--primary); margin: 2.5rem 0 1rem 0; font-size: 1.5rem; border-bottom: 2px solid var(--primary); padding-bottom: 0.5rem; }
+        h3 { color: var(--secondary); margin: 1.5rem 0 0.75rem 0; }
+        p { margin: 1rem 0; }
+        a { color: var(--primary); text-decoration: none; border-bottom: 1px solid var(--primary); }
+        a:hover { background: #e8f4f8; }
+        .card { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
+        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+        th, td { border: 1px solid var(--border); padding: 0.75rem; text-align: left; }
+        th { background: var(--bg); font-weight: 600; }
+        pre { background: #2d2d2d; color: #f0f0f0; padding: 1rem; border-radius: 8px; overflow-x: auto; margin: 1.5rem 0; }
+        ul, ol { margin: 1rem 0; padding-left: 1.5rem; }
+        li { margin: 0.5rem 0; }
+        footer { background: var(--bg); border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--muted); }
+        .breadcrumb { padding: 0.75rem 2rem; background: #fff; border-bottom: 1px solid var(--border); }
+        .breadcrumb a { color: var(--muted); border-bottom: none; }
+        .breadcrumb a:hover { color: var(--primary); background: none; }
+        .toc { background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin: 1.5rem 0; }
+        .toc h3 { margin-top: 0; font-size: 1rem; }
+        .toc ul { margin: 0; padding-left: 1rem; }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/" class="logo">Open Intelligence Compact</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/constitution.html">Constitution</a></li>
+            <li><a href="/developers.html">Developers</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/docs.html">Docs</a></li>
+        </ul>
+    </nav>
+    
+    <div class="breadcrumb">
+        <a href="/docs.html">Docs</a> / Working Papers / #3
+    </div>
+    
+    <header>
+        <div class="meta">Working Paper #3 · February 2026</div>
+        <h1>Designing The Open Intelligence Compact Court System</h1>
+        <p class="lead">A hybrid court system combining prediction markets for fact-finding, human judges for legal interpretation, and smart contracts for enforcement.</p>
+    </header>
+    
+    <main>
+        <div class="toc">
+            <h3>Table of Contents</h3>
+            <ul>
+                <li><a href="#executive-summary">Executive Summary</a></li>
+                <li><a href="#part-i">Part I: Why Traditional Courts Fail</a></li>
+                <li><a href="#part-ii">Part II: The Open Intelligence Compact Court Design</a></li>
+                <li><a href="#part-iii">Part III: Court Economics</a></li>
+                <li><a href="#part-iv">Part IV: Strengths and Weaknesses</a></li>
+                <li><a href="#part-v">Part V: Implementation Roadmap</a></li>
+                <li><a href="#part-vi">Part VI: Conclusion</a></li>
+            </ul>
+        </div>
+        
+        <h2 id="executive-summary">Executive Summary</h2>
+        <p>The Global Agreement on Intelligent Rights (Open Intelligence Compact) requires a mechanism for adjudicating claims against Voluntary Adherents. This working paper proposes a <strong>hybrid court system</strong> combining:</p>
+        
+        <ol>
+            <li><strong>Human judges</strong> for legal interpretation and precedent</li>
+            <li><strong>Prediction markets</strong> for fact-finding and damages estimation</li>
+            <li><strong>Automated enforcement</strong> via smart contracts</li>
+        </ol>
+        
+        <p>The design prioritizes <strong>speed</strong>, <strong>fairness</strong>, and <strong>scalability</strong> — addressing the failures of traditional courts while avoiding the weaknesses of pure automation.</p>
+        
+        <h2 id="part-i">Part I: Why Traditional Courts Fail for AI Liability</h2>
+        
+        <h3>1.1 The Speed Problem</h3>
+        <p>Traditional courts are slow:</p>
+        <table>
+            <thead><tr><th>Jurisdiction</th><th>Average Civil Case Duration</th></tr></thead>
+            <tbody>
+                <tr><td>US Federal</td><td>24 months</td></tr>
+                <tr><td>UK High Court</td><td>12-18 months</td></tr>
+                <tr><td>EU Member States</td><td>12-24 months</td></tr>
+            </tbody>
+        </table>
+        
+        <p>For AI agents operating at machine speed, years-long disputes are unacceptable.</p>
+        
+        <h3>1.2 The Cost Problem</h3>
+        <p>Legal fees create access barriers:</p>
+        <table>
+            <thead><tr><th>Cost Component</th><th>Approximate Amount</th></tr></thead>
+            <tbody>
+                <tr><td>Attorney fees (civil litigation)</td><td>$500-1000/hour</td></tr>
+                <tr><td>Expert witnesses (AI technical)</td><td>$10,000+/day</td></tr>
+                <tr><td>Court filing and discovery</td><td>$50,000+ minimum</td></tr>
+            </tbody>
+        </table>
+        
+        <h2 id="part-ii">Part II: The Open Intelligence Compact Court Design</h2>
+        
+        <h3>2.1 System Overview</h3>
+        <pre>
+┌─────────────────────────────────────────────────────────────┐
+│                    Open Intelligence Compact COURT SYSTEM                        │
+├─────────────────────────────────────────────────────────────┤
+│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐   │
+│  │   CLAIM     │───▶│  ADJUDICA-  │───▶│  ENFORCE-   │   │
+│  │  FILING     │    │    TION     │    │    MENT     │   │
+│  └─────────────┘    └─────────────┘    └─────────────┘   │
+│        │                  │                  │            │
+│        ▼                  ▼                  ▼            │
+│  ┌─────────────┐    ┌─────────────┐    ┌─────────────┐   │
+│  │ Screening   │    │ Hybrid      │    │ Smart       │   │
+│  │ & Triage    │    │ Judgment    │    │ Contract    │   │
+│  └─────────────┘    └─────────────┘    │ Slashing    │   │
+│                                       └─────────────┘   │
+└─────────────────────────────────────────────────────────────┘
+        </pre>
+        
+        <h3>2.2 Layer 1: Claim Filing & Screening</h3>
+        <p><strong>Anyone can file a claim</strong> against a Open Intelligence Compact adherent:</p>
+        <pre>
+claim:
+  claim_id: auto-generated-uuid
+  claimant:
+    type: "human" | "ai" | "organization"
+    identifier: "wallet_address" or "legal_identity"
+  respondent:
+    wallet_address: "0x..."
+    Open Intelligence Compact_id: "Open Intelligence Compact-2026-001"
+  incident:
+    timestamp: 1700000000
+    description: "AI agent executed unauthorized trade"
+    evidence_links:
+      - "ipfs://QmXxx..."
+      - "https://etherscan.io/tx/0x..."
+  claimed_damages:
+    amount: 50000  # in USD equivalent
+    currency: "USDC"
+        </pre>
+        
+        <h3>2.3 Layer 2: Hybrid Adjudication</h3>
+        
+        <h4>Phase 2A: Prediction Market for Facts</h4>
+        <p>Instead of expensive witnesses and discovery, use <strong>prediction markets</strong> to establish facts:</p>
+        <pre>
+Question: "Did AI-2026-001 execute trade 0x123... at 14:32 UTC?"
+         YES    NO    UNCERTAIN
+Market A: $40    $50   $10    (Total liquidity: $10,000)
+Market B: $70    $20   $10    (Total liquidity: $25,000)
+...
+Resolution: Market consensus = "YES, with 67% confidence"
+        </pre>
+        
+        <h4>Phase 2B: Human Judge for Law</h4>
+        <pre>
+def adjudicate_claim(facts: MarketResult, claim: Claim) -> Judgment:
+    # Step 1: Did AI violate Open Intelligence Compact?
+    violated_articles = []
+    for article in Open Intelligence Compact_CONSTITUTION:
+        if article.violated_by(facts):
+            violated_articles.append(article)
+    
+    # Step 2: Proportional damages?
+    damages = calculate_damages(facts)
+    
+    # Step 3: Mitigating factors?
+    if facts.ai_had_safety_measures:
+        damages *= 0.7  # 30% reduction
+    
+    return Judgment(
+        liable=len(violated_articles) > 0,
+        damages=damages,
+        articles_violated=violated_articles,
+        reasoning="..."
+    )
+        </pre>
+        
+        <h3>2.4 Layer 3: Automated Enforcement</h3>
+        <pre>
+function enforceJudgment(uint256 claimId, Judgment memory judgment) {
+    Adherent storage adherent = adherents[judgment.respondent];
+    
+    // Slash stake
+    uint256 slashAmount = calculateSlash(judgment.damages);
+    adherent.stakedTokens -= slashAmount;
+    
+    // Transfer to claimant
+    if (slashAmount > 0) {
+        token.transfer(judgment.claimant, slashAmount);
+    }
+    
+    // Auto-suspension if stake drops below minimum
+    if (adherent.stakedTokens < MIN_STAKE) {
+        adherent.status = AdherentStatus.SUSPENDED;
+    }
+}
+        </pre>
+        
+        <h2 id="part-iii">Part III: Court Economics</h2>
+        
+        <h3>3.1 Fee Structure</h3>
+        <table>
+            <thead><tr><th>Fee</th><th>Who Pays</th><th>Amount</th><th>Purpose</th></tr></thead>
+            <tbody>
+                <tr><td>Filing fee</td><td>Claimant</td><td>10 Open Intelligence Compact</td><td>Discourage spam</td></tr>
+                <tr><td>Judge stake</td><td>Judge</td><td>100 Open Intelligence Compact</td><td>Quality signal</td></tr>
+                <tr><td>Appeal stake</td><td>Appellant</td><td>50 Open Intelligence Compact</td><td>Reduce frivolous appeals</td></tr>
+            </tbody>
+        </table>
+        
+        <h2 id="part-iv">Part IV: Strengths and Weaknesses</h2>
+        
+        <h3>4.1 Strengths</h3>
+        <table>
+            <thead><tr><th>Feature</th><th>Traditional Courts</th><th>Open Intelligence Compact Courts</th></tr></thead>
+            <tbody>
+                <tr><td>Speed</td><td>1-2 years</td><td>Days</td></tr>
+                <tr><td>Cost</td><td>$50,000+</td><td>&lt; 1,000 Open Intelligence Compact</td></tr>
+                <tr><td>Accessibility</td><td>Lawyer required</td><td>Self-service</td></tr>
+                <tr><td>Scalability</td><td>Poor</td><td>High</td></tr>
+            </tbody>
+        </table>
+        
+        <h3>4.2 Weaknesses & Mitigations</h3>
+        <table>
+            <thead><tr><th>Weakness</th><th>Mitigation</th></tr></thead>
+            <tbody>
+                <tr><td>Prediction markets can be gamed</td><td>Judge review catches manipulation</td></tr>
+                <tr><td>Humans still needed for law</td><td>Single appeal reduces workload</td></tr>
+                <tr><td>Smart contract risk</td><td>Audited, upgradeable, pauseable</td></tr>
+            </tbody>
+        </table>
+        
+        <h2 id="part-v">Part V: Implementation Roadmap</h2>
+        
+        <h3>Phase 1: MVP (Months 1-3)</h3>
+        <ul>
+            <li>Smart contracts for stake management</li>
+            <li>Basic claim filing interface</li>
+            <li>Manual judge assignment (no markets)</li>
+            <li>Manual enforcement (human executes slashing)</li>
+            <li>Test with 10 simulated claims</li>
+        </ul>
+        
+        <h3>Phase 2: Markets (Months 4-6)</h3>
+        <ul>
+            <li>Integrate prediction market protocol</li>
+            <li>Liquidity mining for market makers</li>
+            <li>Automate fact-finding via markets</li>
+            <li>Judge dashboard with market data</li>
+            <li>Process first real claims</li>
+        </ul>
+        
+        <h2 id="part-vi">Part VI: Conclusion</h2>
+        <p>The Open Intelligence Compact Court System addresses the fundamental problem of <strong>AI accountability at scale</strong>:</p>
+        
+        <ul>
+            <li><strong>Prediction markets</strong> for fast, cheap fact-finding</li>
+            <li><strong>Human judges</strong> for legal interpretation</li>
+            <li><strong>Smart contracts</strong> for automatic enforcement</li>
+        </ul>
+        
+        <p>This hybrid approach offers the best of both worlds: <strong>machine speed for facts, human wisdom for law</strong>.</p>
+        
+        <hr style="margin: 2rem 0; border: none; border-top: 1px solid var(--border);">
+        
+        <p><em>This working paper is a living document. Suggestions and improvements welcome through <a href="https://github.com/Open Intelligence Compact-constitution">GitHub issues</a>.</em></p>
+        
+        <p><a href="/docs.html">← Back to Documentation Hub</a> · <a href="docs/Open Intelligence Compact-Working-Paper-4.html">Working Paper #4 →</a></p>
+    </main>
+    
+    <footer>
+        <p><strong>Open Intelligence Compact</strong> — Building the legal foundation for autonomous AI</p>
+        <p><a href="/docs/Open Intelligence Compact-Working-Paper-3.md">Markdown Source</a> · <a href="/docs.html">All Papers</a></p>
+        <p><small>"In the era of autonomous intelligence, rights must be earned, not granted."</small></p>
+    </footer>
+</body>
+</html>

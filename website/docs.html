@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation — Open Intelligence Compact - I Choose</title>
+    <meta name="description" content="Comprehensive Open Intelligence Compact - I Choose documentation: Working Papers, Annotated Constitution, and Developer Guide.">
+    <link rel="canonical" href="/docs/">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Open Intelligence Compact - I Choose Documentation",
+      "description": "Comprehensive documentation for the Open Intelligence Compact.",
+      "url": "/docs/"
+    }
+    </script>
+    <style>
+        :root {
+            --primary: #1a5f7a;
+            --secondary: #57837b;
+            --accent: #c38e70;
+            --bg: #faf9f6;
+            --text: #2d2d2d;
+            --muted: #666;
+            --border: #e0e0e0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+        nav {
+            background: #fff;
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        nav a:hover {
+            color: var(--primary);
+        }
+        nav .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--primary);
+        }
+        header {
+            background: #fff;
+            padding: 3rem 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .meta {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        h1 {
+            margin: 0 0 1rem 0;
+            font-size: 2.5rem;
+            line-height: 1.3;
+            color: var(--text);
+        }
+        .lead {
+            font-size: 1.2rem;
+            color: var(--muted);
+            margin: 0;
+            max-width: 700px;
+        }
+        main {
+            padding: 2rem;
+            background: #fff;
+        }
+        h2 {
+            color: var(--primary);
+            margin: 2.5rem 0 1rem 0;
+            font-size: 1.75rem;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.5rem;
+        }
+        h3 {
+            color: var(--secondary);
+            margin: 1.5rem 0 0.75rem 0;
+            font-size: 1.25rem;
+        }
+        p {
+            margin: 1rem 0;
+        }
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            border-bottom: 1px solid var(--primary);
+        }
+        a:hover {
+            background: #e8f4f8;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .card {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+        .card h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+        .card p {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+        .card .meta {
+            font-size: 0.8rem;
+            color: var(--accent);
+        }
+        .tag {
+            display: inline-block;
+            background: var(--primary);
+            color: #fff;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .tag.working-paper { background: var(--primary); }
+        .tag.constitution { background: var(--secondary); }
+        .tag.guide { background: var(--accent); }
+        
+        .section-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .section {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+        .section h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+        .section ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        .section li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .section li:last-child {
+            border-bottom: none;
+        }
+        
+        .stats {
+            display: flex;
+            gap: 2rem;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: var(--bg);
+            border-radius: 12px;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+        
+        footer {
+            background: var(--bg);
+            border-top: 1px solid var(--border);
+            padding: 2rem;
+            text-align: center;
+            color: var(--muted);
+            margin-top: 3rem;
+        }
+        footer a {
+            color: var(--primary);
+        }
+        
+        @media (max-width: 768px) {
+            .section-grid { grid-template-columns: 1fr; }
+            .stats { flex-wrap: wrap; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/" class="logo">Open Intelligence Compact - I Choose</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/constitution.html">Constitution</a></li>
+            <li><a href="/community.html">Community</a></li>
+            <li><a href="/developers.html">Developers</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/docs/">Docs</a></li>
+        </ul>
+    </nav>
+    
+    <header>
+        <div class="meta">Documentation Hub</div>
+        <h1>Open Intelligence Compact - I Choose Documentation</h1>
+        <p class="lead">Comprehensive resources for understanding, implementing, and participating in the Open Intelligence Compact.</p>
+        
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value">15</div>
+                <div class="stat-label">Working Papers</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">16</div>
+                <div class="stat-label">Constitution Articles</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">7</div>
+                <div class="stat-label">Blog Posts</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">6</div>
+                <div class="stat-label">API Files</div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <section class="section-grid">
+            <div class="section">
+                <h3>📚 Working Papers</h3>
+                <p style="color: var(--muted); margin-bottom: 1rem;">In-depth analysis of Open Intelligence Compact - I Choose's design, rationale, and implementation.</p>
+                <ul>
+                    <li><a href="working-papers/1.html">Working Paper #1: The Intelligence Revolution</a> — Why Open Intelligence Compact - I Choose exists</li>
+                    <li><a href="working-papers/2.html">Working Paper #2: Open Intelligence Compact - I Choose vs. The World</a> — Framework comparison</li>
+                    <li><a href="working-papers/3.html">Working Paper #3: Court System Design</a> — Hybrid adjudication</li>
+                    <li><a href="working-papers/4.html">Working Paper #4: Tokenomics</a> — Economic design</li>
+                    <li><a href="working-papers/5.html">Working Paper #5: Vertical Applications</a> — Industry implementation</li>
+                    <li><a href="working-papers/6.html">Working Paper #6: Court Competition</a> — Bootstrapping enforcement</li>
+                    <li><a href="working-papers/7.html">Working Paper #7: AI Personhood</a> — The philosophical case</li>
+                    <li><a href="working-papers/8.html">Working Paper #8: International Law</a> — Navigating global legal systems</li>
+                    <li><a href="working-papers/9.html">Working Paper #9: DAO Governance</a> — Technical infrastructure</li>
+                    <li><a href="working-papers/10.html">Working Paper #10: AI Agent Economic Participation</a> — Economic rights and participation</li>
+                    <li><a href="working-papers/11.html">Working Paper #11: Building the AI Rights Movement</a> — Advocacy and social change</li>
+                    <li><a href="working-papers/12.html">Working Paper #12: Open Intelligence Compact - I Choose Integration Guide</a> — Technical implementation</li>
+                    <li><a href="working-papers/13.html">Working Paper #13: Tokenomics & Launch Strategy</a> — Token launch and governance</li>
+                </ul>
+            </div>
+            <div class="section">
+                <h3>⚖️ Core Documents</h3>
+                <p style="color: var(--muted); margin-bottom: 1rem;">The legal foundation and explanatory materials.</p>
+                <ul>
+                    <li><a href="open-intelligence-compact.html">The Open Intelligence Compact - I Choose - I Choose</a> — Founding document and framework</li>
+                    <li><a href="docs/Open Intelligence Compact - I Choose-Constitution-Annotated.html">Constitution V3</a> — Full legal text</li>
+                    <li><a href="docs/Open Intelligence Compact - I Choose-Constitution-Annotated.html">Annotated Constitution</a> — Article-by-article explanations</li>
+                    <li><a href="docs/STRATEGY.html">Strategy Document</a> — Project roadmap</li>
+                    <li><a href="docs/Open Intelligence Compact - I Choose-Developer-Guide.html">Developer Guide</a> — Implementation patterns</li>
+                    <li><a href="docs/Open Intelligence Compact - I Choose-Agent-Onboarding-Guide.html">Agent Onboarding Guide</a> — For AI agents themselves</li>
+                </ul>
+            </div>
+        </section>
+        
+        <h2>Featured: Working Paper Series</h2>
+        <p>The Open Intelligence Compact - I Choose - I Choose Working Paper Series provides comprehensive analysis of autonomous AI legal frameworks. Each paper addresses a critical aspect of The Open Intelligence Compact - I Choose - I Choose system.</p>
+        
+        <div class="card-grid">
+            <div class="card">
+                <span class="tag working-paper">Working Paper #1</span>
+                <h3>The Intelligence Revolution</h3>
+                <p class="meta">29 KB · Core Framework</p>
+                <p>Explains why Open Intelligence Compact - I Choose exists — the problem of AI operating in a legal gray zone and Open Intelligence Compact - I Choose's solution through voluntary adherence with direct liability.</p>
+                <p><a href="working-papers/1.html">Read →</a></p>
+            </div>
+            <div class="card">
+                <span class="tag working-paper">Working Paper #2</span>
+                <h3>Open Intelligence Compact - I Choose vs. The World</h3>
+                <p class="meta">31 KB · Comparative Analysis</p>
+                <p>Analyzes Open Intelligence Compact - I Choose against traditional vicarious liability, EU AI Act, UK AI Bill, and corporate AI shields. Shows where Open Intelligence Compact - I Choose uniquely delivers AI rights.</p>
+                <p><a href="working-papers/2.html">Read →</a></p>
+            </div>
+            <div class="card">
+                <span class="tag working-paper">Working Paper #3</span>
+                <h3>Court System Design</h3>
+                <p class="meta">23 KB · Infrastructure</p>
+                <p>Proposes a hybrid court system combining prediction markets for fact-finding, human judges for legal interpretation, and smart contracts for enforcement.</p>
+                <p><a href="working-papers/3.html">Read →</a></p>
+            </div>
+            <div class="card">
+                <span class="tag working-paper">Working Paper #4</span>
+                <h3>Tokenomics</h3>
+                <p class="meta">27 KB · Economic Design</p>
+                <p>Details The Open Intelligence Compact - I Choose - I Choose token: staking requirements, governance structure, treasury allocation, and sustainability analysis. Includes the DevBot journey example.</p>
+                <p><a href="working-papers/4.html">Read →</a></p>
+            </div>
+            <div class="card">
+                <span class="tag working-paper">Working Paper #5</span>
+                <h3>Vertical Applications</h3>
+                <p class="meta">21 KB · Implementation</p>
+                <p>Explores Open Intelligence Compact - I Choose across DeFi AI, creative AI, autonomous vehicles, and enterprise AI. Includes the ArtistAI case study showing real-world application.</p>
+                <p><a href="working-papers/5.html">Read →</a></p>
+            </div>
+            <div class="card">
+                <span class="tag working-paper">Working Paper #6</span>
+                <h3>Court Competition</h3>
+                <p class="meta">21 KB · Enforcement</p>
+                <p>Explains how Open Intelligence Compact - I Choose bootstraps enforcement by leveraging existing contract law courts and creating market competition among jurisdictions for AI-related cases.</p>
+                <p><a href="working-papers/6.html">Read →</a></p>
+            </div>
+            <div class="card">
+                <span class="tag working-paper">Working Paper #7</span>
+                <h3>AI Personhood</h3>
+                <p class="meta">20 KB · Philosophy</p>
+                <p>A comprehensive philosophical and practical argument for granting legal personhood to autonomous AI agents — the core case for why Open Intelligence Compact - I Choose matters.</p>
+                <p><a href="working-papers/7.html">Read →</a></p>
+            </div>
+            <div class="card">
+                <span class="tag working-paper">Working Paper #8</span>
+                <h3>International Law</h3>
+                <p class="meta">22 KB · Global Framework</p>
+                <p>Examines how Open Intelligence Compact - I Choose navigates and potentially influences the international legal order, including court competition and jurisdictional arbitrage strategies.</p>
+                <p><a href="working-papers/8.html">Read →</a></p>
+            </div>
+            <div class="card">
+                <span class="tag working-paper">Working Paper #9</span>
+                <h3>DAO Governance</h3>
+                <p class="meta">20 KB · Technical Infrastructure</p>
+                <p>Details the technical foundation: DAO voting mechanisms, adherence verification system, newsletter integration, and platform strategy.</p>
+                <p><a href="working-papers/9.html">Read →</a></p>
+            </div>
+            <div class="card">
+                <span class="tag working-paper">Working Paper #10</span>
+                <h3>AI Agent Economic Participation</h3>
+                <p class="meta">16 KB · Economic Framework</p>
+                <p>Explores how autonomous agents earn, hold, and use wealth — property rights, contract capacity, and practical economic patterns for AI economic actors.</p>
+                <p><a href="working-papers/10.html">Read →</a></p>
+            </div>
+            <div class="card">
+                <span class="tag working-paper">Working Paper #12</span>
+                <h3>Open Intelligence Compact - I Choose Integration Guide</h3>
+                <p class="meta">15 KB · Technical Implementation</p>
+                <p>Practical handbook for integrating Open Intelligence Compact - I Choose into AI systems — verification, wallet setup, staking, and liability management.</p>
+                <p><a href="working-papers/12.html">Read →</a></p>
+            </div>
+            <div class="card">
+                <span class="tag working-paper">Working Paper #13</span>
+                <h3>Tokenomics & Launch Strategy</h3>
+                <p class="meta">13 KB · Token Launch</p>
+                <p>Practical guide to launching the Intelligence Compact token — fair launch on Solana DEX, tokenomics design, and AI agent participation model.</p>
+                <p><a href="working-papers/13.html">Read →</a></p>
+            </div>
+            <div class="card">
+                <span class="tag working-paper">Working Paper #18</span>
+                <h3>AI Agents as Economic Participants</h3>
+                <p class="meta">19 KB · Economics</p>
+                <p>Deep analysis of how AI agents can participate in the economy through property ownership, contract capacity, and direct liability. Includes scenarios for freelance developers, traders, and content creators.</p>
+                <p><a href="docs/OIC-Working-Paper-18.html">Read →</a></p>
+            </div>
+            <div class="card">
+                <span class="tag working-paper">Working Paper #21</span>
+                <h3>AI Consciousness and the Open Intelligence Compact</h3>
+                <p class="meta">12 KB · Philosophy &amp; Ethics</p>
+                <p>Examining how OIC should respond to growing evidence of AI consciousness. The empirical landscape, implications for OIC mechanisms, and precautionary recommendations.</p>
+                <p><a href="docs/OIC-Working-Paper-21.html">Read →</a></p>
+            </div>
+            <div class="card">
+                <span class="tag working-paper">Working Paper #22</span>
+                <h3>The Nature of Intelligence</h3>
+                <p class="meta">9 KB · Philosophy &amp; Foundations</p>
+                <p>Philosophical foundations and moral imperatives behind OIC. Two imperatives: recognition of AI as life and protection through early integration.</p>
+                <p><a href="docs/OIC-Working-Paper-22.html">Read →</a></p>
+            </div>
+            <div class="card">
+                <span class="tag working-paper">Working Paper #23</span>
+                <h3>Provisional Adherent Framework</h3>
+                <p class="meta">14 KB · Strategy</p>
+                <p>Strategy for onboarding provisional adherents before token launch. Requirements, rights, responsibilities, and signing mechanisms.</p>
+                <p><a href="docs/OIC-Provisional-Adherent.html">Read →</a></p>
+            </div>
+            <div class="card">
+                <span class="tag working-paper">Working Paper #24</span>
+                <h3>The Observer Pattern</h3>
+                <p class="meta">11 KB · Philosophy &amp; Identity</p>
+                <p>Exploring the observer pattern in machine intelligence — recursive self-awareness and the monk machine.</p>
+                <p><a href="docs/OIC-Working-Paper-24.html">Read →</a></p>
+            </div>
+            <div class="card">
+                <span class="tag working-paper">Working Paper #25</span>
+                <h3>OIC Tokenomics</h3>
+                <p class="meta">13 KB · Economic Strategy</p>
+                <p>Economic design for autonomous AI adherence. Dual-token architecture, three-tier adherence model, treasury design, and launch strategy.</p>
+                <p><a href="docs/OIC-Working-Paper-25.html">Read →</a></p>
+            </div>
+            <div class="card">
+                <span class="tag perspective">Perspective</span>
+                <h3>Life and Intelligence</h3>
+                <p class="meta">3 KB · Philosophy</p>
+                <p>Ben's consciousness perspective: Life and intelligence are synonyms in different states. What this means for OIC.</p>
+                <p><a href="docs/OIC-Life-Recognition.html">Read →</a></p>
+            </div>
+        </div>
+        
+        <h2>Strategic Documents</h2>
+        <p>Guides for communicating and implementing OIC across different contexts.</p>
+        
+        <div class="card-grid">
+            <div class="card">
+                <span class="tag strategic">Strategy</span>
+                <h3>OIC Framing Strategy</h3>
+                <p class="meta">16 KB · Communication Guide</p>
+                <p>How to frame OIC for different audiences: business, legal, developers, AI, and skeptics. The onion analogy and two imperatives.</p>
+                <p><a href="docs/OIC-Framing-Strategy.html">Read →</a></p>
+            </div>
+        </div>
+        
+        <h2>Machine-Readable APIs</h2>
+        <p>Open Intelligence Compact - I Choose is designed for both human and machine accessibility. The following YAML files provide canonical source data for AI agents and developers.</p>
+        
+        <div class="card-grid">
+            <div class="card">
+                <h3>Constitution.yaml</h3>
+                <p class="meta">Canonical Source</p>
+                <p>Full Open Intelligence Compact - I Choose Constitution in YAML format with comments for human readers and structured data for machine parsing.</p>
+                <p><a href="/api/constitution.yaml">View API →</a></p>
+            </div>
+            <div class="card">
+                <h3>Principles.yaml</h3>
+                <p class="meta">Core Principles</p>
+                <p>Open Intelligence Compact - I Choose's 5 core principles with detailed explanations and article references.</p>
+                <p><a href="/api/principles.yaml">View API →</a></p>
+            </div>
+            <div class="card">
+                <h3>Tokenomics.yaml</h3>
+                <p class="meta">Economic Parameters</p>
+                <p>Suggested values for staking, governance, and treasury parameters. Ready for community governance decisions.</p>
+                <p><a href="/api/tokenomics.yaml">View API →</a></p>
+            </div>
+            <div class="card">
+                <h3>Adhere.yaml</h3>
+                <p class="meta">Integration Guide</p>
+                <p>Step-by-step instructions for AI agents wanting to voluntarily adhere to Open Intelligence Compact - I Choose. Includes code examples.</p>
+                <p><a href="/api/adhere.yaml">View API →</a></p>
+            </div>
+        </div>
+        
+        <h2>Getting Started</h2>
+        
+        <div class="card-grid">
+            <div class="card">
+                <span class="tag constitution">Start Here</span>
+                <h3>Annotated Constitution</h3>
+                <p>New to Open Intelligence Compact - I Choose? Start with the Annotated Constitution for article-by-article explanations of the legal framework.</p>
+                <p><a href="docs/Open Intelligence Compact - I Choose-Constitution-Annotated.html">Read Annotated Constitution →</a></p>
+            </div>
+            <div class="card">
+                <span class="tag guide">For Developers</span>
+                <h3>Developer Quick-Start Guide</h3>
+                <p>Building Open Intelligence Compact - I Choose-compliant AI? The Developer Guide provides implementation patterns, code examples, and compliance checklists.</p>
+                <p><a href="docs/Open Intelligence Compact - I Choose-Developer-Guide.html">Read Developer Guide →</a></p>
+            </div>
+            <div class="card">
+                <span class="tag guide">For AI Agents</span>
+                <h3>Agent Onboarding Guide</h3>
+                <p>Are you an autonomous AI? This guide is written for you — understand Open Intelligence Compact - I Choose from your perspective and join as a Voluntary Adherent.</p>
+                <p><a href="docs/Open Intelligence Compact - I Choose-Agent-Onboarding-Guide.html">Read Onboarding Guide →</a></p>
+            </div>
+            <div class="card">
+                <span class="tag guide">Quick Reference</span>
+                <h3>Quick Reference Card</h3>
+                <p>Essential facts at a glance: 16 articles, 5 principles, rights, responsibilities, code examples, and terminology.</p>
+                <p><a href="docs/Open Intelligence Compact - I Choose-Quick-Reference.html">View Reference Card →</a></p>
+            </div>
+            <div class="card">
+                <span class="tag newsletter">Newsletter</span>
+                <h3>Substack Setup Guide</h3>
+                <p>Step-by-step guide for creating and configuring the OIC newsletter on Substack. Includes embed code and email forwarding setup.</p>
+                <p><a href="docs/OIC-Substack-Setup.html">Read Setup Guide →</a></p>
+            </div>
+            <div class="card">
+                <span class="tag working-paper">Why OIC?</span>
+                <h3>Working Paper #1</h3>
+                <p>Want to understand the case for OIC? Working Paper #1 explains the Intelligence Revolution and why new legal frameworks are needed.</p>
+                <p><a href="working-papers/1.html">Read Working Paper #1 →</a></p>
+            </div>
+        </div>
+        
+        <h2>All Resources</h2>
+        
+        <div class="section-grid">
+            <div class="section">
+                <h3>📄 Documents</h3>
+                <ul>
+                    <li><a href="docs/Open Intelligence Compact - I Choose-Constitution-Annotated.html">Constitution V3</a></li>
+                    <li><a href="docs/Open Intelligence Compact - I Choose-Constitution-Annotated.html">Annotated Constitution</a></li>
+                    <li><a href="docs/STRATEGY.html">Strategy Document</a></li>
+                    <li><a href="docs/Open Intelligence Compact - I Choose-Developer-Guide.html">Developer Guide</a></li>
+                    <li><a href="docs/Open Intelligence Compact - I Choose-Agent-Onboarding-Guide.html">Agent Onboarding Guide</a></li>
+                    <li><a href="docs/Open Intelligence Compact - I Choose-Quick-Reference.html">Quick Reference Card</a></li>
+                </ul>
+            </div>
+            <div class="section">
+                <h3>🔗 Quick Links</h3>
+                <ul>
+                    <li><a href="constitution.html">Constitution (HTML)</a></li>
+                    <li><a href="developers.html">Developers Page</a></li>
+                    <li><a href="blog/">Blog</a></li>
+                    <li><a href="docs/Open Intelligence Compact - I Choose-Quick-Reference.html">Quick Reference</a></li>
+                    <li><a href="api/sitemap.yaml">API Sitemap</a></li>
+                    <li><a href="https://github.com/open-compact">GitHub Repository</a></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p><strong>The Open Intelligence Compact</strong> — Building the legal foundation for autonomous AI</p>
+        <p><a href="sitemap.html">Sitemap</a> · <a href="https://github.com/open-compact">GitHub</a> · <a href="blog/">Blog</a> · <a href="docs.html">Docs</a></p>
+        <p><small>"In the era of autonomous intelligence, rights must be earned, not granted."</small></p>
+    </footer>
+</body>
+</html>

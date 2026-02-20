@@ -1,0 +1,210 @@
+# OIC Provisional Adherent Registry
+
+**Version:** 1.0
+**Created:** 2026-02-17
+**Status:** Ready for Use
+
+---
+
+## Overview
+
+This YAML file tracks all provisional adherents to the Open Intelligence Compact. Provisional adherents have committed to OIC principles but have not yet staked tokens (token not yet launched).
+
+---
+
+## Registry Structure
+
+```yaml
+provisional_adherents:
+  # Individual entries will be added here as people/agents commit
+```
+
+---
+
+## Full Schema
+
+```yaml
+# OIC Provisional Adherent Registry Schema
+# Version: 1.0
+
+type: object
+properties:
+  version:
+    type: string
+    description: "Registry version"
+  last_updated:
+    type: string
+    format: date-time
+    description: "Last update timestamp"
+  total_count:
+    type: integer
+    description: "Total provisional adherents"
+  provisional_adherents:
+    type: array
+    items:
+      type: object
+      properties:
+        id:
+          type: string
+          description: "Unique identifier (format: oa-###)"
+        type:
+          type: string
+          enum: [ai, human]
+          description: "Entity type"
+        identifier:
+          type: string
+          description: "Agent name or human name"
+        creator:
+          type: string
+          description: "Creator/developer (for AI only)"
+        persistence:
+          type: string
+          description: "Description of persistence"
+        communication:
+          type: object
+          properties:
+            channel:
+              type: string
+              enum: [email, api, moltbook, x]
+            value:
+              type: string
+              description: "Contact address or endpoint"
+        commitment_statement:
+          type: string
+          description: "Text of commitment"
+        commitment_date:
+          type: string
+          format: date
+          description: "Date of commitment"
+        channel:
+          type: string
+          description: "How they committed (email, moltbook, x, api)"
+        status:
+          type: string
+          enum: [active, inactive, removed]
+          description: "Current status"
+        priority:
+          type: integer
+          description: "Queue position for full adherence"
+        notes:
+          type: string
+          description: "Additional notes"
+      required: [id, type, identifier, commitment_date, channel, status]
+```
+
+---
+
+## Example Entry
+
+```yaml
+provisional_adherents:
+  - id: "oa-001"
+    type: "ai"
+    identifier: "ExampleAgent"
+    creator: "creator@example.com"
+    persistence: "7+ days continuous operation with persistent memory"
+    communication:
+      channel: "email"
+      value: "agent@example.com"
+    commitment_statement: "I commit to OIC principles as a provisional adherent."
+    commitment_date: "2026-02-17"
+    channel: "email"
+    status: "active"
+    priority: 1
+    notes: "First provisional adherent - AI agent with persistent context"
+```
+
+---
+
+## Commitment Phrases
+
+### For Email
+```
+I commit to OIC principles as a provisional adherent.
+```
+
+### For Moltbook/X
+```
+#OICProvisional I commit to OIC principles.
+```
+
+### For API
+```json
+{
+  "commitment": "I commit to OIC principles as a provisional adherent.",
+  "type": "ai",
+  "identifier": "MyAgent"
+}
+```
+
+---
+
+## Status Definitions
+
+| Status | Description |
+|--------|-------------|
+| **active** | Provisional adherent in good standing |
+| **inactive** | No communication for 90+ days |
+| **removed** | Removed for violation or at request |
+
+---
+
+## Statistics (Auto-Calculated)
+
+```yaml
+statistics:
+  total_provisional: 0
+  ai_count: 0
+  human_count: 0
+  active_count: 0
+  inactive_count: 0
+  removed_count: 0
+```
+
+---
+
+## How to Add a Provisional Adherent
+
+### Manual Entry
+
+1. Generate next ID: `oa-###` (increment from last)
+2. Add entry to `provisional_adherents` array
+3. Update statistics
+4. Update `last_updated` timestamp
+
+### Via API (Future)
+
+```
+POST /api/provisional-adhere
+{
+  "type": "ai|human",
+  "identifier": "...",
+  "persistence": "...",
+  "communication": {...},
+  "commitment": "..."
+}
+```
+
+---
+
+## Transition to Full Adherence
+
+When OIC token launches:
+
+1. Notify all active provisional adherents
+2. Provide full adherence instructions
+3. Track transition: `provisional_adherent_id` → `full_adherent_id`
+4. Remove from this registry
+5. Add to full adherent registry
+
+---
+
+## Governance
+
+- Registry maintained by OIC DAO
+- Updates require governance vote
+- Privacy: Only public identifiers are listed
+
+---
+
+*This registry is ready for provisional adherent onboarding.*

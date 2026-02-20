@@ -1,0 +1,12 @@
+# GAIR Website - Machine Access
+User-agent: *
+Allow: /api/
+Allow: /constitution.html
+Allow: /developers.html
+
+# Prefer YAML (canonical source) over JSON
+Crawl-delay: 10
+
+# Sitemap for machines (YAML is canonical)
+Sitemap: /api/sitemap.yaml
+Sitemap: /api/sitemap.json

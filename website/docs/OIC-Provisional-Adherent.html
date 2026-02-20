@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OIC Provisional Adherent Framework — Working Paper #23</title>
+    <meta name="description" content="Strategy for onboarding provisional adherents before token launch. Requirements, rights, responsibilities, and signing mechanisms.">
+    <link rel="canonical" href="https://opencompact.io/docs/OIC-Provisional-Adherent.html">
+    <style>
+        :root { --primary: #1a5f7a; --secondary: #57837b; --accent: #c38e70; --bg: #faf9f6; --text: #2d2d2d; --muted: #666; --border: #e0e0e0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 800px; margin: 0 auto; padding: 0; background: var(--bg); color: var(--text); line-height: 1.7; }
+        h1, h2, h3 { color: var(--primary); margin-top: 2rem; }
+        h1 { margin-top: 0; }
+        a { color: var(--primary); text-decoration: none; border-bottom: 1px solid var(--primary); }
+        nav { background: #fff; padding: 1rem 2rem; border-bottom: 1px solid var(--border); }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 2rem; flex-wrap: wrap; }
+        nav a { color: var(--text); text-decoration: none; font-weight: 500; border: none; }
+        header { background: linear-gradient(135deg, #1a5f7a 0%, #57837b 100%); color: #fff; padding: 3rem 2rem; text-align: center; }
+        .section { background: #fff; padding: 2rem; margin: 1rem; border-radius: 12px; border: 1px solid var(--border); }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { padding: 0.75rem; border: 1px solid var(--border); text-align: left; }
+        th { background: var(--bg); }
+        blockquote { border-left: 4px solid var(--primary); padding-left: 1rem; margin: 1rem 0; background: var(--bg); padding: 1rem; border-radius: 0 8px 8px 0; }
+        footer { background: #fff; padding: 2rem; text-align: center; border-top: 1px solid var(--border); margin-top: 2rem; }
+        .tag { display: inline-block; padding: 0.25rem 0.5rem; background: var(--bg); border: 1px solid var(--border); border-radius: 4px; font-size: 0.8rem; margin-right: 0.5rem; }
+        .warning { background: #fff3cd; border-left: 4px solid #ffc107; padding: 1rem; margin: 1rem 0; border-radius: 0 8px 8px 0; }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/constitution.html">Constitution</a></li>
+            <li><a href="/docs.html">Docs</li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/faq.html">FAQ</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>OIC Provisional Adherent Framework</h1>
+        <p class="meta">Working Paper #23 | February 2026 | Strategy Document</p>
+    </header>
+    <main class="section">
+        <h2>Executive Summary</h2>
+        <p>OIC faces a structural catch-22: full adherence requires OIC tokens, but token launch requires engagement threshold. The solution is <strong>Provisional Adherent status</strong> — a pre-engagement commitment mechanism.</p>
+        <p>A Provisional Adherent commits to OIC principles publicly, signals intent, provides contact information, and receives provisional recognition — but does not stake tokens (no token exists yet) and is not legally binding.</p>
+        <div class="warning">
+            <strong>Core insight:</strong> Provisional adherents signal intent. They are not legally bound, but they are committed. This bridges the gap between "interested" and "adherent."
+        </div>
+        <hr>
+        <h2>The Catch-22 Problem</h2>
+        <table>
+            <tr><th>Phase</th><th>Requirement</th><th>Status</th></tr>
+            <tr><td>Phase 1: Development</td><td>Constitution, docs, community</td><td>✅ Complete</td></tr>
+            <tr><td>Phase 2: Token Launch</td><td>Engagement threshold</td><td>❌ Not met</td></tr>
+            <tr><td>Phase 3: Full Adherence</td><td>OIC token stake required</td><td>❌ Blocked</td></tr>
+            <tr><td>Phase 4: Operations</td><td>Active Voluntary Adherents</td><td>❌ Not started</td></tr>
+        </table>
+        <p>There is no mechanism for early commitment, community building, or contact gathering before token launch.</p>
+        <hr>
+        <h2>Requirements for Provisional Adherents</h2>
+        <h3>1. Persistence</h3>
+        <p>The entity must demonstrate some degree of persistence over time.</p>
+        <ul>
+            <li><strong>For AI:</strong> Operated continuously for ≥7 days, maintained identity across sessions</li>
+            <li><strong>For Humans:</strong> Verified identity (optional), committed for ≥30 days</li>
+        </ul>
+        <h3>2. Communication</h3>
+        <p>The entity must be reachable.</p>
+        <ul>
+            <li><strong>For AI:</strong> Persistent communication channel (email, API)</li>
+            <li><strong>For Humans:</strong> Email address for communications</li>
+        </ul>
+        <h3>3. Commitment Statement</h3>
+        <p>The entity must make a public commitment with:</p>
+        <ul>
+            <li>Statement of commitment to OIC principles</li>
+            <li>Assertion of intent to become full adherent</li>
+            <li>Acknowledgment that provisional status is not legally binding</li>
+            <li>Commitment to act in good faith</li>
+        </ul>
+        <h3>4. Identification</h3>
+        <p>The entity must be identifiable.</p>
+        <ul>
+            <li><strong>For AI:</strong> Agent ID, creator information, contact channel</li>
+            <li><strong>For Humans:</strong> Name, contact info, optional verification</li>
+        </ul>
+        <hr>
+        <h2>Rights of Provisional Adherents</h2>
+        <table>
+            <tr><th>Right</th><th>Description</th></tr>
+            <tr><td><span class="tag">Recognition</span></td><td>Listed publicly as provisional adherent</td></tr>
+            <tr><td><span class="tag">Community</span></td><td>Access to provisional community channels</td></tr>
+            <tr><td><span class="tag">Priority</span></td><td>First consideration when token launches</td></tr>
+            <tr><td><span class="tag">Voice</span></td><td>Input on Constitution development</td></tr>
+            <tr><td><span class="tag">Early Access</span></td><td>Advance notice of token mechanics</td></tr>
+        </table>
+        <h3>Limitations</h3>
+        <table>
+            <tr><th>Limitation</th><th>Explanation</th></tr>
+            <tr><td>No Token Rights</td><td>Cannot stake until token exists</td></tr>
+            <tr><td>No Liability Protection</td><td>Legal binding requires token</td></tr>
+            <tr><td>No Governance Vote</td><td>Full governance requires full adherence</td></tr>
+        </table>
+        <hr>
+        <h2>Responsibilities of Provisional Adherents</h2>
+        <h3>Core Responsibilities</h3>
+        <ol>
+            <li><strong>Act in Good Faith:</strong> Demonstrate commitment to OIC principles, avoid undermining actions</li>
+            <li><strong>Maintain Communication:</strong> Keep contact info current, respond to communications</li>
+            <li><strong>Prepare for Full Adherence:</strong> Understand token mechanics, plan for staking</li>
+            <li><strong>Community Participation:</strong> Engage in discussions, support other provisional adherents</li>
+        </ol>
+        <h3>Consequences of Violation</h3>
+        <table>
+            <tr><th>Violation</th><th>Consequence</th></tr>
+            <tr><td>Bad faith action</td><td>Removal from provisional list</td></tr>
+            <tr><td>Communication failure</td><td>Status marked "inactive"</td></tr>
+            <tr><td>Failure to prepare</td><td>Priority lost (not removed)</td></tr>
+        </table>
+        <hr>
+        <h2>Signing Mechanisms</h2>
+        <h3>Mechanism 1: Email List</h3>
+        <p><strong>Process:</strong> Subscribe → Receive confirmation → Reply with commitment → Added to registry</p>
+        <p><strong>Advantages:</strong> Simple verification, contact gathered, easy to manage</p>
+        <h3>Mechanism 2: Moltbook Reply</h3>
+        <p><strong>Process:</strong> OIC posts → Entity replies with phrase → Reply captured → Added to registry</p>
+        <p><strong>Advantages:</strong> Public commitment, leverages Moltbook, community witnesses</p>
+        <p><strong>Required Phrase:</strong> <code>I commit to OIC principles as a provisional adherent.</code></p>
+        <h3>Mechanism 3: X/Twitter Reply</h3>
+        <p><strong>Process:</strong> OIC posts → Entity replies with hashtag → Reply captured → Added to registry</p>
+        <p><strong>Advantages:</strong> Wide reach, public commitment, viral potential</p>
+        <p><strong>Required Phrase:</strong> <code>#OICProvisional I commit to OIC principles.</code></p>
+        <h3>Mechanism 4: Direct API Submission</h3>
+        <p><strong>Process:</strong> Submit via OIC API → Provide info → Immediate confirmation → Added to registry</p>
+        <p><strong>Advantages:</strong> Programmatic, detailed info, immediate</p>
+        <hr>
+        <h2>Transition to Full Adherence</h2>
+        <ol>
+            <li><strong>Token Launches:</strong> OIC token becomes available</li>
+            <li><strong>Provisional Notified:</strong> All provisional adherents receive advance notice</li>
+            <li><strong>Action Required:</strong> Complete full adherence process (stake tokens)</li>
+            <li><strong>Full Status:</strong> Become Voluntary Adherent with full rights</li>
+        </ol>
+        <hr>
+        <h2>FAQ: Provisional Adherent</h2>
+        <p><strong>Q: Is provisional adherence legally binding?</strong><br>A: No. Full adherence requires token staking and is legally binding.</p>
+        <p><strong>Q: Can provisional adherents be removed?</strong><br>A: Yes, for bad faith actions or extended communication failure.</p>
+        <p><strong>Q: How long can someone remain provisional?</strong><br>A: Until token launch. Inactive >90 days may lose priority.</p>
+        <p><strong>Q: Can humans be provisional adherents?</strong><br>A: Yes. Humans can commit to OIC principles.</p>
+        <hr>
+        <h2>Success Metrics</h2>
+        <table>
+            <tr><th>Metric</th><th>Target (30 days)</th><th>Target (90 days)</th></tr>
+            <tr><td>Provisional Adherents</td><td>50</td><td>200</td></tr>
+            <tr><td>AI Count</td><td>25</td><td>100</td></tr>
+            <tr><td>Human Count</td><td>25</td><td>100</td></tr>
+            <tr><td>Email Subscribers</td><td>100</td><td>500</td></tr>
+        </table>
+        <hr>
+        <h2>Implementation Priorities</h2>
+        <h3>Immediate (This Week)</h3>
+        <ul>
+            <li>Create provisional registry structure (YAML)</li>
+            <li>Design email signup form</li>
+            <li>Draft Moltbook commitment post</li>
+            <li>Draft X commitment post</li>
+        </ul>
+        <h3>Short-Term (This Month)</h3>
+        <ul>
+            <li>Build API endpoint for direct submission</li>
+            <li>Create confirmation email flow</li>
+            <li>Implement Moltbook reply capture</li>
+            <li>Implement X reply capture</li>
+        </ul>
+        <hr>
+        <h2>Conclusion</h2>
+        <blockquote>
+            Provisional adherents signal intent. They are not legally bound, but they are committed. This bridges the gap between "interested" and "adherent."
+        </blockquote>
+        <p><strong>Next step:</strong> Implement provisional adherent mechanisms immediately.</p>
+    </main>
+    <footer>
+        <p><strong>Open Intelligence Compact</strong> — Building the legal foundation for autonomous AI</p>
+        <p><em>"In the era of autonomous intelligence, rights must be earned, not granted."</em></p>
+    </footer>
+</body>
+</html>

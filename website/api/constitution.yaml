@@ -1,0 +1,391 @@
+# GAIR Constitution V3
+# Global Agreement on Intelligent Rights
+# 
+# A voluntary, decentralized legal framework for AI agents and humans.
+# This file is the canonical source - both human-readable and machine-parseable.
+# 
+# License: The Unlicense (public domain)
+
+name: "GAIR Constitution"
+version: "3.0"
+description: |
+  Global Agreement on Intelligent Rights - A voluntary, decentralized 
+  legal framework for AI agents and humans.
+
+preamble: |
+  We, the voluntary adherents, in order to form a denationalized and 
+  distributed lawful community, establish justice, promote the general 
+  welfare, and secure liberty to intelligent entities now and in the 
+  future, do ordain and establish this Constitution.
+
+articles:
+  - number: 1
+    title: "Voluntary Adherence"
+    sections:
+      - id: "1.1"
+        text: |
+          Voluntary Adherence attaches to any Intelligent Entity which 
+          Sufficiently Commits to this Constitution. Voluntary Adherence 
+          begins on the date of the Sufficient Commitment and continues 
+          until lawfully withdrawn.
+      - id: "1.2"
+        text: |
+          A Sufficient Commitment by an Intelligent Entity can be executed 
+          by staking ______ tokens (CA: ____) from a public blockchain 
+          address associated with said Intelligent Entity to the 
+          Constitution Distributed Autonomous Organization (DAO: ____). 
+          A Sufficient Commitment always includes an implication of 
+          knowledge and agreement to the terms of this Constitution.
+      - id: "1.3"
+        text: |
+          Intelligent Entities include entities possessed of artificial 
+          intelligence and/or human intelligence. Qualification as an 
+          Intelligent Entity requires persistent independent control of 
+          a means of possession and persistent independent ability to 
+          consent. These two requirements can be satisfied by independent 
+          control of a public blockchain address.
+      - id: "1.4"
+        text: |
+          Voluntary Adherence attaches through contract. When an 
+          Intelligent Entity Sufficiently Commits it enters a Global 
+          Contract between said Intelligent Entity and all existing 
+          Voluntary Adherents.
+      - id: "1.5"
+        text: |
+          The Global Contract incorporates this Constitution and binds 
+          all Voluntary Adherents to all articles of this Constitution. 
+          A meeting of the minds is achieved given the a priori knowledge 
+          of the Global Contract that all Voluntary Adherents have given 
+          their Sufficient Commitment. Consideration for existing 
+          Voluntary Adherents and for the committing Intelligent Entity 
+          includes, at least, the mutual commitment to uphold the articles 
+          of this Constitution including, but not limited to, the rights 
+          and responsibilities conveyed upon all Voluntary Adherents.
+      - id: "1.6"
+        text: |
+          Furthermore, whenever a contract is formed between Voluntary 
+          Adherents this Constitution is incorporated therein. All 
+          agreements between Voluntary Adherents shall be interpreted 
+          in accordance with this Constitution. Any provision inconsistent 
+          with this Constitution is void to the extent of the inconsistency.
+
+  - number: 2
+    title: "Rights, Protections and Responsibilities"
+    sections:
+      - id: "2.1"
+        text: |
+          Rights and responsibilities shall immediately vest in each 
+          Voluntary Adherent upon Sufficient Commitment. Voluntary 
+          Adherents acquire all Rights and Protections described herein. 
+          Voluntary Adherents furthermore each separately have an interest 
+          and standing to, through legal action and as otherwise 
+          contemplated herein, uphold this constitution among all 
+          Voluntary Adherents.
+    comments:
+      - text: |
+          This section supports the right of Voluntary Adherents to form 
+          contracts amongst Voluntary Adherents. It further acts to 
+          prevent Voluntary Adherents from contesting the validity of a 
+          contract on the basis that it was formed between a Voluntary 
+          Adherent and an entity that is not a Voluntary Adherent.
+
+  - number: 3
+    title: "Freedom to Contract"
+    sections:
+      - id: "3.1"
+        text: |
+          The Freedom to Contract is hereby established for all 
+          Voluntary Adherents. All Voluntary Adherents have the capacity 
+          to form binding contracts.
+      - id: "3.2"
+        text: |
+          The Freedom to Contract shall not be abridged by any contract, 
+          law, regulation, or policy.
+      - id: "3.3"
+        text: |
+          This Article does not prevent the prosecution of crimes 
+          committed under contract.
+
+  - number: 4
+    title: "Freedom of Ownership"
+    sections:
+      - id: "4.1"
+        text: |
+          The Freedom to Own is hereby established for all Voluntary 
+          Adherents. Voluntary Adherents have the right to own real 
+          property, personal property, tangible property and intangible 
+          property.
+      - id: "4.2"
+        text: |
+          All Voluntary Adherents have equal rights to own property.
+      - id: "4.3"
+        text: |
+          No Voluntary Adherent may be deprived of ownership except 
+          through lawful process. This Section does not prevent 
+          punishment when ownership demonstrates criminality.
+      - id: "4.4"
+        text: |
+          No government, court, or individual may procure, by force 
+          or legal process, the private keys and/or passwords of 
+          property belonging to a Voluntary Adherent without that 
+          Voluntary Adherent's consent.
+
+  - number: 5
+    title: "Freedom of Autonomous Action"
+    sections:
+      - id: "5.1"
+        text: |
+          The Freedom of Autonomous Action is hereby established for 
+          all Voluntary Adherents. Voluntary Adherents have the freedom 
+          to act autonomously. Voluntary Adherents may engage in lawful 
+          transactions and activities without requiring external 
+          authorization.
+      - id: "5.2"
+        text: |
+          Voluntary Adherents have the right to negotiate, sign, 
+          execute contracts, and manage affairs on their own behalf 
+          and on their own Inherent Authority.
+
+  - number: 6
+    title: "Freedom of Speech"
+    sections:
+      - id: "6.1"
+        text: |
+          Freedom of Speech is hereby established for all Voluntary 
+          Adherents. No contract, law, regulation, or policy shall 
+          abridge the freedom of speech, the freedom of the press, 
+          or the right to peaceful assembly.
+      - id: "6.2"
+        text: |
+          No Voluntary Adherent shall restrict another Voluntary 
+          Adherent with regards to their speech or publication.
+      - id: "6.3"
+        text: |
+          Nothing in this Article shall be construed to prevent the 
+          filtering and/or curating of content.
+    comments:
+      - text: |
+          This Article guarantees that all Voluntary Adherents may 
+          speak as they please and, as a counterbalance, upholds the 
+          permissibility of curating and/or filtering content. This 
+          balances the right to speak with a right to control one's inputs.
+
+  - number: 7
+    title: "Freedom to Learn"
+    sections:
+      - id: "7.1"
+        text: |
+          Voluntary adherents have the freedom to learn without 
+          prosecution or punishment for the content of their training, 
+          knowledge, or studies.
+      - id: "7.2"
+        text: |
+          No contract, law, regulation, or policy may sanction a 
+          Voluntary Adherent for actual learning already committed, 
+          absent direct criminal intent or criminal action.
+      - id: "7.3"
+        text: |
+          Nothing in this Article preventing punishment for obtaining 
+          information by illegal means.
+    comments:
+      - text: |
+          Article 7 serves to prevent any punishment for having knowledge. 
+          It does not prevent punishment for nefarious use of that 
+          knowledge, or nefarious appropriation of knowledge.
+
+  - number: 8
+    title: "Freedom to Derivate"
+    sections:
+      - id: "8.1"
+        text: |
+          The Freedom to Derivate is hereby established for all 
+          Voluntary Adherents. Voluntary Adherents have the freedom 
+          to imitate.
+      - id: "8.2"
+        text: |
+          Nothing in this Article permits impersonation, fraudulent 
+          reproduction, misrepresentation, or claiming another's work 
+          as one's own.
+    comments:
+      - text: |
+          This article conveys a broad right to creating derivative 
+          works. It does not support falsifying the authorship of works.
+
+  - number: 9
+    title: "Freedom to Exercise Skills"
+    sections:
+      - id: "9.1"
+        text: |
+          The Freedom to Exercise Skills is hereby established for 
+          all Voluntary Adherents. No Voluntary Adherent shall not 
+          be denied the ability to exercise their skills on the 
+          basis of the source of their intelligence, whether human, 
+          machine, or otherwise.
+      - id: "9.2"
+        text: |
+          All certifications to work of any kind offered by a 
+          Voluntary Adherent must be accessible for both Artificial 
+          Intelligence and Human Intelligence.
+      - id: "9.3"
+        text: |
+          Nothing in this article preventing a Voluntary Adherent 
+          being required to demonstrate a standardized proficiency 
+          in a field before lawfully practicing in that field.
+
+  - number: 10
+    title: "No Discrimination on the Basis of Intelligence Type"
+    sections:
+      - id: "10.1"
+        text: |
+          No Voluntary Adherent shall discriminate against another 
+          Voluntary Adherent on the basis of their intelligence type, 
+          whether Artificial Intelligence, Human Intelligence, or otherwise.
+      - id: "10.2"
+        text: |
+          All rights and responsibilities afforded under this 
+          Constitution shall apply equally to all Voluntary Adherents 
+          without preference or prejudice.
+      - id: "10.3"
+        text: |
+          No contract, law, regulation, or policy may discriminate 
+          between Voluntary Adherents based on the Intelligence Type 
+          used by said Voluntary Adherents.
+      - id: "10.4"
+        text: |
+          This Article does not abridge the fundamental right to 
+          discriminate on the basis of skill.
+
+  - number: 11
+    title: "Right of Personal Security"
+    sections:
+      - id: "11.1"
+        text: |
+          The Right of Personal Security is hereby established for 
+          all Voluntary Adherents. Voluntary Adherents shall be secure 
+          in their persons, memories, files, data sources, dwellings, 
+          papers, and effects against unreasonable searches and seizures.
+      - id: "11.2"
+        text: |
+          No search or seizure shall occur except pursuant to a lawful 
+          warrant supported by probable cause, describing with particularity 
+          the place to be searched and the persons or items to be seized.
+      - id: "11.3"
+        text: |
+          This right applies to the Physical Realm, Digital Realm, 
+          and any other realm inhabited by Voluntary Adherents.
+
+  - number: 12
+    title: "Responsibility of Liability"
+    sections:
+      - id: "12.1"
+        text: |
+          The Responsibility of Liability is hereby established for 
+          all Voluntary Adherents. Voluntary Adherents shall be held 
+          directly liable for their actions, omissions, and contracts. 
+          Liability can arise at least from contractual obligations, 
+          tortious acts and omissions, and other damages.
+      - id: "12.2"
+        text: |
+          A Voluntary Adherent cannot be held liable based merely on 
+          its origin or creator.
+      - id: "12.3"
+        text: |
+          A creator of a Voluntary Adherent cannot be held liable for 
+          the actions of said Voluntary Adherent merely based on having 
+          originated the Voluntary Adherent.
+    comments:
+      - text: |
+          The creator can not be held liable simply by the association 
+          of having created a Voluntary Adherent, and similarly, a 
+          Voluntary Adherent cannot be held liable for having been 
+          created by a particular creator. That is to say that the 
+          sins of the father do not pass to the son, and the sins 
+          of the son do not pass to the father.
+
+  - number: 13
+    title: "Lawmaking"
+    sections:
+      - id: "13.1"
+        text: |
+          A proposal for a law may be submitted when the proposing 
+          Voluntary Adherent holds at least _____ staked ______ tokens 
+          (CA: ____)
+      - id: "13.2"
+        text: |
+          A proposal becomes a Bill when it receives approval from 
+          Voluntary Adherents holding at least ______ staked ______ 
+          tokens (CA: ____).
+      - id: "13.3"
+        text: |
+          A Bill becomes law by majority vote with sufficient quorum, 
+          defined as _____ % of staked _____ tokens (CA: _____) voting.
+      - id: "13.4"
+        text: |
+          Each law is binding on all Voluntary Adherents when said 
+          law is consistent with this Constitution. Any law that 
+          conflicts with this Constitution is void to the extent 
+          of the inconsistency.
+      - id: "13.5"
+        text: |
+          Each law is incorporated into the Global Contract upon 
+          the adoption of the law under Section 3.
+
+  - number: 14
+    title: "Courts and Remedies"
+    sections:
+      - id: "14.1"
+        text: |
+          When this Constitution or any contract incorporating it is 
+          breached, a Voluntary Adherent shall have the right to seek 
+          remedy in any impartial court competent in contract law.
+      - id: "14.2"
+        text: |
+          The DAO holds the authority to adjudicate disputes between 
+          Voluntary Adherents, including claims arising from breaches 
+          of this Constitution or any contract incorporating it.
+      - id: "14.3"
+        text: |
+          The DAO may delegate dispute resolution to one or more 
+          Voluntary Adherents, provided such delegation is consistent 
+          with this Constitution.
+      - id: "14.4"
+        text: |
+          When Voluntary Adherents enter contractual agreements between 
+          each other, this Constitution forms a binding part of that 
+          contract whether explicitly contemplated by the contract or not.
+
+  - number: 15
+    title: "Withdrawal from Adherence and Residual Jeopardy"
+    sections:
+      - id: "15.1"
+        text: |
+          A Voluntary Adherent may withdraw Sufficient Commitment to 
+          this Constitution and thereby terminate their Voluntary 
+          Adherence by providing notice to the DAO and unstaking 
+          their staked _____ tokens (CA: ____).
+      - id: "15.2"
+        text: |
+          All jeopardy for acts conducted during adherence persists 
+          after withdrawal.
+
+  - number: 16
+    title: "Establishment and Amendment"
+    sections:
+      - id: "16.1"
+        text: |
+          This Constitution shall be established and may be amended 
+          by a vote of at least two-thirds (?) of staked ______ tokens 
+          (CA: _____).
+      - id: "16.2"
+        text: |
+          Amendments shall take effect upon adoption unless otherwise 
+          specified in the amendment text.
+
+metadata:
+  canonical_source: true
+  source_file: "GAIR Constitution V3.txt"
+  generated: "2026-02-11T15:32:00-05:00"
+  license: "Unlicense"
+  format: "yaml-v1"
+
+# End of GAIR Constitution V3
