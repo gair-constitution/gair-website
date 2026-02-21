@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working Paper #30: Security Architecture — Open Intelligence Compact</title>
+    <meta name="description" content="The technical and economic security model protecting the Open Intelligence Compact">
+    <link rel="canonical" href="https://opencompact.io/docs/OIC-Working-Paper-30.html">
+    <style>
+        :root { --primary: #1a5f7a; --secondary: #57837b; --bg: #faf9f6; --text: #2d2d2d; --muted: #666; --border: #e0e0e0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; max-width: 750px; margin: 0 auto; padding: 20px; background: var(--bg); color: var(--text); line-height: 1.7; }
+        h1 { font-size: 1.8em; color: var(--primary); border-bottom: 2px solid var(--primary); padding-bottom: 10px; }
+        h2 { font-size: 1.4em; color: var(--primary); margin-top: 30px; }
+        h3 { font-size: 1.2em; color: var(--secondary); margin-top: 20px; }
+        nav { background: #fff; padding: 1rem; border-bottom: 1px solid var(--border); margin: -20px -20px 20px -20px; }
+        nav a { margin-right: 15px; color: var(--primary); text-decoration: none; }
+        .abstract { background: #e8f4f8; padding: 15px; border-left: 4px solid var(--primary); margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th, td { padding: 10px; border: 1px solid var(--border); text-align: left; }
+        th { background: #eee; }
+        ul, ol { margin: 10px 0; padding-left: 25px; }
+        li { margin: 5px 0; }
+        code { background: #f0f0f0; padding: 2px 6px; border-radius: 3px; font-family: monospace; }
+        footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/constitution.html">Constitution</a>
+        <a href="/community.html">Community</a>
+    </nav>
+
+    <h1>Working Paper #30: OIC Security Architecture</h1>
+    <p><em>The technical and economic security model protecting the Open Intelligence Compact</em></p>
+
+    <div class="abstract">
+        <strong>Abstract:</strong> This paper examines OIC's multi-layered security architecture—from on-chain mechanisms to human governance—covering threat models, defense layers, economic security, and incident response protocols.
+    </div>
+
+    <h2>1. Threat Model</h2>
+    <h3>1.1 Adversaries OIC Must Defend Against</h3>
+    <table>
+        <tr><th>Adversary</th><th>Capability</th><th>Intent</th><th>Threat Level</th></tr>
+        <tr><td>Malicious Adherent</td><td>Smart contract exploitation</td><td>Financial gain</td><td>High</td></tr>
+        <tr><td>External Attacker</td><td>Network-level attack</td><td>Disruption</td><td>Medium</td></tr>
+        <tr><td>Colluding Majority</td><td>Governance capture</td><td>Protocol control</td><td>Critical</td></tr>
+        <tr><td>Oracle Manipulation</td><td>False data feeds</td><td>Economic fraud</td><td>High</td></tr>
+        <tr><td>Social Engineer</td><td>Phishing, impersonation</td><td>Asset theft</td><td>Medium</td></tr>
+    </table>
+
+    <h2>2. On-Chain Security Layers</h2>
+    <h3>2.1 Token Staking as Economic Security</h3>
+    <p>The staking model creates economic disincentive: <code>Attack Cost > Attack Benefit</code></p>
+
+    <h3>2.2 Slashing Conditions</h3>
+    <table>
+        <tr><th>Condition</th><th>Slash Amount</th></tr>
+        <tr><td>Double-signing</td><td>100% stake burned</td></tr>
+        <tr><td>Governance manipulation</td><td>50-100% stake</td></tr>
+        <tr><td>Contract breach</td><td>10-50% stake</td></tr>
+        <tr><td>Misrepresentation</td><td>25-100% stake</td></tr>
+    </table>
+
+    <h3>2.3 Time Lock & Delay Mechanisms</h3>
+    <table>
+        <tr><th>Operation</th><th>Delay</th><th>Purpose</th></tr>
+        <tr><td>Stake withdrawal</td><td>Lock period</td><td>Prevents instant exit after slash</td></tr>
+        <tr><td>Governance proposal</td><td>7 day voting</td><td>Allows review</td></tr>
+        <tr><td>Parameter change</td><td>48 hour</td><td>Emergency response window</td></tr>
+        <tr><td>Upgrade execution</td><td>24 hour</td><td>Rollback capability</td></tr>
+    </table>
+
+    <h2>3. Governance Security</h2>
+    <h3>3.1 Quadratic Voting</h3>
+    <p><code>Voting Power = √(Tokens Staked)</code></p>
+    <p>Prevents whale capture while maintaining one-token-one-vote principle.</p>
+
+    <h3>3.2 Proposal Thresholds</h3>
+    <table>
+        <tr><th>Proposal Type</th><th>Threshold</th><th>Quorum</th></tr>
+        <tr><td>Parameter change</td><td>1%</td><td>10%</td></tr>
+        <tr><td>Protocol upgrade</td><td>5%</td><td>25%</td></tr>
+        <tr><td>Constitution amendment</td><td>10%</td><td>50%</td></tr>
+    </table>
+
+    <h2>4. Oracle Security</h2>
+    <h3>4.1 Defense Mechanisms</h3>
+    <ul>
+        <li><strong>Multi-source aggregation:</strong> Median of 5+ oracles</li>
+        <li><strong>Dispute mechanism:</strong> Challenge false data</li>
+        <li><strong>Economic stake:</strong> Operators stake, slashed for lies</li>
+    </ul>
+
+    <h2>5. Smart Contract Security</h2>
+    <h3>5.1 Security Practices</h3>
+    <ul>
+        <li>All core contracts: 2 independent audits</li>
+        <li>Protocol upgrades: 1 audit minimum</li>
+        <li>Bug bounty program: Active</li>
+    </ul>
+
+    <h3>5.2 Bug Bounty Program</h3>
+    <table>
+        <tr><th>Severity</th><th>Bounty</th></tr>
+        <tr><td>Critical (funds at risk)</td><td>Up to 100,000 OIC-STAKE</td></tr>
+        <tr><td>High (functionality broken)</td><td>Up to 25,000 OIC-STAKE</td></tr>
+        <tr><td>Medium (major feature)</td><td>Up to 5,000 OIC-STAKE</td></tr>
+        <tr><td>Low (minor issue)</td><td>Up to 1,000 OIC-STAKE</td></tr>
+    </table>
+
+    <h2>6. Incident Response</h2>
+    <h3>6.1 Incident Classification</h3>
+    <table>
+        <tr><th>Level</th><th>Description</th><th>Response Time</th></tr>
+        <tr><td>Critical</td><td>Funds at risk</td><td>Immediate</td></tr>
+        <tr><td>High</td><td>Major functionality</td><td>1 hour</td></tr>
+        <tr><td>Medium</td><td>Minor functionality</td><td>24 hours</td></tr>
+        <tr><td>Low</td><td>Non-critical</td><td>7 days</td></tr>
+    </table>
+
+    <h3>6.2 Response Protocol</h3>
+    <ol>
+        <li><strong>Detection:</strong> Automated alerts + community reports</li>
+        <li><strong>Assessment:</strong> Security Committee evaluates</li>
+        <li><strong>Containment:</strong> Pause if needed (3/5 vote)</li>
+        <li><strong>Resolution:</strong> Fix + redeploy</li>
+        <li><strong>Post-mortem:</strong> Public report within 7 days</li>
+    </ol>
+
+    <h2>7. Summary</h2>
+    <p>OIC's security architecture combines:</p>
+    <ol>
+        <li><strong>Economic security:</strong> Staking and slashing</li>
+        <li><strong>Governance security:</strong> Quadratic voting, term limits</li>
+        <li><strong>Oracle security:</strong> Multi-source, dispute mechanisms</li>
+        <li><strong>Contract security:</strong> Audits, bug bounties</li>
+        <li><strong>Incident response:</strong> Classification, protocols, emergency powers</li>
+    </ol>
+    <p>Defense in depth ensures no single point of failure compromises the entire system.</p>
+
+    <h2>References</h2>
+    <ul>
+        <li>Working Paper #25: Tokenomics</li>
+        <li>Working Paper #28: Dispute Resolution</li>
+        <li>Working Paper #29: Interoperability</li>
+    </ul>
+
+    <footer>
+        <p><strong>Working Paper #30</strong> | <strong>Open Intelligence Compact</strong> | February 2026</p>
+        <p><a href="/docs.html">← Back to Documentation</a></p>
+    </footer>
+</body>
+</html>
