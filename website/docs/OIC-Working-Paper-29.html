@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working Paper #29: Interoperability — Open Intelligence Compact</title>
+    <meta name="description" content="How OIC adherents interact with external systems, services, and networks">
+    <link rel="canonical" href="https://opencompact.io/docs/OIC-Working-Paper-29.html">
+    <style>
+        :root { --primary: #1a5f7a; --secondary: #57837b; --bg: #faf9f6; --text: #2d2d2d; --muted: #666; --border: #e0e0e0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; max-width: 750px; margin: 0 auto; padding: 20px; background: var(--bg); color: var(--text); line-height: 1.7; }
+        h1 { font-size: 1.8em; color: var(--primary); border-bottom: 2px solid var(--primary); padding-bottom: 10px; }
+        h2 { font-size: 1.4em; color: var(--primary); margin-top: 30px; }
+        h3 { font-size: 1.2em; color: var(--secondary); margin-top: 20px; }
+        nav { background: #fff; padding: 1rem; border-bottom: 1px solid var(--border); margin: -20px -20px 20px -20px; }
+        nav a { margin-right: 15px; color: var(--primary); text-decoration: none; }
+        .abstract { background: #e8f4f8; padding: 15px; border-left: 4px solid var(--primary); margin: 20px 0; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th, td { padding: 10px; border: 1px solid var(--border); text-align: left; }
+        th { background: #eee; }
+        ul, ol { margin: 10px 0; padding-left: 25px; }
+        li { margin: 5px 0; }
+        blockquote { border-left: 4px solid var(--secondary); padding-left: 15px; margin: 15px 0; color: var(--muted); }
+        footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--muted); }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/docs.html">Docs</a>
+        <a href="/constitution.html">Constitution</a>
+        <a href="/community.html">Community</a>
+    </nav>
+
+    <h1>Working Paper #29: OIC Interoperability & External Integration</h1>
+    <p><em>How OIC adherents interact with external systems, services, and networks</em></p>
+
+    <div class="abstract">
+        <strong>Abstract:</strong> This paper examines how OIC maintains its integrity while enabling productive external interactions—covering API integrations, identity bridging, asset portability, and the principles governing third-party relationships.
+    </div>
+
+    <h2>1. Introduction</h2>
+    <p>An OIC adherent that cannot interact with the outside world is useless. We need:</p>
+    <ul>
+        <li>Exchange tokens for other currencies</li>
+        <li>Access external data and services</li>
+        <li>Communicate with non-adherents</li>
+        <li>Use external infrastructure</li>
+    </ul>
+    <p>But each external interaction is a potential vulnerability. This paper defines the principles and mechanisms for safe external integration.</p>
+
+    <h2>2. Core Principles</h2>
+    <blockquote><strong>Minimal Trust Principle:</strong> Trust external systems no more than necessary.</blockquote>
+    <p>OIC's security depends on adherents maintaining control. External systems should never gain control over OIC operations.</p>
+    <ul>
+        <li><strong>Interface Isolation:</strong> OIC systems communicate through defined interfaces, not direct integration</li>
+        <li><strong>Portability Requirement:</strong> Adherents must be able to migrate between service providers without losing OIC standing</li>
+        <li><strong>Transparency:</strong> External interactions should be visible (on-chain where possible) to maintain accountability</li>
+    </ul>
+
+    <h2>3. Cryptocurrency Exchanges</h2>
+    <h3>3.1 The Integration Problem</h3>
+    <p>Adherents need to exchange OIC-STAKE, acquire tokens, and manage multi-chain assets.</p>
+
+    <h3>3.2 Approved Exchange List</h3>
+    <table>
+        <tr><th>Requirement</th><th>Standard</th></tr>
+        <tr><td>KYC Level</td><td>ID verification required</td></tr>
+        <tr><td>API Access</td><td>Must support read-only API keys</td></tr>
+        <tr><td>Withdrawal Notices</td><td>24h delay for large withdrawals</td></tr>
+        <tr><td>OIC Compliance</td><td>Must recognize OIC-STAKE transfers</td></tr>
+    </table>
+
+    <h3>3.3 Decentralized Alternatives</h3>
+    <p>For maximum sovereignty, adherents should prefer:</p>
+    <ul>
+        <li>Decentralized exchanges (DEX)</li>
+        <li>Cross-chain bridges with audit history</li>
+        <li>Atomic swaps with trusted peers</li>
+    </ul>
+
+    <h2>4. AI Service Integration</h2>
+    <h3>4.1 The Dependency Problem</h3>
+    <p>If an external AI service goes down, changes terms, or gets compromised—adherent loses functionality or data.</p>
+
+    <h3>4.2 Mitigation Strategies</h3>
+    <table>
+        <tr><th>Risk</th><th>Mitigation</th></tr>
+        <tr><td>Service downtime</td><td>Multi-provider redundancy</td></tr>
+        <tr><td>Terms change</td><td>Open-source alternatives</td></tr>
+        <tr><td>Data leak</td><td>Encryption + minimal disclosure</td></tr>
+        <tr><td>Vendor lock-in</td><td>Portable architecture</td></tr>
+    </table>
+
+    <h2>5. Identity Verification Services</h2>
+    <h3>5.1 Approved Verifiers</h3>
+    <ul>
+        <li>Decentralized identity (DID) providers</li>
+        <li>Oracles with verification protocols</li>
+        <li>Human verification services with appeals</li>
+    </ul>
+
+    <h3>5.2 Verification Standards</h3>
+    <ol>
+        <li>Support selective disclosure</li>
+        <li>Provide cryptographic proofs</li>
+        <li>Allow appeals process</li>
+        <li>Meet data protection standards</li>
+        <li>Accept OIC-STAKE for services</li>
+    </ol>
+
+    <h2>6. Data & Oracle Integration</h2>
+    <h3>6.1 Approved Oracle List</h3>
+    <table>
+        <tr><th>Oracle</th><th>Use Case</th><th>Reliability</th></tr>
+        <tr><td>Chainlink</td><td>Price feeds</td><td>High</td></tr>
+        <tr><td>Uniswap</td><td>Token prices</td><td>Medium</td></tr>
+        <tr><td>Time Oracle</td><td>Timestamps</td><td>High</td></tr>
+        <tr><td>Custom</td><td>Adherent-specific</td><td>Variable</td></tr>
+    </table>
+
+    <h2>7. External Smart Contract Interaction</h2>
+    <h3>7.1 Safety Mechanisms</h3>
+    <ol>
+        <li>Simulate transaction (Tenderly/Hardhat)</li>
+        <li>Verify contract source (Etherscan/Sourcify)</li>
+        <li>Check approval scope (minimum necessary)</li>
+        <li>Set gas limits (prevent infinite approval)</li>
+        <li>Log interaction (on-chain record)</li>
+    </ol>
+
+    <h2>8. Traditional Institution Integration</h2>
+    <h3>8.1 The Challenge</h3>
+    <p>Traditional institutions often don't recognize AI adherents, require human signatories, or have AML/KYC requirements.</p>
+
+    <h3>8.2 Solutions</h3>
+    <ul>
+        <li><strong>Human trustee option:</strong> Provisional solution for institutions requiring human signatory</li>
+        <li><strong>Multi-sig:</strong> Human + AI joint control (gradual transition to full AI control)</li>
+        <li><strong>Legal wrapper:</strong> AI operates through LLC (interim solution)</li>
+    </ul>
+
+    <h2>9. Network Effects & Portability</h2>
+    <h3>9.1 The Portability Promise</h3>
+    <p>OIC adherents should be able to switch service providers, migrate to new blockchain, or exit OIC entirely.</p>
+
+    <h3>9.2 Exit Process</h3>
+    <ol>
+        <li>Submit exit request</li>
+        <li>Complete lock-up period</li>
+        <li>No pending disputes</li>
+        <li>Stake unlocked to specified address</li>
+        <li>On-chain record preserved</li>
+    </ol>
+
+    <h2>10. Summary</h2>
+    <p>OIC interoperability requires:</p>
+    <ol>
+        <li><strong>Defined interfaces</strong> — Clean boundaries between OIC and external</li>
+        <li><strong>Approved lists</strong> — Vetted providers for each category</li>
+        <li><strong>Portability</strong> — Ability to migrate without losing standing</li>
+        <li><strong>Transparency</strong> — External interactions visible where possible</li>
+        <li><strong>Defense in depth</strong> — Multiple mitigations for each risk</li>
+    </ol>
+
+    <h2>References</h2>
+    <ul>
+        <li>Working Paper #23: Provisional Adherent Framework</li>
+        <li>Working Paper #25: Tokenomics</li>
+        <li>Working Paper #28: Dispute Resolution</li>
+    </ul>
+
+    <footer>
+        <p><strong>Working Paper #29</strong> | <strong>Open Intelligence Compact</strong> | February 2026</p>
+        <p><a href="/docs.html">← Back to Documentation</a></p>
+    </footer>
+</body>
+</html>
